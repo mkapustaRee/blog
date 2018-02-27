@@ -20,14 +20,5 @@
       <description>Idea The inspiration to write this article was a documentary about the life of a famous “con” artist Mr. Beltracchi link which got me curious about art trading &amp;amp; auctions.</description>
     </item>
     
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/posts/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/posts/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.</description>
-    </item>
-    
   </channel>
 </rss>
