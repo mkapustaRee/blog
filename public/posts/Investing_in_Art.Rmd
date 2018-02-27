@@ -62,7 +62,7 @@ The primary source of information is the website of Slovak national gallery auct
 
 Before we start web scraping process the website has to allow this behavior. More information about using robot.txt [here](https://towardsdatascience.com/functions-with-r-and-rvest-a-laymens-guide-acda42325a77)
 
-```{r check the website settings, eval = F}
+```{r check the website settings, eval = T}
 library(robotstxt)
 robotstxt::robotstxt("soga.sk") %>% print()
 ```

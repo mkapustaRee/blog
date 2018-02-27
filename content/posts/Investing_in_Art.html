@@ -38,8 +38,57 @@ tags: ["Webscraping", "Purrr", "Rvest","Plotly","Art","Investment"]
 <li>artist, artwork name, starting price, final price data are listed</li>
 </ul>
 <p>Before we start web scraping process the website has to allow this behavior. More information about using robot.txt <a href="https://towardsdatascience.com/functions-with-r-and-rvest-a-laymens-guide-acda42325a77">here</a></p>
-<pre class="r"><code>library(robotstxt)
-robotstxt::robotstxt(&quot;soga.sk&quot;) %&gt;% print()</code></pre>
+<pre class="r"><code>library(robotstxt)</code></pre>
+<pre><code>## Warning: package &#39;robotstxt&#39; was built under R version 3.4.3</code></pre>
+<pre class="r"><code>robotstxt::robotstxt(&quot;soga.sk&quot;) %&gt;% print()</code></pre>
+<pre><code>## $domain
+## [1] &quot;soga.sk&quot;
+## 
+## $text
+## # robots.txt file for http://www.soga.sk
+## 
+## User-agent: *
+## Disallow:
+## 
+## $bots
+## [1] &quot;*&quot;
+## 
+## $comments
+##   line                                  comment
+## 1    1 # robots.txt file for http://www.soga.sk
+## 
+## $permissions
+##      field useragent value
+## 1 Disallow         *      
+## 
+## $crawl_delay
+## [1] field     useragent value    
+## &lt;0 rows&gt; (or 0-length row.names)
+## 
+## $host
+## [1] field     useragent value    
+## &lt;0 rows&gt; (or 0-length row.names)
+## 
+## $sitemap
+## [1] field     useragent value    
+## &lt;0 rows&gt; (or 0-length row.names)
+## 
+## $other
+## [1] field     useragent value    
+## &lt;0 rows&gt; (or 0-length row.names)
+## 
+## $robexclobj
+## &lt;Robots Exclusion Protocol Object&gt;
+## $check
+## function (paths = &quot;/&quot;, bot = &quot;*&quot;) 
+## {
+##     spiderbar::can_fetch(obj = self$robexclobj, path = paths, 
+##         user_agent = bot)
+## }
+## &lt;environment: 0x7fb5aa3f7ca0&gt;
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;robotstxt&quot;</code></pre>
 <p>Great! The website enables the scraping of the data.</p>
 <p>First step is to gather the data and build a database that contains all the data available from the website.</p>
 <p>Next step is to identify the elements we want to scape. Selectorgadget identifies web elements containing auction information.</p>
