@@ -30,7 +30,7 @@ Learned a lot as a private banker during GFC, went to study real estate investme
 : Data Science Career Track @ www.datacamp.com
 : 2018
  
-+++
+
 
 
 
