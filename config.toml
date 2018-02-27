@@ -1,0 +1,22 @@
+baseurl = "https://www.example.org/"
+title = "Michal Kapusta"
+copyright = "Copyright &copy; 2017 - Michal Kapusta"
+canonifyurls = true
+theme = "hugo-kiera"
+
+paginate = 3
+
+summaryLength = 30
+enableEmoji = true
+pygmentsCodeFences = true
+
+[author]
+    name = "Michal Kapusta"
+    github = "mkapustaRee"
+    linkedin = "michal-kapusta-4b178511/"
+    twitter = "mkapustaRee"
+
+[params]
+    tagline = "Investment Research | R programming | Finance"
+
+

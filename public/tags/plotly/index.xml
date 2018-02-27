@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plotly on Michal Kapusta</title>
+    <link>/tags/plotly/</link>
+    <description>Recent content in Plotly on Michal Kapusta</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 2017 - Michal Kapusta</copyright>
+    <lastBuildDate>Mon, 26 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/plotly/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Is fine Art a fine Investment? Let&#39;s find out using web scraping!</title>
+      <link>/posts/investing_in_art/</link>
+      <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/investing_in_art/</guid>
+      <description>Idea The inspiration to write this article was a documentary about the life of a famous “con” artist Mr. Beltracchi link which got me curious about art trading &amp;amp; auctions.</description>
+    </item>
+    
+  </channel>
+</rss>

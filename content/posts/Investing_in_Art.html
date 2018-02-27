@@ -1,0 +1,902 @@
+---
+title: "Is fine Art a fine Investment? Let's find out using web scraping!"
+author: "Michal Kapusta"
+date: "2018-02-26"
+lastmod: "2018-02-26"
+categories: ["R"]       
+tags: ["Webscraping", "Purrr", "Rvest","Plotly","Art","Investment"]
+---
+
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/pymjs/pym.v1.js"></script>
+<script src="/rmarkdown-libs/widgetframe-binding/widgetframe.js"></script>
+
+
+<div id="idea" class="section level2">
+<h2>Idea</h2>
+<p>The inspiration to write this article was a documentary about the life of a famous “con” artist Mr. Beltracchi <a href="http://www.imdb.com/title/tt3212568/">link</a> which got me curious about art trading &amp; auctions. I often hear the media saying: <strong>“Invest in fine Art, it is a great investment!”</strong>. In the finance world, banks offer clients services such as Art Consulting. The service offers advice on buying and selling fine art. The key to a great advice is to know which Artist’s artwork is increasing in value over time and generate profits at the auctions and which one doesn’t.</p>
+<p>This analysis <strong>shows evidence</strong> an art investor might use when making investment decisions based on actual transaction data. Structured transaction data, trends or patterns are non existent so in order to find them I have used handy web scraping techniques to start with. I have then analyzed the data and created interactive charts that hopefully provide insights into the world of Slovak art auctions.</p>
+</div>
+<div id="approach" class="section level2">
+<h2>Approach</h2>
+<ol style="list-style-type: decimal">
+<li>Webscrape all the auctioned paintings from the SOGA auction house website (rvest, stringr)</li>
+<li>Tidy the raw data into the tidy form (tidyverse, rebus, purrr)</li>
+<li>Use tidy data as base for the analysis (tidyverse)</li>
+<li>Conclusions</li>
+</ol>
+<ul>
+<li>the MVF (Most Valuable Function) is the <strong>safely()</strong> function from the package purrr!</li>
+</ul>
+<div id="part-i-the-webscrape" class="section level3">
+<h3>Part I: The webscrape</h3>
+<p>The primary source of information is the website of Slovak national gallery auction house: <a href="https://www.soga.sk" class="uri">https://www.soga.sk</a> (aka SOGA). The website is filled with data that can be categorized as:</p>
+<ul>
+<li>grouped &amp; labeled auctions (since 2005)</li>
+<li>all auctioned items are listed<br />
+</li>
+<li>artist, artwork name, starting price, final price data are listed</li>
+</ul>
+<p>Before we start web scraping process the website has to allow this behavior. More information about using robot.txt <a href="https://towardsdatascience.com/functions-with-r-and-rvest-a-laymens-guide-acda42325a77">here</a></p>
+<pre class="r"><code>library(robotstxt)
+robotstxt::robotstxt(&quot;soga.sk&quot;) %&gt;% print()</code></pre>
+<p>Great! The website enables the scraping of the data.</p>
+<p>First step is to gather the data and build a database that contains all the data available from the website.</p>
+<p>Next step is to identify the elements we want to scape. Selectorgadget identifies web elements containing auction information.</p>
+<pre class="r"><code>url &lt;- &quot;http://www.soga.sk/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/vysledky-aukcii&quot;
+
+result &lt;- url %&gt;% read_html() %&gt;%
+        html_nodes(&quot;p.results&quot;) %&gt;% 
+        html_text()
+
+time &lt;- url %&gt;% read_html() %&gt;%
+        html_nodes(&quot;p.about&quot;) %&gt;% 
+        html_text()
+
+link &lt;- url %&gt;% read_html() %&gt;%
+        html_nodes(&quot;h2 a&quot;) %&gt;% 
+        html_attr(&quot;href&quot;) 
+
+df &lt;- cbind(time, result,link) %&gt;% as.tibble()</code></pre>
+<p>This chunk of code records following table:</p>
+<pre class="r"><code>df %&gt;% head() %&gt;% knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">time</th>
+<th align="left">result</th>
+<th align="left">link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">138. zimná aukcia výtvarných diel a starožitností, 05.12.2017</td>
+<td align="left">Na aukcii bolo vydražených 159 diel (55%) v celkovej hodnote 499 745 €.</td>
+<td align="left">/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/138-zimna-aukcia-vytvarnych-diel-a-starozitnosti</td>
+</tr>
+<tr class="even">
+<td align="left">137. večerná aukcia, 14.11.2017</td>
+<td align="left">Na aukcii bolo vydražených 45 diel (50%) v celkovej hodnote 378 900 €.</td>
+<td align="left">/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/137-vecerna-aukcia</td>
+</tr>
+<tr class="odd">
+<td align="left">136. jesenná aukcia výtvarných diel, 26.09.2017</td>
+<td align="left">Na aukcii bolo vydražených 152 diel (57%) v celkovej hodnote 198 940 €.</td>
+<td align="left">/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/136-jesenna-aukcia-vytvarnych-diel</td>
+</tr>
+<tr class="even">
+<td align="left">135. letná aukcia výtvarných diel a starožitností, 13.06.2017</td>
+<td align="left">Na aukcii bolo vydražených 164 diel (50%) v celkovej hodnote 276 625 €.</td>
+<td align="left">/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/135-letna-aukcia-vytvarnych-diel-a-starozitnosti</td>
+</tr>
+<tr class="odd">
+<td align="left">134. večerná aukcia, 25.04.2017</td>
+<td align="left">Na aukcii bolo vydražených 47 diel (51%) v celkovej hodnote 665 600 €.</td>
+<td align="left">/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia</td>
+</tr>
+<tr class="even">
+<td align="left">133. jarná aukcia výtvarných diel, 07.03.2017</td>
+<td align="left">Na aukcii bolo vydražených 129 diel (64%) v celkovej hodnote 212 230 €.</td>
+<td align="left">/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/133-jarna-aukcia-vytvarnych-diel</td>
+</tr>
+</tbody>
+</table>
+<p>Perfect! The successful scrape generated the table with information about:</p>
+<ul>
+<li>column <strong>time</strong>: name of the action &amp; date of the auction</li>
+<li>column <strong>result</strong>: # of auctioned items, % of sold items, auction turnover</li>
+<li>column <strong>link</strong>: contains the weblink to the actual auction.</li>
+</ul>
+<p>Unfortunately, the data are still locked in the records. The Information is extracted using string manipulation (stringr, rebus) into <strong>separate</strong> columns:</p>
+<ul>
+<li>date of the auction</li>
+<li>number and name of the auction</li>
+<li>number of artwork entering auction</li>
+<li>success rate of the auctions</li>
+<li>overall sum of all auctioned items</li>
+</ul>
+<pre class="r"><code># extract time information 
+ptrn &lt;-  &quot;, &quot; %R% one_or_more(DIGIT) %R% &quot;.&quot; %R% one_or_more(HEX_DIGIT) %R% &quot;.&quot; %R% one_or_more(HEX_DIGIT) 
+df$c_time &lt;- df$time %&gt;% str_extract(pattern = ptrn) %&gt;% str_replace(&quot;, &quot;,&quot;&quot;) %&gt;% lubridate::dmy()
+
+# extract name information 
+df$c_name &lt;- df$time %&gt;%  str_replace(ptrn,&quot;&quot;) 
+
+# extract link information
+df$c_link  &lt;- paste0(&quot;http://www.soga.sk/&quot;,df$link)
+
+# extract percentage information
+ptrn_2 &lt;-  &quot;(&quot; %R% one_or_more(DIGIT) %R% &quot;%)&quot; 
+df$c_rate &lt;- df$result %&gt;% str_extract(pattern = ptrn_2) %&gt;% str_replace(&quot;%&quot;,&quot;&quot;) %&gt;% as.numeric()
+
+# clean items information
+ptrn_3 &lt;-  one_or_more(DIGIT) %R% &quot; diel&quot; 
+df$c_items &lt;- df$result %&gt;% str_extract(pattern = ptrn_3) %&gt;% str_replace(&quot; diel&quot;,&quot;&quot;) %&gt;% as.numeric()
+
+# clean price information
+ptrn_4 &lt;- one_or_more(DIGIT) %R% SPACE %R% one_or_more(DIGIT) %R% &quot; €&quot; 
+df$c_price &lt;- df$result %&gt;% str_extract(pattern = ptrn_4) %&gt;%
+        str_replace(&quot; &quot;,&quot;&quot;) %&gt;% 
+        str_replace(&quot;€&quot;,&quot;&quot;) %&gt;% 
+        as.numeric()
+
+# tidy dataframe &amp; calc average price
+df_tidy &lt;- df %&gt;%
+        select(contains(&quot;c_&quot;)) %&gt;%
+        mutate(year = lubridate::year(c_time),
+               quarter = lubridate::quarter(c_time),
+               qtr = paste0(year,&quot;.&quot;,quarter),
+               c_price_avg = c_price / c_items)
+
+
+df_tidy %&gt;% 
+        select(-year,-qtr,-quarter) %&gt;% 
+        head() %&gt;%
+        knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">c_time</th>
+<th align="left">c_name</th>
+<th align="left">c_link</th>
+<th align="right">c_rate</th>
+<th align="right">c_items</th>
+<th align="right">c_price</th>
+<th align="right">c_price_avg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2017-12-05</td>
+<td align="left">138. zimná aukcia výtvarných diel a starožitností</td>
+<td align="left"><a href="http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/138-zimna-aukcia-vytvarnych-diel-a-starozitnosti" class="uri">http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/138-zimna-aukcia-vytvarnych-diel-a-starozitnosti</a></td>
+<td align="right">55</td>
+<td align="right">159</td>
+<td align="right">499745</td>
+<td align="right">3143.050</td>
+</tr>
+<tr class="even">
+<td align="left">2017-11-14</td>
+<td align="left">137. večerná aukcia</td>
+<td align="left"><a href="http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/137-vecerna-aukcia" class="uri">http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/137-vecerna-aukcia</a></td>
+<td align="right">50</td>
+<td align="right">45</td>
+<td align="right">378900</td>
+<td align="right">8420.000</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-09-26</td>
+<td align="left">136. jesenná aukcia výtvarných diel</td>
+<td align="left"><a href="http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/136-jesenna-aukcia-vytvarnych-diel" class="uri">http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/136-jesenna-aukcia-vytvarnych-diel</a></td>
+<td align="right">57</td>
+<td align="right">152</td>
+<td align="right">198940</td>
+<td align="right">1308.816</td>
+</tr>
+<tr class="even">
+<td align="left">2017-06-13</td>
+<td align="left">135. letná aukcia výtvarných diel a starožitností</td>
+<td align="left"><a href="http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/135-letna-aukcia-vytvarnych-diel-a-starozitnosti" class="uri">http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/135-letna-aukcia-vytvarnych-diel-a-starozitnosti</a></td>
+<td align="right">50</td>
+<td align="right">164</td>
+<td align="right">276625</td>
+<td align="right">1686.738</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-04-25</td>
+<td align="left">134. večerná aukcia</td>
+<td align="left"><a href="http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia" class="uri">http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia</a></td>
+<td align="right">51</td>
+<td align="right">47</td>
+<td align="right">665600</td>
+<td align="right">14161.702</td>
+</tr>
+<tr class="even">
+<td align="left">2017-03-07</td>
+<td align="left">133. jarná aukcia výtvarných diel</td>
+<td align="left"><a href="http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/133-jarna-aukcia-vytvarnych-diel" class="uri">http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/133-jarna-aukcia-vytvarnych-diel</a></td>
+<td align="right">64</td>
+<td align="right">129</td>
+<td align="right">212230</td>
+<td align="right">1645.194</td>
+</tr>
+</tbody>
+</table>
+<p>Clean dataset reveals important information about auction house performance over the period of years 2001-2017.</p>
+<pre class="r"><code>df_summary &lt;- function(data, ...) {
+        
+        group_var &lt;- quos(...)
+        
+        data %&gt;% 
+                group_by(!!!group_var) %&gt;%  
+                summarise(s_price = sum(c_price),
+                          s_items = sum(c_items),
+                          c_price_avg = mean(c_price_avg)) 
+        
+}
+
+# chart overview
+df_tidy %&gt;%
+        df_summary(year) %&gt;%
+        rename(average_price = c_price_avg , 
+               number_of_items = s_items,
+               auction_turnover = s_price) %&gt;% 
+        gather(Ratio, Value, 2:length(.)) %&gt;% 
+        ggplot(aes(year, Value, group = Ratio)) +
+        geom_line(alpha = .3)  +
+        theme_minimal(base_family = &quot;Verdana&quot;,base_size = 12) + 
+        facet_wrap(~Ratio,scales = &quot;free&quot;) +
+        tidyquant::geom_ma(n = 4,color = &quot;red&quot;, linetype = 1, size = 1) + 
+        labs(title = &quot;SOGA: Overview &quot;,
+             subtitle = &quot;by indicator&quot;, caption = &quot;source: www.soga.sk&quot;, y = &quot;&quot;)</code></pre>
+<p><img src="/posts/Investing_in_Art_files/figure-html/display%20the%20results-1.png" width="672" /></p>
+<p>Data shows SOGA turnover is growing steadily from 2004. Additionally, the average price per painting sold at auction is growing. Average price grew from ~1200€ to current ~5000€ in 14 years. This means either more expensive paintings are being sold or the prices of the artworks are growing. A calculation reveals 10% CAGR in prices per painting for the time period.</p>
+<p>A byproduct of the scrape is the URL to every single auction in SOGA history (for example here <a href="http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia" class="uri">http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia</a>). This link leads to every single item auctioned at that particular auction.</p>
+<p>Next step is taken in order to:</p>
+<ul>
+<li>scrape all the websites dedicated to listing items sold at one particular auction (user need to click several times next page in order to see all the items)</li>
+<li>scrape the URLs of the particular items traded on the auction (download the individual URL link of the items)</li>
+<li>scrape the details regarding starting price, final price, artwork name etc.</li>
+</ul>
+<p>These steps can be executed using following code:</p>
+<pre class="r"><code>extract_auction_length      &lt;- function(url) {
+        ptrn &lt;- &quot;page=&quot; %R% one_or_more(DIGIT)
+        
+        num &lt;- url %&gt;% read_html() %&gt;%
+                html_nodes(&quot;#auctionArtworks~ .pager .last&quot;) %&gt;% 
+                html_attr(&quot;href&quot;) %&gt;% 
+                str_extract(ptrn) %&gt;% 
+                str_replace(&quot;page=&quot;,&quot;&quot;) %&gt;% 
+                as.numeric()
+
+        df &lt;- paste0(url,&quot;?page=&quot;)
+        
+        df_seq &lt;- seq(1:num)
+        
+        df_final &lt;- paste0(df,df_seq)
+        return(df_final)
+        
+} # download the auction websites urls
+extract_page_content        &lt;- function(url) {
+        print(url)
+        
+        Sys.sleep(sample(seq(1, 3, by=0.001), 1))
+        
+        article_list &lt;- url %&gt;% read_html() %&gt;%
+                html_nodes(&quot;h2&quot;) %&gt;% 
+                html_nodes(&quot;a&quot;) %&gt;% 
+                html_attr(&quot;href&quot;) 
+        
+        article_list_corrected &lt;- paste0(&quot;http://www.soga.sk&quot;,
+                                         article_list)
+        
+        return(article_list_corrected)
+        
+} # download the auction items urls
+extract_article_content     &lt;- function(url) {
+        print(url)
+        
+        Sys.sleep(sample(seq(1, 3, by=0.001), 1))
+        
+
+        art_name &lt;- url %&gt;% read_html() %&gt;% 
+                html_nodes(&quot;h2 a&quot;) %&gt;% 
+                html_text(&quot;href&quot;)
+        
+        art_piece &lt;- url %&gt;% read_html() %&gt;% 
+                html_nodes(&quot;.wrapper a&quot;) %&gt;% 
+                html_text(&quot;href&quot;)
+        
+        art_cat &lt;- url %&gt;% read_html() %&gt;% 
+                html_nodes(&quot;.col1&quot;) %&gt;% 
+                html_text(&quot;href&quot;) %&gt;% as.tibble()
+        
+        art_values &lt;- url %&gt;% read_html() %&gt;% 
+                html_nodes(&quot;.col2&quot;) %&gt;% 
+                html_text(&quot;href&quot;) %&gt;% as.tibble()
+        
+        art_df &lt;- bind_cols(art_cat,art_values) %&gt;% as.tibble()
+        
+        art_df$name  &lt;- art_name
+        art_df$piece &lt;- art_piece
+        
+        return(art_df)
+        
+        
+} # download the auction item content
+
+df_all_pages                &lt;- map(df$c_link,extract_auction_length) %&gt;% unlist()
+
+df_all_pages_content        &lt;- map(df_all_pages,extract_page_content) %&gt;% unlist()
+
+df_all_pages_content_vec    &lt;- df_all_pages_content %&gt;% pull()
+
+df_all_article_content_sf   &lt;- map(df_all_pages_content_vec,safely(extract_article_content))</code></pre>
+</div>
+<div id="part-ii-raw-data-into-tidy-data" class="section level3">
+<h3>Part II: Raw data into tidy data</h3>
+<p>The downloaded wide raw data have the following structure:</p>
+<pre class="r"><code>df_soga &lt;- df_soga %&gt;%
+        rename(variable = value, value = value1) %&gt;% 
+        drop_na()  
+str(df_soga)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    47635 obs. of  4 variables:
+##  $ variable: chr  &quot;Poradové číslo:&quot; &quot;Vyvolávacia cena:&quot; &quot;Konečná cena:&quot; &quot;Poradové číslo:&quot; ...
+##  $ value   : chr  &quot;1&quot; &quot;400 €&quot; &quot;320 €&quot; &quot;2&quot; ...
+##  $ name    : chr  &quot;CPIN ŠTEFAN (1919 - 1971)&quot; &quot;CPIN ŠTEFAN (1919 - 1971)&quot; &quot;CPIN ŠTEFAN (1919 - 1971)&quot; &quot;HÁLA JAN (1890 - 1959)&quot; ...
+##  $ piece   : chr  &quot;Dievča&quot; &quot;Dievča&quot; &quot;Dievča&quot; &quot;Dievča na lúke (Leto)&quot; ...</code></pre>
+<p>The <strong>variable column</strong> contains the following information:</p>
+<ul>
+<li>Article Number (Poradové číslo)</li>
+<li>Starting Price (Vyvolávacia cena)</li>
+<li>Final Price (Konečná cena)</li>
+</ul>
+<p>Importantly, everyday items (such as sculptures) are sold besides paintings. These items will be removed as they are not the target of this analysis.</p>
+<p>For more broader audience I will translate the collum names into the English language.</p>
+<pre class="r"><code>df_soga$variable &lt;- if_else(df_soga$variable == &quot;Cena v predaji:&quot;, &quot;sale_price&quot;,
+                         if_else(df_soga$variable == &quot;Konečná cena:&quot;, &quot;final_price&quot;,
+                          if_else(df_soga$variable == &quot;Nevydražené&quot;, &quot;unsold&quot;,
+                          if_else(df_soga$variable == &quot;Odhadovaná cena:&quot;, &quot;assumed_price&quot;,
+                          if_else(df_soga$variable == &quot;Poradové číslo:&quot;, &quot;item_number&quot;,
+                          if_else(df_soga$variable == &quot;Vyvolávacia cena:&quot;, &quot;starting_price&quot;,df_soga$variable)))))) # works but looks ugly - sorry folks</code></pre>
+<p>The code above is five times nested if_else command - something I am not particularly proud of. It might be a more elegant way to code this but I haven’t found it yet.</p>
+<p>Next step is to create an ID columns that identify author &amp; artwork and spread the data from long to wide - in line with the <strong>tidy data</strong> <a href="https://www.google.de/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwjcwpnQ_fjYAhVPyqQKHf05AVMQFggqMAA&amp;url=https%3A%2F%2Fwww.jstatsoft.org%2Farticle%2Fview%2Fv059i10%2Fv59i10.pdf&amp;usg=AOvVaw2vJ6CHw9RT8m_noVUfoeP6">manifest</a> written by Hadely Wickham.</p>
+<pre class="r"><code>df_soga_wide &lt;- df_soga %&gt;%
+        mutate(id = paste(name, piece)) %&gt;%  # create unique id per row
+        split(.$id) %&gt;%  # split the data per unique artwork
+        map(safely(spread),variable, value) %&gt;% # spread the values - use safely to prevent errors
+        map_df(&quot;result&quot;) # filter list with suscessfull results 
+
+glimpse(df_soga_wide)</code></pre>
+<p>Now, we have one row per piece and variables stored in columns. This enables a quick and consistent way of working the data. Let’s take a glimpse into the data and let’s find out the most frequently sold author at the auction house.</p>
+<pre class="r"><code>df_soga_wide$name %&gt;%
+        table() %&gt;%
+        as.tibble() %&gt;%
+        arrange(desc(n)) %&gt;% 
+        set_names(c(&quot;artist&quot;, &quot;count&quot;)) %&gt;% 
+        top_n(10) %&gt;% 
+        knitr::kable()</code></pre>
+<pre><code>## Selecting by count</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">artist</th>
+<th align="right">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">NEZNÁMY STREDOEURÓPSKY MALIAR</td>
+<td align="right">349</td>
+</tr>
+<tr class="even">
+<td align="left">MEDNYÁNSZKY LADISLAV (1852 - 1919)</td>
+<td align="right">186</td>
+</tr>
+<tr class="odd">
+<td align="left">BENKA MARTIN (1888 - 1971)</td>
+<td align="right">161</td>
+</tr>
+<tr class="even">
+<td align="left">HLOŽNÍK VINCENT (1919 - 1997)</td>
+<td align="right">151</td>
+</tr>
+<tr class="odd">
+<td align="left">ZMETÁK ERNEST (1919 - 2004)</td>
+<td align="right">133</td>
+</tr>
+<tr class="even">
+<td align="left">MEDVECKÁ MÁRIA (1914 - 1987)</td>
+<td align="right">119</td>
+</tr>
+<tr class="odd">
+<td align="left">WEINER-KRÁĽ IMRO (1901 - 1978)</td>
+<td align="right">118</td>
+</tr>
+<tr class="even">
+<td align="left">Mednyánszky Ladislav (1852 – 1919)</td>
+<td align="right">117</td>
+</tr>
+<tr class="odd">
+<td align="left">KOMPÁNEK VLADIMÍR (1927 - 2011)</td>
+<td align="right">111</td>
+</tr>
+<tr class="even">
+<td align="left">HÁLA JAN (1890 - 1959)</td>
+<td align="right">108</td>
+</tr>
+</tbody>
+</table>
+<p>Great! Now we see that the most frequently sold artist was an unknown central European artist with around 360 sold paintings.</p>
+<p>Unfortunately the data is still not tidy. My poorly written web scraping code is responsible for this messy dataset. (I am sure there is a better R code to scrape data more accurately)</p>
+<p>Now, lets tidy up columns containing the messy data. Columns are still character variables and errors prohibiting transformation into tidy are:</p>
+<ul>
+<li>Columns with price data contains symbols currency symbol €</li>
+<li>Blank space before, after and in between the values</li>
+<li>Date of birth &amp; death of the artist are not in separate columns</li>
+<li>Name of the artist contains his living years</li>
+</ul>
+<p>Let’s remove the errors using string manipulation techniques!</p>
+<pre class="r"><code># tidy the columns with variables containing price informations
+
+df_soga_tidy &lt;- df_soga_wide %&gt;%
+        modify_at(c(5,6), ~ str_replace_all(.,&quot;€&quot;,&quot;&quot;)) %&gt;% # modify_at helps identify collums more efficiently then naming them using mutate
+        modify_at(c(5,6), ~ str_replace_all(.,&quot; &quot;,&quot;&quot;)) %&gt;% 
+        modify_at(c(5,6), ~ str_replace_all(.,&quot;Neurčená&quot;,&quot;&quot;)) %&gt;% 
+        modify_at(c(5,6), ~ str_replace_all(.,&quot;,&quot;,&quot;&quot;)) %&gt;% 
+        modify_at(c(5,6), ~ str_replace_all(.,&quot;EUR&quot;,&quot;&quot;)) %&gt;% 
+        modify_at(c(5,6), ~ str_trim(.)) %&gt;% 
+        modify_at(c(5,6), as.numeric)  
+
+# tidy the column names 
+colnames(df_soga_tidy) &lt;- df_soga_tidy %&gt;% 
+                        colnames() %&gt;%
+                        str_to_lower() %&gt;%
+                        str_replace_all(&quot;:&quot;,&quot;&quot;) %&gt;%
+                        str_replace_all(&quot; &quot;,&quot;_&quot;)
+
+# tidy the date of birth &amp; death into two separate collumns
+living_years &lt;- str_extract_all(df_soga_tidy$name, one_or_more(DIGIT),simplify = T) %&gt;% 
+        as.tibble() %&gt;% 
+        set_names(c(&quot;birth_year&quot;,&quot;death_year&quot;,&quot;birth_year_I&quot;,&quot;death_year_I&quot;)) %&gt;% 
+        select(&quot;birth_year&quot;,&quot;death_year&quot;) %&gt;% 
+        modify_if(is.character, as.numeric)
+
+
+df_soga_tidy &lt;- df_soga_tidy %&gt;% 
+                bind_cols(living_years)
+
+# remove years from name column
+df_soga_tidy$name &lt;- df_soga_tidy$name %&gt;% 
+        str_replace_all(pattern = DIGIT,&quot;&quot;) %&gt;% 
+        str_replace_all(&quot;\\)&quot;,&quot; &quot;) %&gt;%
+        str_replace_all(&quot;\\(&quot;,&quot;&quot;) %&gt;%
+        str_replace_all(&quot;-&quot;,&quot;&quot;) %&gt;% 
+        str_replace_all(&quot;–&quot;,&quot;&quot;) %&gt;% 
+        str_trim() %&gt;% 
+        str_to_upper()
+
+# tidy &amp; include assumed_price in the final price
+df_assumed_price_tidy &lt;- df_soga_tidy$assumed_price %&gt;% 
+        str_replace_all(&quot;-&quot;, &quot;/&quot;) %&gt;% 
+        str_replace_all(&quot;– &quot;,&quot;/&quot;) %&gt;% 
+        str_replace_all(&quot;€&quot;,&quot;&quot;) %&gt;% 
+        str_replace_all(&quot;EUR&quot;,&quot;&quot;) %&gt;% 
+        str_replace_all(&quot;,00&quot;,&quot;&quot;) %&gt;% 
+        str_replace_all(&quot;,&quot;,&quot;&quot;) %&gt;% 
+        str_replace_all(space(),&quot;&quot;) %&gt;% 
+        str_split(&quot;/&quot;,simplify = T) %&gt;% 
+        as.tibble() %&gt;% 
+        modify(as.numeric) %&gt;% 
+        mutate(assumed_price = (V1 + V2) / 2) %&gt;% 
+        select(assumed_price) 
+
+df_soga_tidy &lt;- bind_cols(dplyr::select(df_soga_tidy, -assumed_price),
+                          df_assumed_price_tidy) 
+
+
+df_soga_tidy %&gt;% glimpse()</code></pre>
+<pre><code>## Observations: 15,978
+## Variables: 10
+## $ name           &lt;chr&gt; &quot;/JIŘÍ/ GEORG DOKOUPIL&quot;, &quot;A D.WEGENER   ?&quot;, &quot;A....
+## $ piece          &lt;chr&gt; &quot;Erotický motív&quot;, &quot;Horská krajina&quot;, &quot;Česká kraj...
+## $ id             &lt;chr&gt; &quot;/JIŘÍ/ GEORG DOKOUPIL (1954) Erotický motív&quot;, ...
+## $ item_number    &lt;chr&gt; &quot;154&quot;, &quot;178&quot;, &quot;291&quot;, &quot;207&quot;, &quot;201&quot;, &quot;192&quot;, &quot;214&quot;...
+## $ starting_price &lt;dbl&gt; 465, 929, 597, 996, 1062, 398, 664, 597, 830, 4...
+## $ final_price    &lt;dbl&gt; NA, NA, NA, 1394, NA, NA, NA, 597, NA, NA, 1461...
+## $ sale_price     &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,...
+## $ birth_year     &lt;dbl&gt; 1954, 1891, NA, NA, NA, NA, NA, NA, NA, NA, NA,...
+## $ death_year     &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,...
+## $ assumed_price  &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,...</code></pre>
+<p>Much better!!! With the above-written code we have achieved:</p>
+<ul>
+<li>name more variable contains just the name of the artist</li>
+<li>birth_year, death_year column created</li>
+<li>assumed price now contains mean value of the range stated</li>
+<li>numeric vector instead of character vector in the columns containing information about price</li>
+</ul>
+<p>Since we have some tidy data now, let’s create some new ratios.</p>
+<pre class="r"><code>df_soga_tidy &lt;- df_soga_tidy %&gt;% 
+        mutate(starting_price = if_else(is.na(starting_price), assumed_price, as.numeric(starting_price)), # if variable starting_price is NA use assumed_price instead 
+                diff_price_rel = ((final_price - starting_price) / (starting_price)), # relative difference between starting price and final price
+               diff_price_abs = final_price - starting_price ,  # absolute difference between starting price and final price
+               bin_price = ntile(starting_price, 4),  # create bins by starting price 
+               bin_diff_price_rel = ntile(diff_price_rel, 4)) # create bins by relative profit &amp; losses</code></pre>
+</div>
+<div id="part-iii-analysis-of-the-data" class="section level3">
+<h3>Part III: Analysis of the data</h3>
+<p>With tidy data lets focus on analyzing the data. Once the data has been cleaned up analysis can be performed. This part is always a cherry on the cake after the painful process of data gathering &amp; cleaning. (Jenny Bryans quote: “Behind every great plot there’s a great deal of wrangling”) - is an accurate one. Link <a href="https://www.youtube.com/watch?v=4MfUCX_KpdE">here</a></p>
+<p>First, let’s look at the highest prices paid for painting on auction:</p>
+<pre class="r"><code>df_soga_tidy %&gt;% 
+        drop_na(final_price) %&gt;% 
+        top_n(wt = final_price,n = 10) %&gt;% 
+        ggplot(aes(reorder(piece, final_price),final_price)) +
+        geom_col() +
+        coord_flip() + 
+        labs(title = &quot;Highest price paid per painting&quot;,
+             caption = &quot;Source: www.soga.sk&quot;, y = &quot;Final Price in €&quot;, x = &quot;Artwork&quot;) + 
+        theme_minimal(base_family = &quot;Verdana&quot;,base_size = 12)  + 
+        scale_y_continuous(labels = scales::comma) +
+        theme(legend.text  = element_text(size = 6),
+                legend.title = element_text(size = 6),legend.position = &quot;bottom&quot;)</code></pre>
+<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20price%20per%20painting-1.png" width="672" /></p>
+<p>The highest auctioned painting was for the “Chlapec s Dalmatinom” by DOMENICHINO DOMENICO ZAMPIERI. Interestingly it failed to reach its owner price of 663 878 EUR and was sold at a loss of (-132 775 EUR or -19%) for final price of 531 103 EUR.</p>
+<p>The second chart shows paintings sold at the highest <strong>relative</strong> profit:</p>
+<pre class="r"><code>df_soga_tidy %&gt;% 
+        drop_na(diff_price_rel) %&gt;% 
+        top_n(wt = diff_price_rel,n = 10) %&gt;% 
+        ggplot(aes(reorder(piece, diff_price_rel),diff_price_rel)) +
+        geom_col() +
+        coord_flip() + 
+        theme_minimal(base_family = &quot;Verdana&quot;,base_size = 12) + 
+        labs(title = &quot;Highest profit generated by painting (in %)&quot;,
+             y = &quot;Profit (in %)&quot;,
+             x = &quot;Artwork&quot;,
+             caption = &quot;Source: www.soga.sk&quot;) + 
+        scale_y_continuous(labels = scales::percent) </code></pre>
+<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20profit%20per%20painting%20-%20relative-1.png" width="672" /></p>
+<p>Surprisingly, the highest profits were in the range of 10x - 15x fold return. This is a great result for the investor. The most profitable painting was - “Zátišie s ľudovým džbánom” by KRIVOŠ RUDOLF ( <a href="http://www.soga.sk/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/102-jarna-aukcia-vytvarnych-diel/krivos-rudolf-zatisie-s-ludovym-dzbanom-30005">link</a> ). This painting was also an outlier as rest of KRIVOŠ paintings generated far lower returns.</p>
+<p>Another point of view is to visualize the most profitable paintings in the <strong>absolute</strong> terms.</p>
+<pre class="r"><code>df_soga_tidy %&gt;% 
+        drop_na(diff_price_abs) %&gt;% 
+        top_n(wt = diff_price_abs,n = 10) %&gt;% 
+        ggplot(aes(reorder(piece, diff_price_abs),diff_price_abs)) +
+        geom_col() +
+        coord_flip() + 
+        theme_minimal(base_family = &quot;Verdana&quot;,base_size = 12) + 
+        labs(title = &quot;Highest profit generated by painting (in €)&quot;,
+             y = &quot;Profit (in €)&quot;,
+             x = &quot;Painting&quot;,
+             caption = &quot;Source: www.soga.sk&quot;) + 
+        scale_y_continuous(labels = scales::comma) </code></pre>
+<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20profit%20per%20painting%20-%20absolute-1.png" width="672" /></p>
+<p>Painting <strong>V žatve</strong> was the paiting sold at the highest profit of about 85 000 EUR. This is an equivalent of the price paid for small 1 bedroom flat in Bratislava.</p>
+<p>Now, let’s visualize the result of the SOGA auctions:</p>
+<pre class="r"><code>df_loss_profit &lt;- df_soga_tidy %&gt;% 
+        drop_na(final_price, bin_price)
+
+
+pl &lt;- plotly::plot_ly(df_loss_profit,
+                x = ~starting_price,
+                y = ~ final_price,
+                size = ~ final_price,
+                color = ~ bin_diff_price_rel,
+                text = ~paste(&quot;Name: &quot;, name, &quot;\n&quot;,
+                              &quot;Artwork:&quot;,piece,&quot;\n&quot;,
+                              &quot;Starting Price: &quot;, scales::comma(starting_price), &quot;\n&quot;,
+                              &quot;Final Price:&quot;,scales::comma(final_price),&quot;\n&quot;,
+                              &quot;Return (%):&quot;,scales::percent(diff_price_rel),&quot;\n&quot;,
+                              &quot;Return (€):&quot;, scales::comma(diff_price_abs))) %&gt;%
+  layout(title = &quot;Profits &amp; Losses @ SOGA Auction House&quot;, 
+         xaxis = list(title = &quot;Starting Price&quot;,range = c(0, 200000)),
+         yaxis = list(title = &quot;Final Price&quot;,range = c(0, 200000)))
+
+widgetframe::frameWidget(pl,width = &quot;100%&quot;,height = 550)</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:550px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"url":"/posts/Investing_in_Art_files/figure-html//widgets/widget_chart I - Loses & Profits.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<p>After playing the the HTML widget for few minutes i have several observation. Some paintings failed to meet the expectation and were traded well below the asking price. Also important to note is that profits are getting smaller the more expensive the painting is.</p>
+<p>Here is summary statistics with the most profitable artist sold at the SOGA auction house.</p>
+<pre class="r"><code>df_soga_tidy %&gt;% 
+        drop_na(final_price,diff_price_rel,diff_price_abs) %&gt;% 
+        group_by(name) %&gt;% 
+        summarise(profit_relative = median(diff_price_rel, na.rm = T) %&gt;% scales::percent(),
+                  profit_absolute = median(diff_price_abs, na.rm = T) %&gt;% scales::comma(),
+                  artwork_price = median(final_price, na.rm = T) %&gt;% scales::comma(),
+                  count = n(),
+                  sum = sum(diff_price_abs)) %&gt;% 
+        filter(count &gt; 5) %&gt;% 
+        arrange(desc(profit_relative)) %&gt;% 
+        dplyr::top_n(wt = profit_relative, n = 15) %&gt;% 
+        knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">profit_relative</th>
+<th align="left">profit_absolute</th>
+<th align="left">artwork_price</th>
+<th align="right">count</th>
+<th align="right">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">LADISLAV GUDERNA</td>
+<td align="left">87.7%</td>
+<td align="left">2,257</td>
+<td align="left">4,149</td>
+<td align="right">7</td>
+<td align="right">11284</td>
+</tr>
+<tr class="even">
+<td align="left">EDITA SPANNEROVÁ</td>
+<td align="left">86.7%</td>
+<td align="left">249</td>
+<td align="left">713.5</td>
+<td align="right">8</td>
+<td align="right">2754</td>
+</tr>
+<tr class="odd">
+<td align="left">BIZMAYER IGNÁC</td>
+<td align="left">85.6%</td>
+<td align="left">325</td>
+<td align="left">1,325</td>
+<td align="right">14</td>
+<td align="right">7820</td>
+</tr>
+<tr class="even">
+<td align="left">STRUHÁR ALOJZ</td>
+<td align="left">8.33%</td>
+<td align="left">25</td>
+<td align="left">310</td>
+<td align="right">6</td>
+<td align="right">200</td>
+</tr>
+<tr class="odd">
+<td align="left">MARTIN SEDLÁK</td>
+<td align="left">8.28%</td>
+<td align="left">66</td>
+<td align="left">1,062</td>
+<td align="right">7</td>
+<td align="right">631</td>
+</tr>
+<tr class="even">
+<td align="left">ZBYNĚK PROKOP</td>
+<td align="left">76.5%</td>
+<td align="left">50.5</td>
+<td align="left">116.5</td>
+<td align="right">6</td>
+<td align="right">302</td>
+</tr>
+<tr class="odd">
+<td align="left">JÚLIUS JAKOBY</td>
+<td align="left">74.2%</td>
+<td align="left">3,071</td>
+<td align="left">7,800.5</td>
+<td align="right">6</td>
+<td align="right">16000</td>
+</tr>
+<tr class="even">
+<td align="left">FRANTIŠEK LIPTÁK</td>
+<td align="left">7.93%</td>
+<td align="left">100</td>
+<td align="left">746.5</td>
+<td align="right">12</td>
+<td align="right">1661</td>
+</tr>
+<tr class="odd">
+<td align="left">VINCENT HLOŽNÍK</td>
+<td align="left">7.49%</td>
+<td align="left">132</td>
+<td align="left">1,461</td>
+<td align="right">19</td>
+<td align="right">14736</td>
+</tr>
+<tr class="even">
+<td align="left">DÁVID BAFFI</td>
+<td align="left">66%</td>
+<td align="left">49.5</td>
+<td align="left">99.5</td>
+<td align="right">6</td>
+<td align="right">397</td>
+</tr>
+<tr class="odd">
+<td align="left">JOZEF JANKOVIČ</td>
+<td align="left">64%</td>
+<td align="left">531</td>
+<td align="left">1,759</td>
+<td align="right">9</td>
+<td align="right">15469</td>
+</tr>
+<tr class="even">
+<td align="left">FRANTIŠEK REICHENTÁL</td>
+<td align="left">62.5%</td>
+<td align="left">132</td>
+<td align="left">1,162</td>
+<td align="right">9</td>
+<td align="right">11021</td>
+</tr>
+<tr class="odd">
+<td align="left">KĽÚČIK PETER</td>
+<td align="left">60%</td>
+<td align="left">90</td>
+<td align="left">240</td>
+<td align="right">17</td>
+<td align="right">6700</td>
+</tr>
+<tr class="even">
+<td align="left">MILOŠ ALEXANDER BAZOVSKÝ</td>
+<td align="left">6.31%</td>
+<td align="left">67</td>
+<td align="left">3,485</td>
+<td align="right">21</td>
+<td align="right">26457</td>
+</tr>
+<tr class="odd">
+<td align="left">KERN PETER JÚLIUS</td>
+<td align="left">5.56%</td>
+<td align="left">10</td>
+<td align="left">470</td>
+<td align="right">10</td>
+<td align="right">730</td>
+</tr>
+</tbody>
+</table>
+<p>The table shows results sorted by the highest median relative profit. In other words - artist generating highest profits per painting is at the top. Based on this table Ladislav Guderna paintings generated average profit of 87%. The author was traded 7x times. Average price per painting was 4 149 EUR generating profit of 2 257 EUR. The total sum of profits generated by Guderna reached 11 284 EUR.</p>
+<p>Similarly below are the authors generating the highest <strong>absolute</strong> profits.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">profit_relative</th>
+<th align="left">profit_absolute</th>
+<th align="left">artwork_price</th>
+<th align="right">count</th>
+<th align="right">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">BENKA MARTIN</td>
+<td align="left">2.11%</td>
+<td align="left">100</td>
+<td align="left">9,700</td>
+<td align="right">109</td>
+<td align="right">332550</td>
+</tr>
+<tr class="even">
+<td align="left">HÁLA JAN</td>
+<td align="left">0%</td>
+<td align="left">0</td>
+<td align="left">5,800</td>
+<td align="right">86</td>
+<td align="right">182950</td>
+</tr>
+<tr class="odd">
+<td align="left">MEDNYÁNSZKY LADISLAV</td>
+<td align="left">0%</td>
+<td align="left">0</td>
+<td align="left">3,500</td>
+<td align="right">208</td>
+<td align="right">153835</td>
+</tr>
+<tr class="even">
+<td align="left">ĽUDOVÍT FULLA</td>
+<td align="left">2.71%</td>
+<td align="left">49.5</td>
+<td align="left">630.5</td>
+<td align="right">30</td>
+<td align="right">96959</td>
+</tr>
+<tr class="odd">
+<td align="left">ANTON JASUSCH</td>
+<td align="left">22.9%</td>
+<td align="left">498</td>
+<td align="left">5,394</td>
+<td align="right">28</td>
+<td align="right">62938</td>
+</tr>
+<tr class="even">
+<td align="left">BAZOVSKÝ MILOŠ ALEXANDER</td>
+<td align="left">0%</td>
+<td align="left">0</td>
+<td align="left">5,200</td>
+<td align="right">57</td>
+<td align="right">61050</td>
+</tr>
+<tr class="odd">
+<td align="left">FULLA ĽUDOVÍT</td>
+<td align="left">12.5%</td>
+<td align="left">50</td>
+<td align="left">600</td>
+<td align="right">45</td>
+<td align="right">50640</td>
+</tr>
+<tr class="even">
+<td align="left">JAKOBY JÚLIUS</td>
+<td align="left">-1.52%</td>
+<td align="left">-400</td>
+<td align="left">31,000</td>
+<td align="right">16</td>
+<td align="right">50500</td>
+</tr>
+<tr class="odd">
+<td align="left">WEISZKUBÍNČAN PETER ARNOLD</td>
+<td align="left">2.78%</td>
+<td align="left">50</td>
+<td align="left">2,850</td>
+<td align="right">12</td>
+<td align="right">44900</td>
+</tr>
+<tr class="even">
+<td align="left">MOUSSON JOZEF TEODOR</td>
+<td align="left">0%</td>
+<td align="left">0</td>
+<td align="left">6,850</td>
+<td align="right">40</td>
+<td align="right">44360</td>
+</tr>
+<tr class="odd">
+<td align="left">PAŠTÉKA MILAN</td>
+<td align="left">0%</td>
+<td align="left">0</td>
+<td align="left">800</td>
+<td align="right">53</td>
+<td align="right">41715</td>
+</tr>
+<tr class="even">
+<td align="left">LALUHA MILAN</td>
+<td align="left">0%</td>
+<td align="left">0</td>
+<td align="left">1,032.5</td>
+<td align="right">62</td>
+<td align="right">40175</td>
+</tr>
+<tr class="odd">
+<td align="left">MIKULÁŠ GALANDA</td>
+<td align="left">20%</td>
+<td align="left">99.5</td>
+<td align="left">647.5</td>
+<td align="right">16</td>
+<td align="right">39698</td>
+</tr>
+<tr class="even">
+<td align="left">MILOŠ ALEXANDER BAZOVSKÝ</td>
+<td align="left">6.31%</td>
+<td align="left">67</td>
+<td align="left">3,485</td>
+<td align="right">21</td>
+<td align="right">26457</td>
+</tr>
+<tr class="odd">
+<td align="left">LADISLAV MEDNYÁNSZKY</td>
+<td align="left">1.11%</td>
+<td align="left">33</td>
+<td align="left">2,539</td>
+<td align="right">36</td>
+<td align="right">24595</td>
+</tr>
+</tbody>
+</table>
+<p>Not suprisingly, <strong>Martin Benka</strong> paintings generated highest profit at the auctions. <a href="https://sk.wikipedia.org/wiki/Martin_Benka">Wiki page</a></p>
+<p>PS: The results are filtered with the condition of the artist selling at least 5 paintings trough SOGA to limit the number of records and filter out paintings that don’t generate enough liquidity. Owning artwork of authors that are rarely traded presents a risk for the investor and is recommended to avoid.</p>
+</div>
+</div>
+<div id="conclusions" class="section level2">
+<h2>Conclusions</h2>
+<ul>
+<li>Average price per painting has been increasing by 10% per annum over the past 15 years<br />
+</li>
+<li>Purchasing famous painter does not always guarantee a good investment.<br />
+</li>
+<li>Gudena, Spannerová or Ignác artwork generated consistently the highest returns ~ 80% per painting</li>
+<li>Highest absolute profit was recorded by the artist Benka (ca 332.000€) followed by Ján Halla (ca 185.000€) or Ladislav Mednyánszky (174.000€)</li>
+</ul>
+</div>
+<div id="known-limitations" class="section level2">
+<h2>Known limitations</h2>
+<ul>
+<li>The analysis would be more accurate if the names of the authors were labeled consistently (to avoid duplicate records for the same artist)</li>
+<li>Profits are calculated based on the auction asking price, which might not reflect actual profit for the owner</li>
+</ul>
+</div>
