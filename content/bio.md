@@ -10,10 +10,9 @@ Learned a lot as a private banker during GFC, went to study real estate investme
 
 ## Interest 
 * Macroeconomics 
-* Property Research 
-* Investments 
-* Spatial Analysis 
-* R programming universe
+* Investment & Property Research
+* Spatial Data 
+* R programming 
 
 ## Education
 **BSc in Corporate Finance**

@@ -15,8 +15,9 @@ pygmentsCodeFences = true
     github = "mkapustaRee"
     linkedin = "michal-kapusta-4b178511/"
     twitter = "mkapustaRee"
+    email = "michal.kapusta@gmail.com"
 
 [params]
-    tagline = "Investment Research | R programming | Finance"
+    tagline = "Investment Research | Finance | R programming"
 
 

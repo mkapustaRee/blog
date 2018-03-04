@@ -5,6 +5,8 @@
     <link>/</link>
     <description>Recent content on Michal Kapusta</description>
     <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>michal.kapusta@gmail.com (Michal Kapusta)</managingEditor>
+    <webMaster>michal.kapusta@gmail.com (Michal Kapusta)</webMaster>
     <copyright>Copyright &amp;copy; 2017 - Michal Kapusta</copyright>
     <lastBuildDate>Wed, 09 Apr 2014 00:00:00 +0000</lastBuildDate>
     
@@ -15,16 +17,25 @@
       <title>Bio</title>
       <link>/bio/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/bio/</guid>
       <description>Learned a lot as a private banker during GFC, went to study real estate investment and became research &amp;amp; strategy proffesional. Since 2016 keen learner of R programming language. I enjoy running, cooking, and music.</description>
     </item>
     
     <item>
       <title>Is fine Art a fine Investment? Let&#39;s find out using web scraping!</title>
+      <link>/post/investing_in_art/</link>
+      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/post/investing_in_art/</guid>
+      <description>Idea The inspiration to write this article was a documentary about the life of a famous “con” artist Mr. Beltracchi link which got me curious about art trading &amp;amp; auctions.</description>
+    </item>
+    
+    <item>
+      <title>Is fine Art a fine Investment? Let&#39;s find out using web scraping!</title>
       <link>/posts/investing_in_art/</link>
-      <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/posts/investing_in_art/</guid>
       <description>Idea The inspiration to write this article was a documentary about the life of a famous “con” artist Mr. Beltracchi link which got me curious about art trading &amp;amp; auctions.</description>
     </item>

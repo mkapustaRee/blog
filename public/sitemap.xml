@@ -4,7 +4,7 @@
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
   </url>
   
   <url>
@@ -13,24 +13,17 @@
   </url>
   
   <url>
-    <loc>/posts/investing_in_art/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <loc>/post/investing_in_art/</loc>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/art/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/posts/investing_in_art/</loc>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/investment/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -41,38 +34,68 @@
   </url>
   
   <url>
+    <loc>/tags/plot/</loc>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/plotly/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/purrr/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/r-markdown/</loc>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/regression/</loc>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/rvest/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/stringr/</loc>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/webscraping/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <loc>/tags/tidyverse/</loc>
+    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   

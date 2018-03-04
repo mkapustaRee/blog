@@ -1,10 +1,10 @@
 ---
 title: "Is fine Art a fine Investment? Let's find out using web scraping!"
 author: "Michal Kapusta"
-date: "2018-02-26"
-lastmod: "2018-02-26"
-categories: ["R"]       
-tags: ["Webscraping","Purrr","Rvest","Plotly","Art","Investment"]
+date: 2018-03-01T21:13:14-05:00
+output: html_document
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
 ---
 
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
@@ -38,57 +38,8 @@ tags: ["Webscraping","Purrr","Rvest","Plotly","Art","Investment"]
 <li>artist, artwork name, starting price, final price data are listed</li>
 </ul>
 <p>Before we start web scraping process the website has to allow this behavior. More information about using robot.txt <a href="https://towardsdatascience.com/functions-with-r-and-rvest-a-laymens-guide-acda42325a77">here</a></p>
-<pre class="r"><code>library(robotstxt)</code></pre>
-<pre><code>## Warning: package &#39;robotstxt&#39; was built under R version 3.4.3</code></pre>
-<pre class="r"><code>robotstxt::robotstxt(&quot;soga.sk&quot;) %&gt;% print()</code></pre>
-<pre><code>## $domain
-## [1] &quot;soga.sk&quot;
-## 
-## $text
-## # robots.txt file for http://www.soga.sk
-## 
-## User-agent: *
-## Disallow:
-## 
-## $bots
-## [1] &quot;*&quot;
-## 
-## $comments
-##   line                                  comment
-## 1    1 # robots.txt file for http://www.soga.sk
-## 
-## $permissions
-##      field useragent value
-## 1 Disallow         *      
-## 
-## $crawl_delay
-## [1] field     useragent value    
-## &lt;0 rows&gt; (or 0-length row.names)
-## 
-## $host
-## [1] field     useragent value    
-## &lt;0 rows&gt; (or 0-length row.names)
-## 
-## $sitemap
-## [1] field     useragent value    
-## &lt;0 rows&gt; (or 0-length row.names)
-## 
-## $other
-## [1] field     useragent value    
-## &lt;0 rows&gt; (or 0-length row.names)
-## 
-## $robexclobj
-## &lt;Robots Exclusion Protocol Object&gt;
-## $check
-## function (paths = &quot;/&quot;, bot = &quot;*&quot;) 
-## {
-##     spiderbar::can_fetch(obj = self$robexclobj, path = paths, 
-##         user_agent = bot)
-## }
-## &lt;environment: 0x7f9905ad1268&gt;
-## 
-## attr(,&quot;class&quot;)
-## [1] &quot;robotstxt&quot;</code></pre>
+<pre class="r"><code>library(robotstxt)
+robotstxt::robotstxt(&quot;soga.sk&quot;) %&gt;% print()</code></pre>
 <p>Great! The website enables the scraping of the data.</p>
 <p>First step is to gather the data and build a database that contains all the data available from the website.</p>
 <p>Next step is to identify the elements we want to scape. Selectorgadget identifies web elements containing auction information.</p>
@@ -166,7 +117,10 @@ df &lt;- cbind(time, result,link) %&gt;% as.tibble()</code></pre>
 </ul>
 <pre class="r"><code># extract time information 
 ptrn &lt;-  &quot;, &quot; %R% one_or_more(DIGIT) %R% &quot;.&quot; %R% one_or_more(HEX_DIGIT) %R% &quot;.&quot; %R% one_or_more(HEX_DIGIT) 
-df$c_time &lt;- df$time %&gt;% str_extract(pattern = ptrn) %&gt;% str_replace(&quot;, &quot;,&quot;&quot;) %&gt;% lubridate::dmy()
+df$c_time &lt;- df$time %&gt;%
+        str_extract(pattern = ptrn) %&gt;%
+        str_replace(&quot;, &quot;,&quot;&quot;) %&gt;%
+        lubridate::dmy()
 
 # extract name information 
 df$c_name &lt;- df$time %&gt;%  str_replace(ptrn,&quot;&quot;) 
@@ -176,11 +130,17 @@ df$c_link  &lt;- paste0(&quot;http://www.soga.sk/&quot;,df$link)
 
 # extract percentage information
 ptrn_2 &lt;-  &quot;(&quot; %R% one_or_more(DIGIT) %R% &quot;%)&quot; 
-df$c_rate &lt;- df$result %&gt;% str_extract(pattern = ptrn_2) %&gt;% str_replace(&quot;%&quot;,&quot;&quot;) %&gt;% as.numeric()
+df$c_rate &lt;- df$result %&gt;%
+        str_extract(pattern = ptrn_2) %&gt;%
+        str_replace(&quot;%&quot;,&quot;&quot;) %&gt;%
+        as.numeric()
 
 # clean items information
 ptrn_3 &lt;-  one_or_more(DIGIT) %R% &quot; diel&quot; 
-df$c_items &lt;- df$result %&gt;% str_extract(pattern = ptrn_3) %&gt;% str_replace(&quot; diel&quot;,&quot;&quot;) %&gt;% as.numeric()
+df$c_items &lt;- df$result %&gt;%
+        str_extract(pattern = ptrn_3) %&gt;%
+        str_replace(&quot; diel&quot;,&quot;&quot;) %&gt;%
+        as.numeric()
 
 # clean price information
 ptrn_4 &lt;- one_or_more(DIGIT) %R% SPACE %R% one_or_more(DIGIT) %R% &quot; €&quot; 
@@ -277,7 +237,7 @@ df_tidy %&gt;%
         group_var &lt;- quos(...)
         
         data %&gt;% 
-                group_by(!!!group_var) %&gt;%  
+                group_by(!!!group_var) %&gt;%  # practise of tidy eval concepts :P
                 summarise(s_price = sum(c_price),
                           s_items = sum(c_items),
                           c_price_avg = mean(c_price_avg)) 
@@ -293,14 +253,20 @@ df_tidy %&gt;%
         gather(Ratio, Value, 2:length(.)) %&gt;% 
         ggplot(aes(year, Value, group = Ratio)) +
         geom_line(alpha = .3)  +
-        theme_minimal(base_family = &quot;Verdana&quot;,base_size = 12) + 
+        theme_minimal(base_family = &quot;Verdana&quot;,
+                      base_size = 12) + 
         facet_wrap(~Ratio,scales = &quot;free&quot;) +
-        tidyquant::geom_ma(n = 4,color = &quot;red&quot;, linetype = 1, size = 1) + 
+        tidyquant::geom_ma(n = 4,
+                           color = &quot;red&quot;,
+                           linetype = 1,
+                           size = 1) + 
         labs(title = &quot;SOGA: Overview &quot;,
-             subtitle = &quot;by indicator&quot;, caption = &quot;source: www.soga.sk&quot;, y = &quot;&quot;)</code></pre>
-<p><img src="/posts/Investing_in_Art_files/figure-html/display%20the%20results-1.png" width="672" /></p>
+             subtitle = &quot;by indicator&quot;,
+             caption = &quot;source: www.soga.sk&quot;,
+             y = &quot;&quot;)</code></pre>
+<p><img src="/post/Investing_in_Art_files/figure-html/display%20the%20results-1.png" width="672" /></p>
 <p>Data shows SOGA turnover is growing steadily from 2004. Additionally, the average price per painting sold at auction is growing. Average price grew from ~1200€ to current ~5000€ in 14 years. This means either more expensive paintings are being sold or the prices of the artworks are growing. A calculation reveals 10% CAGR in prices per painting for the time period.</p>
-<p>A byproduct of the scrape is the URL to every single auction in SOGA history (for example here <a href="http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia" class="uri">http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia</a>). This link leads to every single item auctioned at that particular auction.</p>
+<p>A byproduct of the scrape is the URL to every single auction in SOGA history (for example <a href="http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia">here</a>. This link leads to every single item auctioned at that particular auction.</p>
 <p>Next step is taken in order to:</p>
 <ul>
 <li>scrape all the websites dedicated to listing items sold at one particular auction (user need to click several times next page in order to see all the items)</li>
@@ -374,13 +340,17 @@ extract_article_content     &lt;- function(url) {
         
 } # download the auction item content
 
-df_all_pages                &lt;- map(df$c_link,extract_auction_length) %&gt;% unlist()
+df_all_pages                &lt;- map(df$c_link,extract_auction_length) %&gt;%
+                                unlist()
 
-df_all_pages_content        &lt;- map(df_all_pages,extract_page_content) %&gt;% unlist()
+df_all_pages_content        &lt;- map(df_all_pages,extract_page_content) %&gt;%
+                                unlist()
 
-df_all_pages_content_vec    &lt;- df_all_pages_content %&gt;% pull()
+df_all_pages_content_vec    &lt;- df_all_pages_content %&gt;%
+                                pull()
 
-df_all_article_content_sf   &lt;- map(df_all_pages_content_vec,safely(extract_article_content))</code></pre>
+df_all_article_content_sf   &lt;- map(df_all_pages_content_vec,
+                                  safely(extract_article_content))</code></pre>
 </div>
 <div id="part-ii-raw-data-into-tidy-data" class="section level3">
 <h3>Part II: Raw data into tidy data</h3>
@@ -583,12 +553,15 @@ df_soga_tidy %&gt;% glimpse()</code></pre>
         geom_col() +
         coord_flip() + 
         labs(title = &quot;Highest price paid per painting&quot;,
-             caption = &quot;Source: www.soga.sk&quot;, y = &quot;Final Price in €&quot;, x = &quot;Artwork&quot;) + 
+             caption = &quot;Source: www.soga.sk&quot;,
+             y = &quot;Final Price in €&quot;,
+             x = &quot;Artwork&quot;) + 
         theme_minimal(base_family = &quot;Verdana&quot;,base_size = 12)  + 
         scale_y_continuous(labels = scales::comma) +
         theme(legend.text  = element_text(size = 6),
-                legend.title = element_text(size = 6),legend.position = &quot;bottom&quot;)</code></pre>
-<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20price%20per%20painting-1.png" width="672" /></p>
+                legend.title = element_text(size = 6),
+              legend.position = &quot;bottom&quot;)</code></pre>
+<p><img src="/post/Investing_in_Art_files/figure-html/highest%20price%20per%20painting-1.png" width="672" /></p>
 <p>The highest auctioned painting was for the “Chlapec s Dalmatinom” by DOMENICHINO DOMENICO ZAMPIERI <a href="http://www.soga.sk/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/59-jesenna-aukcia-vytvarnych-diel/domenichino-domenico-zampieri-chlapec-s-dalmatinom-9260">link</a>. Interestingly it failed to reach its owner price of 663 878 EUR and was sold at a loss of (-132 775 EUR or -19%) for final price of 531 103 EUR.</p>
 <p>The second chart shows paintings sold at the highest <strong>relative</strong> profit:</p>
 <pre class="r"><code>df_soga_tidy %&gt;% 
@@ -603,7 +576,7 @@ df_soga_tidy %&gt;% glimpse()</code></pre>
              x = &quot;Artwork&quot;,
              caption = &quot;Source: www.soga.sk&quot;) + 
         scale_y_continuous(labels = scales::percent) </code></pre>
-<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20profit%20per%20painting%20-%20relative-1.png" width="672" /></p>
+<p><img src="/post/Investing_in_Art_files/figure-html/highest%20profit%20per%20painting%20-%20relative-1.png" width="672" /></p>
 <p>Surprisingly, the highest profits were in the range of 10x - 15x fold return. This is a great result for the investor. The most profitable painting was - “Zátišie s ľudovým džbánom” by KRIVOŠ RUDOLF ( <a href="http://www.soga.sk/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/102-jarna-aukcia-vytvarnych-diel/krivos-rudolf-zatisie-s-ludovym-dzbanom-30005">link</a> ). This painting was also an outlier as rest of KRIVOŠ paintings generated far lower returns.</p>
 <p>Another point of view is to visualize the most profitable paintings in the <strong>absolute</strong> terms.</p>
 <pre class="r"><code>df_soga_tidy %&gt;% 
@@ -618,7 +591,7 @@ df_soga_tidy %&gt;% glimpse()</code></pre>
              x = &quot;Painting&quot;,
              caption = &quot;Source: www.soga.sk&quot;) + 
         scale_y_continuous(labels = scales::comma) </code></pre>
-<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20profit%20per%20painting%20-%20absolute-1.png" width="672" /></p>
+<p><img src="/post/Investing_in_Art_files/figure-html/highest%20profit%20per%20painting%20-%20absolute-1.png" width="672" /></p>
 <p>Painting <strong>Po žatve</strong> was the paiting sold at the highest profit of about 85 000 EUR <a href="http://www.soga.sk/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/107-vecerna-aukcia/benka-martin-po-zatve-32046">link</a>. The profit from this one transaction could by one bedroom flat in the city.</p>
 <p>Now, let’s visualize the result of the SOGA auctions:</p>
 <pre class="r"><code>df_loss_profit &lt;- df_soga_tidy %&gt;% 
@@ -642,7 +615,7 @@ pl &lt;- plotly::plot_ly(df_loss_profit,
 
 widgetframe::frameWidget(pl,width = &quot;100%&quot;,height = 550)</code></pre>
 <div id="htmlwidget-1" style="width:100%;height:550px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"url":"/posts/Investing_in_Art_files/figure-html//widgets/widget_chart I - Loses & Profits.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"url":"/post/Investing_in_Art_files/figure-html//widgets/widget_chart I - Loses & Profits.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 <p>After playing the the HTML widget for few minutes i have several observation. Some paintings failed to meet the expectation and were traded well below the asking price. Also important to note is that profits are getting smaller the more expensive the painting is.</p>
 <p>Here is summary statistics with the most profitable artist sold at the SOGA auction house.</p>
 <pre class="r"><code>df_soga_tidy %&gt;% 

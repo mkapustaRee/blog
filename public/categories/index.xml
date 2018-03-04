@@ -5,6 +5,8 @@
     <link>/categories/</link>
     <description>Recent content in Categories on Michal Kapusta</description>
     <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>michal.kapusta@gmail.com (Michal Kapusta)</managingEditor>
+    <webMaster>michal.kapusta@gmail.com (Michal Kapusta)</webMaster>
     <copyright>Copyright &amp;copy; 2017 - Michal Kapusta</copyright>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
@@ -13,8 +15,8 @@
     <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
-      
+      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/categories/r/</guid>
       <description></description>
     </item>

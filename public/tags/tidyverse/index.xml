@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tidyverse on Michal Kapusta</title>
+    <link>/tags/tidyverse/</link>
+    <description>Recent content in Tidyverse on Michal Kapusta</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>michal.kapusta@gmail.com (Michal Kapusta)</managingEditor>
+    <webMaster>michal.kapusta@gmail.com (Michal Kapusta)</webMaster>
+    <copyright>Copyright &amp;copy; 2017 - Michal Kapusta</copyright>
+    <lastBuildDate>Thu, 01 Mar 2018 21:13:14 -0500</lastBuildDate>
+    
+	<atom:link href="/tags/tidyverse/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Is fine Art a fine Investment? Let&#39;s find out using web scraping!</title>
+      <link>/post/investing_in_art/</link>
+      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/post/investing_in_art/</guid>
+      <description>Idea The inspiration to write this article was a documentary about the life of a famous “con” artist Mr. Beltracchi link which got me curious about art trading &amp;amp; auctions.</description>
+    </item>
+    
+  </channel>
+</rss>

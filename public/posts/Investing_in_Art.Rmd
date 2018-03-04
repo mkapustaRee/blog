@@ -1,10 +1,10 @@
 ---
 title: "Is fine Art a fine Investment? Let's find out using web scraping!"
 author: "Michal Kapusta"
-date: "2018-02-26"
-lastmod: "2018-02-26"
-categories: ["R"]       
-tags: ["Webscraping","Purrr","Rvest","Plotly","Art","Investment"]
+date: 2018-03-01T21:13:14-05:00
+output: html_document
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
 ---
 
 ```{r setup, include=FALSE}
@@ -62,7 +62,7 @@ The primary source of information is the website of Slovak national gallery auct
 
 Before we start web scraping process the website has to allow this behavior. More information about using robot.txt [here](https://towardsdatascience.com/functions-with-r-and-rvest-a-laymens-guide-acda42325a77)
 
-```{r check the website settings, eval = T}
+```{r check the website settings, eval = F}
 library(robotstxt)
 robotstxt::robotstxt("soga.sk") %>% print()
 ```
@@ -74,7 +74,6 @@ First step is to gather the data and build a database that contains all the data
 Next step is to identify the elements we want to scape. Selectorgadget identifies web elements containing auction information.
 
 ```{r download aution results,eval = FALSE}
-
 
 url <- "http://www.soga.sk/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/vysledky-aukcii"
 
@@ -121,7 +120,10 @@ Unfortunately, the data are still locked in the records. The Information is extr
 
 # extract time information 
 ptrn <-  ", " %R% one_or_more(DIGIT) %R% "." %R% one_or_more(HEX_DIGIT) %R% "." %R% one_or_more(HEX_DIGIT) 
-df$c_time <- df$time %>% str_extract(pattern = ptrn) %>% str_replace(", ","") %>% lubridate::dmy()
+df$c_time <- df$time %>%
+        str_extract(pattern = ptrn) %>%
+        str_replace(", ","") %>%
+        lubridate::dmy()
 
 # extract name information 
 df$c_name <- df$time %>%  str_replace(ptrn,"") 
@@ -131,11 +133,17 @@ df$c_link  <- paste0("http://www.soga.sk/",df$link)
 
 # extract percentage information
 ptrn_2 <-  "(" %R% one_or_more(DIGIT) %R% "%)" 
-df$c_rate <- df$result %>% str_extract(pattern = ptrn_2) %>% str_replace("%","") %>% as.numeric()
+df$c_rate <- df$result %>%
+        str_extract(pattern = ptrn_2) %>%
+        str_replace("%","") %>%
+        as.numeric()
 
 # clean items information
 ptrn_3 <-  one_or_more(DIGIT) %R% " diel" 
-df$c_items <- df$result %>% str_extract(pattern = ptrn_3) %>% str_replace(" diel","") %>% as.numeric()
+df$c_items <- df$result %>%
+        str_extract(pattern = ptrn_3) %>%
+        str_replace(" diel","") %>%
+        as.numeric()
 
 # clean price information
 ptrn_4 <- one_or_more(DIGIT) %R% SPACE %R% one_or_more(DIGIT) %R% " €" 
@@ -168,7 +176,7 @@ df_summary <- function(data, ...) {
         group_var <- quos(...)
         
         data %>% 
-                group_by(!!!group_var) %>%  
+                group_by(!!!group_var) %>%  # practise of tidy eval concepts :P
                 summarise(s_price = sum(c_price),
                           s_items = sum(c_items),
                           c_price_avg = mean(c_price_avg)) 
@@ -184,16 +192,22 @@ df_tidy %>%
         gather(Ratio, Value, 2:length(.)) %>% 
         ggplot(aes(year, Value, group = Ratio)) +
         geom_line(alpha = .3)  +
-        theme_minimal(base_family = "Verdana",base_size = 12) + 
+        theme_minimal(base_family = "Verdana",
+                      base_size = 12) + 
         facet_wrap(~Ratio,scales = "free") +
-        tidyquant::geom_ma(n = 4,color = "red", linetype = 1, size = 1) + 
+        tidyquant::geom_ma(n = 4,
+                           color = "red",
+                           linetype = 1,
+                           size = 1) + 
         labs(title = "SOGA: Overview ",
-             subtitle = "by indicator", caption = "source: www.soga.sk", y = "")
+             subtitle = "by indicator",
+             caption = "source: www.soga.sk",
+             y = "")
 ```
 
 Data shows SOGA turnover is growing steadily from 2004. Additionally, the average price per painting sold at auction is growing. Average price grew from ~1200€ to current ~5000€ in 14 years. This means either more expensive paintings are being sold or the prices of the artworks are growing. A calculation reveals 10% CAGR in prices per painting for the time period.
 
-A byproduct of the scrape is the URL to every single auction in SOGA history (for example here <http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia>).  This link leads to every single item auctioned at that particular auction.
+A byproduct of the scrape is the URL to every single auction in SOGA history (for example [here](http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia).  This link leads to every single item auctioned at that particular auction.
 
 Next step is taken in order to: 
 
@@ -270,13 +284,17 @@ extract_article_content     <- function(url) {
         
 } # download the auction item content
 
-df_all_pages                <- map(df$c_link,extract_auction_length) %>% unlist()
+df_all_pages                <- map(df$c_link,extract_auction_length) %>%
+                                unlist()
 
-df_all_pages_content        <- map(df_all_pages,extract_page_content) %>% unlist()
+df_all_pages_content        <- map(df_all_pages,extract_page_content) %>%
+                                unlist()
 
-df_all_pages_content_vec    <- df_all_pages_content %>% pull()
+df_all_pages_content_vec    <- df_all_pages_content %>%
+                                pull()
 
-df_all_article_content_sf   <- map(df_all_pages_content_vec,safely(extract_article_content))
+df_all_article_content_sf   <- map(df_all_pages_content_vec,
+                                  safely(extract_article_content))
 
 ```
 
@@ -465,11 +483,14 @@ df_soga_tidy %>%
         geom_col() +
         coord_flip() + 
         labs(title = "Highest price paid per painting",
-             caption = "Source: www.soga.sk", y = "Final Price in €", x = "Artwork") + 
+             caption = "Source: www.soga.sk",
+             y = "Final Price in €",
+             x = "Artwork") + 
         theme_minimal(base_family = "Verdana",base_size = 12)  + 
         scale_y_continuous(labels = scales::comma) +
         theme(legend.text  = element_text(size = 6),
-                legend.title = element_text(size = 6),legend.position = "bottom")
+                legend.title = element_text(size = 6),
+              legend.position = "bottom")
 ```
 
 The highest auctioned painting was for the “Chlapec s Dalmatinom” by DOMENICHINO DOMENICO ZAMPIERI [link](http://www.soga.sk/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/59-jesenna-aukcia-vytvarnych-diel/domenichino-domenico-zampieri-chlapec-s-dalmatinom-9260). Interestingly it failed to reach its owner price of 663 878 EUR and was sold at a loss of (-132 775 EUR or -19%) for final price of 531 103 EUR.
