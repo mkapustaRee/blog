@@ -23,24 +23,6 @@
     </item>
     
     <item>
-      <title>Plotly</title>
-      <link>/tags/plotly/</link>
-      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
-      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
-      <guid>/tags/plotly/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Purrr</title>
-      <link>/tags/purrr/</link>
-      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
-      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
-      <guid>/tags/purrr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>R Markdown</title>
       <link>/tags/r-markdown/</link>
       <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
@@ -55,33 +37,6 @@
       <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/tags/regression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rvest</title>
-      <link>/tags/rvest/</link>
-      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
-      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
-      <guid>/tags/rvest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stringr</title>
-      <link>/tags/stringr/</link>
-      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
-      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
-      <guid>/tags/stringr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tidyverse</title>
-      <link>/tags/tidyverse/</link>
-      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
-      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
-      <guid>/tags/tidyverse/</guid>
       <description></description>
     </item>
     

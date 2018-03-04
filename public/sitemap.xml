@@ -40,19 +40,7 @@
   </url>
   
   <url>
-    <loc>/tags/plotly/</loc>
-    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/post/</loc>
-    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/purrr/</loc>
     <lastmod>2018-03-01T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -76,25 +64,7 @@
   </url>
   
   <url>
-    <loc>/tags/rvest/</loc>
-    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/stringr/</loc>
-    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/</loc>
-    <lastmod>2018-03-01T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tidyverse/</loc>
     <lastmod>2018-03-01T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>

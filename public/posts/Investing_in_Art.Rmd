@@ -547,7 +547,8 @@ pl <- plotly::plot_ly(df_loss_profit,
                 x = ~starting_price,
                 y = ~ final_price,
                 size = ~ final_price,
-                color = ~ bin_diff_price_rel,
+                split =  ~ bin_diff_price_rel,
+                colors = ~ bin_diff_price_rel,
                 text = ~paste("Name: ", name, "\n",
                               "Artwork:",piece,"\n",
                               "Starting Price: ", scales::comma(starting_price), "\n",
@@ -603,6 +604,30 @@ df_soga_tidy %>%
 
 Not suprisingly, **Martin Benka** paintings generated highest profit at the auctions.  [Wiki page](https://sk.wikipedia.org/wiki/Martin_Benka) 
 
+The last chart displays distribution of the returns per author.  
+
+```{r distribution of returns,warning=F,message=F}
+df_soga_tidy %>% 
+        drop_na(final_price,diff_price_rel,diff_price_abs) %>% 
+        group_by(name) %>% 
+        summarise(profit_relative = median(diff_price_rel, na.rm = T) ,
+                  profit_absolute = median(diff_price_abs, na.rm = T) ,
+                  artwork_price = median(final_price, na.rm = T) ,
+                  count = n(),
+                  sum = sum(diff_price_abs)) %>% 
+        filter(count > 5) %>% 
+        ggplot(aes(profit_relative))  +
+        geom_histogram() + 
+        theme_minimal(base_family = "Verdana",
+                      base_size = 12) + 
+        labs(title = "Distribution of median returns",
+             subtitle = "by Author",
+             source = "source: www.soga.sk")  
+```
+
+As expected, majority of authors sold their painting at the same price compared to starting price. Also, high number of authors sell at the lower price compared to starting price. The distribution of returns is showing positive skew. 
+
+
 PS: The results are filtered with the condition of the artist selling at least 5 paintings trough SOGA to limit the number of records and filter out paintings that don’t generate enough liquidity. Owning artwork of authors that are rarely traded presents a risk for the investor and is recommended to avoid.
 
 
@@ -613,9 +638,10 @@ PS: The results are filtered with the condition of the artist selling at least 5
 * Purchasing famous painter does not always guarantee a good investment.  
 * Gudena, Spannerová or Ignác artwork generated consistently the highest returns ~ 80% per painting
 * Highest absolute profit was recorded by the artist Benka (ca 332.000€) followed by Ján Halla (ca 185.000€) or Ladislav Mednyánszky (174.000€)
+* The distribution of retruns is right-skewed. High proportion of Artists generate 0% or negative returns. 
 
 ## Known limitations
 * The analysis would be more accurate if the names of the authors were labeled consistently (to avoid duplicate records for the same artist) 
-* Profits are calculated based on the auction asking price, which might not reflect actual profit for the owner 
+* Profits are calculated based on the auction starting price, which might not reflect actual profit for the owner. Owners might set starting price artificially high.  
 
 
