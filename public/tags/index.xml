@@ -14,11 +14,29 @@
     
     
     <item>
+      <title>Investments</title>
+      <link>/tags/investments/</link>
+      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/investments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Plot</title>
       <link>/tags/plot/</link>
       <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/tags/plot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plotly</title>
+      <link>/tags/plotly/</link>
+      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/plotly/</guid>
       <description></description>
     </item>
     
@@ -37,6 +55,24 @@
       <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/tags/regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tidyverse</title>
+      <link>/tags/tidyverse/</link>
+      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/tidyverse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webscrape</title>
+      <link>/tags/webscrape/</link>
+      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/webscrape/</guid>
       <description></description>
     </item>
     

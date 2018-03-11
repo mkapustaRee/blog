@@ -88,13 +88,16 @@
             <em>
                 
                     
-                    <a href="/tags/r-markdown/">#R Markdown</a>
+                    <a href="/tags/webscrape/">#Webscrape</a>
                 
                     , 
-                    <a href="/tags/plot/">#plot</a>
+                    <a href="/tags/tidyverse/">#Tidyverse</a>
                 
                     , 
-                    <a href="/tags/regression/">#regression</a>
+                    <a href="/tags/plotly/">#Plotly</a>
+                
+                    , 
+                    <a href="/tags/investments/">#Investments</a>
                 
             </em>
         </li>
@@ -362,7 +365,7 @@ df_tidy %&gt;%
              subtitle = &quot;by indicator&quot;,
              caption = &quot;source: www.soga.sk&quot;,
              y = &quot;&quot;)</code></pre>
-<p><img src="/posts/Investing_in_Art_files/figure-html/display%20the%20results-1.png" width="672" /></p>
+<p><img src="/posts/Investing_in_Art_files/figure-html/display%20the%20results-1.png" width="100%" /></p>
 <p>Data shows SOGA turnover is growing steadily from 2004. Additionally, the average price per painting sold at auction is growing. Average price grew from ~1200€ to current ~5000€ in 14 years. This means either more expensive paintings are being sold or the prices of the artworks are growing. A calculation reveals 10% CAGR in prices per painting for the time period.</p>
 <p>A byproduct of the scrape is the URL to every single auction in SOGA history (for example <a href="http://www.soga.sk//aukcie-obrazy-diela-umenie-starozitnosti/aukcie/134-vecerna-aukcia">here</a>. This link leads to every single item auctioned at that particular auction.</p>
 <p>Next step is taken in order to:</p>
@@ -659,7 +662,7 @@ df_soga_tidy %&gt;% glimpse()</code></pre>
         theme(legend.text  = element_text(size = 6),
                 legend.title = element_text(size = 6),
               legend.position = &quot;bottom&quot;)</code></pre>
-<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20price%20per%20painting-1.png" width="672" /></p>
+<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20price%20per%20painting-1.png" width="100%" /></p>
 <p>The highest auctioned painting was for the “Chlapec s Dalmatinom” by DOMENICHINO DOMENICO ZAMPIERI <a href="http://www.soga.sk/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/59-jesenna-aukcia-vytvarnych-diel/domenichino-domenico-zampieri-chlapec-s-dalmatinom-9260">link</a>. Interestingly it failed to reach its owner price of 663 878 EUR and was sold at a loss of (-132 775 EUR or -19%) for final price of 531 103 EUR.</p>
 <p>The second chart shows paintings sold at the highest <strong>relative</strong> profit:</p>
 <pre class="r"><code>df_soga_tidy %&gt;% 
@@ -674,7 +677,7 @@ df_soga_tidy %&gt;% glimpse()</code></pre>
              x = &quot;Artwork&quot;,
              caption = &quot;Source: www.soga.sk&quot;) + 
         scale_y_continuous(labels = scales::percent) </code></pre>
-<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20profit%20per%20painting%20-%20relative-1.png" width="672" /></p>
+<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20profit%20per%20painting%20-%20relative-1.png" width="100%" /></p>
 <p>Surprisingly, the highest profits were in the range of 10x - 15x fold return. This is a great result for the investor. The most profitable painting was - “Zátišie s ľudovým džbánom” by KRIVOŠ RUDOLF ( <a href="http://www.soga.sk/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/102-jarna-aukcia-vytvarnych-diel/krivos-rudolf-zatisie-s-ludovym-dzbanom-30005">link</a> ). This painting was also an outlier as rest of KRIVOŠ paintings generated far lower returns.</p>
 <p>Another point of view is to visualize the most profitable paintings in the <strong>absolute</strong> terms.</p>
 <pre class="r"><code>df_soga_tidy %&gt;% 
@@ -689,7 +692,7 @@ df_soga_tidy %&gt;% glimpse()</code></pre>
              x = &quot;Painting&quot;,
              caption = &quot;Source: www.soga.sk&quot;) + 
         scale_y_continuous(labels = scales::comma) </code></pre>
-<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20profit%20per%20painting%20-%20absolute-1.png" width="672" /></p>
+<p><img src="/posts/Investing_in_Art_files/figure-html/highest%20profit%20per%20painting%20-%20absolute-1.png" width="100%" /></p>
 <p>Painting <strong>Po žatve</strong> was the paiting sold at the highest profit of about 85 000 EUR <a href="http://www.soga.sk/aukcie-obrazy-diela-umenie-starozitnosti/aukcie/107-vecerna-aukcia/benka-martin-po-zatve-32046">link</a>. The profit from this one transaction could by one bedroom flat in the city.</p>
 <p>Now, let’s visualize the result of the SOGA auctions:</p>
 <pre class="r"><code>df_loss_profit &lt;- df_soga_tidy %&gt;% 
@@ -999,8 +1002,8 @@ widgetframe::frameWidget(pl,width = &quot;100%&quot;,height = 550)</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Not suprisingly, <strong>Martin Benka</strong> paintings generated highest profit at the auctions. <a href="https://sk.wikipedia.org/wiki/Martin_Benka">Wiki page</a></p>
-<p>The last chart displays distribution of the returns per author.</p>
+<p>As expected, the paintings of famous slovak artist <strong>Martin Benka</strong> generated the highest profit. <a href="https://sk.wikipedia.org/wiki/Martin_Benka">Wiki page</a></p>
+<p>The last chart displays distribution of the returns per artist.</p>
 <pre class="r"><code>df_soga_tidy %&gt;% 
         drop_na(final_price,diff_price_rel,diff_price_abs) %&gt;% 
         group_by(name) %&gt;% 
@@ -1011,15 +1014,16 @@ widgetframe::frameWidget(pl,width = &quot;100%&quot;,height = 550)</code></pre>
                   sum = sum(diff_price_abs)) %&gt;% 
         filter(count &gt; 5) %&gt;% 
         ggplot(aes(profit_relative))  +
-        geom_histogram() + 
+        geom_histogram(bins = 30) + 
         theme_minimal(base_family = &quot;Verdana&quot;,
                       base_size = 12) + 
         labs(title = &quot;Distribution of median returns&quot;,
              subtitle = &quot;by Author&quot;,
-             source = &quot;source: www.soga.sk&quot;)  </code></pre>
-<p><img src="/posts/Investing_in_Art_files/figure-html/distribution%20of%20returns-1.png" width="672" /></p>
-<p>As expected, majority of authors sold their painting at the same price compared to starting price. Also, high number of authors sell at the lower price compared to starting price. The distribution of returns is showing positive skew.</p>
-<p>PS: The results are filtered with the condition of the artist selling at least 5 paintings trough SOGA to limit the number of records and filter out paintings that don’t generate enough liquidity. Owning artwork of authors that are rarely traded presents a risk for the investor and is recommended to avoid.</p>
+             source = &quot;source: www.soga.sk&quot;)  + 
+        scale_x_continuous(label = scales::percent)</code></pre>
+<p><img src="/posts/Investing_in_Art_files/figure-html/distribution%20of%20returns-1.png" width="100%" /></p>
+<p>The histogram shows that the most common profit is zero. This means that the majority of authors sell at their work at the starting price. Also, a high number of authors sell at a loss. The distribution of returns is showing positive skew - means the large portion of authors sell at no profit or at a loss. Making informed beds is well adviced!</p>
+<p><em>PS: The results are filtered with the condition of the artist selling at least 5 paintings trough SOGA to limit the number of records and filter out paintings that don’t generate enough liquidity. Owning artwork of authors that are rarely traded presents a risk for the investor and is recommended to avoid.</em></p>
 </div>
 </div>
 <div id="conclusions" class="section level2">

@@ -4,7 +4,7 @@ author: "Michal Kapusta"
 date: 2018-03-01T21:13:14-05:00
 output: html_document
 categories: ["R"]
-tags: ["R Markdown", "plot", "regression"]
+tags: ["Webscrape", "Tidyverse", "Plotly","Investments"]
 ---
 
 ```{r setup, include=FALSE}
@@ -37,6 +37,7 @@ df_soga_wide <- read_csv(file = "Soga/df_soga_wide.csv") %>% as.tibble()
 ```
 
 ## Idea 
+
 
 The inspiration to write this article was a documentary about the life of a famous “con” artist Mr. Beltracchi [link](<http://www.imdb.com/title/tt3212568/>) which got me curious about art trading & auctions. I often hear the media saying: **“Invest in fine Art, it is a great investment!”**. In the finance world, banks offer clients services such as Art Consulting. The service offers advice on buying and selling fine art. The key to a great advice is to know which Artist’s artwork is increasing in value over time and generate profits at the auctions and which one doesn’t.
 
@@ -170,7 +171,7 @@ df_tidy %>%
 
 Clean dataset reveals important information about auction house performance over the period of years 2001-2017. 
 
-```{r display the results}
+```{r display the results,out.width="100%"}
 df_summary <- function(data, ...) {
         
         group_var <- quos(...)
@@ -475,7 +476,7 @@ df_soga_tidy <- df_soga_tidy %>% mutate(piece = if_else(piece == "Margaréta II.
 ```
 
 
-```{r highest price per painting}
+```{r highest price per painting,out.width="100%"}
 df_soga_tidy %>% 
         drop_na(final_price) %>% 
         top_n(wt = final_price,n = 10) %>% 
@@ -497,7 +498,7 @@ The highest auctioned painting was for the “Chlapec s Dalmatinom” by DOMENIC
 
 The second chart shows paintings sold at the highest **relative** profit:
 
-```{r highest profit per painting - relative }
+```{r highest profit per painting - relative,out.width="100%" }
 df_soga_tidy %>% 
         drop_na(diff_price_rel) %>% 
         top_n(wt = diff_price_rel,n = 10) %>% 
@@ -517,7 +518,7 @@ Surprisingly, the highest profits were in the range of 10x - 15x fold return. Th
 
 Another point of view is to visualize the most profitable paintings in the **absolute** terms.
 
-```{r highest profit per painting - absolute,warning=F }
+```{r highest profit per painting - absolute,warning=F,out.width="100%" }
 df_soga_tidy %>% 
         drop_na(diff_price_abs) %>% 
         top_n(wt = diff_price_abs,n = 10) %>% 
@@ -538,7 +539,7 @@ Painting **Po žatve** was the paiting sold at the highest profit of about 85 00
 Now, let's visualize the result of the SOGA auctions: 
 
 
-```{r chart I - Loses & Profits,warning=F,message = FALSE}
+```{r chart I - Loses & Profits,warning=F,message = FALSE,out.width="100%"}
 df_loss_profit <- df_soga_tidy %>% 
         drop_na(final_price, bin_price)
 
@@ -587,7 +588,7 @@ The table shows results sorted by the highest median relative profit. In other w
 
 Similarly below are the authors generating the highest **absolute** profits.
 
-```{r highest profit per artist,echo=F}
+```{r highest profit per artist,echo=F,out.width="100%"}
 df_soga_tidy %>% 
         drop_na(final_price,diff_price_rel,diff_price_abs) %>% 
         group_by(name) %>% 
@@ -602,11 +603,11 @@ df_soga_tidy %>%
         knitr::kable()
 ```
 
-Not suprisingly, **Martin Benka** paintings generated highest profit at the auctions.  [Wiki page](https://sk.wikipedia.org/wiki/Martin_Benka) 
+As expected, the paintings of famous slovak artist **Martin Benka** generated the highest profit. [Wiki page](https://sk.wikipedia.org/wiki/Martin_Benka) 
 
-The last chart displays distribution of the returns per author.  
+The last chart displays distribution of the returns per artist.  
 
-```{r distribution of returns,warning=F,message=F}
+```{r distribution of returns,warning=F,message=F,out.width="100%"}
 df_soga_tidy %>% 
         drop_na(final_price,diff_price_rel,diff_price_abs) %>% 
         group_by(name) %>% 
@@ -617,18 +618,19 @@ df_soga_tidy %>%
                   sum = sum(diff_price_abs)) %>% 
         filter(count > 5) %>% 
         ggplot(aes(profit_relative))  +
-        geom_histogram() + 
+        geom_histogram(bins = 30) + 
         theme_minimal(base_family = "Verdana",
                       base_size = 12) + 
         labs(title = "Distribution of median returns",
              subtitle = "by Author",
-             source = "source: www.soga.sk")  
+             source = "source: www.soga.sk")  + 
+        scale_x_continuous(label = scales::percent)
 ```
 
-As expected, majority of authors sold their painting at the same price compared to starting price. Also, high number of authors sell at the lower price compared to starting price. The distribution of returns is showing positive skew. 
+The histogram shows that the most common profit is zero. This means that the majority of authors sell at their work at the starting price.  Also, a high number of authors sell at a loss. The distribution of returns is showing positive skew - means the large portion of authors sell at no profit or at a loss. Making informed beds is well adviced!
 
 
-PS: The results are filtered with the condition of the artist selling at least 5 paintings trough SOGA to limit the number of records and filter out paintings that don’t generate enough liquidity. Owning artwork of authors that are rarely traded presents a risk for the investor and is recommended to avoid.
+*PS: The results are filtered with the condition of the artist selling at least 5 paintings trough SOGA to limit the number of records and filter out paintings that don’t generate enough liquidity. Owning artwork of authors that are rarely traded presents a risk for the investor and is recommended to avoid.*
 
 
 
