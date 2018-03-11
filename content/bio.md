@@ -6,7 +6,7 @@ weight = "40"
 meta = "false"
 +++
 
-Learned a lot as a private banker during GFC, went to study real estate investment and became research & strategy proffesional. Since 2016 keen learner of R programming language. I enjoy running, cooking, and music.
+Learned a lot as a private banker during GFC, went to study real estate investment and became research & strategy professional. Since 2016 keen learner of R programming language. I enjoy running, cooking, and music.
 
 ## Interest 
 * Macroeconomics 
