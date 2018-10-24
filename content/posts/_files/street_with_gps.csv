@@ -1,0 +1,584 @@
+street,lon,lat
+"Haburská, Bratislava",NA,NA
+"Martákovej, Bratislava",17.1709034,48.1508181
+"Kadnárova, Bratislava",17.1431757,48.2007051
+"Šancová, Bratislava",NA,NA
+"Údernícka, Bratislava",NA,NA
+"Rustaveliho, Bratislava",NA,NA
+"Krajinská, Bratislava",NA,NA
+"Doležalova, Bratislava",17.1616673,48.1700083
+"Tomášikova, Bratislava",NA,NA
+"Drieňová, Bratislava",17.1548693,48.16018709999999
+"Bajkalská, Bratislava",NA,NA
+"Seberíniho, Bratislava",17.1681201,48.1535576
+"Mýtna, Bratislava",17.1167165,48.1551616
+"Tupého, Bratislava",17.1170049,48.16543470000001
+"Šustekova, Bratislava",NA,NA
+"Hrachová, Bratislava",NA,NA
+"Píniová, Bratislava",17.2115211,48.1498328
+"Mierová, Bratislava",NA,NA
+"Na Piesku, Bratislava",NA,NA
+"Račianska, Bratislava",17.1291084,48.1806992
+"Martina Granca, Bratislava",17.0269669,48.1971466
+"Ružinov (Bratislava II), Bratislava",NA,NA
+"Jasovská, Bratislava",17.1151941,48.0946547
+"Devínska Nová Ves (Bratislava IV), Bratislava",16.9727781,48.2094434
+"Odborárska, Bratislava",NA,NA
+"Bodrocká, Bratislava",17.2094184,48.13362859999999
+"Osuského, Bratislava",17.1146422,48.1187528
+"Kapsohradská, Bratislava",NA,NA
+"Chvojnícka, Bratislava",NA,NA
+"Čerencová, Bratislava",NA,NA
+"Rajecká, Bratislava",17.2056141,48.1435974
+"Dobrovského, Bratislava",NA,NA
+"Pod Vachmajstrom, Bratislava",17.1105,48.1663107
+"Robotnícka, Bratislava",17.129112,48.1616898
+"Mariánska, Bratislava",17.1149896,48.1480144
+"Nám. SNP, Bratislava",17.1111114,48.1453107
+"Nerudova, Bratislava",17.1660647,48.1667097
+"Saratovská, Bratislava",17.0347437,48.1931033
+"Nevädzová, Bratislava",17.1593323,48.15244389999999
+"Gallayova, Bratislava",17.0320635,48.1930354
+"Kukučínova, Bratislava",NA,NA
+"Záhradnícka, Bratislava",NA,NA
+"Turbínová, Bratislava",17.1544367,48.1749155
+"Brezova, Bratislava",17.1948575,48.1471368
+"Toryská, Bratislava",17.2091192,48.1366436
+"Papraďová, Bratislava",17.1620024,48.1544991
+"Paulínyho, Bratislava",17.1076925,48.1409483
+"Heydukova, Bratislava",17.1133193,48.1476319
+"Dlhé diely III., Bratislava",17.0375445,48.152084
+"Kazanská, Bratislava",17.2055048,48.1343045
+"Ipeľská, Bratislava",17.2119168,48.1359576
+"Riazanská, Bratislava",17.1336421,48.17173589999999
+"Záhorská Bystrica (Bratislava IV), Bratislava",17.0387275,48.241632
+"Beňovského, Bratislava",17.0477932,48.1824146
+"Opletalova, Bratislava",16.9780752,48.2225399
+"Na varte, Bratislava",NA,NA
+"Andreja Mráza, Bratislava",17.1690451,48.1551372
+"Čunovo (Bratislava V), Bratislava",NA,NA
+"Jamnického, Bratislava",17.0463958,48.1501885
+"Vývojová, Bratislava",NA,NA
+"Palkovičova, Bratislava",17.1375164,48.1575988
+"Žilinská, Bratislava",17.1121466,48.1552672
+"Ondavská, Bratislava",17.1401415,48.1596539
+"Mozartova, Bratislava",17.0867258,48.1527801
+"Pionierska, Bratislava",17.120037,48.1644936
+"Nezábudková, Bratislava",17.1524564,48.1510314
+"Lotyšská, Bratislava",17.2026909,48.138329
+"Budatinská, Bratislava",17.1004733,48.1061225
+"M. Schneidera - Trnavského, Bratislava",17.045259,48.17809039999999
+"Pluhová, Bratislava",17.1358439,48.1742548
+"Chlumeckého, Bratislava",NA,NA
+"Korytnická, Bratislava",NA,NA
+"Vŕbová, Bratislava",NA,NA
+"Štetinová, Bratislava",NA,NA
+"Teplická, Bratislava",NA,NA
+"Československých parašutistov, Bratislava",17.1302565,48.1714887
+"Staré záhrady, Bratislava",17.1648213,48.1481003
+"Šalviová, Bratislava",17.1606214,48.1529612
+"Lackova, Bratislava",17.0492266,48.1592091
+"Planét, Bratislava",17.1710203,48.1632085
+"Herlianska, Bratislava",17.156265,48.1589484
+"Sklenárova, Bratislava",17.1458105,48.1503237
+"Kuklovská, Bratislava",NA,NA
+"Pajštúnska, Bratislava",NA,NA
+"Vlčie hrdlo, Bratislava",NA,NA
+"Podunajská, Bratislava",NA,NA
+"Špitálska, Bratislava",NA,NA
+"Medená, Bratislava",NA,NA
+"Štefana Králika, Bratislava",16.9837268,48.2044904
+"Bujnákova, Bratislava",17.0398108,48.1794369
+"Babuškova, Bratislava",NA,NA
+"Prešovská, Bratislava",17.1423973,48.1595681
+"Bílikova, Bratislava",NA,NA
+"Rezedová, Bratislava",NA,NA
+"Hlaváčikova, Bratislava",17.0435326,48.15437
+"Piešťanská, Bratislava",NA,NA
+"Ružová dolina, Bratislava",17.1415845,48.1515682
+"Tilgnerova, Bratislava",NA,NA
+"Polianky, Bratislava",NA,NA
+"Ľudovíta Fullu, Bratislava",NA,NA
+"Vlčie Hrdlo, Bratislava",17.163238,48.1186741
+"Topoľčianska, Bratislava",17.1094666,48.1086109
+"Vrakuňa (Bratislava II), Bratislava",17.2129005,48.1421639
+"Guothova, Bratislava",NA,NA
+"Raketová, Bratislava",NA,NA
+"Staré Grunty, Bratislava",NA,NA
+"Zadunajská cesta, Bratislava",17.1016426,48.1299842
+"Zálužická, Bratislava",NA,NA
+"Sekurisova, Bratislava",17.0384479,48.191666
+"Sládkovičova, Bratislava",NA,NA
+"Námestie Biely Kríž, Bratislava",NA,NA
+"Studená, Bratislava",NA,NA
+"Fazuľová, Bratislava",17.1171754,48.1533205
+"Budatínska, Bratislava",17.1004733,48.1061225
+"Košická, Bratislava",17.1326777,48.1467178
+"Ďurgalova, Bratislava",NA,NA
+"Ľ.Fullu, Bratislava",17.0497019,48.1551054
+"Vajnorská, Bratislava",17.1446845,48.1747512
+"Andrusova, Bratislava",NA,NA
+"Boženy Němcovej, Bratislava",17.1020362,48.1552022
+"Hrušovská, Bratislava",17.1854486,48.149289
+"Na Zlatej nohe, Bratislava",17.1153764,48.1656758
+"Drotárska cesta, Bratislava",17.0829511,48.155947
+"Búdková, Bratislava",17.0885398,48.1560092
+"Nové Mesto (Bratislava III), Bratislava",NA,NA
+"Jungmannova, Bratislava",17.1144008,48.1249798
+"Kmeťovo námestie, Bratislava",17.1206743,48.1552808
+"Pri Kríži, Bratislava",17.0302053,48.1946694
+"Exnárova, Bratislava",17.1733547,48.1572156
+"Obchodná, Bratislava",17.110388,48.14752240000001
+"Kovácsova, Bratislava",17.1449079,48.0524123
+"Krížna, Bratislava",17.1243342,48.1552594
+"Lietavská, Bratislava",17.1049458,48.1002958
+"Slovinská, Bratislava",17.1606869,48.1694835
+"Na úvrati, Bratislava",NA,NA
+"Hornádska, Bratislava",17.2142475,48.136103
+"Murgašova, Bratislava",17.109696,48.1565358
+"Hroznová, Bratislava",17.0968375,48.1636327
+"Staromestská, Bratislava",17.1039111,48.1439302
+"Mateja Bela, Bratislava",17.104846,48.1495854
+"Karlova Ves (Bratislava IV), Bratislava",17.0518442,48.1591643
+"Staré Mesto (Bratislava I), Bratislava",17.1077474,48.148598
+"Šándorova, Bratislava",17.1747257,48.1553815
+"Námestie Hraničiarov, Bratislava",17.1166657,48.1217966
+"Komárnická, Bratislava",NA,NA
+"Miletičova, Bratislava",17.1365022,48.1529147
+"Mlynarovičová, Bratislava",17.121358,48.12665819999999
+"Bystrická, Bratislava",NA,NA
+"Pri strelnici, Bratislava",NA,NA
+"Dopravná, Bratislava",17.1662745,48.199887
+"Trenčianska, Bratislava",17.1397444,48.1517452
+"Petržalka (Bratislava V), Bratislava",17.1115426,48.11087000000001
+"Vtáčnik, Bratislava",17.1163072,48.1680102
+"Lamač (Bratislava IV), Bratislava",17.0474565,48.1938879
+"Bartoškova, Bratislava",17.1321583,48.1611404
+"Dlhá, Bratislava",17.1967037,48.0329609
+"Pečnianska, Bratislava",17.0944704,48.12928180000001
+"Hronská, Bratislava",17.2105548,48.1341737
+"Šípová, Bratislava",17.2057875,48.1503464
+"Židovská, Bratislava",17.1038268,48.1433715
+"Hradská, Bratislava",NA,NA
+"Nákovná, Bratislava",NA,NA
+"Pribišova, Bratislava",17.0482552,48.1532037
+"Pri Hrubej lúke, Bratislava",17.0349999,48.19834160000001
+"Ulica . augusta 2/A, Bratislava",17.1158024,48.14958009999999
+"Rovniankova, Bratislava",NA,NA
+"Sputniková, Bratislava",NA,NA
+"Hrobákova, Bratislava",NA,NA
+"Pri Vápenickom potoku, Bratislava",17.0414574,48.2315999
+"Strmý vŕšok, Bratislava",NA,NA
+"Ota Holúska, Bratislava",17.0422807,48.2332221
+"Fedinova, Bratislava",17.1028701,48.1174269
+"Dunajská, Bratislava",NA,NA
+"Markova, Bratislava",NA,NA
+"Bagarova, Bratislava",NA,NA
+"Dúbravka (Bratislava IV), Bratislava",17.0290285,48.1888276
+"Rača (Bratislava III), Bratislava",NA,NA
+"Podunajské Biskupice (Bratislava II), Bratislava",NA,NA
+"Jarovce (Bratislava V), Bratislava",NA,NA
+"Pri kríži, Bratislava",NA,NA
+"Ivanská cesta, Bratislava",17.1852175,48.1704896
+"Bratislavská, Bratislava",NA,NA
+"Majerníkova, Bratislava",NA,NA
+"Račianská, Bratislava",17.1291084,48.1806992
+"Vrútocka, Bratislava",NA,NA
+"Radlinského, Bratislava",NA,NA
+"Záhrebská, Bratislava",17.1161646,48.1562231
+"Šintavská, Bratislava",NA,NA
+"Zuzany Chalupovej, Bratislava",17.1196132,48.0926903
+"Tallerova, Bratislava",17.1139725,48.14204789999999
+"Galvaniho, Bratislava",NA,NA
+"Kozia, Bratislava",NA,NA
+"Svätovavrinecká, Bratislava",17.1181878,48.1678019
+"Veternicová, Bratislava",NA,NA
+"Závodná, Bratislava",NA,NA
+"Gregorovej, Bratislava",NA,NA
+"Rusovská cesta, Bratislava",17.1028823,48.1240715
+"Svetlá, Bratislava",17.0859376,48.1510419
+"Legionárska, Bratislava",17.1226226,48.1565463
+"Kominárska, Bratislava",17.123249,48.1597122
+"Na Revíne, Bratislava",NA,NA
+"Vihorlatská, Bratislava",17.1590859,48.1742208
+"Jána Smreka, Bratislava",NA,NA
+"Meteorová, Bratislava",17.1642888,48.16417970000001
+"Kysucká, Bratislava",NA,NA
+"Žižkova, Bratislava",17.090188,48.1423211
+"Ambroseho, Bratislava",17.1148265,48.1160378
+"Moskovská, Bratislava",17.1222717,48.150574
+"vvv, Bratislava",17.1077478,48.1485965
+"Sabinovská, Bratislava",17.1489037,48.1600513
+"Nejedlého, Bratislava",17.0365656,48.1929101
+"Stará Vajnorská, Bratislava",17.1748398,48.1877752
+"Nová Bellova, Bratislava",17.1077478,48.1485965
+"Zámocká, Bratislava",17.1018366,48.1447091
+"Čsl. parašutistov, Bratislava",17.1306245,48.1710412
+"Panónska cesta, Bratislava",17.0984998,48.111264
+"Tichá, Bratislava",17.083378,48.15085209999999
+"Martinengova, Bratislava",17.0787203,48.1591256
+"Krajná, Bratislava",17.1734444,48.1786217
+"Anenská, Bratislava",17.1156337,48.155066
+"Ševčenkova, Bratislava",17.1034175,48.1195047
+"Jašíkova, Bratislava",17.1669648,48.1555678
+"Lazaretská, Bratislava",17.1199992,48.1455383
+"Sibírska, Bratislava",17.1226043,48.1641704
+"Ulica Martina Granca, Bratislava",17.0269669,48.1971466
+"..., Bratislava",17.1077478,48.1485965
+"Švantnerova, Bratislava",17.0367275,48.1812591
+"Bazovského, Bratislava",17.0413202,48.1833435
+"Budyšínska, Bratislava",17.1287131,48.1631108
+"Dvořakovo nábrežie, Bratislava",17.0895271,48.1412027
+"Albína Brunovského, Bratislava",17.0505376,48.1486689
+"Podkolibská, Bratislava",17.1153831,48.1625951
+"Belinského, Bratislava",17.1034571,48.1219765
+"Plynárenská, Bratislava",17.1419905,48.1447841
+"Slatinská, Bratislava",17.2143108,48.1405988
+"Trnavská cesta, Bratislava",17.1465239,48.1636363
+"Karola Adlera, Bratislava",17.0314381,48.1904755
+"Ľanová, Bratislava",17.1589567,48.1563416
+"Tranovského, Bratislava",17.0249999,48.1932318
+"Šoltésovej, Bratislava",17.1232537,48.15105579999999
+"Bosákova, Bratislava",17.1256837,48.12768029999999
+"Pavla Horova, Bratislava",16.9799328,48.2033873
+"Nobelova, Bratislava",17.1364561,48.1838284
+"Bieloruská, Bratislava",17.1990108,48.1389882
+"Vrakunská, Bratislava",17.1994128,48.1371356
+"Suché mýto, Bratislava",NA,NA
+"Kopčianska, Bratislava",17.0906023,48.11420469999999
+"Malokrasňanská, Bratislava",NA,NA
+"Furdekova, Bratislava",17.1208933,48.1228183
+"Drobného, Bratislava",17.039605,48.19099550000001
+"L. Dérera, Bratislava",17.1008826,48.1659737
+"Hrdličkova, Bratislava",17.0838054,48.1687406
+"Donnerova, Bratislava",17.0555119,48.1578595
+"Bučinová, Bratislava",17.2075909,48.1432633
+"Bartoňova, Bratislava",17.093864,48.14626380000001
+"Brodská, Bratislava",17.0482969,48.1607393
+"Rozvodná, Bratislava",NA,NA
+"Martinčekova, Bratislava",17.1473938,48.14962269999999
+"Milana Marečka, Bratislava",16.9786794,48.2067816
+"Červeňákova, Bratislava",17.0422272,48.18458649999999
+"Žitavská, Bratislava",NA,NA
+"Holíčska, Bratislava",NA,NA
+"x, Bratislava",NA,NA
+"Bzovícka, Bratislava",NA,NA
+"Stavbárska, Bratislava",NA,NA
+"Jána Poničana, Bratislava",16.9824314,48.2064513
+"Zochova, Bratislava",17.1012408,48.1462148
+"Pribinova, Bratislava",NA,NA
+"Na pasekách, Bratislava",17.175008,48.198431
+"Vilová, Bratislava",17.0968209,48.1241968
+"Ľubovníkova, Bratislava",NA,NA
+"Landererova, Bratislava",17.1259838,48.1425112
+"Bakošova, Bratislava",17.0471313,48.198897
+"Smaragdová, Bratislava",NA,NA
+"Bernolákova, Bratislava",17.1214436,48.1553903
+"Strážna, Bratislava",NA,NA
+"Silvánska, Bratislava",NA,NA
+"Stromová, Bratislava",17.0963905,48.164729
+"Černyševského, Bratislava",NA,NA
+"Považanová, Bratislava",17.0369947,48.18389149999999
+"Pekná cesta, Bratislava",17.1301157,48.199381
+"Čmelíkova, Bratislava",17.176241,48.1574243
+"Znievska, Bratislava",17.1047337,48.1025126
+"PETRŽALKA CITY, Bratislava",NA,NA
+"Karpatská, Bratislava",17.1136709,48.1579603
+"Narcisová, Bratislava",17.1613448,48.1552188
+"Opavská, Bratislava",17.0838628,48.1663921
+"Ferienčíkova, Bratislava",17.1204006,48.1467671
+"Beniakova, Bratislava",17.0469512,48.1575101
+"Malokarpatské námestie, Bratislava",17.0531676,48.1948495
+"Zimná, Bratislava",17.1638301,48.1634144
+"Vážska, Bratislava",NA,NA
+"Jégého, Bratislava",17.1348342,48.1572261
+"Mraziarenská, Bratislava",17.1417599,48.1551802
+"Čiližská, Bratislava",NA,NA
+"Hany Meličkovej, Bratislava",17.0542867,48.1495876
+"Banšelová, Bratislava",NA,NA
+"Vyšehradská, Bratislava",17.103956,48.096764
+"Bajkalska, Bratislava",17.1477112,48.1518695
+"Jurigovo námestie, Bratislava",17.0600453,48.15157989999999
+"Jaskový rad, Bratislava",NA,NA
+"Štefunkova, Bratislava",17.1708915,48.1562743
+"Sadmelijská, Bratislava",17.1469666,48.2076872
+"Chemická, Bratislava",17.157276800000002,48.1751356
+"Mickiewiczova, Bratislava",17.115766699999998,48.1500149
+"Hubeného, Bratislava",17.1429715,48.1977433
+"Hollého, Bratislava",17.113995,48.1471978
+"Matejkova, Bratislava",17.0485807,48.1498026
+"Kpt. Rašu, Bratislava",17.0398256,48.1886009
+"Jesenná, Bratislava",17.1633866,48.1643358
+"Hviezdna, Bratislava",17.2136904,48.1303021
+"Baltská, Bratislava",17.2015475,48.1351804
+"Žltá, Bratislava",17.124036,48.0870151
+"Estónska, Bratislava",17.2018581,48.1432935
+"Studenohorská, Bratislava",17.0510155,48.1937424
+"Nový Ružinov, Bratislava",17.1556372,48.1387464
+"Lipského, Bratislava",17.0512715,48.1797189
+"Belehradská, Bratislava",17.1235499,48.15713840000001
+"Zvolenská, Bratislava",17.1385837,48.14821320000001
+"Galbavého, Bratislava",17.0379253,48.18302019999999
+"Klenová, Bratislava",17.0896258,48.1721602
+"Cyprichova, Bratislava",17.1431309,48.1966279
+"Ďatelinová, Bratislava",17.1596146,48.1514464
+"Laurinská, Bratislava",17.1107447,48.1435619
+"Wolkrova, Bratislava",17.1085971,48.1254698
+"Mlynské nivy, Bratislava",17.140801,48.1444816
+"Dulovo námestie, Bratislava",NA,NA
+"Jarabinková, Bratislava",NA,NA
+"Ráztočná, Bratislava",17.215905,48.1494424
+"Na Krčoch, Bratislava",17.0422682,48.2367277
+"Azúrová, Bratislava",NA,NA
+"Nad Lúčkami, Bratislava",17.0500098,48.1577768
+"Karloveská, Bratislava",NA,NA
+"Vígľašská, Bratislava",17.1078517,48.0970303
+"Arménska, Bratislava",17.2028947,48.1448249
+"Podzáhradná, Bratislava",17.2042472,48.1337533
+"Haanova, Bratislava",NA,NA
+"Toplianska, Bratislava",NA,NA
+"Žatevná, Bratislava",17.0300721,48.1892648
+"Námestie hraničiarov, Bratislava",NA,NA
+"Pod Krásnou hôrkou, Bratislava",NA,NA
+"Andrusovova, Bratislava",17.0993884,48.116503
+"Páričkova, Bratislava",NA,NA
+"Petržalka, Bratislava",NA,NA
+"Cabanova, Bratislava",17.0262539,48.1931395
+"Bebravská, Bratislava",17.2126738,48.1395706
+"Široká, Bratislava",17.2088072,48.1981371
+"Račianske mýto, Bratislava",17.1201714,48.1578188
+"Lužná, Bratislava",NA,NA
+"Pernecká, Bratislava",17.0523522,48.1611431
+"Ďumbierska, Bratislava",17.0828043,48.1680856
+"Metodova, Bratislava",17.1279024,48.1566997
+"Štetinova, Bratislava",17.1037521,48.1483928
+"Eisnerova, Bratislava",16.9804264,48.205841
+"Syslia, Bratislava",17.1722933,48.1434092
+"Hraničná, Bratislava",17.1586657,48.146137
+"Rumančeková, Bratislava",17.1556672,48.15070470000001
+"Kafendova, Bratislava",17.1509962,48.2099151
+"Beňadická, Bratislava",17.1070221,48.099621
+"Kazanska, Bratislava",NA,NA
+"Stropkovská, Bratislava",NA,NA
+"Ľuda Zúbka, Bratislava",17.0462539,48.17916959999999
+"Mánesovo námestie, Bratislava",17.1117807,48.1286733
+"Oravská, Bratislava",NA,NA
+"Dostojevského rad, Bratislava",17.1203218,48.1423882
+"Blumentálska, Bratislava",17.1216097,48.1541615
+"Jána Stanislava, Bratislava",17.0521929,48.1542707
+"Kresánkova, Bratislava",17.0501824,48.1502314
+"Jozefská, Bratislava",17.110358,48.150741
+"Klariská, Bratislava",17.1051748,48.14446539999999
+"Mlynské Luhy, Bratislava",17.1788371,48.1532443
+"Baštová, Bratislava",17.1059625,48.144838
+"Líščie nivy, Bratislava",17.1407782,48.15710499999999
+"Horská, Bratislava",17.1246211,48.1821302
+"Kríková, Bratislava",17.2087687,48.1439359
+"Nevädzová G, Bratislava",17.1593323,48.15244389999999
+"Heyrovského, Bratislava",NA,NA
+"Pod brehmi, Bratislava",17.0608563,48.1740125
+"Hodálová, Bratislava",17.055353,48.1530948
+"Námestie sv. Františka, Bratislava",17.0527471,48.159342
+"Haydnova, Bratislava",17.0903436,48.1522803
+"Leškova, Bratislava",17.1081063,48.15432939999999
+"Alstrova, Bratislava",17.1465905,48.2110491
+"Strakova, Bratislava",17.1067948,48.1417535
+"Novosvetská, Bratislava",17.0976086,48.1527568
+"Astrová, Bratislava",17.1587276,48.1558194
+"Novackého, Bratislava",17.0564966,48.1531831
+"Zochova a, Bratislava",17.1012408,48.1462148
+"Ulica . augusta, Bratislava",17.121055900000002,48.1478796
+"Hlbinná, Bratislava",NA,NA
+"Bezručova, Bratislava",17.1174033,48.14280919999999
+"Jozefa Hagaru, Bratislava",17.1418576,48.1999894
+"Ružinovská, Bratislava",17.162041,48.1573869
+"Geologická, Bratislava",17.1955554,48.1387687
+"Bradáčova, Bratislava",17.1138096,48.1143544
+"Bulíkova, Bratislava",17.1292042,48.1265381
+"Cintorínska, Bratislava",17.1178268,48.1466854
+"Námestie slobody, Bratislava",17.1114209,48.1524854
+"Kvačalova, Bratislava",17.1314392,48.151932
+"Jelšová, Bratislava",17.0932041,48.1648633
+"Dvořákovo nábrežie, Bratislava",NA,NA
+"Výtvarná, Bratislava",NA,NA
+"Pražská, Bratislava",17.0996046,48.1618098
+"Vlčkova, Bratislava",NA,NA
+"kamenná, Bratislava",NA,NA
+"Prievozská, Bratislava",NA,NA
+"Daxnerovo námestie, Bratislava",17.1330722,48.1528101
+"Fedinová, Bratislava",17.1028701,48.1174269
+"Komonicová, Bratislava",17.0406237,48.15153429999999
+"Štefánikova, Bratislava",17.1066226,48.1523332
+"Na Grunte, Bratislava",17.131318,48.19537150000001
+"Hnilecká, Bratislava",NA,NA
+"Rusovská, Bratislava",NA,NA
+"Čárskeho, Bratislava",17.0545619,48.1602269
+"Gelnická, Bratislava",17.1548108,48.2131493
+"Banskobystrická, Bratislava",NA,NA
+"Uhrova, Bratislava",17.0949881,48.1644977
+"Na Križovatkách, Bratislava",NA,NA
+"Šášovská, Bratislava",17.107087,48.0974051
+"Švabinského, Bratislava",NA,NA
+"Narcisova, Bratislava",17.1613448,48.1552188
+"Vajnory (Bratislava III), Bratislava",NA,NA
+"Björnsonova, Bratislava",17.1147304,48.15572
+"Hradska, Bratislava",NA,NA
+"Polárna, Bratislava",NA,NA
+"Brnianska, Bratislava",17.0847183,48.1647459
+"Starhradská, Bratislava",NA,NA
+"Latorická, Bratislava",17.2120463,48.135396
+"Palisády, Bratislava",17.0994683,48.1465604
+"Vigľašská, Bratislava",17.1078517,48.0970303
+"Drienova, Bratislava",17.1548693,48.16018709999999
+"Uzbecká, Bratislava",NA,NA
+"Pri Šajbách, Bratislava",17.1609633,48.2035801
+"Hanulova, Bratislava",17.0402969,48.1787533
+"Nábrežie arm. gen. L. Svobodu, Bratislava",NA,NA
+"Ventúrska, Bratislava",17.1064961,48.142974
+"pešia zóna, Bratislava",NA,NA
+"Agátová, Bratislava",NA,NA
+"Muškátová, Bratislava",NA,NA
+"Dudvážska, Bratislava",NA,NA
+"Schneidera - Trnavského, Bratislava",17.045259,48.17809039999999
+"Popolná, Bratislava",NA,NA
+"Rovníková, Bratislava",17.1673387,48.1602168
+"Športová, Bratislava",NA,NA
+"Panenská, Bratislava",17.104131,48.1479268
+"Jungmanova, Bratislava",17.1144008,48.1249798
+"Fedákova, Bratislava",17.033119,48.1926077
+"Detvianska, Bratislava",17.1542318,48.2119011
+"Pri vinohradoch, Bratislava",17.157843,48.2158786
+"Klemensova, Bratislava",17.1187104,48.1436952
+"Kristy Bendovej, Bratislava",17.0309599,48.1955719
+"Záhorská Bystrica, Bratislava",17.0387275,48.241632
+"Lachova, Bratislava",17.1177737,48.1243239
+"Hurbanovo námestie, Bratislava",17.1076336,48.1459972
+"Višňová, Bratislava",17.0965796,48.166693
+"Hviezdoslavovo námestie, Bratislava",17.1055257,48.1407482
+"Čiernovodská, Bratislava",17.2112265,48.1392487
+"Budovateľská, Bratislava",17.1266926,48.1493951
+"Záhradnícka ul, Bratislava",17.1331673,48.1546755
+"Vrútocká, Bratislava",NA,NA
+"Tupolevova, Bratislava",17.1038319,48.1128593
+"Wilsonova, Bratislava",17.1207991,48.15482
+"Halova, Bratislava",17.1065939,48.1211743
+"Latoricka, Bratislava",17.2120463,48.135396
+"Nejedého, Bratislava",17.0369572,48.19303190000001
+"Sokolská, Bratislava",17.1033094,48.157024
+"Vŕbová x, Bratislava",17.2083921,48.14128969999999
+"Kalinčiakova, Bratislava",17.1343234,48.1608305
+"Závadská, Bratislava",17.1575692,48.2126761
+"Považanova, Bratislava",NA,NA
+"ul. Planét, Bratislava",17.1710203,48.1632085
+"Tokajícka, Bratislava",17.1507818,48.1618609
+"Šachorová, Bratislava",17.2079676,48.1977758
+"Železničiarska, Bratislava",17.1094965,48.15710929999999
+"Živnostenská, Bratislava",17.1114206,48.1494042
+"Homolova, Bratislava",17.027624,48.1945629
+"Banšelova, Bratislava",17.1674628,48.1746372
+"Miloslavov, Bratislava",NA,NA
+"Starý Ružinov, Bratislava",17.1398196,48.1582054
+"Štefanovičova, Bratislava",NA,NA
+"Svoradova, Bratislava",17.1008225,48.1455111
+"Novohorská, Bratislava",17.1461653,48.2092079
+"Súmračná, Bratislava",NA,NA
+"Brezová, Bratislava",17.1948575,48.1471368
+"Romanova, Bratislava",NA,NA
+"Perla Ružinova, Bratislava",17.1665482,48.1498561
+"Vietnamská, Bratislava",NA,NA
+"Karadžičova, Bratislava",NA,NA
+"Sliačska, Bratislava",NA,NA
+"Firmova, Bratislava",17.1569935,48.0435722
+"nezadaná, Bratislava",NA,NA
+"Bilíkova, Bratislava",NA,NA
+"Jakubovo námestie, Bratislava",17.1199674,48.1433052
+"Hummelova, Bratislava",17.0910239,48.1473178
+"Nové Mesto (Bratislava I), Bratislava",NA,NA
+"Bajzova, Bratislava",17.1390838,48.1590304
+"Mierova, Bratislava",NA,NA
+"Púpavová, Bratislava",17.0500488,48.1646313
+"Krasovského, Bratislava",NA,NA
+"Tománkova, Bratislava",NA,NA
+"Marie Curie - Sklodowskej, Bratislava",NA,NA
+"Raketová ulica, Bratislava",NA,NA
+"Ladislava Dérera, Bratislava",NA,NA
+"na piesku /A, Bratislava",17.1854275,48.1555488
+"neuvedená, Bratislava",17.1077478,48.1485965
+"Nová Rožňavská ulica, Bratislava",NA,NA
+"Hutnícka, Bratislava",16.9852576,48.1722201
+"Votrubova, Bratislava",17.1357197,48.1438005
+"Lermontovova, Bratislava",17.1049599,48.1510648
+"Cesta na Klanec, Bratislava",17.0595562,48.1922021
+"Zuzany Chalupkovej, Bratislava",NA,NA
+"Námestie . mája 2, Bratislava",17.1099615,48.1491865
+"Rázusovo nábrežie, Bratislava",NA,NA
+"Čiližska, Bratislava",NA,NA
+"Dankovského, Bratislava",NA,NA
+"Skalická cesta, Bratislava",17.1279382,48.1824541
+"Ivana Bukovčana, Bratislava",16.9798542,48.2078309
+"Červeňova, Bratislava",NA,NA
+"Ďatelinova, Bratislava",NA,NA
+"Kukučínová, Bratislava",NA,NA
+"Popradská, Bratislava",17.1936338,48.13809750000001
+"Brečtanová, Bratislava",NA,NA
+"Čilížska, Bratislava",NA,NA
+"Sklabinská, Bratislava",NA,NA
+"Nábrežie generála L. Svobodu, Bratislava",17.0968033,48.1396418
+"Dlhé diely I., Bratislava",17.0518442,48.1591643
+"Kalinčiaková, Bratislava",17.1343234,48.1608305
+"Hrachova, Bratislava",NA,NA
+"Kramáre-Na Revíne, Bratislava",NA,NA
+"Na križovatkách, Bratislava",17.1707334,48.1686103
+"Gabčíkova, Bratislava",17.0581642,48.1504743
+"Kvetná, Bratislava",17.1328323,48.1531996
+"Vavilovova, Bratislava",17.113844,48.1270321
+"Slávičie údolie, Bratislava",17.0833048,48.15243890000001
+"Mesačná, Bratislava",17.1666322,48.1633657
+"Kadnárová, Bratislava",17.1431757,48.2007051
+"Letná, Bratislava",17.1322835,48.1709091
+"Smolenická, Bratislava",17.1009578,48.1098927
+"Sabinovska, Bratislava",17.1489037,48.1600513
+"Ipelská, Bratislava",17.2119168,48.1359576
+"Lenardova, Bratislava",17.0975861,48.1284968
+"Krasňany, Bratislava",17.1403591,48.1966579
+"Klenova, Bratislava",17.0896258,48.1721602
+"Alžbety Gwerkovej, Bratislava",17.1272996,48.1196187
+"Koreničova, Bratislava",17.0978191,48.14478769999999
+"Ožvoldíkova, Bratislava",17.030982,48.1930068
+"Adámiho, Bratislava",17.0565229,48.1525524
+"Senická, Bratislava",17.0784434,48.1646186
+"Plickova, Bratislava",17.1490886,48.2097665
+"Kremencová, Bratislava",16.9789584,48.2200305
+"Repašského, Bratislava",17.0334897,48.1899017
+"Okánikova, Bratislava",NA,NA
+"Koprivnická, Bratislava",17.0314521,48.1848614
+"Jelenia, Bratislava",17.1113531,48.1573298
+"Palárikova, Bratislava",17.1113531,48.1573298
+"Jégeho, Bratislava",17.1348342,48.1572261
+"Nám. Martina Benku, Bratislava",17.122771,48.15319119999999
+"Konventná, Bratislava",17.104506,48.1470692
+"Gogoľova, Bratislava",17.0923707,48.1213878
+"Trnávka- s GARÁŽOVÝM  STÁTÍM v cene, Bratislava",17.1689349,48.1719486
+"Uzbecká s balkónom a lodžiou, Bratislava",17.2069541,48.1346403
+"Tabaková, Bratislava",17.1170322,48.15605559999999
+"Hronska, Bratislava",17.2105548,48.1341737
+"Šuňavcova, Bratislava",17.1222009,48.1636866
+"Betliarska, Bratislava",17.1207072,48.0993573
+"Hodálova, Bratislava",17.055353,48.1530948
+"Vranovská, Bratislava",17.0935643,48.1242384
+"Mikulášska, Bratislava",NA,NA
+"Bartókova, Bratislava",17.085901,48.1530717
+"Východná, Bratislava",17.1784189,48.1963241
+"Majoránová, Bratislava",NA,NA
+"Vetvárska, Bratislava",17.2110385,48.12492990000001
+"Komonicova, Bratislava",NA,NA
+"Podjavorínska, Bratislava",17.1012408,48.1462148
+"Rusovce (Bratislava V), Bratislava",17.1450367,48.0560336
+"Krásnohorská, Bratislava",17.1144932,48.0983736
+"Cesta na Kamzík, Bratislava",NA,NA
+"Dobrovskeho, Bratislava",NA,NA
+"Radvanská, Bratislava",NA,NA
+"Horský park, Bratislava",17.0906447,48.1578958
+"Vrakuňská cesta, Bratislava",17.1777205,48.1611796
+"Veternicova, Bratislava",NA,NA
+"Koliba, Bratislava",NA,NA
