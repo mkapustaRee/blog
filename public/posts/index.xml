@@ -22,5 +22,14 @@
       <description>Idea The inspiration to write this article was a documentary about the life of a famous “con” artist Mr. Beltracchi link which got me curious about art trading &amp;amp; auctions.</description>
     </item>
     
+    <item>
+      <title>Predicting property prices using alternative data sources</title>
+      <link>/posts/forecasting_house_prices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/posts/forecasting_house_prices/</guid>
+      <description>The goal of the post The aim of this blog post is to showcase the usage of alternative data in order to improve predictive model.</description>
+    </item>
+    
   </channel>
 </rss>

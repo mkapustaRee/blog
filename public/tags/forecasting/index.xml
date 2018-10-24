@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Forecasting on Michal Kapusta</title>
+    <link>/tags/forecasting/</link>
+    <description>Recent content in Forecasting on Michal Kapusta</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>michal.kapusta@gmail.com (Michal Kapusta)</managingEditor>
+    <webMaster>michal.kapusta@gmail.com (Michal Kapusta)</webMaster>
+    <copyright>Copyright &amp;copy; 2017 - Michal Kapusta</copyright>
+    
+	<atom:link href="/tags/forecasting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Predicting property prices using alternative data sources</title>
+      <link>/post/forecasting_house_prices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/post/forecasting_house_prices/</guid>
+      <description>The goal of the post The aim of this blog post is to showcase the usage of alternative data in order to improve predictive model.</description>
+    </item>
+    
+    <item>
+      <title>Predicting property prices using alternative data sources</title>
+      <link>/posts/forecasting_house_prices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/posts/forecasting_house_prices/</guid>
+      <description>The goal of the post The aim of this blog post is to showcase the usage of alternative data in order to improve predictive model.</description>
+    </item>
+    
+  </channel>
+</rss>
