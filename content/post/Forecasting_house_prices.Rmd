@@ -1,10 +1,10 @@
 ---
-title: "Predicting property prices using alternative data sources"
+title: "Predicting residential property prices in Bratislava using recipes - Linear regression (part I)"
 author: "Michal Kapusta"
-date: "8 August 2018"
+date: "2018-10-23T21:13:14-05:00"
 output: html_document
 categories: ["R"]
-tags: ["Webscrape", "LIME", "Alternative Data","Forecasting"]
+tags: ["Webscraping", "Forecasting","Property prices", "Recipes","Rsample"]
 ---
 
 ```{r setup, include=FALSE}
@@ -19,21 +19,33 @@ library(stringr)
 library(janitor)
 library(data.table)
 
-df_ads <-  read_csv(file = "_files/list_of_ads [2018-08-08].csv")  %>% filter(!str_detect(street,pattern = "Bratislava")) 
-urls <-  read_csv(file = "_files/list_of_urls [2018-08-08].csv") %>% pull(value)
-gps_street <-  read_csv(file = "_files/street_with_gps.csv")  %>% drop_na() %>% rename(street_long = street)
-street <- gps_street$street_long %>% str_split(", ",simplify = T) %>% as.data.frame() %>% pull(V1) 
+df_ads <-  read_csv(file = "_files/list_of_ads [2018-08-08].csv")  %>% 
+           filter(!str_detect(street,pattern = "Bratislava")) 
+
+urls <-  read_csv(file = "_files/list_of_urls [2018-08-08].csv") %>%
+         pull(value)
+
+gps_street <-  read_csv(file = "_files/street_with_gps.csv")  %>%
+                drop_na() %>%
+                rename(street_long = street)
+
+street <- gps_street$street_long %>%
+                str_split(", ",simplify = T) %>%
+                as.data.frame() %>%
+                pull(V1) 
+
 gps_street$street <- street
-gps_street <- gps_street %>% mutate(street = as.character(street))
 
-df_ads_wGPS <- df_ads %>% left_join(gps_street %>% select(street,lon,lat))
+gps_street <- gps_street %>%
+                mutate(street = as.character(street))
 
-
+df_ads_wGPS <- df_ads %>%
+                left_join(gps_street %>% select(street,lon,lat))
 
 # geospatial data with distance calcs
 
 df_transport <- fread("/Users/Michal/Desktop/R Projects/R projects/data_storage/transport.csv")
-df_amenity <- fread("/Users/Michal/Desktop/R Projects/R projects/data_storage/amenity.csv")
+df_amenity   <- fread("/Users/Michal/Desktop/R Projects/R projects/data_storage/amenity.csv")
 
 
 
@@ -42,11 +54,11 @@ df_amenity <- fread("/Users/Michal/Desktop/R Projects/R projects/data_storage/am
 
 ## The goal of the post
 
-The aim of this blog post is to showcase the usage of alternative data in order to improve predictive model. In this blogpost, I will be scraping data from property listing website in order to access real world data. After scraping and data cleaning steps I will add geospatial data (www.openstreetmaps.com) to enrich the database. My thesys is that the location features should improve the predictive models. Lets find out!
+In this blogpost, i will be predicting the residential prices in the city of Bratislava (Slovakian capital). In order to access real world data I will be scraping data from property listing website. After scraping and data cleaning steps, I will build a predictive model that can predict house prices. 
 
 ## Acquiring the real world data 
 
-The property website **www.topreality.sk** is a good resource for the real house price listings. Also the website link generator is pretty straight forward. After filtering based on:
+The property website **www.topreality.sk** is a good resource for the appartment price listings. in addition, the website link generator is straight forward. After filtering based on:
 
 * the desired flat location (in this case all districts of Bratislava)
 * number of bedrooms (1-4) 
@@ -60,7 +72,7 @@ The first part of the url (*https://www.topreality.sk/vyhladavanie-nehnutelnosti
 
 <https://www.topreality.sk/vyhladavanie-nehnutelnosti-2.html?type%5B0%5D=108&type%5B1%5D=102&type%5B2%5D=103&type%5B3%5D=104&type%5B4%5D=105&form=1&obec=2%2C4%2C5%2C6%2C8%2C9%2C10%2C12%2C13%2C14%2C15%2C16%2C17%2C19%2C20%2C21%2C22&n_search=search&gpsPolygon=&searchType=string>
 
-This information is essential, since it is the only variable that is changing in the url string.  The icon to jump to the latest record (symbol **>>**) also contains information about the **last** url number. In this case it reveals 255 webpages are needed to list all the ads. Following url generator creates string of urls needed to scrape all the listings:
+This information is essential, since it is the only variable that is changing in the url string. The icon to jump to the latest record (symbol **>>**) also contains information about the **last** url number. In this case it reveals 255 webpages are needed to list all the ads. Following url generator creates string of urls needed to scrape all the listings:
 
 ```{r url generator,eval = FALSE}
 url <- "https://www.topreality.sk/vyhladavanie-nehnutelnosti-1.html?type%5B0%5D=108&type%5B1%5D=102&type%5B2%5D=103&type%5B3%5D=104&type%5B4%5D=105&form=1&obec=2%2C4%2C5%2C6%2C8%2C9%2C10%2C12%2C13%2C14%2C15%2C16%2C17%2C19%2C20%2C21%2C22&n_search=search&gpsPolygon=&searchType=string"
@@ -105,7 +117,7 @@ urls %>% tail(3) %>% knitr::kable()
 ```
 
 
-Using the package **rvest** we can access the information displayed on the webpage. The following datapoints are of our interest: 
+Using the package **rvest** we can access the information displayed on the webpage. The following data-points are of our interest: 
 
 * price of the flat 
 * size of the flat in square meters 
@@ -181,16 +193,17 @@ The database contains information about ca 2379 listings stored in consistent wa
 
 After the data is obtained we can proceed into the explanatory data analysis part. First lets look at the summary statistics.
 
-```{r ads table}
-df_ads %>% summary()
+```{r ads table, warning=F}
+library(skimr)
+df_ads %>% skimr::skim_to_list()
 
 ```
 
-The table shows we have suscesfully scraped 2379 records. Approximately 100 records are incomplete and will be removed from the analysis. Few other observations: 
+The table shows we have successfully scraped ca 2100 records. Approximately 100 records are incomplete and will be removed from the analysis. Few other observations: 
 
 * Average price for flat in Bratislava is ca **173.000 Eur**
-* Average size of the flat is **72.7** square meters
-* Average price per square meter is **2455** Eur
+* Average size of the flat is **73** square meters
+* Average price per square meter is **2478** Eur
 * District variable needs to be converted to factors 
 
 Now lets look at the data! The following charts show basic distribution of price and log(price). 
@@ -205,15 +218,15 @@ df_ads  %>% drop_na() %>%
         theme_minimal(base_family = "Verdana",base_size = 12)   + 
         facet_wrap(~Ratio, scales = "free") +
         theme(plot.title = element_text(face = "bold")) + 
-        labs(title = "DISTRIBUTION OF APPARTMENT PRICES IN BRATISLAVA")
+        labs(title = "DISTRIBUTION OF APARTMENT PRICES IN BRATISLAVA")
 
 ```
 
-The charts show that the majority of ads are price in range between 125.000 EUR - 200.000 EUR. The distribution is left-skewed an needs to be transformed using logarithm. The log10(price) ensures the distribution is normalized (more suitable for forecasting and readable). For backward conversion use calculate for example: 5.5^10 = 316227 EUR. 
+The charts show that the majority of ads have price in range between 125.000 EUR - 200.000 EUR. The distribution is right-skewed an needs to be transformed using logarithm. The log10(price) ensures the distribution is normalised (more suitable for forecasting and human comprehension). For backward conversion use calculate for example: 10^5.5 = 316227 EUR. 
 
-We would expect the prices vary across the five districts in Bratislava. The following chart confirms: 
+Now, we would expect the prices vary across the five districts in Bratislava. Let's find out! 
 
-```{r histogram per district,include=T, echo = F}
+```{r histogram per district,include=T, echo = F, warning=F}
 df_ads %>% 
         drop_na() %>% 
         ggplot(aes(district, log10(price) )) + 
@@ -228,11 +241,12 @@ df_ads %>%
 ```
 
 * that prices are highest in Bratislava I - the old town district
-* The most comeptitive priced is BA V. (small range between 25-75 % Quartile)  
+* BA I median price is around 5.45 or 281.000€
+* The most competitive priced is BA V. (small range between 25-75 % Quartile)  
 
 Lets dig deeper into dataset to extract all the information. Lets look at price distributions within the district based on the number of beds. 
 
-```{r histogram per district and per no_of_bedrooms, echo=F }
+```{r histogram per district and per no_of_bedrooms, echo=F, warning=F }
 
 df_ads %>% 
         drop_na() %>% 
@@ -250,13 +264,13 @@ df_ads %>%
 
 The transformation reveals: 
 
-* Price increases by number of bedrooms (exeption: BA V prices for 2 & 3 bedroom)
+* Price increases by number of bedrooms (exception: BA V prices for 2 & 3 bedroom)
 * Some of the ranges are very wide. Big differences occur within districts as well. 
-* 4x bedroom flat in BA I cost on average (10 ^ 5.5 = ~400.000 EUR)
+* Most costly category is a 4x bedroom flat in BA I costing ~400.000 EUR (10 ^ 5.6)
   
 Next, lets look at the qualitative variable - **area** compared to the **price**
 
-```{r area and price, echo = F}
+```{r area and price, echo = F, warning=F}
 
 df_ads %>% 
         drop_na() %>% 
@@ -273,16 +287,17 @@ df_ads %>%
 
 ```
 
-The chart above revelas that the flat prices are in direct relationship with the flat area. This is to be expected. Also Bratislava IV looks clustered around the model line - suggesting stronger relationship in the market. Is this a mere coincidence or hidden insight? 
+The chart above shows that the flat prices is in linear relationship with the flat area. This is to be expected. Also Bratislava IV looks clustered around the model line - suggesting stronger relationship in the market. Is this a mere coincidence or hidden insight? 
 
-Next, lets fit a linear model using data at we assembled so far. We  predict the price for the appartmetn using the traditional set of variables data scientists usually have at hand (mostly appartment metric and basic location variables)
+Next, lets fit a linear model using data at we assembled so far. We will predict the price for the apartments using the traditional set of variables data scientists usually have at hand. The following chunk of code is a direct copy of Max Kuhn R code presented at UseR 2018 workshop <https://github.com/topepo/user2018>. 
 
-```{r traditional model}
+```{r traditional model, warning=F, message=F}
+set.seed(4595)
 
 df_to_model <- df_ads  %>%
         drop_na() %>%
-        select(-url_saved,-id,-listed, -price_per_sqm) %>% 
-        mutate(no_of_bedrooms = no_of_bedrooms %>% factor(ordered = T,levels = c(1,2,3,4)),
+        select(-url_saved,-listed, -price_per_sqm) %>% 
+        mutate(no_of_bedrooms = no_of_bedrooms %>% as.factor(),
                district = district %>% as.factor(),
                street = street %>% as.factor())
 
@@ -303,12 +318,19 @@ cv_splits <- vfold_cv(df_train, v = 10, strata = "price")
 # recipes
 library(recipes)
 
-model_recipe <- recipe(price ~ .  , data = df_train ) %>% 
-                step_other(street, threshold = .0125) %>% 
-                step_dummy(no_of_bedrooms, district, street)  %>%        # convert string of factors into columns with 0,1
-                step_log(price, base = 10) %>%                  # log-transformation to normalize
-                step_BoxCox(area)  # find suitable transformation for area var
-                
+model_recipe <- recipe(price ~ . - id, data = df_train ) %>% 
+                step_other(street, threshold = .05) %>% 
+                step_interact( ~ starts_with("district"):area) %>% 
+                step_dummy(street, district, no_of_bedrooms)  %>%      
+                step_log(price, base = 10) %>%                         
+                step_BoxCox(area) 
+
+# create processed databases
+preped_model <- model_recipe %>% prep()
+
+x_train_processed_tbl <- bake(preped_model, df_train) 
+x_test_processed_tbl  <- bake(preped_model, df_test)
+
 
 # apply recipe on CV splits
 
@@ -347,365 +369,116 @@ library(yardstick)
 
 # Compute the summary statistics
 map_df(cv_splits$pred, metrics, truth = price, estimate = .fitted) %>% 
-  colMeans %>% knitr::kable()
+  colMeans %>% 
+  knitr::kable()
 
 ```
 
-The results shows that the regression Rsquared is around 0.66. This means around 66% of the price variance can be explained using the variables at hand. 
+The code above is broadly doing following steps: 
 
-```{r model summary}
+* splitting the datasets into 10 equal-sized subsets (cross-validation)
+* recipe step 1: collapse infrequent street names into "other"
+* recipe step 2: create binary column (0 or 1) for each of the factor variables **no_of_bedrooms, district, street**
+* recipe step 3: log transformation of price
+* recipe step 4: Box-Cox transformation of area variable
+
+After splitting the dataset and performing The results shows that the regression Rsquared is around **0.66**. This means around 66% of the price variance can be explained using the variables at hand. 
+
+The detailed breakdown of the statistical model can be seen here:
+
+```{r model summary, warning=F, render = F}
         cv_splits$fits[[1]] %>% summary()
 ```
 
+Now let's visualise the dataset 
 
-## Adding alternative data sources
-
-The analysis so far used only several variables to analyse price of appartments in Bratislava. Compared to other datasets this is low. Kaggle competitions usually have dozens of metrics to build model. This metrics are usually covering data like: floor number, date of completition or fit-out quality. This additional data will ultimatively lead to more accurate model. Since we dont have such informations we look to **alternative data sources** to augment our database with non-standart metrics. Our thesys revolves around old real estate saying: **Location,Location,Location**.
-
-In the following chapter we will:
-
-* source open-street-map data  
-* use location features to enrich the database 
-* calculate distance from appartments to location features 
-* use the results in the predictive model  
-
-### Source the data using Open-Street-Map
-
-The geospatial databases are a great source of information. The two major sources are **Google Maps API** or the open-source option **Open-street Map API**. The option from google supports location feature extraction, but it cost money to retrive thousends of records. 
-
-First step is to enrich our database with geospatial data (longitute, latitude). For this purposes we will use the street adress and city information. Our dataset contains the street name and flats are located in Bratislava.   
-
-```{r add gps coordinate to the streets,eval=F}
-library(ggmap)
-
-geocodeAdddress <- function(address) {
-  require(RJSONIO)
-  print(address)
-  url <- "http://maps.google.com/maps/api/geocode/json?address="
-  url <- URLencode(paste(url, address, "&sensor=false", sep = ""))
-  x <- fromJSON(url, simplify = FALSE)
-  if (x$status == "OK") {
-    out <- c(x$results[[1]]$geometry$location$lng,
-             x$results[[1]]$geometry$location$lat)
-  } else {
-    out <- c(NA,NA)
-  }
-  Sys.sleep(0.2)  # API only allows 5 requests per second
-  out
-}
-
-
-vct_adrres <- df_ads %>% 
-        pull(street) %>% 
-        paste0(", Bratislava") %>%
-        data.frame() %>% 
-        distinct() %>%
-        pull() %>%
-        as.character()
-
-gps_coordinates <- map(.f = geocodeAdddress,
-                       .x = vct_adrres) %>%
-                        plyr::ldply()
-
+```{r model visualisation, warning=F}
+cv_splits %>%
+        unnest(pred) %>% 
+        mutate(pred_accuracy = ntile(.resid, 5)) %>% 
+        ggplot(aes(price, .fitted, col = as.factor(pred_accuracy))) +
+        geom_point() + 
+        geom_abline() + 
+        scale_color_brewer(palette = "RdYlGn") +
+        theme_minimal() +
+        labs(title = "MODEL ACCURACY: Fitted vs Real Prices",
+                subtitle = "Price and prediction in a relationship") + 
+        theme(legend.position = "bottom") + 
+        theme(plot.title = element_text(face = "bold")) +
+        geom_smooth(se = F, color = "red")
+ 
 ```
 
-The code above sources the geospatial information and yields following insights.
+The points around the line (3 pred_accuracy) are the most accurate estimates of the model - where residual values are small. Other colors are showing overvalued prices (5 pred_accuracy) and undervalues (1 pred_accuracy). The red line indicates that low prices are overpredicted and high prices are underpredicted by the linear model.   
 
-```{r show on the map, echo = F}
+Even better understanding offers a interactive map of Bratislava with original prices and the linear model results: 
+
+```{r show leaflet of properties, warning=F, echo=F}
 library(ggmap)
 
-df_leaf <- df_ads_wGPS %>%
+df_leaf <- cv_splits %>%
+        unnest(pred) %>% 
+        select(-id) %>% 
+        mutate(pred_accuracy = ntile(.resid, 5) %>% as.integer(),
+               price_eur = 10 ^ price,
+               model_eur = 10 ^ .fitted, 
+               diff = (price_eur - model_eur) %>% round(digits = 0),
+               id = id1)   %>%
+        select(-price,-id1) %>% 
+        left_join(df_ads_wGPS, by = "id") %>% 
+        drop_na() %>%
         group_by(street) %>%
         mutate(price_mean = mean(price_per_sqm, na.rm =T), 
-               sample_size = n()) %>% 
-        drop_na()
+               sample_size = n())
 
-pal <- colorQuantile(palette = "viridis",domain = df_leaf$price_mean)
+
+pal <- colorFactor(palette = "viridis",domain = df_leaf$pred_accuracy)
 
 
 leaflet() %>%
-        addCircles(data = df_leaf,
+        addCircleMarkers(data = df_leaf,
                    lng = ~lon,
-                   lat = ~lat,
+                   lat = ~lat,fillOpacity = .7,
                    label = ~ street,
-                   color  = ~pal(price_mean),
+                   color  = ~pal(pred_accuracy),
                    popup = ~paste("Street Name: ", df_leaf$street,"</br>",
-                              "Mean Price:",df_leaf$price_mean %>% scales::dollar(),"</br>",
-                              "Sample Size: ", df_leaf$sample_size)) %>%
+                              "Predicted Price (EUR):",df_leaf$model_eur %>% scales::comma(),"</br>",
+                              "Offered Size (EUR): ", df_leaf$price_eur  %>% scales::comma(),"</br>",
+                              "Difference (EUR): " , df_leaf$diff %>% scales::comma(),"</br>",
+                              "Sample size (n): ", df_leaf$sample_size  %>%  scales::comma() )) %>%
         addProviderTiles("Stamen.TonerHybrid")  %>%
-        addLegend(pal = pal, values = ~ price_mean,
+        addLegend(pal = pal,
+                  values = ~pred_accuracy,
                   data = df_leaf,
                   na.label = "N/A",
-                  title = "Price distribution by Quartiles",opacity = 0.8) 
+                  title = ~paste0("Undervalued = 1","</br>",
+                                 "Overvalued  = 5" 
+                                 ),opacity = 0.8)
 
-
-```
-
-The former database can be charted using the longitude and latitude information. The map shows the streets in Bratislava grouped in four quartiles. The yellow color representing the 75-100% quartile means the prices are highest. From the map we can identify following facts: 
-
-* Bratislava most expensive streets are located around city center (no suprise there :-) )
-* Hurbanovo námestie street is displaying highest price at 6249 € per sq m
-* The lowest price are recorded at street Vlčie Hrdlo, Čárskeho
-
-### Attach the dataset to the appartment database
-
-Now, lets look at the location features in the Bratislava. 
-
-```{r display all geospatial,echo = F, warning=F}
-
-df <- df_amenity %>% distinct(name,.keep_all = T)
-pal <- colorFactor(palette = "Spectral",domain = df$feat)
-
-leaflet() %>%
-        addCircles(data = df,
-                   lng = ~ feat_lon,
-                   lat = ~ feat_lat,
-                   label = ~ name,
-                   color  = ~pal(df$feat),
-                   popup = ~paste("Street Name: ", df$name,"</br>",
-                              "Mean Price:",df$feat))  %>% 
-         addProviderTiles("Stamen.TonerHybrid") %>% 
-        addLegend(pal = pal, values = ~ feat,
-                  data = df,
-                  na.label = "N/A",
-                  title = "Price distribution by Quartiles",opacity = 0.8) 
-
-
-```
-
-
-```{r display deal relevant geospatial data, echo=F, warning=F}
-
-
-df <- df_amenity %>% filter(street_long %in% c("Mariánska, Bratislava", "Pečnianska, Bratislava"))
-
-df_sliced <- df %>% split(.$street_long) %>% map_df(slice, 1)
-
-
-pal <- colorFactor(palette = "Spectral",domain = df$feat)
-
-leaflet() %>%
-        addCircles(data = df,
-                   lng = ~ feat_lon,
-                   lat = ~ feat_lat,
-                   label = ~ name,
-                   color  = ~pal(df$feat),
-                   popup = ~paste("Street Name: ", df$name,"</br>",
-                              "Mean Price:",df$feat))  %>%
-        addMarkers(data = df_sliced, 
-                   lng = ~ lon,
-                   lat = ~ lat,
-                   label = ~ street_long) %>% 
-         addProviderTiles("Stamen.TonerHybrid") %>% 
-        addLegend(pal = pal, values = ~ feat,
-                  data = df,
-                  na.label = "N/A",
-                  title = "Price distribution by Quartiles",opacity = 0.8) 
-        
-        
-
-```
-
-
-```{r histogram of distances}
-
-df_hist      <- df_amenity %>% group_by(street_long,feat) %>% summarise(min = min(distance))
-df_hist_mean <- df_amenity %>% group_by(street_long,feat) %>% summarise(min = min(distance)) %>% ungroup() %>% group_by(feat) %>% mutate(mean = median(min, na.rm = T))
-
-ggplot() +
-        geom_histogram(data = df_hist,aes(min)) + 
-        facet_wrap(~feat, scales = "free") + 
-        geom_vline(aes(xintercept = mean), data  = df_hist_mean ,linetype = 1, color = "red") + 
-        theme_minimal() +
-        labs(title)
-
-```
-
-
-```{r extended database}
-
-check_if_na <- function (x) {
-    x[is.na(x)] <- 0
-    return(x)
-}
-
-scored_amenity <- df_amenity %>%
-                        split(.$cat) %>%
-                        map_df(mutate, pct = ntile(-distance, 5)) %>%
-                        split(.$street_long) %>%
-                        map(group_by, cat) %>%
-                        map_df(mutate, score = sum(pct,na.rm = T)) %>%
-                        select(street_long, cat, score) %>%
-                        distinct() %>% 
-                        spread(cat, score)
-
-scored_transport <- df_transport %>%
-                        split(.$cat) %>%
-                        map_df(mutate, pct = ntile(-distance, 5)) %>%
-                        split(.$street_long) %>%
-                        map(group_by, cat) %>%
-                        map_df(mutate, score = sum(pct,na.rm = T)) %>%
-                        select(street_long, cat, score) %>%
-                        distinct() %>% 
-                        spread(cat, score)
-
-
-
-df_model <- df_ads_wGPS %>%
-        drop_na() %>% 
-        mutate(street_long = paste0(street, ", Bratislava")) %>%
-        left_join(scored_amenity, by = "street_long") %>%
-        left_join(scored_transport, by = "street_long") %>%
-        select(id, price, area, street, district,no_of_bedrooms, contains("amenity"),contains("public"),lon, lat) %>% 
-        mutate(no_of_bedrooms = no_of_bedrooms %>% factor(ordered = T, levels = c(1,2,3,4)),
-               district = district %>% factor(),
-               street = street %>% factor()) %>% 
-        mutate_if(is.numeric, check_if_na) %>% 
-        drop_na() 
-
-df_model %>% summary()
-
-```
-
-### Model
-
-```{r linear model, eval = F}
-# split 
-
-library(rsample)
-library(caret)
-
-
-set.seed(4595)
-data_split <- initial_split(df_model, strata = "price")
-
-df_train <- training(data_split)
-df_test  <- testing(data_split)
-
-cv_splits <- vfold_cv(df_train, v = 10, strata = "price")
-
-
-# recipes
-library(recipes)
-
-model_recipe_gps <- recipe(price ~ .  , data = df_train ) %>% 
-                        step_dummy(no_of_bedrooms,district)  %>% 
-                        step_log(area, price, base = 10) %>%  
-                        step_other(street, threshold = 0.05) %>% 
-                        step_interact(~ contains("no_of_bedrooms"):area) 
-                        
-
-# apply recipe on all splits
-
-cv_splits <- cv_splits %>% mutate(ads_rec = map(splits, prepper, recipe = model_recipe_gps, retain = T))
-
-
-# apply lm function to all splits
-
-lm_fit_rec <- function(rec_obj, ...) {
-        lm(..., data = juice(rec_obj))
-        
-}
  
-cv_splits <- cv_splits %>% mutate(fits = map(ads_rec, lm_fit_rec, price ~.))
+```
 
+Finally, here are the 10 most undervalued streets in Slovakian capital:
 
-# generate predictions based on the splits
-assess_predictions <- function(split_obj, rec_obj, mod_obj) {
-  raw_data <- assessment(split_obj)
-  proc_x <- bake(rec_obj, newdata = raw_data, all_predictors())
-  bake(rec_obj, newdata = raw_data, everything()) %>%
-    mutate(.fitted = predict(mod_obj, newdata = proc_x),
-      .resid = price - .fitted,  
-      .row = as.integer(split_obj, data = "assessment"))
-}
+```{r top 10 undervalued streets, warning=F, echo = F}
 
-cv_splits <- cv_splits %>%
-  mutate(
-    pred = 
-      pmap(
-        lst(split_obj = cv_splits$splits, 
-            rec_obj = cv_splits$ads_rec, 
-            mod_obj = cv_splits$fits),
-        assess_predictions 
-      )
-  )
-        
-
-# measure performance
-library(yardstick)
-
-# Compute the summary statistics
-map_df(cv_splits$pred, metrics, truth = price, estimate = .fitted) %>% 
-  colMeans
-
-assess_pred <- bind_rows(cv_splits$pred) %>%
-  mutate(price = 10^price %>% round(digits = 0),
-         .fitted = 10^.fitted %>% round(digits = 0)) 
-
-assess_pred %>% 
-        ggplot(
-       aes(x = price, y = .fitted)) + 
-  geom_abline(lty = 2) + 
-  geom_point(alpha = .4)  + 
-  geom_smooth(se = FALSE, col = "red") + 
-        scale_x_continuous(labels = scales::dollar_format(suffix = "€", prefix = "")) + 
-        scale_y_continuous(labels = scales::dollar_format(suffix = "€", prefix = "")) + 
-        theme_minimal()
-
+df_leaf %>% 
+        arrange(diff) %>% 
+        head(10) %>% 
+        ggplot(aes(reorder(street, -diff),diff, fill = district)) +
+        geom_col() +
+        coord_flip() + 
+        scale_y_continuous(labels = scales::dollar_format(prefix = "",suffix = "€"))  + 
+        theme_minimal() + 
+        scale_fill_brewer(palette = "Spectral") + 
+        labs(title = "MODEL PREDICTION: Most undervalued streets in BA",
+                subtitle = "Difference between offered price and model estimate",
+                x = "") + 
+        theme(legend.position = "bottom") + 
+        theme(plot.title = element_text(face = "bold"))
 
 ```
 
+## Further work and final considerations
 
-```{r knn, eval=F}
-
-model_recipe_norm <- recipe(price ~ .  , data = df_train ) %>% 
-                        step_dummy(no_of_bedrooms,district)  %>% 
-                        step_log(price, base = 10) %>%  
-                        step_BoxCox(area)  %>% 
-                        step_other(street, threshold = .03) %>% 
-                        step_center(all_numeric(),-price) %>% 
-                        step_scale(all_numeric(),-price) %>% 
-                        step_interact(~ contains("no_of_bedrooms"):area) %>% 
-                        step_bs(lon, lat, options = list(df = 5))  
-
-
-converted_resamples <-  rsample2caret(cv_splits)
-
-ctrl <- trainControl(method = "cv",  savePredictions = "final")
-ctrl$index <- converted_resamples$index
-ctrl$indexOut <- converted_resamples$indexOut
-
-knn_grid <- expand.grid(
-  kmax = 1:9,
-  distance = 2,
-  kernel = c("rectangular", "triangular", "gaussian")
-  )
-
-knn_fit <- train(
-  model_recipe_norm, data = df_train,
-  method = "kknn", 
-  tuneGrid = knn_grid,
-  trControl = ctrl
-)
-
-getTrainPerf(knn_fit)
-
-ggplot(knn_fit) + theme_minimal()
-
-
-knn_pred <- knn_fit$pred %>%
-  mutate(price = 10^obs %>% round(digits = 0) ,
-         .fitted = 10^pred %>% round(digits = 0))
-
-ggplot(knn_pred,
-       aes(x = price, y = .fitted)) + 
-  geom_abline(lty = 2) + 
-  geom_point(alpha = .4)  + 
-  geom_smooth(se = FALSE, col = "red")  %>% 
-  scale_x_continuous(labels = scales::comma)
-
-```
-
-
-
+In summary, we have successfully scraped and analysed residential property market in Bratislava. With ca 2.000 ads we found linear model that can explain ca 66% of the price variance. For real world application this result is too weak. The problem needs more advanced statistical models and possibly more data (distance to city center, number of transportation options. etc) to drive the accuracy even higher. 

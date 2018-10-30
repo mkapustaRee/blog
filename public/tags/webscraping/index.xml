@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Forecasting on Michal Kapusta</title>
-    <link>/tags/forecasting/</link>
-    <description>Recent content in Forecasting on Michal Kapusta</description>
+    <title>Webscraping on Michal Kapusta</title>
+    <link>/tags/webscraping/</link>
+    <description>Recent content in Webscraping on Michal Kapusta</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>michal.kapusta@gmail.com (Michal Kapusta)</managingEditor>
     <webMaster>michal.kapusta@gmail.com (Michal Kapusta)</webMaster>
     <copyright>Copyright &amp;copy; 2017 - Michal Kapusta</copyright>
     <lastBuildDate>Tue, 23 Oct 2018 21:13:14 -0500</lastBuildDate>
     
-	<atom:link href="/tags/forecasting/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/webscraping/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/post/forecasting_house_prices/</guid>
       <description>The goal of the post In this blogpost, I will be scraping data from property listing website in order to access real world data.</description>
-    </item>
-    
-    <item>
-      <title>Predicting property prices using alternative data sources</title>
-      <link>/posts/forecasting_house_prices/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
-      <guid>/posts/forecasting_house_prices/</guid>
-      <description>The goal of the post The aim of this blog post is to showcase the usage of alternative data in order to improve predictive model.</description>
     </item>
     
   </channel>

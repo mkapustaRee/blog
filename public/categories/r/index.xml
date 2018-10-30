@@ -8,10 +8,19 @@
     <managingEditor>michal.kapusta@gmail.com (Michal Kapusta)</managingEditor>
     <webMaster>michal.kapusta@gmail.com (Michal Kapusta)</webMaster>
     <copyright>Copyright &amp;copy; 2017 - Michal Kapusta</copyright>
-    <lastBuildDate>Thu, 01 Mar 2018 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 23 Oct 2018 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Predicting residential property prices in Bratislava</title>
+      <link>/post/forecasting_house_prices/</link>
+      <pubDate>Tue, 23 Oct 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/post/forecasting_house_prices/</guid>
+      <description>The goal of the post In this blogpost, I will be scraping data from property listing website in order to access real world data.</description>
+    </item>
     
     <item>
       <title>Is fine Art a fine Investment? Let&#39;s find out using web scraping!</title>
@@ -29,15 +38,6 @@
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/posts/investing_in_art/</guid>
       <description>Idea The inspiration to write this article was a documentary about the life of a famous “con” artist Mr. Beltracchi link which got me curious about art trading &amp;amp; auctions.</description>
-    </item>
-    
-    <item>
-      <title>Predicting property prices using alternative data sources</title>
-      <link>/post/forecasting_house_prices/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
-      <guid>/post/forecasting_house_prices/</guid>
-      <description>The goal of the post The aim of this blog post is to showcase the usage of alternative data in order to improve predictive model.</description>
     </item>
     
     <item>

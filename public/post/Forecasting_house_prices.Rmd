@@ -1,10 +1,10 @@
 ---
-title: "Predicting property prices using alternative data sources"
+title: "Predicting residential property prices in Bratislava"
 author: "Michal Kapusta"
-date: "8 August 2018"
+date: "2018-10-23T21:13:14-05:00"
 output: html_document
 categories: ["R"]
-tags: ["Webscrape", "LIME", "Alternative Data","Forecasting"]
+tags: ["Webscraping", "Forecasting","Property prices"]
 ---
 
 ```{r setup, include=FALSE}
@@ -19,21 +19,33 @@ library(stringr)
 library(janitor)
 library(data.table)
 
-df_ads <-  read_csv(file = "_files/list_of_ads [2018-08-08].csv")  %>% filter(!str_detect(street,pattern = "Bratislava")) 
-urls <-  read_csv(file = "_files/list_of_urls [2018-08-08].csv") %>% pull(value)
-gps_street <-  read_csv(file = "_files/street_with_gps.csv")  %>% drop_na() %>% rename(street_long = street)
-street <- gps_street$street_long %>% str_split(", ",simplify = T) %>% as.data.frame() %>% pull(V1) 
+df_ads <-  read_csv(file = "_files/list_of_ads [2018-08-08].csv")  %>% 
+           filter(!str_detect(street,pattern = "Bratislava")) 
+
+urls <-  read_csv(file = "_files/list_of_urls [2018-08-08].csv") %>%
+         pull(value)
+
+gps_street <-  read_csv(file = "_files/street_with_gps.csv")  %>%
+                drop_na() %>%
+                rename(street_long = street)
+
+street <- gps_street$street_long %>%
+                str_split(", ",simplify = T) %>%
+                as.data.frame() %>%
+                pull(V1) 
+
 gps_street$street <- street
-gps_street <- gps_street %>% mutate(street = as.character(street))
 
-df_ads_wGPS <- df_ads %>% left_join(gps_street %>% select(street,lon,lat))
+gps_street <- gps_street %>%
+                mutate(street = as.character(street))
 
-
+df_ads_wGPS <- df_ads %>%
+                left_join(gps_street %>% select(street,lon,lat))
 
 # geospatial data with distance calcs
 
 df_transport <- fread("/Users/Michal/Desktop/R Projects/R projects/data_storage/transport.csv")
-df_amenity <- fread("/Users/Michal/Desktop/R Projects/R projects/data_storage/amenity.csv")
+df_amenity   <- fread("/Users/Michal/Desktop/R Projects/R projects/data_storage/amenity.csv")
 
 
 
@@ -42,7 +54,7 @@ df_amenity <- fread("/Users/Michal/Desktop/R Projects/R projects/data_storage/am
 
 ## The goal of the post
 
-The aim of this blog post is to showcase the usage of alternative data in order to improve predictive model. In this blogpost, I will be scraping data from property listing website in order to access real world data. After scraping and data cleaning steps I will add geospatial data (www.openstreetmaps.com) to enrich the database. My thesys is that the location features should improve the predictive models. Lets find out!
+In this blogpost, I will be scraping data from property listing website in order to access real world data. After scraping and data cleaning steps I will build a predictive model that can predict house prices. Lets find out!
 
 ## Acquiring the real world data 
 
@@ -60,7 +72,7 @@ The first part of the url (*https://www.topreality.sk/vyhladavanie-nehnutelnosti
 
 <https://www.topreality.sk/vyhladavanie-nehnutelnosti-2.html?type%5B0%5D=108&type%5B1%5D=102&type%5B2%5D=103&type%5B3%5D=104&type%5B4%5D=105&form=1&obec=2%2C4%2C5%2C6%2C8%2C9%2C10%2C12%2C13%2C14%2C15%2C16%2C17%2C19%2C20%2C21%2C22&n_search=search&gpsPolygon=&searchType=string>
 
-This information is essential, since it is the only variable that is changing in the url string.  The icon to jump to the latest record (symbol **>>**) also contains information about the **last** url number. In this case it reveals 255 webpages are needed to list all the ads. Following url generator creates string of urls needed to scrape all the listings:
+This information is essential, since it is the only variable that is changing in the url string. The icon to jump to the latest record (symbol **>>**) also contains information about the **last** url number. In this case it reveals 255 webpages are needed to list all the ads. Following url generator creates string of urls needed to scrape all the listings:
 
 ```{r url generator,eval = FALSE}
 url <- "https://www.topreality.sk/vyhladavanie-nehnutelnosti-1.html?type%5B0%5D=108&type%5B1%5D=102&type%5B2%5D=103&type%5B3%5D=104&type%5B4%5D=105&form=1&obec=2%2C4%2C5%2C6%2C8%2C9%2C10%2C12%2C13%2C14%2C15%2C16%2C17%2C19%2C20%2C21%2C22&n_search=search&gpsPolygon=&searchType=string"
@@ -105,7 +117,7 @@ urls %>% tail(3) %>% knitr::kable()
 ```
 
 
-Using the package **rvest** we can access the information displayed on the webpage. The following datapoints are of our interest: 
+Using the package **rvest** we can access the information displayed on the webpage. The following data-points are of our interest: 
 
 * price of the flat 
 * size of the flat in square meters 
@@ -186,11 +198,11 @@ df_ads %>% summary()
 
 ```
 
-The table shows we have suscesfully scraped 2379 records. Approximately 100 records are incomplete and will be removed from the analysis. Few other observations: 
+The table shows we have successfully scraped ca 2100 records. Approximately 100 records are incomplete and will be removed from the analysis. Few other observations: 
 
 * Average price for flat in Bratislava is ca **173.000 Eur**
-* Average size of the flat is **72.7** square meters
-* Average price per square meter is **2455** Eur
+* Average size of the flat is **73** square meters
+* Average price per square meter is **2478** Eur
 * District variable needs to be converted to factors 
 
 Now lets look at the data! The following charts show basic distribution of price and log(price). 
@@ -205,11 +217,11 @@ df_ads  %>% drop_na() %>%
         theme_minimal(base_family = "Verdana",base_size = 12)   + 
         facet_wrap(~Ratio, scales = "free") +
         theme(plot.title = element_text(face = "bold")) + 
-        labs(title = "DISTRIBUTION OF APPARTMENT PRICES IN BRATISLAVA")
+        labs(title = "DISTRIBUTION OF APARTMENT PRICES IN BRATISLAVA")
 
 ```
 
-The charts show that the majority of ads are price in range between 125.000 EUR - 200.000 EUR. The distribution is left-skewed an needs to be transformed using logarithm. The log10(price) ensures the distribution is normalized (more suitable for forecasting and readable). For backward conversion use calculate for example: 5.5^10 = 316227 EUR. 
+The charts show that the majority of ads have price in range between 125.000 EUR - 200.000 EUR. The distribution is left-skewed an needs to be transformed using logarithm. The log10(price) ensures the distribution is normalised (more suitable for forecasting and human comprehention). For backward conversion use calculate for example: 5.5^10 = 316227 EUR. 
 
 We would expect the prices vary across the five districts in Bratislava. The following chart confirms: 
 
@@ -228,7 +240,7 @@ df_ads %>%
 ```
 
 * that prices are highest in Bratislava I - the old town district
-* The most comeptitive priced is BA V. (small range between 25-75 % Quartile)  
+* The most competitive priced is BA V. (small range between 25-75 % Quartile)  
 
 Lets dig deeper into dataset to extract all the information. Lets look at price distributions within the district based on the number of beds. 
 
@@ -250,7 +262,7 @@ df_ads %>%
 
 The transformation reveals: 
 
-* Price increases by number of bedrooms (exeption: BA V prices for 2 & 3 bedroom)
+* Price increases by number of bedrooms (exception: BA V prices for 2 & 3 bedroom)
 * Some of the ranges are very wide. Big differences occur within districts as well. 
 * 4x bedroom flat in BA I cost on average (10 ^ 5.5 = ~400.000 EUR)
   
@@ -273,9 +285,9 @@ df_ads %>%
 
 ```
 
-The chart above revelas that the flat prices are in direct relationship with the flat area. This is to be expected. Also Bratislava IV looks clustered around the model line - suggesting stronger relationship in the market. Is this a mere coincidence or hidden insight? 
+The chart above shows that the flat prices and flat are are in linear relationship. This is to be expected. Also Bratislava IV looks clustered around the model line - suggesting stronger relationship in the market. Is this a mere coincidence or hidden insight? 
 
-Next, lets fit a linear model using data at we assembled so far. We  predict the price for the appartmetn using the traditional set of variables data scientists usually have at hand (mostly appartment metric and basic location variables)
+Next, lets fit a linear model using data at we assembled so far. We predict the price for the apartment using the traditional set of variables data scientists usually have at hand (mostly apartment metric and basic location variables)
 
 ```{r traditional model}
 
@@ -306,7 +318,7 @@ library(recipes)
 model_recipe <- recipe(price ~ .  , data = df_train ) %>% 
                 step_other(street, threshold = .0125) %>% 
                 step_dummy(no_of_bedrooms, district, street)  %>%        # convert string of factors into columns with 0,1
-                step_log(price, base = 10) %>%                  # log-transformation to normalize
+                step_log(price, base = 10) %>%                  # log-transformation to normalise
                 step_BoxCox(area)  # find suitable transformation for area var
                 
 
@@ -360,20 +372,20 @@ The results shows that the regression Rsquared is around 0.66. This means around
 
 ## Adding alternative data sources
 
-The analysis so far used only several variables to analyse price of appartments in Bratislava. Compared to other datasets this is low. Kaggle competitions usually have dozens of metrics to build model. This metrics are usually covering data like: floor number, date of completition or fit-out quality. This additional data will ultimatively lead to more accurate model. Since we dont have such informations we look to **alternative data sources** to augment our database with non-standart metrics. Our thesys revolves around old real estate saying: **Location,Location,Location**.
+The analysis so far used only several variables to analyse price of apartments in Bratislava. Compared to other datasets this is low. Kaggle competitions usually have dozens of metrics to build model. This metrics are usually covering data like: floor number, construction date or fit-out quality. This additional data will ultimately lead to more accurate model. Since we dont have such informations we look to **alternative data sources** to augment our database with non-standard metrics. Our thesys revolves around old real estate saying: **Location,Location,Location**.
 
 In the following chapter we will:
 
 * source open-street-map data  
 * use location features to enrich the database 
-* calculate distance from appartments to location features 
+* calculate distance from apartments to location features 
 * use the results in the predictive model  
 
 ### Source the data using Open-Street-Map
 
-The geospatial databases are a great source of information. The two major sources are **Google Maps API** or the open-source option **Open-street Map API**. The option from google supports location feature extraction, but it cost money to retrive thousends of records. 
+The geospatial databases are a great source of information. The two major sources are **Google Maps API** or the open-source option **Open-street Map API**. The option from google supports location feature extraction, but it cost money to retrieve thousands of records. 
 
-First step is to enrich our database with geospatial data (longitute, latitude). For this purposes we will use the street adress and city information. Our dataset contains the street name and flats are located in Bratislava.   
+First step is to enrich our database with geospatial data (longitude, latitude). For this purposes we will use the street address and city information. Our dataset contains the street name and flats are located in Bratislava.   
 
 ```{r add gps coordinate to the streets,eval=F}
 library(ggmap)
@@ -447,7 +459,7 @@ The former database can be charted using the longitude and latitude information.
 * Hurbanovo námestie street is displaying highest price at 6249 € per sq m
 * The lowest price are recorded at street Vlčie Hrdlo, Čárskeho
 
-### Attach the dataset to the appartment database
+### Attach the dataset to the apartment database
 
 Now, lets look at the location features in the Bratislava. 
 
