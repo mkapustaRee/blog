@@ -319,8 +319,7 @@ cv_splits <- vfold_cv(df_train, v = 10, strata = "price")
 library(recipes)
 
 model_recipe <- recipe(price ~ . - id, data = df_train ) %>% 
-                step_other(street, threshold = .05) %>% 
-                step_interact( ~ starts_with("district"):area) %>% 
+                step_other(street, threshold = .0125) %>% 
                 step_dummy(street, district, no_of_bedrooms)  %>%      
                 step_log(price, base = 10) %>%                         
                 step_BoxCox(area) 
@@ -382,7 +381,7 @@ The code above is broadly doing following steps:
 * recipe step 3: log transformation of price
 * recipe step 4: Box-Cox transformation of area variable
 
-After splitting the dataset and performing The results shows that the regression Rsquared is around **0.66**. This means around 66% of the price variance can be explained using the variables at hand. 
+After splitting the dataset and performing The results shows that the regression Rsquared is around **0.63**. This means around 66% of the price variance can be explained using the variables at hand. 
 
 The detailed breakdown of the statistical model can be seen here:
 
@@ -481,4 +480,4 @@ df_leaf %>%
 
 ## Further work and final considerations
 
-In summary, we have successfully scraped and analysed residential property market in Bratislava. With ca 2.000 ads we found linear model that can explain ca 66% of the price variance. For real world application this result is too weak. The problem needs more advanced statistical models and possibly more data (distance to city center, number of transportation options. etc) to drive the accuracy even higher. 
+In summary, we have successfully scraped and analysed residential property market in Bratislava. With ca 2.000 ads we found linear model that can explain ca 63% of the price variance. For real world application this result is too weak. The problem needs more advanced statistical models and possibly more data (distance to city center, number of transportation options. etc) to drive the accuracy even higher. 
