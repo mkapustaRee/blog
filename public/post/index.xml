@@ -14,12 +14,12 @@
     
     
     <item>
-      <title>Predicting residential property prices in Bratislava</title>
+      <title>Predicting residential property prices in Bratislava using recipes - Linear regression (part I)</title>
       <link>/post/forecasting_house_prices/</link>
       <pubDate>Tue, 23 Oct 2018 21:13:14 -0500</pubDate>
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/post/forecasting_house_prices/</guid>
-      <description>The goal of the post In this blogpost, I will be scraping data from property listing website in order to access real world data.</description>
+      <description>The goal of the post In this blogpost, i will be predicting the residential prices in the city of Bratislava (Slovakian capital). In order to access real world data I will be scraping data from property listing website.</description>
     </item>
     
     <item>

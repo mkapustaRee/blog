@@ -68,6 +68,24 @@
     </item>
     
     <item>
+      <title>Recipes</title>
+      <link>/tags/recipes/</link>
+      <pubDate>Tue, 23 Oct 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/recipes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rsample</title>
+      <link>/tags/rsample/</link>
+      <pubDate>Tue, 23 Oct 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/rsample/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tidyverse</title>
       <link>/tags/tidyverse/</link>
       <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
