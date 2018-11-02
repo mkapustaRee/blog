@@ -126,7 +126,7 @@
 
 <div id="the-goal-of-the-post" class="section level2">
 <h2>The goal of the post</h2>
-<p>In this blogpost, i will be predicting the residential prices in the city of Bratislava (Slovakian capital). In order to access real world data I will be scraping data from property listing website. After scraping and data cleaning steps, I will build a predictive model that can predict house prices.</p>
+<p>In this blogpost, i will be predicting the residential prices in the city of Bratislava (Slovakian capital). In order to access real world data I will be scraping data from property listing website. After scraping and data cleaning steps, I will build a linear model that can predict house prices.</p>
 </div>
 <div id="acquiring-the-real-world-data" class="section level2">
 <h2>Acquiring the real world data</h2>
@@ -513,7 +513,7 @@ map_df(cv_splits$pred, metrics, truth = price, estimate = .fitted) %&gt;%
 <li>recipe step 3: log transformation of price</li>
 <li>recipe step 4: Box-Cox transformation of area variable</li>
 </ul>
-<p>After splitting the dataset and performing The results shows that the regression Rsquared is around <strong>0.63</strong>. This means around 66% of the price variance can be explained using the variables at hand.</p>
+<p>After splitting the dataset and performing The results shows that the regression Rsquared is around <strong>0.63</strong>. This means around 63% of the price variance can be explained using the variables at hand.</p>
 <p>The detailed breakdown of the statistical model can be seen here:</p>
 <pre class="r"><code>        cv_splits$fits[[1]] %&gt;% summary()</code></pre>
 <pre><code>## 
