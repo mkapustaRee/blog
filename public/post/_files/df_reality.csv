@@ -1,0 +1,2198 @@
+balcony,price,no_of_bedrooms,basement,street,size,elevator,district,floor,material,status
+Yes,205000,2,Yes,Mýtna 44,70,Yes,stare_mesto,other,brick,refurbished
+Yes,334017,4,Yes,Radlinského 45,111,Yes,stare_mesto,other,brick,refurbished
+Yes,245000,3,No,Mickiewiczova,102,Yes,stare_mesto,other,brick,refurbished
+No,4e+05,3,No,Živnostenská,127,No,stare_mesto,other,brick,refurbished
+No,310000,2,No,Klobučnícka,98,No,stare_mesto,other,brick,refurbished
+No,69000,1,Yes,Latorická,36,No,podunajske_biskupice,bottom,panel,refurbished
+No,63600,1,Yes,Čiližská,43,Yes,vrakuna,other,panel,refurbished
+No,289000,3,Yes,Cesta na Kamzík,175,Yes,nove_mesto,bottom,brick,refurbished
+No,230000,4,No,Špitálska,100,No,stare_mesto,rest,brick,refurbished
+No,91000,2,No,Poľnohospodárska,61,No,vrakuna,other,brick,refurbished
+No,148000,4,Yes,Bošániho,74,Yes,dubravka,other,panel,refurbished
+Yes,380750.4,3,No,Skalná,106,Yes,stare_mesto,other,brick,refurbished
+Yes,260000,3,No,Mickiewiczova,101,Yes,stare_mesto,other,brick,refurbished
+Yes,260000,3,No,Mickiewiczova,102,Yes,stare_mesto,other,brick,refurbished
+Yes,165000,2,No,Tomášikova,76,Yes,ruzinov,other,brick,refurbished
+No,275000,3,No,Mickiewiczova,107,Yes,stare_mesto,other,brick,refurbished
+No,165000,2,No,Tomášikova,76,Yes,ruzinov,other,brick,refurbished
+No,310000,4,No,Mickiewiczova,106,Yes,stare_mesto,other,brick,refurbished
+Yes,255000,4,No,Vinohrady,108,Yes,nove_mesto,rest,brick,refurbished
+Yes,360000,4,Yes,Paulínyho,137,Yes,stare_mesto,other,brick,old
+No,155000,3,Yes,Legionárska,77,No,nove_mesto,top,brick,old
+Yes,209900,3,No,Na Križovatkách,90,Yes,ruzinov,other,brick,refurbished
+Yes,179000,2,Yes,Sedmokráskova 7,70,Yes,ruzinov,other,brick,refurbished
+Yes,107990,2,No,Majerská,66,No,vrakuna,top,brick,refurbished
+Yes,270000,3,Yes,Špitálska,110,Yes,stare_mesto,other,brick,refurbished
+Yes,85000,2,Yes,Mesačná,46,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,118000,1,Yes,Kresánkova,57,Yes,karlova_ves,other,brick,refurbished
+Yes,4e+05,3,Yes,Živnostenská,130,Yes,stare_mesto,other,brick,refurbished
+No,350000,3,No,Nám. SNP,156,Yes,stare_mesto,top,brick,refurbished
+No,71900,1,Yes,Bieloruská,34,Yes,podunajske_biskupice,bottom,panel,refurbished
+Yes,134900,2,Yes,Kyjevská 3,56,Yes,nove_mesto,other,brick,refurbished
+Yes,570000,4,Yes,Strážna,158,No,nove_mesto,top,brick,refurbished
+Yes,159900,3,Yes,Nové mesto,79,Yes,nove_mesto,other,brick,refurbished
+Yes,149000,3,Yes,Hubeného 52,80,No,raca,top,brick,refurbished
+No,257500,2,No,Štúrova,92,Yes,stare_mesto,other,brick,refurbished
+Yes,274807,3,Yes,Na pažiti,113,Yes,nove_mesto,other,brick,refurbished
+No,324113,3,Yes,Na pažitit,172,Yes,nove_mesto,bottom,brick,refurbished
+Yes,305364,3,Yes,Na pažiti,115,Yes,nove_mesto,other,brick,refurbished
+Yes,310000,3,No,Podjavorinskej,160,No,stare_mesto,top,brick,refurbished
+Yes,102000,4,Yes,Kríková,84,Yes,vrakuna,bottom,panel,refurbished
+No,140724,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,240000,3,Yes,Klincová,87,Yes,ruzinov,rest,brick,refurbished
+Yes,104000,3,No,Korytnická,72,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,99000,2,Yes,Planét,55,No,ruzinov,other,brick,partial_refurbishment
+Yes,117500,2,No,Sibírska,60,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,117500,2,Yes,Sibírska,57,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,222000,3,Yes,Mraziarenská,87,Yes,ruzinov,other,brick,refurbished
+Yes,117500,2,Yes,Sibírska,56,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,389990,4,No,Špitálska,169,Yes,stare_mesto,top,brick,refurbished
+Yes,207652,2,No,Podjavorinskej,60,Yes,stare_mesto,other,brick,refurbished
+Yes,457899,4,No,Podjavorinskej,135,Yes,stare_mesto,other,brick,refurbished
+Yes,452052,3,No,Podjavorinskej,133,Yes,stare_mesto,other,brick,refurbished
+No,142000,2,No,Budatínska,77,Yes,petrzalka,other,panel,refurbished
+Yes,122000,2,Yes,Sibírska,52,No,nove_mesto,bottom,brick,partial_refurbishment
+Yes,117000,1,No,Lužná,36,Yes,petrzalka,other,panel,refurbished
+Yes,345000,3,Yes,Cesta na kamzík,116,Yes,nove_mesto,bottom,brick,refurbished
+Yes,145000,3,Yes,Kazanská,75,Yes,podunajske_biskupice,other,brick,refurbished
+Yes,120000,2,Yes,Sibírska,56,Yes,nove_mesto,bottom,panel,partial_refurbishment
+Yes,129000,2,Yes,Rusovská cesta,53,Yes,petrzalka,other,other,refurbished
+Yes,189100,3,Yes,Rusovská cesta,83,Yes,petrzalka,other,other,refurbished
+Yes,195000,4,Yes,Rusovská cesta,86,Yes,petrzalka,other,other,refurbished
+Yes,311100,4,Yes,Rusovská cesta,106,Yes,petrzalka,top,other,refurbished
+No,207652,2,No,Podjavorinskej,60,Yes,stare_mesto,other,brick,refurbished
+Yes,457899,4,No,Podjavorinskej,135,Yes,stare_mesto,other,brick,refurbished
+Yes,119900,2,Yes,Pri Vápenickom potoku,75,Yes,zahorska_bistrica,other,brick,refurbished
+Yes,305000,4,No,Trnavská cesta,176,Yes,nove_mesto,other,brick,refurbished
+No,215711,2,No,Na pažiti,87,Yes,nove_mesto,other,brick,refurbished
+No,299000,3,No,Na pažiti,113,Yes,nove_mesto,bottom,brick,refurbished
+Yes,229500,3,No,Na pažiti,93,Yes,nove_mesto,other,brick,refurbished
+No,196999,4,Yes,Podhorského,110,No,stare_mesto,top,brick,refurbished
+Yes,101000,1,No,Pečnianska,55,Yes,petrzalka,other,panel,refurbished
+Yes,36900,1.5,No,Stavbárska,40,Yes,vrakuna,other,brick,partial_refurbishment
+Yes,132000,3,No,Budatínska,70,Yes,petrzalka,bottom,panel,refurbished
+Yes,124999,3,No,Holíčska,68,Yes,petrzalka,other,panel,refurbished
+Yes,165000,3,Yes,Karadžičova,101,Yes,stare_mesto,bottom,brick,refurbished
+Yes,105000,1.5,Yes,Pečnianska,53,Yes,petrzalka,other,panel,refurbished
+No,148000,2,No,Floglova,51,Yes,stare_mesto,bottom,brick,old
+Yes,250000,4,No,Dunajská,132,No,stare_mesto,other,brick,refurbished
+No,385000,3,No,Žltá,100,Yes,petrzalka,top,other,refurbished
+No,385000,4,No,Žltá,100,Yes,petrzalka,top,other,refurbished
+Yes,75384.23,1,No,Uzbecká,39,Yes,podunajske_biskupice,rest,base,refurbished
+Yes,104139.36,2,No,Uzbecká,56,Yes,podunajske_biskupice,rest,base,refurbished
+Yes,229278.35,4,No,Uzbecká,134,Yes,podunajske_biskupice,rest,base,refurbished
+Yes,251160,3,Yes,Landererova,92,Yes,stare_mesto,other,other,refurbished
+No,74900,1,Yes,Hanulova,38,Yes,dubravka,other,panel,refurbished
+No,97000,2,Yes,Medveďovej,53,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,470000,4,No,Svetlá,202,Yes,stare_mesto,top,brick,refurbished
+Yes,250000,2,Yes,Staré Grunty,122,Yes,karlova_ves,top,brick,refurbished
+Yes,86000,1,No,Žltá,33,Yes,petrzalka,other,brick,refurbished
+Yes,73300,2,Yes,Odborárska 3,34,Yes,nove_mesto,other,brick,refurbished
+Yes,126600,3,Yes,Odborárska 3,64,Yes,nove_mesto,other,brick,refurbished
+Yes,116000,3,No,Gessayova,71,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,275000,3,No,Mickiewiczova,102,Yes,stare_mesto,other,brick,refurbished
+Yes,263000,3,No,Ľanová,100,No,ruzinov,top,brick,refurbished
+Yes,255000,4,Yes,Matejkova,122,Yes,karlova_ves,other,brick,refurbished
+Yes,117500,2,Yes,Sibírska,56,No,nove_mesto,bottom,panel,partial_refurbishment
+Yes,360000,4,Yes,Tupého 25,144,Yes,nove_mesto,bottom,brick,refurbished
+Yes,257000,4,Yes,Klincová,111,Yes,ruzinov,top,base,refurbished
+No,68000,1,Yes,Homolova,38,Yes,dubravka,other,panel,old
+Yes,129000,3,Yes,Jána Poničana,74,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+No,309900,4,Yes,Pri Vápenickom potoku,137,Yes,zahorska_bistrica,top,brick,refurbished
+No,95000,1,Yes,Píniová,40,No,vrakuna,bottom,brick,refurbished
+Yes,132000,2,No,Kadnárova,58,No,raca,other,brick,refurbished
+Yes,125000,3,No,Vyšehradská,74,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,122000,3,Yes,Vyšehradská,74,Yes,petrzalka,other,panel,partial_refurbishment
+No,99800,2,No,Tomanova,47,No,vajnory,top,brick,refurbished
+Yes,133700,2,Yes,Kadnárova,60,No,raca,other,brick,refurbished
+Yes,125000,3,Yes,Haburská,64,Yes,ruzinov,bottom,panel,partial_refurbishment
+No,349000,3,No,Dunajská,157,Yes,stare_mesto,top,brick,refurbished
+No,173000,3,Yes,Ulica 29. augusta,70,No,stare_mesto,bottom,brick,refurbished
+No,396000,3,Yes,Paulínyho,141,Yes,stare_mesto,top,brick,refurbished
+Yes,132000,2,Yes,Kadnárová,60,No,raca,other,brick,refurbished
+Yes,120996.6,4,Yes,Panónska cesta,60,Yes,petrzalka,other,brick,refurbished
+No,105000,1,Yes,Mozartova,38,Yes,stare_mesto,other,panel,partial_refurbishment
+No,91900,3,No,Šancová,59,No,stare_mesto,rest,panel,refurbished
+Yes,338200,3,No,Búdková,109,Yes,stare_mesto,other,brick,refurbished
+Yes,232800,2,No,Búdková,69,Yes,stare_mesto,other,brick,refurbished
+Yes,140000,2,Yes,Kadnárova,60,No,raca,rest,brick,refurbished
+Yes,99900,1.5,Yes,Vavilovova 26,53,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,1e+05,1,Yes,Nejedlého,37,Yes,dubravka,other,panel,refurbished
+Yes,182098.8,2,No,Búdková,54,Yes,stare_mesto,bottom,brick,refurbished
+Yes,193800,3,Yes,Mierová,81,Yes,ruzinov,other,brick,refurbished
+Yes,198800,3,Yes,Mierová,81,Yes,ruzinov,other,brick,refurbished
+Yes,215800,3,Yes,Mierová,99,Yes,ruzinov,other,brick,refurbished
+Yes,244000,3,Yes,Mierová,82,Yes,ruzinov,other,brick,refurbished
+Yes,328000,4,Yes,Mierová,184,Yes,ruzinov,top,brick,refurbished
+Yes,107900,2,Yes,Rovníková,44,Yes,ruzinov,bottom,panel,refurbished
+No,280000,4,No,Radlinského,211,No,stare_mesto,top,brick,refurbished
+Yes,122000,3,Yes,Lachova,79,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,235000,3,No,Kozia,71,No,stare_mesto,rest,brick,refurbished
+Yes,113000,2,No,Martinčekova,50,Yes,ruzinov,other,panel,partial_refurbishment
+No,119000,2,No,Štefunkova,68,Yes,ruzinov,rest,panel,old
+No,128000,2,No,Hollého,38,Yes,stare_mesto,other,brick,refurbished
+No,91000,2,No,Čiližská,45,No,vrakuna,other,panel,refurbished
+Yes,380000,3,No,Tupého,123,Yes,nove_mesto,other,brick,refurbished
+Yes,131000,3,No,Rovniankova,68,Yes,petrzalka,other,panel,refurbished
+No,265000,2,No,Klariská,100,No,stare_mesto,top,brick,refurbished
+Yes,125000,4,Yes,Homolova,78,No,dubravka,rest,brick,partial_refurbishment
+No,160000,3,Yes,Ulica 29. augusta 11,70,No,stare_mesto,bottom,brick,partial_refurbishment
+Yes,299000,3,Yes,Račianska,137,No,nove_mesto,rest,brick,refurbished
+Yes,99900,3,Yes,Podunajské Biskupice,98,Yes,podunajske_biskupice,other,brick,refurbished
+No,102000,2,Yes,Alžbety Gwerkovej,53,Yes,petrzalka,other,panel,refurbished
+Yes,99900,3,Yes,Podunajské Biskupice,98,Yes,podunajske_biskupice,other,brick,refurbished
+Yes,110000,3,Yes,Petržalka,68,Yes,petrzalka,rest,panel,old
+Yes,120000,2,Yes,Sibírska,51,Yes,nove_mesto,rest,panel,partial_refurbishment
+Yes,112900,2,No,Podunajská,51,Yes,podunajske_biskupice,other,brick,refurbished
+No,311309,3,Yes,Sokolská,89,Yes,stare_mesto,other,base,refurbished
+Yes,345000,3,Yes,Strážna 9,109,Yes,nove_mesto,bottom,brick,refurbished
+No,159000,3,Yes,Ulica 29. augusta,70,No,stare_mesto,rest,brick,refurbished
+Yes,81299,1,No,Pekná cesta,32,Yes,raca,other,brick,refurbished
+Yes,90499,1,No,Pekná cesta,36,Yes,raca,other,brick,refurbished
+No,296542,3,Yes,Sokolská,89,Yes,stare_mesto,other,base,refurbished
+No,295469,3,Yes,Sokolská,89,No,stare_mesto,other,base,refurbished
+Yes,121320,3,No,Nejedého,61,Yes,dubravka,bottom,brick,refurbished
+Yes,125000,3,Yes,Studenohorská,77,Yes,lamac,bottom,panel,partial_refurbishment
+Yes,134000,3,No,Holíčska,70,Yes,petrzalka,bottom,panel,refurbished
+Yes,152000,2,No,Údernícka,58,Yes,petrzalka,other,brick,refurbished
+No,85000,1,Yes,Saratovská,41,Yes,dubravka,bottom,panel,refurbished
+Yes,88000,1,Yes,Tomášikova,30,Yes,nove_mesto,rest,other,refurbished
+Yes,121400,2,Yes,Tomášikova,45,Yes,nove_mesto,rest,other,refurbished
+Yes,184600,3,Yes,Tomášikova,65,Yes,nove_mesto,rest,other,refurbished
+Yes,301250,4,Yes,Tomášikova,107,Yes,nove_mesto,rest,other,refurbished
+Yes,135000,3,Yes,Holíčska,66,Yes,petrzalka,bottom,panel,partial_refurbishment
+No,155900,3,No,Budovateľská,62,No,ruzinov,top,brick,refurbished
+No,155900,3,No,Budovateľská,62,No,ruzinov,top,brick,refurbished
+Yes,135000,3,Yes,Mlynarovičova,72,Yes,petrzalka,other,panel,refurbished
+Yes,139000,3,No,Vavilovova,74,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,480000,3,No,Boženy Němcovej,153,Yes,stare_mesto,other,brick,refurbished
+No,130000,3,No,Exnárova,72,Yes,ruzinov,rest,panel,refurbished
+Yes,214000,4,Yes,Slávičie údolie,106,Yes,stare_mesto,other,brick,old
+No,182000,2,No,Klobučnícka,55,Yes,stare_mesto,other,brick,refurbished
+No,88000,2,Yes,Studenohorská,43,Yes,lamac,other,panel,partial_refurbishment
+No,133000,3,No,Hrachová,60,No,ruzinov,rest,brick,refurbished
+Yes,549000,2,Yes,Pribinova,71,Yes,stare_mesto,other,other,refurbished
+No,98500,3,No,Korytnická,72,Yes,podunajske_biskupice,other,panel,old
+No,88000,1,No,Bohrova,37,Yes,petrzalka,other,panel,refurbished
+Yes,299500,3,No,Detvianska,145,No,raca,top,brick,refurbished
+Yes,125000,1,Yes,Sklenárova,40,Yes,ruzinov,bottom,panel,refurbished
+Yes,98000,3,Yes,Korytnická,69,Yes,podunajske_biskupice,other,panel,old
+No,183000,3,Yes,Koceľova,77,Yes,ruzinov,other,brick,refurbished
+Yes,274000,4,Yes,Svätoplukova,105,No,ruzinov,other,brick,refurbished
+Yes,305000,4,No,Trenčianska,200,No,ruzinov,top,brick,refurbished
+Yes,128200,3,Yes,Bebravská,74,Yes,vrakuna,bottom,brick,refurbished
+Yes,135000,3,Yes,Jasovská,84,Yes,petrzalka,top,panel,refurbished
+Yes,148000,4,Yes,Haanova 3,87,Yes,petrzalka,bottom,panel,partial_refurbishment
+Yes,142000,3,Yes,Budatínska,68,Yes,petrzalka,other,panel,refurbished
+Yes,156000,2,Yes,Kresánkova,88,Yes,karlova_ves,other,brick,refurbished
+Yes,123000,2,Yes,Drobného,67,Yes,dubravka,top,panel,refurbished
+Yes,125000,2,Yes,Družstevná,59,Yes,nove_mesto,bottom,brick,old
+Yes,328000,4,Yes,Rozvodná 9a,140,Yes,nove_mesto,other,brick,refurbished
+Yes,268000,4,No,Trnavská cesta,122,Yes,ruzinov,other,brick,partial_refurbishment
+No,145000,3,Yes,Stromova 10,63,Yes,nove_mesto,bottom,panel,refurbished
+No,338000,3,Yes,Jakubovo námestie,126,Yes,stare_mesto,other,brick,refurbished
+Yes,165500,1,Yes,Židovská,68,Yes,stare_mesto,bottom,brick,refurbished
+No,579000,4,Yes,Strážna,164,No,nove_mesto,other,brick,refurbished
+Yes,390000,2,Yes,Pribinova,93,Yes,stare_mesto,other,brick,refurbished
+Yes,405000,2,No,Pribinova,81,Yes,stare_mesto,other,brick,refurbished
+Yes,138000,3,Yes,Budatínska 15,73,Yes,petrzalka,other,panel,refurbished
+Yes,107000,3,No,Hronská,67,Yes,podunajske_biskupice,other,panel,old
+No,155000,2,Yes,Dobrovského,55,No,stare_mesto,top,brick,partial_refurbishment
+Yes,305000,4,No,Trenčianska,203,No,ruzinov,top,panel,refurbished
+Yes,92000,3,Yes,Bebravska,67,Yes,vrakuna,rest,panel,partial_refurbishment
+Yes,111000,2,No,Rusovská cesta,40,Yes,petrzalka,other,brick,refurbished
+Yes,134000,3,Yes,Furdekova,72,Yes,petrzalka,bottom,panel,partial_refurbishment
+No,195000,3,Yes,Laurinská,60,No,stare_mesto,other,brick,refurbished
+No,151000,4,Yes,Planét 9,88,No,ruzinov,bottom,brick,refurbished
+Yes,145000,4,Yes,Karpatské námestie,87,Yes,raca,other,brick,old
+No,73500,1,Yes,Drobného,33,Yes,dubravka,other,other,refurbished
+Yes,170000,1,No,Hviezdoslavovo námestie,60,No,stare_mesto,top,brick,old
+No,133000,3,Yes,Arménska,92,No,ruzinov,other,brick,refurbished
+Yes,250000,4,No,Trenčianska,120,No,ruzinov,other,brick,refurbished
+No,119500,2,No,Poloreckého,55,Yes,petrzalka,other,panel,partial_refurbishment
+No,195000,3,No,Laurinská,60,No,stare_mesto,other,brick,partial_refurbishment
+Yes,112900,2,No,Podunajská,51,Yes,podunajske_biskupice,other,brick,refurbished
+No,95000,4,Yes,Hlbinná,40,No,podunajske_biskupice,rest,brick,refurbished
+Yes,549000,4,Yes,Neuvedená,246,Yes,stare_mesto,top,brick,refurbished
+Yes,134999.72,3,Yes,Landauova,68,Yes,dubravka,bottom,panel,refurbished
+No,205000,2,No,Svoradova,65,Yes,stare_mesto,other,brick,refurbished
+No,76000,1,No,Hlbinná,36,No,podunajske_biskupice,bottom,brick,refurbished
+Yes,115200,2,Yes,Martinčekova,53,Yes,ruzinov,rest,panel,refurbished
+No,370000,3,No,Námestie slobody,108,Yes,stare_mesto,other,brick,refurbished
+Yes,100900,2,Yes,Na Piesku,54,Yes,ruzinov,other,brick,refurbished
+No,359000,2,Yes,Pribinova,90,Yes,stare_mesto,other,other,refurbished
+Yes,80890,1,No,Bajkalská,32,Yes,ruzinov,other,brick,refurbished
+Yes,119000,2,Yes,Sibírska,54,Yes,nove_mesto,bottom,panel,partial_refurbishment
+No,125000,2,Yes,Budyšínska,45,No,nove_mesto,other,brick,old
+Yes,155000,3,Yes,Višňová 2,65,No,nove_mesto,top,brick,refurbished
+Yes,122000,3,Yes,Matejkova,62,Yes,karlova_ves,top,panel,refurbished
+Yes,260000,3,No,Mickiewiczova,105,Yes,stare_mesto,other,brick,refurbished
+Yes,387965,4,Yes,Sokolská,108,Yes,stare_mesto,other,base,refurbished
+Yes,115000,2,Yes,Martinčekova,45,Yes,ruzinov,other,panel,refurbished
+Yes,132000,2,No,Kaštieľska,48,Yes,ruzinov,other,brick,refurbished
+No,160000,2,Yes,Dobrovského 9,55,No,stare_mesto,top,brick,partial_refurbishment
+Yes,135000,2,No,Exnárova,55,Yes,ruzinov,other,panel,refurbished
+Yes,131000,3,Yes,Jasovská,82,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,285000,3,Yes,Špitálska 49,86,Yes,stare_mesto,other,brick,refurbished
+Yes,133000,3,No,Jasovská,76,Yes,petrzalka,other,panel,refurbished
+Yes,131000,3,No,Jasovská,76,Yes,petrzalka,other,panel,partial_refurbishment
+No,138000,2,No,Ľadová,65,No,stare_mesto,rest,brick,refurbished
+Yes,419990,4,Yes,Haanova,147,Yes,petrzalka,top,brick,refurbished
+Yes,132600,3,Yes,Jasovská,76,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,287520,3,Yes,Drotárska cesta,80,No,stare_mesto,other,brick,refurbished
+Yes,121900,3,No,Jána Smreka,73,Yes,devinska_nova_ves,bottom,panel,refurbished
+Yes,178192,2,Yes,Pod Vachmajstrom,59,Yes,nove_mesto,bottom,other,refurbished
+Yes,261178,3,Yes,Pod Vachmajstrom,78,Yes,nove_mesto,bottom,other,refurbished
+Yes,327201,4,Yes,Pod Vachmajstrom,108,Yes,nove_mesto,other,other,refurbished
+Yes,193790,2,Yes,Pod Vachmajstrom,64,Yes,nove_mesto,bottom,other,refurbished
+Yes,285695,3,Yes,Pod Vachmajstrom,83,Yes,nove_mesto,other,other,refurbished
+Yes,329791,4,Yes,Pod Vachmajstrom,119,Yes,nove_mesto,bottom,other,refurbished
+Yes,117900,3,Yes,Púpavová,67,Yes,karlova_ves,bottom,panel,partial_refurbishment
+No,99000,3,No,Čiernovodská,66,Yes,vrakuna,bottom,panel,partial_refurbishment
+Yes,334373,4,Yes,Pod Vachmajstrom,110,Yes,nove_mesto,bottom,other,refurbished
+Yes,405353,4,Yes,Pod Vachmajstrom,140,Yes,nove_mesto,bottom,other,refurbished
+Yes,198238,2,Yes,Pod Vachmajstrom,64,Yes,nove_mesto,other,other,refurbished
+Yes,342046,4,Yes,Strážna,110,Yes,nove_mesto,other,other,refurbished
+Yes,389011,4,Yes,Pod Vachmajstrom,106,Yes,nove_mesto,bottom,other,refurbished
+Yes,297087,3,Yes,Pod Vachmajstrom,83,Yes,nove_mesto,bottom,other,refurbished
+Yes,301085,3,Yes,Pod Vachmajstrom,90,Yes,nove_mesto,bottom,other,refurbished
+Yes,362620,3,Yes,Pod Vachmajstrom,98,Yes,nove_mesto,bottom,other,refurbished
+Yes,282807,2,Yes,Pod Vachmajstrom,73,Yes,nove_mesto,bottom,other,refurbished
+Yes,350444,3,Yes,Pod Vachmajstrom,98,Yes,nove_mesto,other,base,refurbished
+No,109900,1,Yes,Karadžičova,49,No,stare_mesto,other,brick,old
+Yes,220000,4,No,Janka Alexyho,96,Yes,dubravka,other,brick,refurbished
+Yes,315000,4,Yes,Lehockého,106,No,stare_mesto,other,brick,refurbished
+No,104400,1,No,Kukučínova,45,No,nove_mesto,bottom,panel,partial_refurbishment
+No,214600,2,No,Bajkalská,67,Yes,nove_mesto,other,brick,refurbished
+Yes,59670,1,Yes,Bystrická,28,Yes,devinska_nova_ves,rest,other,refurbished
+Yes,78030,2,Yes,Bystrická,40,Yes,devinska_nova_ves,rest,other,refurbished
+Yes,118830,3,Yes,Bystrická,66,Yes,devinska_nova_ves,rest,other,refurbished
+Yes,106000,3,No,Hornádska,70,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,140000,3,Yes,Exnárova,68,No,ruzinov,top,brick,partial_refurbishment
+Yes,39900,1.5,No,Stavbárska,40,Yes,vrakuna,other,panel,partial_refurbishment
+No,339900,3,Yes,Drotárska cesta,203,Yes,stare_mesto,top,brick,refurbished
+Yes,161000,3,Yes,Vysoká,68,No,stare_mesto,bottom,brick,partial_refurbishment
+No,124700,2,Yes,Mozartova,45,Yes,stare_mesto,other,panel,refurbished
+No,410000,4,No,Lopúchová,150,Yes,nove_mesto,other,brick,refurbished
+No,85500,2,Yes,Podunajská,34,Yes,vrakuna,bottom,brick,refurbished
+Yes,160000,2,No,Béžova,67,Yes,petrzalka,top,brick,refurbished
+Yes,281520,3,Yes,Drotárska cesta,79,Yes,stare_mesto,other,brick,refurbished
+Yes,126000,3,Yes,Vígľašská,70,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,99000,2,No,Zaluhy,43,Yes,dubravka,other,panel,old
+No,259900,3,No,Fraňa Kráľa,177,No,stare_mesto,bottom,brick,refurbished
+Yes,215000,3,Yes,Slovanské nábrežie,100,No,devin,top,brick,refurbished
+Yes,95000,1,No,Nobelova,39,Yes,nove_mesto,other,brick,refurbished
+Yes,97000,2,Yes,Bieloruská,52,Yes,podunajske_biskupice,rest,panel,refurbished
+No,85000,2,No,Podunajská,36,No,podunajske_biskupice,other,brick,refurbished
+No,104000,2,No,Pri Šajbách,62,No,raca,other,brick,refurbished
+Yes,110000,2,Yes,Bebravská,65,Yes,vrakuna,bottom,other,partial_refurbishment
+No,182900,3,No,Šancová,83,Yes,stare_mesto,other,brick,refurbished
+Yes,135000,2,No,Exnárova,57,No,ruzinov,other,panel,refurbished
+Yes,340000,3,No,Záhradnícka,93,Yes,stare_mesto,other,brick,refurbished
+No,399000,4,Yes,Palisády,126,No,stare_mesto,bottom,brick,refurbished
+Yes,255000,3,No,Staré Grunty,84,Yes,karlova_ves,other,brick,refurbished
+Yes,116999,3,Yes,Bebravská,61,Yes,vrakuna,bottom,brick,refurbished
+No,77000,2,Yes,Latorická,47,No,podunajske_biskupice,top,brick,refurbished
+Yes,149900,3,Yes,Gallayova,66,Yes,dubravka,other,panel,refurbished
+Yes,99999,3,No,Rybničná 61/B,75,Yes,vajnory,other,panel,refurbished
+Yes,147900,2,No,Vajnorská,74,No,nove_mesto,other,brick,partial_refurbishment
+No,71700,1,Yes,Nobelova,28,Yes,nove_mesto,other,brick,refurbished
+No,109900,3,No,Rovniankova,76,No,petrzalka,bottom,panel,old
+No,131000,2,Yes,Budyšínska,45,No,nove_mesto,other,brick,old
+Yes,267000,3,Yes,Špitálska,78,Yes,stare_mesto,other,brick,refurbished
+Yes,99000,1.5,Yes,Topoľčianska,36,Yes,petrzalka,other,panel,refurbished
+Yes,127000,2,Yes,Hubeného,56,Yes,raca,bottom,brick,refurbished
+Yes,379990,4,No,Stromová,210,Yes,nove_mesto,top,brick,refurbished
+Yes,249990,3,No,Na pažiti,94,Yes,nove_mesto,other,brick,refurbished
+Yes,105000,3,No,Estónska,69,No,podunajske_biskupice,bottom,panel,partial_refurbishment
+Yes,86300,2,Yes,Údernícka,43,Yes,petrzalka,bottom,base,refurbished
+Yes,120251,3,Yes,Údernícka,60,Yes,petrzalka,bottom,base,refurbished
+Yes,96302,2,Yes,Údernícka,51,Yes,petrzalka,other,base,refurbished
+No,128000,2,Yes,neuvedená,55,Yes,nove_mesto,bottom,brick,refurbished
+No,65000,1,Yes,Bieloruská,31,Yes,podunajske_biskupice,top,panel,refurbished
+Yes,78000,1,No,Bujnákova,33,No,dubravka,other,panel,old
+No,130000,2,No,Hollého,38,Yes,stare_mesto,other,brick,refurbished
+No,130000,1.5,No,Hollého,38,Yes,stare_mesto,other,brick,refurbished
+No,113000,2,Yes,Čiližská,70,Yes,vrakuna,other,panel,refurbished
+Yes,299000,3,Yes,Jančova,97,No,stare_mesto,other,brick,refurbished
+Yes,164900,2,Yes,Martinčekova,73,Yes,ruzinov,other,brick,refurbished
+No,93000,3,No,Šancova,59,Yes,stare_mesto,other,brick,partial_refurbishment
+Yes,135000,3,Yes,Furdekova,71,Yes,petrzalka,other,panel,refurbished
+Yes,139900,3,Yes,Na Piesku,78,Yes,ruzinov,other,brick,refurbished
+Yes,100900,2,Yes,Na Piesku,54,Yes,ruzinov,other,brick,refurbished
+No,124000,2,No,Račianska,53,Yes,nove_mesto,bottom,brick,refurbished
+No,130000,2,No,Hollého,38,Yes,stare_mesto,other,brick,refurbished
+Yes,235000,3,No,Kadnárova,90,No,raca,other,brick,refurbished
+No,119990,2,No,Štefunkova,61,Yes,ruzinov,bottom,panel,refurbished
+No,364900,4,Yes,Drotárska cesta,217,Yes,stare_mesto,top,brick,refurbished
+Yes,84000,1,No,Pavla Horova,42,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,215000,3,Yes,Na Revíne,70,Yes,nove_mesto,other,brick,refurbished
+Yes,88000,1,Yes,Pavla Horova,38,Yes,devinska_nova_ves,other,panel,refurbished
+Yes,88000,1,Yes,Pavla Horova,39,Yes,devinska_nova_ves,other,panel,refurbished
+Yes,238000,3,Yes,Na Revíne,72,Yes,nove_mesto,other,brick,refurbished
+No,109000,2,Yes,Meteorová,43,Yes,ruzinov,other,panel,refurbished
+Yes,156000,2,No,Svätého Vincenta,70,Yes,ruzinov,bottom,brick,refurbished
+No,171600,3,No,Nákovná,69,No,podunajske_biskupice,other,brick,refurbished
+No,173000,3,No,Nákovná,70,No,podunajske_biskupice,rest,brick,refurbished
+Yes,238500,4,Yes,Potočná,214,No,raca,other,brick,refurbished
+No,95000,1,Yes,Vranovská,36,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,179900,2,No,Drieňová,73,Yes,ruzinov,other,other,refurbished
+Yes,133000,3,Yes,Pavla Horova,68,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,174000,4,Yes,Kadnárova,89,No,raca,other,brick,refurbished
+Yes,125000,2,Yes,Narcisova,55,Yes,ruzinov,rest,panel,refurbished
+Yes,149000,3,Yes,Kadnárova,73,No,raca,other,brick,refurbished
+No,125000,3,Yes,Exnárova,72,Yes,ruzinov,bottom,panel,refurbished
+Yes,118000,1.5,No,Vígľašská,49,Yes,petrzalka,other,panel,refurbished
+No,304600,4,No,Ďumbierska,123,No,nove_mesto,other,brick,refurbished
+No,203000,2,Yes,Zochova,76,No,stare_mesto,rest,brick,refurbished
+Yes,87500,1,No,Pavla Horova,38,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,90500,1,Yes,Pavla Horova,41,Yes,devinska_nova_ves,rest,panel,refurbished
+Yes,235000,3,Yes,Kadnárova,97,No,raca,other,brick,refurbished
+No,148900,2,Yes,Tabaková 10,64,No,stare_mesto,top,brick,partial_refurbishment
+Yes,163000,2,No,Dobrovskeho 4,70,No,stare_mesto,other,brick,refurbished
+No,106000,1,Yes,Jadrova 5,43,Yes,ruzinov,other,panel,refurbished
+No,101800,2,Yes,Nobelova,39,Yes,nove_mesto,other,panel,refurbished
+Yes,118000,2,No,Bujnákova,41,No,dubravka,other,other,partial_refurbishment
+Yes,120000,2,No,Bujnákova,41,No,dubravka,other,panel,partial_refurbishment
+No,85500,1,Yes,Ivana Bukovčana,40,Yes,devinska_nova_ves,other,brick,refurbished
+No,390000,2,Yes,Pribinova,98,Yes,stare_mesto,bottom,other,refurbished
+Yes,98540,1,No,Pri starej prachárni,36,Yes,nove_mesto,bottom,brick,refurbished
+Yes,110010,1,No,Pri starej prachárni,36,Yes,nove_mesto,other,brick,refurbished
+Yes,110010,1,No,Pri starej prachárni,36,Yes,nove_mesto,other,brick,refurbished
+Yes,111940,1,No,Pri starej prachárni,36,Yes,nove_mesto,other,brick,refurbished
+Yes,123605,2,No,Pri starej prachárni,40,Yes,nove_mesto,other,brick,refurbished
+Yes,136760,2,No,Pri starej prachárni,50,Yes,nove_mesto,bottom,brick,refurbished
+Yes,142020,2,No,Pri starej prachárni,50,Yes,nove_mesto,other,brick,refurbished
+Yes,142020,2,No,Pri starej prachárni,50,Yes,nove_mesto,other,brick,refurbished
+Yes,150080,2,No,Pri starej prachárni,51,Yes,nove_mesto,other,brick,refurbished
+Yes,150080,2,No,Pri starej prachárni,51,Yes,nove_mesto,other,brick,refurbished
+Yes,150080,2,No,Pri starej prachárni,51,Yes,stare_mesto,other,brick,refurbished
+Yes,152760,2,No,Pri starej prachárni,51,Yes,nove_mesto,other,brick,refurbished
+Yes,152760,2,No,Pri starej prachárni,51,Yes,nove_mesto,other,brick,refurbished
+Yes,152760,2,No,Pri starej prachárni,51,Yes,nove_mesto,other,brick,refurbished
+Yes,152760,2,No,Pri starej prachárni,51,Yes,stare_mesto,other,brick,refurbished
+Yes,152760,2,No,Pri starej prachárni,51,Yes,nove_mesto,other,brick,refurbished
+Yes,155440,2,No,Pri starej prachárni,51,Yes,nove_mesto,other,brick,refurbished
+Yes,155440,2,No,Pri starej prachárni,51,Yes,nove_mesto,other,brick,refurbished
+No,143000,3,No,Šalviová,72,Yes,ruzinov,rest,panel,refurbished
+Yes,112000,1.5,No,Mánesovo námestie,58,Yes,petrzalka,other,panel,partial_refurbishment
+No,330000,3,No,Štúrova,73,Yes,stare_mesto,other,brick,refurbished
+No,96999,3,Yes,Lotyšska,50,Yes,podunajske_biskupice,other,panel,refurbished
+No,96999,2,Yes,Lotyšská,50,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,123000,3,Yes,Smolenická,73,Yes,petrzalka,other,panel,partial_refurbishment
+No,72999,1,Yes,Slatinská,36,Yes,vrakuna,other,panel,refurbished
+Yes,119990,2,No,Martinčekova,53,Yes,ruzinov,top,panel,refurbished
+Yes,143000,3,Yes,Šumavská,65,No,ruzinov,other,brick,refurbished
+Yes,109000,2,No,Račianska,48,Yes,nove_mesto,other,panel,refurbished
+Yes,109000,2,No,Račianska,48,Yes,nove_mesto,other,panel,refurbished
+Yes,136000,3,Yes,Bakošova,76,Yes,lamac,other,panel,refurbished
+Yes,117900,2,No,Martinčekova,53,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,147000,2,No,Bosákova,55,Yes,petrzalka,other,panel,refurbished
+Yes,120000,4,No,Bodrocká,79,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+No,119990,4,No,Bodrocká,78,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,225000,3,No,Bajkalská,90,Yes,nove_mesto,other,other,old
+Yes,120500,2,No,Riazanská,49,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,118000,2,Yes,Riazanská,53,Yes,nove_mesto,other,panel,partial_refurbishment
+No,55500,1.5,No,Stavbárska,41,No,vrakuna,other,panel,refurbished
+No,126000,2,No,Na Piesku,47,No,ruzinov,rest,brick,refurbished
+No,49000,1.5,No,Stavbárska,42,Yes,vrakuna,other,panel,refurbished
+Yes,144900,2,No,Bosákova,55,Yes,petrzalka,other,brick,refurbished
+No,133900,2,No,Račianska,72,No,nove_mesto,bottom,brick,refurbished
+Yes,144900,2,No,Bosákova,55,Yes,petrzalka,other,panel,refurbished
+Yes,142900,2,No,Bosákova,55,Yes,petrzalka,other,brick,refurbished
+Yes,99999,3,No,Rybničná 61/B,75,Yes,raca,other,panel,refurbished
+No,198000,3,No,Planét,92,Yes,ruzinov,bottom,brick,refurbished
+No,157000,3,Yes,Budyšínska,69,Yes,nove_mesto,bottom,panel,refurbished
+Yes,117000,2,Yes,Medzilaborecká,47,Yes,ruzinov,bottom,panel,refurbished
+Yes,142900,2,Yes,Bosákova,55,Yes,petrzalka,other,brick,refurbished
+Yes,144500,2,Yes,Bosákova,55,Yes,petrzalka,other,base,refurbished
+Yes,84000,1,Yes,Pavla Horova,39,Yes,devinska_nova_ves,other,panel,refurbished
+Yes,113700,3,Yes,Píniová,82,No,vrakuna,other,brick,old
+Yes,113700,3,Yes,Píniová,82,No,vrakuna,top,brick,old
+Yes,139900,3,No,Bazovského,76,No,dubravka,bottom,panel,old
+No,129000,1,Yes,Námestie Slobody,50,No,stare_mesto,other,brick,old
+No,168000,2,Yes,Klariská,44,No,stare_mesto,top,brick,refurbished
+No,362800,3,Yes,Klariská,96,No,stare_mesto,top,brick,refurbished
+Yes,116900,2,No,Medzilaborecká,47,Yes,ruzinov,bottom,panel,refurbished
+No,132000,2,No,Železničiarska,52,No,stare_mesto,other,brick,refurbished
+No,299900,4,Yes,Pri Vápenickom potoku,124,Yes,zahorska_bistrica,top,brick,refurbished
+Yes,79000,1,Yes,Ľuda Zúbka,38,Yes,dubravka,other,panel,partial_refurbishment
+Yes,259000,3,Yes,Majerníkova,104,Yes,karlova_ves,bottom,brick,refurbished
+Yes,116900,2,No,Medzilaborecká,46,No,ruzinov,bottom,panel,refurbished
+Yes,156900,3,No,Budyšínska,69,Yes,nove_mesto,bottom,panel,refurbished
+No,164900,2,No,Karadžičova,64,Yes,stare_mesto,other,brick,refurbished
+Yes,81000,1,No,Ľuda Zúbka,31,Yes,dubravka,other,panel,partial_refurbishment
+Yes,79000,1,Yes,Ľuda Zúbka,31,Yes,dubravka,bottom,panel,partial_refurbishment
+Yes,127000,3,Yes,Bakošova,76,Yes,lamac,other,panel,partial_refurbishment
+No,113000,2,No,Stromová,43,Yes,nove_mesto,other,base,refurbished
+No,78999,1,Yes,Topoľčianska,36,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,97000,1.5,No,Šustekova,36,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,104000,3,Yes,Korytnická,72,Yes,podunajske_biskupice,bottom,panel,partial_refurbishment
+Yes,94500,2,No,Vlčie hrdlo,43,Yes,ruzinov,other,panel,refurbished
+Yes,150000,2,Yes,Staré Grunty,76,Yes,karlova_ves,bottom,brick,refurbished
+Yes,119000,3,No,Iľjušinova,68,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,95000,3,Yes,Estónska,69,No,podunajske_biskupice,top,panel,old
+Yes,133000,3,Yes,Medveďovej,70,Yes,petrzalka,top,panel,refurbished
+Yes,143000,2,No,Vajnorská,74,No,nove_mesto,other,brick,partial_refurbishment
+Yes,147000,3,Yes,Heyrovského,75,Yes,lamac,other,panel,partial_refurbishment
+Yes,235000,4,Yes,Špitálska,108,Yes,stare_mesto,other,brick,refurbished
+Yes,104000,3,Yes,Korytnická,72,Yes,podunajske_biskupice,bottom,panel,partial_refurbishment
+No,274152,3,Yes,Alstrova,146,No,raca,top,brick,refurbished
+No,269123,4,Yes,Alstrova,118,No,raca,other,brick,refurbished
+No,174024,3,Yes,Novohorská,65,No,raca,other,brick,refurbished
+Yes,150862,3,Yes,Novohorská,65,No,raca,bottom,brick,refurbished
+No,157976,2,Yes,Barónka,64,No,raca,other,brick,refurbished
+No,104796,1,No,Novohorská,39,No,raca,other,brick,refurbished
+No,176500,3,Yes,Trnavská cesta,78,Yes,nove_mesto,top,brick,refurbished
+No,64950,1,Yes,Dudvážska,37,No,podunajske_biskupice,other,panel,old
+Yes,130000,2,No,Kaštieľska,44,Yes,ruzinov,other,brick,refurbished
+Yes,142500,3,Yes,Šumavská,65,No,ruzinov,other,brick,refurbished
+No,99990,1,No,Ďatelinová,35,No,ruzinov,bottom,panel,refurbished
+Yes,480000,3,No,Prešernova,173,Yes,stare_mesto,top,brick,refurbished
+Yes,122400,3,Yes,Bošániho,61,Yes,dubravka,other,panel,old
+Yes,144000,3,Yes,Janotova,78,Yes,karlova_ves,other,panel,partial_refurbishment
+Yes,120000,2,No,Račianska,48,Yes,nove_mesto,other,brick,refurbished
+Yes,149990,3,Yes,Trnavská cesta,87,Yes,ruzinov,other,brick,old
+Yes,118000,2,Yes,Bujnákova,41,No,dubravka,other,panel,partial_refurbishment
+Yes,112000,2,No,Račianska,52,Yes,nove_mesto,other,panel,old
+Yes,94900,1,Yes,Miletičova,31,Yes,ruzinov,other,brick,refurbished
+Yes,108000,4,No,Stavbárska,80,Yes,vrakuna,other,panel,refurbished
+Yes,124990,3,Yes,Hronská,68,Yes,podunajske_biskupice,bottom,panel,refurbished
+Yes,375497,4,Yes,Pod Vachmajstrom,90,Yes,nove_mesto,top,other,refurbished
+Yes,128000,2,No,Vyšehradská,62,Yes,petrzalka,other,base,refurbished
+Yes,269074,2,Yes,Pod Vachmajstrom,73,Yes,nove_mesto,other,other,refurbished
+Yes,136900,2,No,Haburská,60,Yes,ruzinov,other,brick,refurbished
+Yes,109900,2,Yes,Riazanská,54,Yes,nove_mesto,other,brick,refurbished
+Yes,105000,3,No,Korytnická,74,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,99500,3,Yes,Rajčianska,68,Yes,vrakuna,other,panel,old
+Yes,129900,3,Yes,Československých parašutistov,77,Yes,nove_mesto,other,panel,partial_refurbishment
+No,64900,1,No,Popradská,36,No,podunajske_biskupice,top,brick,refurbished
+Yes,145000,3,Yes,Rumančeková,69,Yes,ruzinov,top,panel,refurbished
+No,116000,2,Yes,Tranovského,51,Yes,dubravka,other,panel,refurbished
+Yes,83900,1,No,Pavla Horova,35,Yes,devinska_nova_ves,rest,panel,refurbished
+No,69900,1,Yes,Hradská,37,No,vrakuna,other,panel,partial_refurbishment
+Yes,239380,2,Yes,Na varte,68,Yes,nove_mesto,bottom,brick,refurbished
+No,110900,2,Yes,Gallayova,53,No,dubravka,other,panel,refurbished
+No,305320,3,Yes,Na varte,98,Yes,nove_mesto,other,brick,refurbished
+No,236070,3,Yes,Na varte,73,Yes,nove_mesto,top,brick,refurbished
+No,424620,4,Yes,Na varte,132,Yes,nove_mesto,rest,brick,refurbished
+No,441730,4,Yes,Na varte,133,Yes,nove_mesto,rest,brick,refurbished
+Yes,169000,2,No,Na Križovatkách,64,Yes,ruzinov,other,brick,refurbished
+Yes,85000,1,No,Čiližská,40,No,vrakuna,other,brick,refurbished
+Yes,139999,3,Yes,Hraničná,59,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,131000,3,Yes,Jasovská,76,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,113000,2,No,Mánesovo námestie,54,Yes,petrzalka,other,panel,partial_refurbishment
+No,175000,2,Yes,Podtatranského,51,No,stare_mesto,rest,brick,refurbished
+Yes,334800,3,No,Búdková,89,Yes,stare_mesto,other,brick,refurbished
+No,245000,3,Yes,Tupého,105,Yes,nove_mesto,other,brick,refurbished
+Yes,126000,3,No,Hany Meličkovej,68,Yes,karlova_ves,other,panel,old
+No,135000,3,Yes,Astronomická,73,No,ruzinov,bottom,brick,refurbished
+Yes,115000,3,No,Učiteľská,85,No,podunajske_biskupice,other,brick,partial_refurbishment
+Yes,250000,3,Yes,Zámocká,83,Yes,stare_mesto,top,brick,refurbished
+Yes,209999,3,Yes,Na Revíne,82,Yes,nove_mesto,other,brick,refurbished
+Yes,145000,3,No,Rumančeková,69,Yes,ruzinov,top,panel,refurbished
+Yes,140000,3,No,Hraničná,55,Yes,ruzinov,top,panel,refurbished
+Yes,79000,1,Yes,Ľuda Zúbka,39,Yes,dubravka,other,panel,partial_refurbishment
+No,112000,2,No,Šancová,43,No,nove_mesto,other,brick,partial_refurbishment
+Yes,119500,2,Yes,Sibírska,53,Yes,nove_mesto,bottom,panel,partial_refurbishment
+Yes,139800,3,No,Hlaváčikova,160,No,karlova_ves,bottom,brick,refurbished
+Yes,131000,3,Yes,Beňadická,72,Yes,petrzalka,top,panel,refurbished
+No,77000,2,No,Vlčie hrdlo,40,No,ruzinov,other,panel,partial_refurbishment
+Yes,139500,3,No,Pribišova,87,Yes,karlova_ves,other,panel,partial_refurbishment
+Yes,80600,1,Yes,Ľuda Zúbka,39,Yes,dubravka,other,panel,partial_refurbishment
+Yes,139990,3,Yes,Rumančeková,69,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,143000,3,Yes,Janotova,76,Yes,karlova_ves,other,panel,partial_refurbishment
+Yes,80000,2,No,Vlčie hrdlo,48,Yes,ruzinov,other,panel,refurbished
+Yes,144900,2,No,Bosákova,55,Yes,petrzalka,other,other,refurbished
+Yes,75000,2,Yes,Stavbárska,54,Yes,vrakuna,other,panel,partial_refurbishment
+No,139900,2,No,Jégeho,54,Yes,ruzinov,other,brick,refurbished
+No,112500,2,Yes,Kadnárova,58,No,raca,other,brick,old
+Yes,245000,3,No,Mickiewiczova,102,Yes,stare_mesto,other,brick,refurbished
+No,107000,1,No,Kozmonautická,44,Yes,ruzinov,top,panel,refurbished
+Yes,131000,3,No,Jasovská,76,Yes,petrzalka,other,panel,refurbished
+Yes,135000,2,Yes,Údernícka,51,Yes,petrzalka,other,brick,refurbished
+Yes,161800,2,Yes,Sibírska,60,No,nove_mesto,other,brick,partial_refurbishment
+Yes,113900,1,No,Rastislavova,45,Yes,ruzinov,other,brick,refurbished
+Yes,135000,3,No,Jána Smreka,73,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,124500,3,Yes,Lackova,65,Yes,karlova_ves,bottom,panel,partial_refurbishment
+Yes,84900,1.5,No,Podzáhradná,52,Yes,podunajske_biskupice,other,panel,old
+No,259000,3,No,Obchodná,100,Yes,stare_mesto,bottom,brick,old
+No,92990,3,No,Poľnohospodárska,60,No,vrakuna,top,brick,refurbished
+No,48000,1.5,No,Stavbárska,40,No,vrakuna,other,panel,refurbished
+Yes,137000,4,No,Jána Smreka,75,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,133000,3,Yes,Holíčska,65,Yes,petrzalka,bottom,panel,refurbished
+No,149990,2,No,Račianske mýto,69,Yes,nove_mesto,other,brick,refurbished
+Yes,94800,1.5,Yes,Holíčska,45,Yes,petrzalka,other,panel,old
+Yes,143000,3,Yes,Janotova,74,Yes,karlova_ves,other,panel,partial_refurbishment
+Yes,143500,2,No,Moldavská,61,Yes,ruzinov,other,panel,refurbished
+Yes,117900,2,Yes,Martinčekova,53,Yes,ruzinov,top,panel,refurbished
+No,110000,1,Yes,Záhradnícka 89,40,Yes,ruzinov,top,brick,refurbished
+Yes,117000,2,Yes,Kazanská,45,Yes,podunajske_biskupice,top,brick,refurbished
+Yes,120000,3,Yes,Učiteľská,78,No,podunajske_biskupice,bottom,brick,old
+Yes,280000,3,Yes,Ružinovská,135,Yes,ruzinov,other,brick,refurbished
+No,73000,1,No,Banšelova,33,No,ruzinov,bottom,brick,refurbished
+Yes,105000,1.5,Yes,Holíčska,46,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,135000,3,No,Holíčska,65,Yes,petrzalka,bottom,panel,refurbished
+Yes,199990,4,Yes,Robotnícka,103,Yes,nove_mesto,bottom,brick,old
+Yes,95900,3,No,Toplianska,66,Yes,vrakuna,other,panel,old
+Yes,198360,3,No,Pri starej prachárni,66,Yes,nove_mesto,other,brick,refurbished
+No,384000,3,No,Bobuľová,122,Yes,nove_mesto,bottom,panel,refurbished
+No,122000,4,Yes,Bodrocká,79,Yes,podunajske_biskupice,other,panel,refurbished
+No,276000,3,No,Štefanovičova,88,No,stare_mesto,top,brick,refurbished
+No,98000,3,No,Šancová,59,No,stare_mesto,other,brick,refurbished
+Yes,205000,2,Yes,Svoradova,75,No,stare_mesto,other,brick,refurbished
+No,276000,3,No,Štefanovičova,110,No,stare_mesto,top,brick,refurbished
+Yes,309000,3,Yes,Gorkého,93,Yes,stare_mesto,other,brick,refurbished
+No,408000,3,No,Klobučnícka,108,Yes,stare_mesto,other,brick,refurbished
+Yes,84518,1,No,Bystrická,59,Yes,devinska_nova_ves,bottom,brick,refurbished
+Yes,112000,1.5,Yes,Mánesovo námestie,53,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,129000,2,No,Kaštieľska,47,Yes,ruzinov,other,brick,refurbished
+No,125000,2,Yes,Budyšínska,45,No,nove_mesto,rest,brick,old
+Yes,118999,1,No,Martinčekova,53,Yes,ruzinov,top,panel,refurbished
+No,87500,2,Yes,Hornádska,51,Yes,podunajske_biskupice,other,panel,refurbished
+No,81600,1,Yes,Fedinova,37,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,158120,2,No,Pri starej prachárni,51,Yes,nove_mesto,other,brick,refurbished
+No,320000,3,No,Mateja Bela,141,No,stare_mesto,top,brick,refurbished
+Yes,122000,3,Yes,Krásnohorská,65,Yes,petrzalka,top,panel,refurbished
+Yes,266000,3,Yes,Banskobystrická,106,No,stare_mesto,other,brick,partial_refurbishment
+No,87900,2,No,Rajčianska,50,Yes,vrakuna,bottom,panel,partial_refurbishment
+No,122000,4,No,Bodrocká,86,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,122000,3,No,Krásnohorská,67,Yes,petrzalka,top,panel,refurbished
+Yes,138000,3,No,Brančská,70,Yes,petrzalka,other,panel,refurbished
+Yes,133000,3,No,Krásnohorská,65,Yes,petrzalka,other,panel,refurbished
+No,99300,1,No,Bajkalská,32,Yes,ruzinov,other,brick,refurbished
+Yes,119900,2,Yes,Martinčekova,53,Yes,ruzinov,top,brick,refurbished
+Yes,392000,3,Yes,Dvořákovo nábrežie,88,Yes,stare_mesto,other,other,refurbished
+Yes,390000,3,Yes,Dvořákovo nábrežie,97,Yes,stare_mesto,other,other,refurbished
+Yes,102330,1,No,Pri starej prachárni,36,Yes,nove_mesto,other,brick,refurbished
+Yes,98000,3,Yes,Ipeľská,69,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+No,325300,4,No,Na Grunte,107,Yes,nove_mesto,bottom,base,refurbished
+Yes,155000,3,Yes,Sekulská,75,Yes,karlova_ves,other,panel,refurbished
+No,76900,1,Yes,Beňadická,36,Yes,petrzalka,other,panel,old
+No,308900,3,No,Gorkého 9,88,Yes,stare_mesto,other,brick,refurbished
+No,161600,3,Yes,Karadžičova,64,Yes,stare_mesto,bottom,brick,refurbished
+No,407900,3,No,Klobučnícka 4,108,Yes,stare_mesto,other,brick,refurbished
+No,179990,3,Yes,000,72,No,ruzinov,other,brick,refurbished
+Yes,204900,2,Yes,Svoradova 9,65,No,stare_mesto,other,brick,refurbished
+Yes,144990,2,Yes,Jelačičova,59,Yes,ruzinov,other,brick,refurbished
+Yes,79900,1.5,No,Podzáhradná,52,Yes,podunajske_biskupice,other,panel,old
+No,166800,2,No,Karadžičova,64,Yes,stare_mesto,other,brick,refurbished
+Yes,122000,3,Yes,Krásnohorská,65,Yes,petrzalka,other,panel,refurbished
+Yes,122000,3,No,Krásnohorská,69,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,130000,3,Yes,Krásnohorská,65,Yes,petrzalka,top,panel,refurbished
+No,123000,2,No,Bazová,56,Yes,ruzinov,top,brick,refurbished
+Yes,78000,1.5,No,Vlčie hrdlo,40,Yes,ruzinov,other,other,refurbished
+Yes,115000,2,No,Kazanská,45,Yes,podunajske_biskupice,top,brick,refurbished
+Yes,160000,2,Yes,Žltá,62,Yes,petrzalka,bottom,brick,refurbished
+No,77500,1,No,Slovinská,30,No,ruzinov,top,brick,refurbished
+Yes,133000,4,No,Rajecká,79,Yes,vrakuna,other,panel,refurbished
+No,112000,2,Yes,Osuského,57,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,119500,2,Yes,okolie Racianskeho myta,57,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,132600,3,Yes,Topoľčianska,69,Yes,petrzalka,other,panel,refurbished
+No,139990,3,No,Šancová,74,No,stare_mesto,other,brick,partial_refurbishment
+No,89000,2,Yes,Estónska,35,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,105000,3,Yes,Bieloruská,72,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,122000,3,Yes,Krásnohorská,68,Yes,petrzalka,top,panel,refurbished
+Yes,119000,3,No,Rajecká,82,Yes,vrakuna,other,panel,refurbished
+Yes,125000,3,Yes,Bakošova,70,Yes,lamac,rest,panel,old
+No,105000,1,No,Mozartova,38,Yes,stare_mesto,other,panel,partial_refurbishment
+Yes,79500,1,No,Bujnákova,35,No,dubravka,bottom,panel,partial_refurbishment
+No,178990,3,No,Béžová 2,88,Yes,petrzalka,top,other,refurbished
+No,72990,1,No,Fedákova,38,Yes,dubravka,other,panel,partial_refurbishment
+Yes,169000,4,Yes,Tománkova 1,90,Yes,karlova_ves,other,panel,partial_refurbishment
+Yes,199990,4,No,Žltá 9,96,Yes,petrzalka,bottom,base,refurbished
+No,133000,3,Yes,Arménska,92,No,vrakuna,other,brick,refurbished
+Yes,149500,2,No,Šuňavcova,58,No,nove_mesto,other,brick,refurbished
+No,71600,1.5,Yes,Vlčie Hrdlo,31,Yes,ruzinov,other,other,refurbished
+No,149000,3,No,Súmračná,66,No,ruzinov,bottom,panel,partial_refurbishment
+Yes,158900,3,No,Budyšínska,74,Yes,nove_mesto,bottom,panel,refurbished
+Yes,117900,2,No,Martinčekova,61,Yes,ruzinov,top,panel,refurbished
+Yes,242950,4,No,Potočná,154,No,raca,rest,brick,refurbished
+No,260000,4,Yes,Podzáhradná,230,No,podunajske_biskupice,rest,brick,refurbished
+Yes,41500,1.5,No,Stavbárska,36,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,135000,3,Yes,Dopravná,72,No,raca,top,brick,partial_refurbishment
+Yes,135000,3,Yes,Ševčenkova,70,Yes,petrzalka,other,panel,refurbished
+No,106000,1,Yes,Mozartova,38,Yes,stare_mesto,other,panel,partial_refurbishment
+Yes,134000,3,Yes,Drobného,70,Yes,dubravka,other,panel,refurbished
+Yes,115000,2,Yes,Agátová,61,Yes,dubravka,other,brick,refurbished
+Yes,225000,3,No,Bajkalská,120,Yes,ruzinov,other,brick,refurbished
+No,113000,2,Yes,Fedákova,53,Yes,dubravka,top,panel,refurbished
+No,330000,3,No,Štúrova,73,Yes,stare_mesto,top,brick,refurbished
+No,150600,3,Yes,Súmračná,64,Yes,ruzinov,other,other,partial_refurbishment
+Yes,103000,1,No,Vyšehradská,52,Yes,petrzalka,other,brick,refurbished
+Yes,155000,2,No,Tomášikova,79,Yes,ruzinov,other,brick,refurbished
+Yes,239500,4,Yes,Krížna 24,114,Yes,stare_mesto,other,brick,partial_refurbishment
+No,149000,3,Yes,Súmračná,64,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,105000,3,No,Lotyšská,70,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,345000,3,Yes,Cesta na Kamzík,115,Yes,nove_mesto,other,brick,refurbished
+No,76999,1,Yes,Repašského,28,Yes,dubravka,other,panel,partial_refurbishment
+Yes,79500,1,No,Bujnákova,35,No,dubravka,bottom,panel,old
+Yes,123000,3,No,Baltská,60,Yes,podunajske_biskupice,other,brick,refurbished
+No,315000,4,Yes,Mariánska,127,Yes,stare_mesto,other,brick,refurbished
+Yes,104000,3,Yes,Bieloruská,68,Yes,podunajske_biskupice,bottom,panel,partial_refurbishment
+Yes,135000,3,Yes,Jána Smreka,73,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,119000,3,Yes,Topoľčianska,78,Yes,petrzalka,other,panel,old
+No,127000,3,Yes,Hodálova,65,Yes,karlova_ves,other,panel,refurbished
+Yes,132000,3,Yes,Vilová,69,Yes,petrzalka,other,brick,partial_refurbishment
+No,88000,1,No,Rovniankova,36,Yes,petrzalka,other,panel,refurbished
+No,150000,2,No,Palárikova,48,No,stare_mesto,top,brick,refurbished
+Yes,156900,4,Yes,bohrova,90,Yes,petrzalka,other,panel,refurbished
+Yes,81400,1,No,Nobelova,40,Yes,nove_mesto,rest,brick,refurbished
+Yes,130000,3,No,Krásnohorská,65,Yes,petrzalka,other,panel,refurbished
+No,145000,3,No,Beniakova,65,Yes,karlova_ves,top,panel,refurbished
+Yes,126000,3,Yes,Rajčianska,65,Yes,vrakuna,bottom,panel,partial_refurbishment
+No,92900,3,No,Šancová,59,No,stare_mesto,other,panel,refurbished
+No,69990,1,No,Vlčie hrdlo,31,Yes,ruzinov,other,panel,refurbished
+No,118000,2,No,Bujnákova,41,No,dubravka,other,panel,partial_refurbishment
+Yes,365000,4,Yes,Matejkova,115,Yes,karlova_ves,top,brick,refurbished
+Yes,130000,4,Yes,Bodrocká,86,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+No,138000,3,No,Exnárová,72,Yes,ruzinov,bottom,panel,refurbished
+Yes,184000,2,No,Dobrovského,67,Yes,stare_mesto,other,brick,refurbished
+Yes,109990,3,No,Bodrocká,69,No,podunajske_biskupice,top,brick,refurbished
+Yes,121000,3,Yes,Saratovská,70,Yes,dubravka,rest,panel,partial_refurbishment
+Yes,80600,1,Yes,Vrakunská,37,Yes,podunajske_biskupice,other,brick,refurbished
+No,109990,2,Yes,Kupeckého,37,Yes,ruzinov,bottom,brick,refurbished
+No,149990,1,Yes,Ulica 29. augusta,58,Yes,stare_mesto,bottom,brick,refurbished
+Yes,102700,2,Yes,Ďatelinová,34,No,ruzinov,other,brick,refurbished
+Yes,99900,1,No,Hradská,44,No,vrakuna,rest,brick,refurbished
+Yes,209000,3,No,Hradská,126,No,vrakuna,rest,brick,refurbished
+Yes,139900,3,Yes,Bujnákova 1,60,No,dubravka,other,panel,refurbished
+No,38000,1.5,No,Stavbárska,40,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,104000,3,Yes,Bieloruská,68,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+No,135000,3,Yes,Astronomická,75,No,ruzinov,bottom,brick,refurbished
+Yes,129000,3,No,Korytnická,70,Yes,podunajske_biskupice,other,panel,refurbished
+No,120000,2,Yes,Bradáčova,53,Yes,petrzalka,rest,panel,partial_refurbishment
+Yes,188000,3,No,Jána Stanislava,80,Yes,karlova_ves,other,brick,refurbished
+No,329900,3,No,Podjavorinskej,126,No,stare_mesto,bottom,brick,partial_refurbishment
+Yes,259000,3,No,Bajkalská 9,87,Yes,nove_mesto,other,base,refurbished
+Yes,307000,3,Yes,Rázusovo nábrežie,91,Yes,stare_mesto,other,brick,refurbished
+No,86600,1.5,Yes,Vranovská,38,Yes,petrzalka,bottom,panel,partial_refurbishment
+Yes,249900,4,Yes,Nové Mesto,138,Yes,nove_mesto,top,brick,refurbished
+Yes,128000,2,No,Galaktická,56,Yes,ruzinov,top,panel,refurbished
+Yes,133000,3,Yes,Jasovská,76,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,122000,3,Yes,Krásnohorská,68,Yes,petrzalka,top,panel,refurbished
+No,87000,1.5,No,Vranovská,38,Yes,petrzalka,bottom,panel,partial_refurbishment
+Yes,155000,3,No,Beniakova,67,Yes,karlova_ves,top,panel,refurbished
+No,86800,1.5,No,Vranovská,38,Yes,petrzalka,bottom,panel,partial_refurbishment
+Yes,113000,1,Yes,Heyrovského,53,Yes,lamac,bottom,brick,refurbished
+No,145000,2,No,Tylova,58,No,nove_mesto,other,brick,refurbished
+No,137000,3,No,Kopčianska,68,Yes,petrzalka,other,brick,refurbished
+No,95000,3,No,Estónska,70,No,podunajske_biskupice,top,panel,old
+No,155900,3,Yes,Budovateľská,62,No,ruzinov,top,brick,refurbished
+No,133000,3,No,Astronomická,75,No,ruzinov,other,brick,refurbished
+Yes,144000,3,Yes,Šustekova,68,Yes,petrzalka,other,panel,refurbished
+Yes,73000,1,No,Ľuda Zúbka,31,No,dubravka,top,panel,old
+No,113000,2,No,Fedákova,53,Yes,dubravka,top,panel,refurbished
+Yes,125000,2,Yes,Galaktická,52,Yes,ruzinov,rest,panel,refurbished
+No,93700,1,Yes,Mesačná,42,Yes,ruzinov,other,panel,partial_refurbishment
+No,83000,2,No,Bodrocká,48,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,136000,3,No,Tbiliská,73,Yes,raca,bottom,panel,refurbished
+Yes,385000,3,Yes,Dvořákovo nábrežie,88,Yes,stare_mesto,other,other,refurbished
+Yes,180000,3,No,Tomášikova,90,Yes,nove_mesto,other,brick,refurbished
+Yes,140000,3,Yes,Homolova,70,Yes,dubravka,top,panel,refurbished
+Yes,120000,3,Yes,Čiližská,65,Yes,vrakuna,other,panel,refurbished
+Yes,109000,1.5,No,Vígľašská,36,Yes,petrzalka,other,panel,refurbished
+Yes,95000,2,Yes,Hlbinná,48,Yes,podunajske_biskupice,top,brick,refurbished
+Yes,135000,3,No,Krásnohorská,71,Yes,petrzalka,bottom,panel,refurbished
+Yes,98400,3,Yes,Baltská,69,No,podunajske_biskupice,other,panel,old
+Yes,190000,3,No,Špitálska,91,Yes,stare_mesto,other,brick,old
+Yes,134000,3,Yes,Súmračná,65,Yes,ruzinov,other,panel,partial_refurbishment
+No,157990,4,No,Vajnorská,84,No,nove_mesto,rest,brick,refurbished
+Yes,129000,3,No,Hlaváčikova,76,No,karlova_ves,other,panel,partial_refurbishment
+Yes,207120,3,No,Ďumbierska 3,79,Yes,nove_mesto,other,brick,being_constructed
+No,359000,2,Yes,neuvedená,98,Yes,stare_mesto,bottom,brick,refurbished
+Yes,365520,4,No,Ďumbierska 3,122,Yes,nove_mesto,other,brick,refurbished
+Yes,117500,2,Yes,Jadrová,64,Yes,ruzinov,bottom,panel,old
+Yes,159000,3,Yes,Na Piesku,82,Yes,ruzinov,other,brick,refurbished
+Yes,149000,2,Yes,Ľudovíta Fullu,61,Yes,karlova_ves,other,brick,refurbished
+Yes,105000,1.5,Yes,Beňadická,37,Yes,petrzalka,bottom,panel,refurbished
+Yes,129000,2,No,Zimná,47,Yes,ruzinov,other,panel,refurbished
+Yes,134000,3,Yes,Ľubovnianska,68,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,71500,1,No,Štefana Králika,35,Yes,devinska_nova_ves,other,panel,old
+Yes,78000,1.5,No,Vlčie hrdlo,40,Yes,ruzinov,other,panel,refurbished
+Yes,132000,3,Yes,Brodská,63,Yes,karlova_ves,other,panel,old
+Yes,80000,1.5,No,Vlčie hrdlo,39,No,ruzinov,other,panel,refurbished
+Yes,99999,2,No,Rybničná,72,Yes,vajnory,other,panel,refurbished
+Yes,175000,3,Yes,Jégého,85,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,168000,3,Yes,Ľudovíta Fullu,90,Yes,karlova_ves,other,panel,refurbished
+No,228800,2,No,Biela,80,No,stare_mesto,other,brick,refurbished
+Yes,107900,2,Yes,Rovníková 6,45,Yes,ruzinov,other,panel,refurbished
+Yes,125000,2,No,Galaktická,56,Yes,ruzinov,top,panel,refurbished
+Yes,185000,3,No,Haburská,90,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,145000,3,Yes,Jána Poničana,73,Yes,devinska_nova_ves,rest,panel,refurbished
+Yes,107900,2,Yes,Rovníková 6,45,Yes,ruzinov,other,panel,refurbished
+No,85000,1,Yes,Pri kríži,37,Yes,dubravka,other,panel,partial_refurbishment
+Yes,130000,3,No,Brodská,63,Yes,karlova_ves,other,panel,old
+Yes,119000,2,Yes,Zimná 2,43,Yes,ruzinov,other,panel,refurbished
+Yes,109000,2,Yes,Heyrovského,73,Yes,lamac,other,panel,partial_refurbishment
+Yes,160000,2,Yes,Vyšehradská,73,Yes,petrzalka,other,brick,refurbished
+Yes,164990,2,No,Martinčekova,74,Yes,ruzinov,other,other,refurbished
+Yes,134000,3,Yes,Ľubovnianska,68,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,160000,2,No,Vyšehradská,73,Yes,petrzalka,other,other,refurbished
+No,145000,2,Yes,Tylova,85,No,nove_mesto,other,brick,refurbished
+Yes,209000,4,Yes,Žižkova,73,Yes,stare_mesto,other,panel,refurbished
+Yes,279000,3,No,Vlčkova,73,No,stare_mesto,other,brick,old
+Yes,202500,2,Yes,Bajkalská,69,Yes,nove_mesto,other,brick,refurbished
+Yes,128000,2,No,Opletalova,67,Yes,devinska_nova_ves,other,brick,refurbished
+Yes,126000,2,Yes,Opletalova,67,Yes,devinska_nova_ves,other,other,refurbished
+Yes,137000,3,Yes,Jána Smreka,73,Yes,devinska_nova_ves,other,panel,refurbished
+Yes,127999,2,Yes,Opletalova,62,Yes,devinska_nova_ves,other,brick,refurbished
+Yes,128000,2,Yes,Opletalova,62,Yes,devinska_nova_ves,other,panel,refurbished
+Yes,617979,4,Yes,Pod Vachmajstrom,149,Yes,nove_mesto,top,other,being_constructed
+Yes,478440,4,No,Buková,150,Yes,stare_mesto,bottom,base,refurbished
+Yes,129900,4,No,Rajecká,79,No,vrakuna,other,panel,refurbished
+Yes,127000,3,Yes,Lietavská,64,Yes,petrzalka,other,panel,old
+No,140000,2,No,Šancová,64,No,nove_mesto,other,brick,refurbished
+Yes,199000,3,Yes,Planét,130,Yes,ruzinov,rest,brick,refurbished
+No,142000,2,No,Šancová,64,No,nove_mesto,top,brick,refurbished
+No,142000,2,No,Šancová,64,No,nove_mesto,top,brick,refurbished
+Yes,139990,3,No,Šancová,80,No,nove_mesto,other,brick,partial_refurbishment
+Yes,126000,2,No,Opletalova,61,Yes,devinska_nova_ves,other,brick,refurbished
+Yes,137000,3,No,Brančská,70,Yes,petrzalka,other,panel,refurbished
+Yes,142900,2,Yes,Bosákova,56,Yes,petrzalka,other,other,refurbished
+Yes,138000,2,Yes,Bakošova,56,Yes,lamac,other,other,refurbished
+Yes,183500,3,Yes,Murgašova,99,Yes,stare_mesto,top,brick,refurbished
+Yes,147900,4,Yes,Röntgenova,91,Yes,petrzalka,bottom,panel,refurbished
+Yes,123900,3,Yes,Beňadická,71,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,319000,4,No,Heydukova,138,No,stare_mesto,bottom,brick,refurbished
+No,155000,2,Yes,Obchodná,54,Yes,stare_mesto,other,brick,partial_refurbishment
+No,157000,2,No,Krížna,57,Yes,nove_mesto,rest,brick,partial_refurbishment
+Yes,112000,3,No,Krásnohorská,67,Yes,petrzalka,other,panel,old
+Yes,135000,4,Yes,Gallayova,79,Yes,dubravka,top,panel,partial_refurbishment
+Yes,122000,3,No,Matejkova,63,Yes,karlova_ves,top,panel,refurbished
+Yes,139500,3,No,Pribišova,87,Yes,karlova_ves,other,panel,partial_refurbishment
+Yes,119000,2,Yes,Martinčekova,53,Yes,ruzinov,top,panel,refurbished
+Yes,155000,2,Yes,Kristy Bendovej,53,Yes,dubravka,top,brick,refurbished
+Yes,135000,3,No,Medveďovej,70,Yes,petrzalka,top,panel,partial_refurbishment
+No,98000,1,Yes,Trenčianska,38,No,ruzinov,other,brick,partial_refurbishment
+Yes,399000,4,Yes,Slávičie údolie,151,Yes,stare_mesto,top,brick,refurbished
+Yes,269000,3,No,Račianske mýto,102,Yes,nove_mesto,other,panel,refurbished
+No,115000,3,No,Podunajská,65,Yes,vrakuna,bottom,brick,refurbished
+Yes,157500,2,No,Tomášikova,74,Yes,nove_mesto,other,brick,refurbished
+No,137000,2,Yes,Cyprichova,59,No,raca,other,brick,refurbished
+No,85000,1.5,Yes,Vranovská,38,Yes,petrzalka,bottom,panel,partial_refurbishment
+Yes,79000,1,Yes,Landauova,30,Yes,dubravka,other,panel,partial_refurbishment
+No,140000,2,Yes,Miletičova,63,No,ruzinov,rest,brick,partial_refurbishment
+No,107000,2,No,Studenohorská,56,Yes,lamac,other,panel,refurbished
+No,420000,4,Yes,Záhradnícka,166,Yes,ruzinov,other,brick,refurbished
+Yes,105900,2,Yes,Vrakunská,44,Yes,podunajske_biskupice,other,brick,refurbished
+Yes,178000,3,Yes,Jégého,82,Yes,ruzinov,bottom,other,partial_refurbishment
+No,87000,1.5,No,Vranovská,38,Yes,petrzalka,bottom,panel,partial_refurbishment
+Yes,130000,3,No,Krásnohorská,65,Yes,petrzalka,top,panel,refurbished
+Yes,135000,3,No,Kazanská,68,Yes,podunajske_biskupice,other,brick,refurbished
+Yes,115000,3,Yes,Hany Meličkovej,63,Yes,karlova_ves,other,panel,partial_refurbishment
+Yes,145000,3,Yes,Budatínska,65,Yes,petrzalka,other,panel,refurbished
+Yes,134999,3,Yes,Mesačná 1,75,Yes,ruzinov,bottom,panel,partial_refurbishment
+No,105500,2,Yes,Hornádska,53,Yes,podunajske_biskupice,top,panel,refurbished
+No,559000,4,Yes,Strážna,158,No,nove_mesto,top,brick,refurbished
+No,125000,3,No,Geologická,67,No,podunajske_biskupice,other,brick,refurbished
+Yes,135000,3,No,Pankúchova,75,Yes,petrzalka,bottom,panel,refurbished
+Yes,115000,1,No,Vyšehradská,58,Yes,petrzalka,other,brick,refurbished
+Yes,128000,2,No,Opletalova,62,Yes,devinska_nova_ves,other,brick,refurbished
+No,98000,1,Yes,Trenčianska,37,No,ruzinov,other,brick,refurbished
+No,130000,2,No,Zadunajská cesta,47,Yes,petrzalka,other,brick,refurbished
+Yes,172600,3,Yes,Ďumbierska,83,Yes,nove_mesto,other,brick,refurbished
+Yes,174990,3,Yes,Klincová,86,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,118500,3,Yes,Markova 5,68,Yes,petrzalka,other,panel,old
+Yes,130000,3,Yes,Heyrovského,84,Yes,lamac,other,panel,refurbished
+Yes,147000,3,No,Arménska,78,No,vrakuna,bottom,brick,refurbished
+Yes,139900,3,No,Úžiny,66,Yes,raca,other,panel,partial_refurbishment
+Yes,129000,2,No,Rusovská cesta,57,Yes,petrzalka,other,brick,refurbished
+No,107000,2,Yes,Studenohorská 2,56,Yes,lamac,other,panel,partial_refurbishment
+Yes,103500,3,No,Korytnická,72,Yes,podunajske_biskupice,bottom,panel,partial_refurbishment
+No,113000,2,Yes,Kadnárova,56,No,raca,other,brick,old
+Yes,144900,2,No,Bosákova,55,Yes,petrzalka,other,other,refurbished
+Yes,130000,3,Yes,Víglašská,72,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,119800,2,Yes,Martinčekova,53,Yes,ruzinov,top,panel,refurbished
+Yes,329900,4,Yes,Mýtna 44,105,Yes,stare_mesto,other,brick,refurbished
+No,135000,3,No,Makovického,58,No,nove_mesto,other,brick,being_constructed
+Yes,269000,4,No,Makovického,123,No,nove_mesto,bottom,brick,being_constructed
+Yes,269000,3,No,Makovického,123,No,nove_mesto,bottom,brick,being_constructed
+Yes,116500,3,No,Jedľová,65,Yes,vrakuna,other,panel,refurbished
+Yes,131000,3,No,Ševčenkova,69,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,139999,2,No,Budatínska,67,Yes,petrzalka,other,panel,refurbished
+No,82000,2,No,Obchodná,90,No,stare_mesto,rest,brick,old
+Yes,132000,3,No,Ševčenkova,69,Yes,petrzalka,other,panel,partial_refurbishment
+No,115000,2,Yes,Kazanská,58,Yes,podunajske_biskupice,top,brick,refurbished
+Yes,120000,2,No,Galaktická,52,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,135500,3,No,Mesačná,75,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,147000,3,Yes,Súmračná,78,Yes,ruzinov,other,panel,refurbished
+Yes,154990,3,No,Janka Alexyho,92,Yes,dubravka,other,brick,partial_refurbishment
+Yes,117000,4,Yes,Latorická,79,No,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,141590,1,Yes,Nevädzová,40,Yes,ruzinov,other,panel,refurbished
+No,99990,1,Yes,Ďatelinová,39,No,ruzinov,bottom,panel,refurbished
+No,169000,3,No,Doležalova,89,No,ruzinov,top,brick,refurbished
+Yes,140000,3,Yes,Gessayova,68,Yes,petrzalka,rest,panel,refurbished
+No,82500,1,Yes,Dudvážska,35,Yes,podunajske_biskupice,other,panel,refurbished
+No,116500,2,Yes,Osuskeho,54,Yes,petrzalka,rest,panel,partial_refurbishment
+Yes,124900,2,Yes,Mesačná,48,Yes,ruzinov,other,panel,refurbished
+Yes,278000,3,Yes,Zámocká,96,Yes,stare_mesto,bottom,brick,refurbished
+Yes,128500,2,Yes,Smolnícka,54,No,ruzinov,other,brick,partial_refurbishment
+No,120000,4,Yes,Bodrocká,77,Yes,podunajske_biskupice,other,panel,refurbished
+No,112000,1,Yes,Záhradnícka,45,Yes,ruzinov,top,brick,refurbished
+Yes,154000,4,Yes,Hodálova,95,Yes,karlova_ves,other,brick,old
+Yes,139900,3,Yes,Rajecká,81,Yes,vrakuna,top,panel,partial_refurbishment
+Yes,113000,2,Yes,Strmý vŕšok,60,Yes,zahorska_bistrica,other,brick,refurbished
+Yes,132000,3,Yes,Holíčska,77,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,269000,3,Yes,Frankovská,85,Yes,nove_mesto,rest,brick,refurbished
+Yes,219000,4,Yes,Záhradnícka,79,Yes,ruzinov,top,brick,refurbished
+No,113000,2,No,Tranovského,50,No,dubravka,top,panel,refurbished
+Yes,145000,3,No,Ľudovíta Fullu,79,Yes,karlova_ves,other,panel,refurbished
+Yes,152000,3,No,Ipeľská,73,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+No,113000,2,Yes,Tranovského,49,No,dubravka,top,panel,refurbished
+No,133000,2,No,Miletičova,62,No,ruzinov,bottom,brick,old
+No,115000,2,Yes,Tranovského,50,Yes,dubravka,top,panel,refurbished
+Yes,301143,4,No,Cyrilova,118,Yes,ruzinov,top,brick,refurbished
+Yes,213134,3,No,Cyrilova,83,Yes,ruzinov,top,brick,refurbished
+No,73000,1,No,Ľuda Zúbka,38,Yes,dubravka,top,panel,old
+Yes,120000,2,No,Galaktická,56,Yes,ruzinov,top,panel,refurbished
+No,121000,1,No,Palárikova,44,No,stare_mesto,top,brick,refurbished
+Yes,124000,2,Yes,Mierová,56,Yes,ruzinov,bottom,brick,refurbished
+Yes,99990,2,Yes,Zimná,49,Yes,ruzinov,other,panel,old
+Yes,147000,3,Yes,Súmračná,78,Yes,ruzinov,other,panel,refurbished
+No,114990,2,No,Tranovského,50,No,dubravka,top,panel,refurbished
+Yes,130000,3,Yes,Brodská,66,Yes,karlova_ves,other,panel,old
+Yes,123000,4,Yes,Stavbárska,80,Yes,vrakuna,bottom,panel,partial_refurbishment
+No,105000,1,Yes,Mesačná,44,Yes,ruzinov,other,panel,refurbished
+Yes,179900,2,Yes,Na Zlatej nohe,62,Yes,nove_mesto,other,brick,old
+No,299000,3,Yes,Jančova,97,No,stare_mesto,top,brick,refurbished
+Yes,173500,2,Yes,Mlynské Luhy,61,Yes,ruzinov,other,brick,refurbished
+No,269000,3,No,Tichá,96,Yes,stare_mesto,bottom,brick,refurbished
+Yes,255000,3,No,Kúpeľná,83,Yes,stare_mesto,other,brick,old
+Yes,106900,2,Yes,Sibírska 3,41,Yes,nove_mesto,other,panel,refurbished
+Yes,133000,4,Yes,Estónska,74,Yes,podunajske_biskupice,other,panel,refurbished
+No,113000,2,No,Tranovského,50,No,dubravka,top,panel,refurbished
+No,132000,2,Yes,Železničiarska,52,No,stare_mesto,bottom,brick,refurbished
+Yes,134600,3,No,Kazanská,68,Yes,podunajske_biskupice,other,brick,refurbished
+Yes,150000,3,No,Ipeľská,73,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+No,113000,2,Yes,Tranovského,50,No,dubravka,top,panel,refurbished
+Yes,157000,2,No,Slávičie údolie,53,Yes,stare_mesto,rest,brick,refurbished
+No,160000,2,Yes,Obchodná,54,Yes,stare_mesto,other,brick,partial_refurbishment
+No,115000,2,No,Trebišovská,46,Yes,ruzinov,bottom,panel,refurbished
+No,84200,1,Yes,Žarnovická,41,Yes,raca,other,panel,refurbished
+Yes,136990,3,No,Ožvoldíkova,71,Yes,dubravka,other,panel,partial_refurbishment
+No,114600,2,Yes,Tranovského,50,No,dubravka,top,panel,refurbished
+Yes,82000,1,No,Pri Šajbách,42,Yes,raca,other,brick,partial_refurbishment
+Yes,199990,4,Yes,Žilinská,123,No,stare_mesto,bottom,brick,partial_refurbishment
+Yes,146777,3,Yes,Pavla Horova,82,Yes,devinska_nova_ves,other,panel,refurbished
+No,82000,1,Yes,Marie Curie - Sklodowskej,38,Yes,petrzalka,other,panel,partial_refurbishment
+No,115000,2,Yes,Kazanská,58,Yes,podunajske_biskupice,top,brick,refurbished
+Yes,172000,3,Yes,Vajnorská,82,No,nove_mesto,bottom,brick,refurbished
+No,114700,2,No,Tranovského,50,No,dubravka,top,panel,refurbished
+No,101000,2,No,Nejedlého,54,Yes,dubravka,other,panel,old
+No,102600,2,Yes,Nejedlého,54,Yes,dubravka,other,panel,old
+Yes,149000,2,Yes,Rezedová,45,Yes,ruzinov,top,other,refurbished
+No,183000,3,No,Kozia,69,No,stare_mesto,top,brick,refurbished
+Yes,115900,2,Yes,Vietnamská,55,Yes,ruzinov,top,brick,old
+Yes,126990,3,Yes,Bakošova,76,Yes,lamac,other,panel,partial_refurbishment
+Yes,240000,3,No,Martinengova,100,Yes,stare_mesto,top,brick,refurbished
+Yes,148000,2,Yes,Tylova 1,85,No,nove_mesto,bottom,brick,refurbished
+Yes,68179,1,No,Tomášikova 32,33,Yes,ruzinov,other,panel,refurbished
+Yes,143000,3,Yes,Majerníkova,83,Yes,karlova_ves,other,panel,partial_refurbishment
+Yes,93000,2,No,Hrachová 71,35,No,ruzinov,bottom,brick,refurbished
+Yes,142000,3,Yes,Rumančeková,66,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,110000,3,Yes,Korytnická,68,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,209000,3,Yes,Čerešňová,89,No,stare_mesto,other,brick,refurbished
+Yes,280000,3,Yes,Ružinovská,135,Yes,ruzinov,other,brick,refurbished
+Yes,123000,3,Yes,Pri Šajbách,80,Yes,raca,other,panel,partial_refurbishment
+No,167000,3,Yes,Opletalova,109,Yes,devinska_nova_ves,top,brick,refurbished
+Yes,89000,1,No,Mierová,39,Yes,ruzinov,other,panel,old
+No,99000,2,Yes,Nejedlého,54,Yes,dubravka,other,panel,old
+Yes,116900,2,Yes,Medzilaborecká,43,Yes,ruzinov,bottom,panel,refurbished
+Yes,102000,2,Yes,Podzáhradná,50,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,159900,2,No,Lermontovova 2,82,Yes,stare_mesto,other,brick,partial_refurbishment
+Yes,159900,3,No,Lermontovova 2,82,Yes,stare_mesto,other,brick,partial_refurbishment
+Yes,148000,4,No,Ivana Bukovčana,86,No,devinska_nova_ves,other,panel,refurbished
+Yes,89900,1,No,Budatínska,46,Yes,petrzalka,other,brick,refurbished
+Yes,302000,3,Yes,Karloveské rameno,99,Yes,karlova_ves,other,brick,refurbished
+No,105000,2,No,Fedákova,48,Yes,dubravka,other,panel,partial_refurbishment
+No,105000,2,Yes,Fedákova,48,Yes,dubravka,other,panel,refurbished
+No,93000,3,No,Toryská,70,No,vrakuna,top,panel,old
+Yes,128000,3,Yes,Rozvodná,66,Yes,nove_mesto,bottom,panel,old
+No,115000,2,Yes,Kazanská,58,Yes,podunajske_biskupice,top,brick,refurbished
+Yes,146900,4,Yes,Karpatské námestie,87,Yes,raca,other,panel,partial_refurbishment
+Yes,114900,3,Yes,Latorická,71,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,118000,3,Yes,Ivana Bukovčana,64,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,175000,2,Yes,Staré Grunty,75,Yes,karlova_ves,bottom,brick,refurbished
+Yes,76000,1.5,Yes,Závodná,35,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,149500,2,Yes,Šuňavcová,58,No,nove_mesto,other,brick,refurbished
+Yes,173040,2,No,Pri starej prachárni,60,Yes,nove_mesto,other,brick,refurbished
+No,106600,2,No,Fedákova,48,Yes,dubravka,other,panel,refurbished
+No,139990,2,No,Šancová,64,No,nove_mesto,top,brick,refurbished
+Yes,113000,3,Yes,Bagarova,47,No,dubravka,top,panel,refurbished
+Yes,113000,2,Yes,Bagarova,47,No,dubravka,top,panel,refurbished
+Yes,83000,2,No,Vlčie hrdlo,47,Yes,ruzinov,top,panel,refurbished
+Yes,105000,3,Yes,Bieloruská,72,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,96990,2,Yes,Jesenná,43,Yes,ruzinov,bottom,panel,partial_refurbishment
+No,135000,2,Yes,Kvačalova,58,No,ruzinov,other,brick,partial_refurbishment
+Yes,126990,3,No,Trenčianska,66,Yes,ruzinov,other,panel,partial_refurbishment
+No,350000,4,No,Slnečnice,205,Yes,petrzalka,top,brick,refurbished
+Yes,75000,2,Yes,Stavbárska,52,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,120000,3,Yes,Žitavská,70,Yes,vrakuna,other,panel,refurbished
+Yes,137000,2,Yes,Miletičova 60,55,Yes,ruzinov,rest,other,refurbished
+Yes,126000,3,Yes,Pavla Horova,65,Yes,devinska_nova_ves,other,panel,refurbished
+Yes,118500,2,Yes,Baltská,60,Yes,podunajske_biskupice,bottom,brick,refurbished
+Yes,106600,3,Yes,Hronská,67,Yes,podunajske_biskupice,other,panel,old
+Yes,156000,4,Yes,Kozmonautická,78,Yes,ruzinov,rest,panel,refurbished
+No,125750,2,Yes,Trenčianska,57,Yes,ruzinov,rest,brick,old
+Yes,159900,3,Yes,Šancová,77,Yes,stare_mesto,other,brick,refurbished
+Yes,159900,3,Yes,Šancová,77,Yes,nove_mesto,other,brick,refurbished
+Yes,169900,2,Yes,Vajnorská,82,No,nove_mesto,bottom,brick,refurbished
+Yes,350000,4,Yes,Kýčerského,139,Yes,stare_mesto,other,brick,refurbished
+Yes,235000,4,No,Špitálska,108,Yes,stare_mesto,other,brick,refurbished
+Yes,150000,3,No,Beniakova,67,Yes,karlova_ves,top,panel,refurbished
+No,127000,1,Yes,Palárikova,43,No,stare_mesto,other,brick,refurbished
+Yes,99900,2,Yes,Na Revíne,43,Yes,nove_mesto,rest,panel,partial_refurbishment
+Yes,320000,3,Yes,Dunajská,88,Yes,stare_mesto,other,brick,refurbished
+Yes,106600,1,No,Vyšehradská,40,Yes,petrzalka,bottom,other,refurbished
+No,158000,2,No,Pražská,60,Yes,stare_mesto,top,brick,partial_refurbishment
+No,70500,1,No,Bieloruská,36,No,podunajske_biskupice,bottom,panel,refurbished
+Yes,114000,1,No,Šancová,41,Yes,stare_mesto,other,brick,refurbished
+Yes,119000,1,No,Šancová,41,Yes,stare_mesto,other,base,refurbished
+Yes,105000,1,No,Šancová,33,Yes,stare_mesto,other,base,refurbished
+Yes,127000,2,No,Šancová,47,Yes,stare_mesto,other,base,refurbished
+No,79990,1,Yes,Medveďovej,37,Yes,petrzalka,other,panel,old
+Yes,139900,2,No,Hrachová,105,Yes,ruzinov,top,brick,refurbished
+Yes,145000,3,Yes,Beniakova,67,Yes,karlova_ves,top,panel,refurbished
+Yes,126999,2,No,Strojnícka,52,No,ruzinov,other,brick,refurbished
+Yes,80900,2,Yes,Vlčie hrdlo,47,Yes,ruzinov,other,panel,refurbished
+Yes,126000,3,Yes,P.Horova,68,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,109999,2,Yes,Súmračná,42,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,122000,3,Yes,Krásnohorská,65,Yes,petrzalka,top,panel,refurbished
+Yes,118500,2,No,Račianska,42,Yes,nove_mesto,other,panel,refurbished
+Yes,159900,3,No,Teplická,73,Yes,nove_mesto,top,panel,refurbished
+Yes,215000,3,Yes,Na Revíne,71,Yes,nove_mesto,other,brick,refurbished
+Yes,145000,2,No,Sokolská,60,Yes,stare_mesto,other,brick,old
+Yes,161000,3,Yes,Strmý vŕšok,85,Yes,zahorska_bistrica,other,brick,refurbished
+No,277500,4,No,Strmý vŕšok,153,Yes,zahorska_bistrica,bottom,brick,refurbished
+Yes,183000,3,No,Tomášikova,86,Yes,ruzinov,other,brick,refurbished
+Yes,144999,3,Yes,Ľudovíta Fullu,73,Yes,karlova_ves,other,panel,refurbished
+Yes,149200,2,No,Nezábudková,66,Yes,ruzinov,other,panel,refurbished
+Yes,165000,3,No,Šintavská,77,Yes,petrzalka,other,brick,refurbished
+Yes,126000,4,No,Toryská,79,No,vrakuna,bottom,panel,refurbished
+Yes,135000,3,No,Ožvoldíkova,72,Yes,dubravka,other,panel,refurbished
+No,127500,2,No,Šancová,43,No,stare_mesto,bottom,brick,refurbished
+Yes,144500,2,No,Bosákova,55,Yes,petrzalka,other,brick,refurbished
+Yes,126000,3,No,Wolkrova,67,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,135000,3,Yes,Kazanská,66,Yes,podunajske_biskupice,other,brick,old
+Yes,85490,1,No,Bučinová,46,Yes,vrakuna,other,panel,refurbished
+Yes,179900,3,Yes,Legionárska,97,No,nove_mesto,rest,brick,refurbished
+Yes,175000,2,Yes,Palisády,94,No,stare_mesto,rest,brick,old
+Yes,133500,2,Yes,Trebišovská,55,Yes,ruzinov,other,panel,refurbished
+No,90000,2,No,Bebravská,50,Yes,vrakuna,other,panel,old
+Yes,69900,1,No,Vlčie hrdlo,39,Yes,ruzinov,rest,panel,old
+No,90000,2,Yes,Bebravská,51,Yes,vrakuna,other,panel,old
+No,90000,2,Yes,Bebravská,51,Yes,vrakuna,other,panel,old
+Yes,155500,3,Yes,Vilová,85,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,150000,4,Yes,Belinského,84,Yes,petrzalka,top,panel,partial_refurbishment
+No,92000,2,No,Bebravská,51,Yes,vrakuna,other,panel,old
+Yes,129900,2,Yes,Pri Hrubej lúke,54,Yes,dubravka,other,brick,refurbished
+No,128000,3,Yes,Krásnohorská,68,Yes,petrzalka,other,panel,old
+No,90000,2,No,Bebravská,52,Yes,vrakuna,other,panel,old
+Yes,152000,4,No,Belinského,84,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,169000,3,No,Budatínska,73,Yes,petrzalka,other,other,refurbished
+No,119000,3,Yes,Súmračná,54,Yes,ruzinov,bottom,panel,partial_refurbishment
+Yes,116000,2,Yes,Drobného,68,Yes,dubravka,other,panel,refurbished
+Yes,110000,2,Yes,Veternicová,61,Yes,karlova_ves,other,panel,partial_refurbishment
+No,91600,2,Yes,Bebravská,52,Yes,vrakuna,other,panel,old
+Yes,152600,4,Yes,Belinského,84,Yes,petrzalka,top,panel,refurbished
+Yes,159900,3,No,Teplická,73,Yes,nove_mesto,top,panel,refurbished
+Yes,139000,2,Yes,Narcisová,52,Yes,ruzinov,other,panel,refurbished
+Yes,68000,1,No,Jasovská,28,Yes,petrzalka,other,panel,partial_refurbishment
+No,85000,1,Yes,Topoľčianska,36,Yes,petrzalka,other,panel,partial_refurbishment
+No,63900,1,Yes,Osloboditeľská,30,No,vajnory,top,panel,refurbished
+No,330000,3,Yes,Cesta na Kamzík,115,Yes,nove_mesto,bottom,other,refurbished
+Yes,159990,4,Yes,Švabinského,84,Yes,petrzalka,bottom,panel,refurbished
+Yes,123000,2,No,Baltská,60,Yes,podunajske_biskupice,other,brick,refurbished
+Yes,112000,1.5,No,Mánesovo námestie,54,Yes,petrzalka,other,panel,partial_refurbishment
+No,1e+05,2,Yes,Alžbety Gwerkovej,52,Yes,petrzalka,bottom,panel,old
+Yes,125000,4,Yes,Dudvážska,74,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,136600,3,Yes,Jána Smreka,73,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+No,151600,3,Yes,Beniakova,67,Yes,karlova_ves,top,panel,refurbished
+No,65900,1,Yes,Hronská,34,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,105000,3,Yes,Rajecká,64,Yes,vrakuna,bottom,panel,refurbished
+No,160000,2,Yes,Obchodná,54,Yes,stare_mesto,other,brick,refurbished
+Yes,93000,1.5,Yes,Podzáhradná,54,Yes,podunajske_biskupice,other,panel,refurbished
+No,105000,2,No,Fedákova,48,No,dubravka,other,panel,refurbished
+No,90000,2,Yes,Bebravská,49,Yes,vrakuna,other,brick,partial_refurbishment
+Yes,119900,2,Yes,Vajnorská,51,No,nove_mesto,other,brick,refurbished
+Yes,119900,1,Yes,Vajnorská,51,No,nove_mesto,other,brick,refurbished
+Yes,79900,1,Yes,Bučinová,37,Yes,vrakuna,rest,panel,refurbished
+Yes,130000,2,No,Šancová,45,No,nove_mesto,other,brick,refurbished
+Yes,198000,2,Yes,Černyševského,75,Yes,petrzalka,other,base,refurbished
+Yes,127000,2,No,Smolnícka,54,No,ruzinov,other,brick,partial_refurbishment
+No,205000,3,Yes,Tabaková,78,No,stare_mesto,other,brick,old
+No,153400,3,Yes,Záhrebská,80,No,stare_mesto,bottom,brick,refurbished
+Yes,134700,2,Yes,Račianska 91,50,Yes,nove_mesto,other,brick,refurbished
+Yes,125000,2,Yes,Levická 2,56,No,ruzinov,top,brick,old
+Yes,95000,2,Yes,Dudvážska,51,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,114900,3,Yes,Vetvárska,67,No,podunajske_biskupice,bottom,brick,refurbished
+Yes,230000,3,Yes,Trenčianska,98,No,ruzinov,bottom,brick,partial_refurbishment
+Yes,110000,4,Yes,Bodrocká,81,No,podunajske_biskupice,top,panel,partial_refurbishment
+Yes,112000,1,Yes,Tomášikova,44,Yes,ruzinov,other,brick,refurbished
+Yes,125000,3,Yes,Furdekova,72,No,petrzalka,bottom,other,partial_refurbishment
+No,84990,1.5,No,Vranovská,38,No,petrzalka,bottom,other,partial_refurbishment
+Yes,207000,2,Yes,Ďumbierska,100,Yes,nove_mesto,bottom,brick,refurbished
+Yes,122500,2,Yes,Štefana Králika,54,Yes,devinska_nova_ves,other,brick,refurbished
+Yes,215000,3,No,Blumentálska,83,Yes,stare_mesto,other,brick,partial_refurbishment
+No,109000,2,Yes,Osuského,54,Yes,petrzalka,other,panel,old
+Yes,126000,1.5,No,Jungmannova,53,Yes,petrzalka,other,panel,refurbished
+No,135000,3,Yes,Astronomická,75,No,ruzinov,bottom,brick,refurbished
+No,63000,1,No,Kašmírska,29,No,ruzinov,bottom,brick,partial_refurbishment
+Yes,160000,3,Yes,Košická,77,Yes,ruzinov,rest,brick,old
+Yes,119000,2,No,Kazanská,58,Yes,podunajske_biskupice,other,brick,refurbished
+No,215000,4,No,Čerencová,122,No,zahorska_bistrica,rest,brick,refurbished
+Yes,179000,3,Yes,Kresánkova,100,Yes,karlova_ves,other,brick,refurbished
+Yes,95000,1,Yes,Hlbinná,48,Yes,podunajske_biskupice,top,brick,refurbished
+No,111000,2,Yes,Osuského,54,Yes,petrzalka,other,panel,old
+Yes,235000,4,Yes,Špitálska,108,Yes,stare_mesto,other,brick,partial_refurbishment
+Yes,235000,4,Yes,Špitálska,108,Yes,stare_mesto,other,brick,partial_refurbishment
+Yes,89900,2,Yes,Kamenárska,43,No,ruzinov,top,brick,refurbished
+Yes,77000,1,Yes,Ľuda Zúbka 15,31,Yes,dubravka,other,panel,partial_refurbishment
+Yes,106000,1,No,Tomášikova,43,Yes,ruzinov,other,brick,refurbished
+Yes,131000,3,No,Majoránová,72,No,vrakuna,top,brick,refurbished
+Yes,139800,2,No,Hlaváčikova,160,No,karlova_ves,bottom,brick,refurbished
+Yes,159000,3,Yes,Mierová,78,Yes,ruzinov,other,panel,refurbished
+Yes,133700,2,Yes,Trebišovská,60,Yes,ruzinov,other,panel,refurbished
+No,151000,3,Yes,Planét 9,88,No,ruzinov,bottom,panel,refurbished
+Yes,159900,2,Yes,Staré grunty,76,Yes,karlova_ves,other,brick,refurbished
+Yes,89990,1.5,Yes,Gessayova,38,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,79000,1,Yes,Landauova,31,Yes,dubravka,other,panel,partial_refurbishment
+Yes,77000,1,No,Ľuda Zúbka,31,Yes,dubravka,other,panel,partial_refurbishment
+No,175000,4,No,Jantár II,81,No,jarovce,rest,brick,refurbished
+Yes,84000,2,Yes,Vlčie hrdlo,41,Yes,ruzinov,top,panel,refurbished
+Yes,109000,2,Yes,Mierová,50,No,ruzinov,top,panel,refurbished
+Yes,158000,3,Yes,Račianska,68,Yes,nove_mesto,other,panel,old
+No,168500,2,No,Cintorínska,63,No,stare_mesto,other,brick,refurbished
+Yes,129800,3,Yes,Krásnohorská,68,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,145500,2,No,Rubínova,55,Yes,raca,bottom,brick,refurbished
+Yes,249000,4,No,Na Križovatkách,120,Yes,ruzinov,bottom,brick,refurbished
+Yes,119990,2,No,Mierová,48,Yes,ruzinov,other,brick,refurbished
+No,315000,4,Yes,Mariánska,127,Yes,stare_mesto,other,brick,refurbished
+No,165000,2,No,Cintorínska,55,No,stare_mesto,other,brick,refurbished
+No,115000,2,Yes,Kozmonautická 9,43,Yes,ruzinov,other,panel,refurbished
+Yes,307000,3,Yes,Rázusovo nábrežie,90,Yes,stare_mesto,other,brick,refurbished
+No,199000,3,Yes,Cintorínska,96,No,stare_mesto,bottom,brick,old
+Yes,172000,2,No,Kvačalova,65,No,ruzinov,other,brick,refurbished
+Yes,144000,2,No,Šustekova,76,No,petrzalka,other,brick,refurbished
+Yes,249000,4,No,Na Križovatkách,120,Yes,ruzinov,bottom,brick,refurbished
+Yes,145000,3,Yes,Ľudovíta Fullu,73,Yes,karlova_ves,other,panel,refurbished
+Yes,78000,1.5,No,Vlčie hrdlo,39,No,ruzinov,other,panel,refurbished
+No,135000,2,No,Vajnorská,65,No,nove_mesto,rest,brick,refurbished
+Yes,235000,4,Yes,Rozvodná,123,Yes,nove_mesto,bottom,brick,old
+No,127900,2,Yes,Kukučínova,65,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,249990,3,No,Bajkalská,80,Yes,nove_mesto,other,brick,refurbished
+Yes,159990,4,No,Švabinského,90,Yes,petrzalka,bottom,panel,refurbished
+No,154900,3,Yes,Tabaková,56,No,stare_mesto,bottom,brick,refurbished
+Yes,249000,4,No,Na Križovatkách,120,Yes,ruzinov,bottom,brick,refurbished
+No,99900,2,No,Hrachová,34,No,ruzinov,other,brick,refurbished
+Yes,139900,3,Yes,Rumančeková,69,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,151000,4,Yes,Segnerova,65,Yes,karlova_ves,other,panel,refurbished
+No,259000,4,No,Svätoplukova,111,No,ruzinov,rest,other,refurbished
+No,166600,2,Yes,Cintorínska,63,No,stare_mesto,other,brick,refurbished
+No,150000,3,Yes,Továrenská,72,No,stare_mesto,rest,brick,refurbished
+No,85000,1,No,Súhvezdná,27,No,ruzinov,bottom,brick,refurbished
+No,105000,2,No,Fedákova,48,Yes,dubravka,other,panel,refurbished
+No,165000,2,Yes,Cintorínska,63,No,stare_mesto,other,brick,refurbished
+Yes,89000,2,Yes,Bieloruská,56,Yes,podunajske_biskupice,other,brick,refurbished
+No,262000,3,Yes,Jakubovo námestie,100,No,stare_mesto,rest,brick,refurbished
+No,166700,2,No,Cintorínska,55,No,stare_mesto,other,brick,refurbished
+No,94000,2,Yes,Bodrocká,48,Yes,podunajske_biskupice,bottom,other,refurbished
+Yes,199000,4,Yes,Kuklovská,99,No,karlova_ves,other,brick,partial_refurbishment
+No,110000,1,Yes,Staré grunty,39,Yes,karlova_ves,other,other,refurbished
+Yes,161600,4,Yes,Jána Smreka,90,Yes,devinska_nova_ves,top,panel,refurbished
+No,110000,2,Yes,Alžbety Gwerkovej,54,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,140000,3,Yes,Solivarská,68,No,ruzinov,top,brick,old
+No,128250,2,Yes,Riazanská,70,No,nove_mesto,other,brick,refurbished
+Yes,89000,1,No,Vyšehradská,39,Yes,petrzalka,other,panel,refurbished
+Yes,123000,3,No,Rovniankova,68,Yes,petrzalka,other,panel,refurbished
+Yes,106000,1,No,Tomášikova,43,Yes,ruzinov,other,brick,refurbished
+Yes,84000,1,Yes,Pavla Horova,39,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+No,100700,1,No,Teplická,51,Yes,nove_mesto,other,panel,refurbished
+No,113000,1,Yes,Trenčianska,39,Yes,ruzinov,rest,brick,partial_refurbishment
+No,118300,2,Yes,Romanova,55,Yes,petrzalka,top,panel,refurbished
+No,107000,2,Yes,Meteorová,43,Yes,ruzinov,other,panel,refurbished
+No,118300,3,No,Romanova,55,Yes,petrzalka,top,panel,refurbished
+Yes,100999,1,Yes,Teplická,41,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,217490,4,Yes,Mraziarenská 7,102,Yes,ruzinov,other,brick,refurbished
+No,160700,4,No,Karpatské námestie,88,Yes,raca,other,panel,partial_refurbishment
+Yes,148000,4,No,Budatínska,64,Yes,petrzalka,other,brick,refurbished
+Yes,121000,1,No,Planét,51,Yes,ruzinov,other,brick,refurbished
+No,122400,2,No,Matúškova,59,No,nove_mesto,rest,brick,refurbished
+Yes,197000,3,Yes,Kresánkova,88,Yes,karlova_ves,top,brick,refurbished
+Yes,94900,2,Yes,Bieloruská,51,Yes,podunajske_biskupice,bottom,panel,refurbished
+Yes,152900,2,No,Pri strelnici,73,Yes,ruzinov,bottom,brick,refurbished
+Yes,97000,1.5,No,Blagoevova,48,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,145000,4,Yes,Budatínska,65,Yes,petrzalka,other,panel,refurbished
+Yes,235000,4,No,Špitálska,108,Yes,stare_mesto,other,other,refurbished
+Yes,216500,4,No,Bakošova,108,Yes,lamac,other,brick,refurbished
+Yes,149990,3,No,Trnavská cesta,76,Yes,ruzinov,other,brick,old
+Yes,79900,2,No,Podzáhradná,52,Yes,podunajske_biskupice,other,brick,old
+No,189800,4,No,Hydinárska,124,No,podunajske_biskupice,bottom,brick,refurbished
+Yes,149000,3,Yes,Budyšínska,77,Yes,nove_mesto,top,panel,refurbished
+Yes,116900,2,Yes,Podzáhradná,57,Yes,podunajske_biskupice,other,brick,refurbished
+Yes,160100,2,No,Kresánkova,76,Yes,karlova_ves,other,brick,refurbished
+No,135000,1,Yes,Povraznícka,66,No,stare_mesto,other,brick,refurbished
+No,141000,3,No,Vajnorská,78,No,nove_mesto,top,brick,refurbished
+Yes,120000,3,Yes,Latorická,68,No,podunajske_biskupice,bottom,panel,refurbished
+Yes,133500,2,Yes,Trebišovská,57,Yes,ruzinov,other,panel,refurbished
+Yes,205000,2,No,Svoradova,60,Yes,stare_mesto,other,brick,refurbished
+Yes,135000,2,Yes,Krížna,54,Yes,stare_mesto,bottom,brick,old
+Yes,195300,3,Yes,Kadnárova 12,104,No,raca,top,brick,refurbished
+Yes,145990,3,Yes,Fedinova,81,Yes,petrzalka,other,panel,refurbished
+No,92700,1,Yes,Osadná,34,No,nove_mesto,rest,brick,partial_refurbishment
+Yes,131000,3,Yes,Wolkrova,64,Yes,petrzalka,top,other,old
+Yes,110000,3,Yes,Kríková,67,Yes,vrakuna,rest,other,refurbished
+Yes,145000,2,Yes,Martinčekova,66,Yes,ruzinov,other,brick,partial_refurbishment
+Yes,144000,2,No,Vietnamská,61,Yes,ruzinov,top,brick,refurbished
+Yes,100600,1,Yes,Teplická,42,Yes,nove_mesto,other,panel,partial_refurbishment
+No,106500,3,Yes,Fedákova,48,Yes,dubravka,other,panel,refurbished
+Yes,145000,3,No,Československých parašutistov,80,Yes,nove_mesto,top,panel,refurbished
+No,85000,1,Yes,Holíčska,35,Yes,petrzalka,other,panel,refurbished
+Yes,95000,3,Yes,Vetvárska,68,No,podunajske_biskupice,other,brick,partial_refurbishment
+Yes,195300,4,Yes,Kadnárova 12,104,No,raca,top,brick,refurbished
+Yes,196400,3,Yes,Kadnárova 14,104,No,raca,top,brick,refurbished
+Yes,196400,4,Yes,Kadnárova 14,104,No,raca,top,brick,refurbished
+Yes,198400,3,Yes,Kadnárova 12,107,No,raca,top,brick,refurbished
+Yes,198400,4,Yes,Kadnárova 12,107,No,raca,top,brick,refurbished
+Yes,162000,4,Yes,Jána Smreka,92,Yes,devinska_nova_ves,top,panel,refurbished
+Yes,112000,2,Yes,Súmračná,43,Yes,ruzinov,other,panel,refurbished
+No,93000,2,Yes,Námestie Hraničiarov,55,Yes,petrzalka,bottom,panel,old
+Yes,115000,2,Yes,Horná,64,Yes,nove_mesto,other,panel,partial_refurbishment
+No,104777,2,Yes,Fedákova,48,Yes,dubravka,other,panel,partial_refurbishment
+Yes,99000,1,No,Teplická,42,Yes,nove_mesto,top,panel,refurbished
+Yes,129000,3,Yes,Pečnianska,73,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,109499.53,4,Yes,Lotyšská,79,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,130000,3,Yes,Hrobákova,72,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,93000,1.5,No,Podzáhradná,54,Yes,podunajske_biskupice,other,panel,refurbished
+No,135000,1,No,Povraznícka,66,No,stare_mesto,other,brick,refurbished
+No,202000,3,Yes,Tabaková,74,Yes,stare_mesto,other,brick,old
+Yes,78000,1,Yes,Rajecká,33,Yes,vrakuna,top,panel,refurbished
+No,145000,3,Yes,Pražská,63,Yes,stare_mesto,top,brick,partial_refurbishment
+Yes,124000,3,Yes,Furdekova,64,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,145100,2,Yes,Moldavská,57,Yes,ruzinov,other,panel,refurbished
+Yes,146600,3,Yes,Budatínska,65,Yes,petrzalka,other,panel,refurbished
+No,249000,4,No,Na Križovatkách,120,Yes,ruzinov,bottom,brick,refurbished
+Yes,126500,3,Yes,Mánesovo námestie,72,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,119500,2,Yes,Sibírska,53,Yes,nove_mesto,bottom,panel,partial_refurbishment
+No,67900,1,Yes,Dopravná,37,Yes,raca,bottom,panel,partial_refurbishment
+Yes,119000,3,Yes,Bieloruská,75,No,podunajske_biskupice,other,panel,partial_refurbishment
+No,90000,1,No,Antolská,42,Yes,petrzalka,other,base,refurbished
+Yes,149000,3,No,Sklenárova,75,Yes,ruzinov,other,panel,partial_refurbishment
+No,109000,2,No,Osuského,54,No,petrzalka,other,other,old
+No,109000,2,No,Osuského,55,Yes,petrzalka,other,panel,old
+Yes,215000,4,No,Pluhová,97,Yes,nove_mesto,other,brick,refurbished
+Yes,94900,2,Yes,Bieloruská,51,Yes,podunajske_biskupice,bottom,panel,refurbished
+Yes,123000,2,Yes,Eisnerova,51,Yes,devinska_nova_ves,other,brick,refurbished
+Yes,112000,2,No,Súmračná,43,Yes,ruzinov,other,panel,refurbished
+Yes,122400,2,No,Kazanská,54,Yes,podunajske_biskupice,other,brick,refurbished
+Yes,118990,3,Yes,Iľjušinova,68,Yes,petrzalka,other,panel,old
+Yes,130000,3,Yes,Medveďovej,71,Yes,petrzalka,bottom,panel,partial_refurbishment
+No,260000,3,Yes,Čapkova,82,No,stare_mesto,bottom,brick,partial_refurbishment
+No,140800,2,Yes,Ľadová,65,No,stare_mesto,bottom,brick,refurbished
+Yes,128200,3,Yes,Bebravská,74,Yes,vrakuna,bottom,brick,refurbished
+Yes,115000,2,No,Kazanská,45,Yes,podunajske_biskupice,top,brick,refurbished
+No,183500,3,No,Murgašova,87,Yes,stare_mesto,top,brick,old
+No,166300,2,Yes,Cintorínska,54,No,stare_mesto,other,brick,refurbished
+Yes,121000,2,No,Eisnerova,51,Yes,devinska_nova_ves,other,brick,refurbished
+No,127500,2,No,Palárikova,42,No,stare_mesto,other,brick,partial_refurbishment
+Yes,180000,3,No,Trnavská cesta,79,Yes,ruzinov,other,panel,refurbished
+No,96700,1.5,No,Blagoevova,48,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,199000,3,No,Karadžičova,88,Yes,ruzinov,other,brick,refurbished
+Yes,129000,3,No,Teplická,54,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,139379,2,Yes,Pod Krásnou hôrkou,58,Yes,nove_mesto,other,brick,refurbished
+Yes,172768,3,Yes,Pod Krásnou hôrkou,71,Yes,nove_mesto,other,brick,being_constructed
+No,95000,1,No,Trenčianska,38,No,ruzinov,other,brick,refurbished
+No,115990,2,Yes,Homolova,54,Yes,dubravka,bottom,panel,refurbished
+Yes,170000,2,No,Trenčianska,81,No,ruzinov,top,brick,refurbished
+Yes,72000,1.5,No,Jána Jonáša,31,Yes,devinska_nova_ves,other,panel,refurbished
+No,83500,1,Yes,Považanova,38,Yes,dubravka,other,panel,refurbished
+No,99990,1,Yes,Jelenia,30,Yes,stare_mesto,other,brick,refurbished
+Yes,69900,1,No,Vlčie Hrdlo,40,No,ruzinov,other,panel,partial_refurbishment
+Yes,137000,4,No,Československých parašutistov,76,Yes,nove_mesto,other,panel,partial_refurbishment
+No,138700,3,No,Bazovského,70,No,dubravka,bottom,panel,old
+Yes,125900,3,No,Andrusovova,69,Yes,petrzalka,top,panel,old
+Yes,72900,1,Yes,Bučinová,40,Yes,vrakuna,other,panel,old
+Yes,99000,1,Yes,Teplická,42,Yes,nove_mesto,other,panel,partial_refurbishment
+No,155900,3,Yes,Budovateľská,63,No,ruzinov,top,brick,refurbished
+Yes,149500,2,Yes,Šuňavcova,58,No,nove_mesto,other,brick,refurbished
+No,130000,1,Yes,Povraznícka,66,No,stare_mesto,other,brick,refurbished
+Yes,137000,3,Yes,Bazovského,78,No,dubravka,other,panel,partial_refurbishment
+Yes,159900,3,Yes,Hraničná,80,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,118500,2,No,Račianska,42,Yes,nove_mesto,other,panel,refurbished
+No,135000,1,Yes,Povraznícka,66,No,stare_mesto,other,brick,refurbished
+Yes,125000,3,No,Na Piesku,62,Yes,ruzinov,other,brick,refurbished
+Yes,89999,2,No,Na Piesku,47,Yes,ruzinov,other,brick,refurbished
+No,104999,2,No,Na Piesku,42,Yes,ruzinov,bottom,brick,refurbished
+Yes,198999,4,No,Na Piesku,104,Yes,ruzinov,other,brick,refurbished
+Yes,104000,3,Yes,Estónska,69,Yes,podunajske_biskupice,bottom,panel,partial_refurbishment
+Yes,146600,3,Yes,Topoľčianska,68,Yes,petrzalka,other,panel,refurbished
+Yes,146600,4,Yes,Topoľčianska,68,Yes,petrzalka,other,panel,refurbished
+Yes,110000,2,Yes,Martinčekova,45,Yes,ruzinov,other,panel,refurbished
+Yes,116000,2,Yes,Zálužická,57,Yes,ruzinov,top,panel,old
+No,129000,3,No,Matejkova,86,Yes,karlova_ves,bottom,panel,refurbished
+No,85000,1,Yes,Holíčska,36,Yes,petrzalka,other,panel,refurbished
+No,70000,1,Yes,Slatinská,38,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,220000,3,No,Svätého Vincenta,84,Yes,ruzinov,other,brick,refurbished
+Yes,156900,3,Yes,Budyšínska,75,Yes,nove_mesto,bottom,panel,refurbished
+Yes,116900,2,Yes,Medzilaborecká,46,Yes,ruzinov,bottom,panel,refurbished
+No,164900,2,Yes,Karadžičova,64,Yes,stare_mesto,other,brick,refurbished
+No,139000,2,Yes,Dohnányho,73,No,ruzinov,rest,brick,partial_refurbishment
+Yes,263000,3,No,Ľanová,99,No,ruzinov,top,brick,refurbished
+No,142000,3,No,Šancová,74,No,nove_mesto,other,brick,partial_refurbishment
+No,88000,1,No,Medveďovej,36,No,petrzalka,top,panel,refurbished
+No,109000,2,Yes,Agátová,56,Yes,dubravka,rest,brick,refurbished
+No,74000,1,No,Ožvoldíkova,37,Yes,dubravka,other,panel,old
+No,36700,1.5,No,Stavbárska,40,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,132000,2,Yes,Opletalova,69,Yes,devinska_nova_ves,bottom,brick,refurbished
+No,150000,3,Yes,Narcisova,75,Yes,ruzinov,bottom,panel,refurbished
+Yes,140000,3,No,Solivarská,64,No,ruzinov,top,brick,old
+Yes,149000,2,No,Gercenova,66,Yes,petrzalka,other,brick,refurbished
+Yes,95000,2,Yes,Blagoevova,48,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,98000,2,Yes,Cabanova,55,No,dubravka,other,panel,partial_refurbishment
+Yes,77000,2,Yes,Vlčie hrdlo,46,Yes,ruzinov,top,panel,refurbished
+Yes,110000,1,Yes,Majerníkova,53,No,karlova_ves,other,brick,old
+No,92000,2,Yes,Bebravská,52,Yes,vrakuna,other,panel,old
+Yes,159000,4,No,Karpatské námestie,88,Yes,raca,other,panel,partial_refurbishment
+No,532900,4,Yes,Vlčkova,157,Yes,stare_mesto,other,brick,refurbished
+No,577700,4,Yes,Vlčkova,164,Yes,stare_mesto,other,brick,refurbished
+No,546500,4,Yes,Vlčkova,155,Yes,stare_mesto,other,brick,refurbished
+No,73900,1,Yes,Čiernovodská,36,No,vrakuna,bottom,panel,refurbished
+Yes,186000,3,Yes,Mierová,83,Yes,ruzinov,bottom,panel,refurbished
+Yes,123600,3,Yes,Hálova,73,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,123600,3,Yes,Hálova,73,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,105000,1,No,Jašíkova,40,Yes,ruzinov,other,brick,refurbished
+No,121700,3,No,Hodálova,67,Yes,karlova_ves,rest,brick,partial_refurbishment
+No,180000,2,No,Palisády,67,Yes,stare_mesto,bottom,brick,refurbished
+Yes,102000,2,No,Zimná,48,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,142000,2,No,Jasovská,76,Yes,petrzalka,top,panel,refurbished
+Yes,137000,3,No,Homolova,72,Yes,dubravka,top,panel,refurbished
+No,86000,1,No,Medveďovej,36,No,petrzalka,top,panel,partial_refurbishment
+No,103990,1,Yes,Mýtna,35,Yes,stare_mesto,bottom,panel,refurbished
+Yes,135000,3,Yes,Jadrová,64,Yes,ruzinov,other,panel,partial_refurbishment
+No,118000,3,Yes,Hodálova,67,Yes,karlova_ves,other,brick,partial_refurbishment
+Yes,235000,3,No,Záhradnícka,106,Yes,ruzinov,other,brick,partial_refurbishment
+Yes,122000,3,Yes,Iľjušinova,66,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,89500,2,No,Dvojkrížna,45,Yes,vrakuna,bottom,panel,refurbished
+No,183000,3,No,Koceľová,77,Yes,stare_mesto,other,brick,refurbished
+Yes,120000,4,Yes,Toryská,77,No,vrakuna,top,panel,partial_refurbishment
+Yes,347000,3,Yes,Fándlyho,90,No,stare_mesto,other,brick,old
+Yes,459000,3,Yes,Fándlyho,90,No,stare_mesto,other,brick,old
+No,121600,3,Yes,Hodálova,67,Yes,karlova_ves,other,brick,partial_refurbishment
+Yes,99800,2,Yes,Na Revíne,43,Yes,nove_mesto,other,brick,refurbished
+Yes,99970,3,Yes,Toplianska,70,Yes,vrakuna,rest,panel,partial_refurbishment
+Yes,128000,3,Yes,Jamnického,67,Yes,karlova_ves,other,panel,partial_refurbishment
+Yes,114990,3,Yes,Bazovského,59,Yes,dubravka,other,panel,refurbished
+No,76500,1,Yes,Saratovská,39,Yes,dubravka,top,panel,partial_refurbishment
+No,106900,2,Yes,Osuskeho,55,Yes,petrzalka,rest,panel,old
+Yes,134000,3,Yes,Homolová,70,Yes,petrzalka,top,panel,refurbished
+Yes,230000,3,Yes,Prievozská,81,Yes,ruzinov,other,base,refurbished
+Yes,99900,2,Yes,Súmračná,43,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,159900,3,No,Teplická,73,Yes,nove_mesto,top,panel,refurbished
+Yes,140000,3,Yes,Solivarská,68,No,ruzinov,top,brick,old
+Yes,69900,1.5,No,Vlčie hrdlo,42,Yes,ruzinov,other,panel,partial_refurbishment
+No,83990,1.5,No,Závodná,34,Yes,podunajske_biskupice,other,panel,refurbished
+No,83990,1,No,Závodná,34,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,71500,1.5,No,Vlčie hrdlo,42,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,69900,1.5,No,Vlčie hrdlo,42,Yes,ruzinov,other,panel,partial_refurbishment
+No,88000,1,Yes,Medveďovej,36,Yes,petrzalka,top,panel,refurbished
+Yes,120000,3,Yes,Gessayova,75,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,142500,3,Yes,Račianska 99,78,Yes,nove_mesto,other,panel,partial_refurbishment
+No,249900,3,Yes,Ulica 29. augusta 30,99,Yes,stare_mesto,bottom,brick,refurbished
+Yes,195000,3,No,Radničné námestie 7/B,79,No,ruzinov,bottom,brick,refurbished
+Yes,69900,1.5,Yes,Vlčie hrdlo,42,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,133800,4,No,Čiernovodská,82,No,vrakuna,other,panel,refurbished
+Yes,93000,1,No,Hrachová,35,No,ruzinov,bottom,other,refurbished
+Yes,105000,1.5,Yes,Beňadická,47,Yes,petrzalka,bottom,panel,refurbished
+Yes,135000,3,Yes,Znievska,66,Yes,petrzalka,other,panel,refurbished
+No,133000,3,Yes,Astronomická,74,No,ruzinov,bottom,brick,refurbished
+Yes,134700,2,No,Račianska,50,Yes,nove_mesto,other,panel,refurbished
+No,155000,2,Yes,Miletičova,68,No,ruzinov,other,brick,partial_refurbishment
+No,123000,3,Yes,Svidnícka,67,Yes,ruzinov,rest,panel,old
+Yes,125000,3,Yes,Jasovská 49,69,Yes,petrzalka,other,panel,partial_refurbishment
+No,110000,1,Yes,Staré grunty,39,Yes,karlova_ves,other,other,refurbished
+Yes,131000,3,Yes,Wolkrova,64,Yes,petrzalka,top,other,old
+No,408000,3,No,Klobučnícka,107,No,stare_mesto,other,brick,refurbished
+Yes,119500,2,Yes,Račianska,61,Yes,raca,top,base,refurbished
+Yes,113900,2,Yes,Polárna 4,49,Yes,ruzinov,other,panel,refurbished
+No,86500,1,Yes,Banšelova,34,Yes,ruzinov,other,panel,refurbished
+Yes,164500,2,Yes,Sputniková,52,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,278000,4,No,Tomášikova,133,Yes,ruzinov,other,brick,refurbished
+Yes,99970,3,Yes,Toplianska,70,Yes,vrakuna,rest,panel,partial_refurbishment
+No,119900,2,No,Sibírska,40,Yes,nove_mesto,top,brick,refurbished
+Yes,107000,3,Yes,Jána Jonáša,64,Yes,devinska_nova_ves,bottom,panel,partial_refurbishment
+Yes,118500,2,No,Račianska,42,Yes,nove_mesto,other,panel,refurbished
+Yes,168500,3,Yes,Sputniková 2,64,Yes,ruzinov,bottom,panel,partial_refurbishment
+No,249000,3,No,Jána Stanislava,106,Yes,karlova_ves,other,brick,refurbished
+No,74900,1,No,Čiernovodská,36,No,vrakuna,bottom,panel,refurbished
+No,76900,1,No,Čiernovodská,36,No,vrakuna,rest,panel,refurbished
+No,79990,1,No,Hanulova,37,Yes,dubravka,other,panel,refurbished
+Yes,178000,3,No,Vajnorská,82,No,nove_mesto,other,brick,refurbished
+Yes,138000,4,No,Bzovícka,83,Yes,petrzalka,bottom,panel,old
+Yes,69000,1,Yes,Pri Šajbách,35,Yes,raca,other,panel,refurbished
+Yes,250000,3,No,Bajkalská,88,Yes,nove_mesto,other,base,refurbished
+Yes,92990,3,Yes,Vlčie hrdlo,72,Yes,ruzinov,other,brick,refurbished
+No,145000,3,No,Homolova,72,Yes,dubravka,other,panel,refurbished
+Yes,186000,3,Yes,Mierová,96,Yes,ruzinov,bottom,brick,refurbished
+No,83000,2,No,Repašského,38,Yes,dubravka,other,panel,refurbished
+Yes,213500,4,No,Rustaveliho,93,Yes,raca,top,brick,refurbished
+Yes,213000,4,Yes,Mýtna 27,105,Yes,stare_mesto,other,brick,old
+No,94500,1,Yes,Trenčianska,36,Yes,ruzinov,bottom,brick,refurbished
+Yes,129990,1,Yes,Trebišovská,49,Yes,ruzinov,other,panel,partial_refurbishment
+No,78000,1,No,Galbavého,41,Yes,dubravka,bottom,panel,old
+Yes,68000,1,Yes,Štefana Králika,34,Yes,devinska_nova_ves,other,panel,old
+Yes,135000,2,Yes,Bakošova,56,Yes,lamac,other,other,refurbished
+No,245000,3,Yes,Nám. SNP,80,Yes,stare_mesto,other,brick,partial_refurbishment
+Yes,112000,1,No,Na križovatkách,53,Yes,ruzinov,other,brick,refurbished
+Yes,138000,3,Yes,Opletalova,62,Yes,devinska_nova_ves,other,brick,refurbished
+Yes,99500,2,No,Doležalova,36,Yes,ruzinov,other,brick,refurbished
+No,93000,1,Yes,Kadnárova,39,No,raca,other,brick,refurbished
+Yes,282000,4,No,Tomášikova,133,Yes,ruzinov,other,brick,refurbished
+No,96990,2,No,Toryská,54,No,vrakuna,other,panel,refurbished
+Yes,91610,2,No,Bujnákova,41,No,dubravka,other,panel,partial_refurbishment
+Yes,82000,1,No,Pri Šajbách,38,Yes,raca,other,brick,old
+Yes,137000,3,Yes,Bazovského,70,No,dubravka,bottom,panel,partial_refurbishment
+Yes,113900,2,Yes,Polárna,44,Yes,ruzinov,other,panel,refurbished
+No,119900,2,Yes,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,139000,3,Yes,Bazovského,67,No,dubravka,bottom,panel,partial_refurbishment
+Yes,133500,3,Yes,Rovniankova,65,Yes,petrzalka,other,panel,refurbished
+Yes,189000,4,Yes,Široká,120,No,vajnory,other,brick,refurbished
+No,121900,2,No,Považanova,54,Yes,dubravka,other,panel,refurbished
+No,95000,2,No,Fedákova,53,Yes,dubravka,other,panel,old
+Yes,144000,3,Yes,Marie Curie - Sklodowskej,66,No,petrzalka,other,panel,partial_refurbishment
+No,119999,2,Yes,Hodálova,67,Yes,karlova_ves,bottom,brick,refurbished
+Yes,155000,2,No,Kresánkova,76,Yes,karlova_ves,other,brick,refurbished
+No,119900,2,Yes,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,120000,2,Yes,Herlianska,54,No,ruzinov,top,brick,partial_refurbishment
+No,128000,3,No,Družicová,74,No,ruzinov,bottom,brick,partial_refurbishment
+No,132000,2,No,Hanulova,55,Yes,dubravka,other,panel,refurbished
+No,125000,2,No,Bazová,43,No,ruzinov,bottom,brick,refurbished
+Yes,109500,3,No,Stavbárska,78,Yes,vrakuna,other,panel,refurbished
+Yes,247250,4,No,Horská,109,Yes,nove_mesto,bottom,brick,refurbished
+Yes,275000,3,No,Horská,122,Yes,nove_mesto,other,brick,refurbished
+Yes,275000,3,No,Horská,122,Yes,nove_mesto,bottom,brick,refurbished
+Yes,198000,3,No,Rusovská cesta,89,Yes,petrzalka,other,brick,refurbished
+No,124900,3,No,Geologická,75,No,podunajske_biskupice,bottom,brick,refurbished
+No,74900,1,Yes,Dudvážska,36,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+No,146000,3,No,Vajnorská,82,No,nove_mesto,top,brick,refurbished
+No,141000,3,No,Vajnorská,78,No,nove_mesto,top,brick,refurbished
+No,116900,2,No,Považanova,54,Yes,dubravka,other,panel,refurbished
+No,83500,1,No,Považanova,38,Yes,dubravka,other,panel,refurbished
+No,116900,2,Yes,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,129000,3,No,Banšelova,68,Yes,ruzinov,top,panel,old
+Yes,154500,4,Yes,Belinského,84,Yes,petrzalka,top,panel,partial_refurbishment
+No,116900,2,No,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,104700,2,No,Žarnovická,64,Yes,raca,other,panel,old
+No,119900,2,No,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,122990,2,No,Hagarova,60,Yes,raca,top,brick,partial_refurbishment
+No,105000,1,Yes,Mozartova,38,Yes,stare_mesto,other,panel,partial_refurbishment
+No,115000,2,No,Tranovského,50,No,dubravka,top,brick,refurbished
+Yes,122000,3,Yes,Mlynarovičova,75,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,114900,2,Yes,Černockého,56,No,raca,other,brick,partial_refurbishment
+Yes,136999,3,Yes,Znievska,66,Yes,petrzalka,other,panel,refurbished
+No,109900,2,No,Budyšínska,45,No,nove_mesto,other,brick,old
+Yes,131000,3,No,Lachova,77,Yes,petrzalka,other,panel,partial_refurbishment
+No,118900,2,Yes,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,93610,2,Yes,Bujnákova,46,No,dubravka,other,panel,partial_refurbishment
+No,179000,2,Yes,Mierová,159,Yes,ruzinov,top,brick,refurbished
+No,119900,2,Yes,Považanova,54,Yes,dubravka,other,panel,refurbished
+No,85000,1.5,Yes,Bakošova,43,Yes,lamac,other,panel,refurbished
+Yes,249000,2,Yes,Americká,90,Yes,nove_mesto,top,brick,refurbished
+Yes,95900,3,Yes,Čiernovodská,68,No,vrakuna,other,panel,old
+Yes,281000,4,No,Tomášikova,102,Yes,ruzinov,other,brick,refurbished
+No,115000,2,Yes,Ostredková,43,Yes,ruzinov,other,panel,refurbished
+Yes,279000,4,No,Tomášikova,133,Yes,ruzinov,other,brick,refurbished
+No,82000,3,No,Obchodná,90,No,stare_mesto,top,brick,refurbished
+Yes,99000,1,Yes,Teplická,42,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,106000,2,No,Cyprichova,47,Yes,raca,bottom,brick,old
+Yes,95000,1.5,Yes,Blagoevova,48,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,105000,1.5,No,Gessayova,39,Yes,petrzalka,top,panel,refurbished
+Yes,139000,3,Yes,Macharova 5,69,Yes,petrzalka,bottom,panel,partial_refurbishment
+Yes,109000,1.5,Yes,Karadžičova,41,Yes,ruzinov,bottom,panel,partial_refurbishment
+No,135000,1,No,Povraznícka,66,No,stare_mesto,other,brick,refurbished
+Yes,175000,3,Yes,Palkovičova,74,Yes,ruzinov,other,panel,refurbished
+No,149500,3,Yes,Medzilaborecká,78,Yes,ruzinov,bottom,panel,refurbished
+Yes,84900,1,Yes,Milana Marečka,46,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,186000,3,No,Kazanská,125,Yes,podunajske_biskupice,top,brick,refurbished
+No,95000,2,No,Sládkovičova,37,No,stare_mesto,bottom,brick,refurbished
+Yes,110500,1.5,Yes,Jasovská,37,Yes,petrzalka,other,panel,refurbished
+Yes,128000,3,No,Furdekova,70,Yes,petrzalka,other,panel,old
+No,160000,2,No,Krížna,57,Yes,stare_mesto,other,brick,refurbished
+No,125000,1,No,Godrova,29,No,stare_mesto,other,brick,refurbished
+Yes,99990,3,Yes,Latorická,67,No,podunajske_biskupice,top,panel,partial_refurbishment
+No,78500,1,No,Saratovská,38,Yes,dubravka,other,panel,partial_refurbishment
+Yes,110900,1.5,No,Jasovská,37,Yes,petrzalka,other,panel,refurbished
+Yes,195000,3,Yes,Muchovo námestie,114,Yes,petrzalka,other,brick,refurbished
+No,369000,4,Yes,Drotárska cesta,207,Yes,stare_mesto,top,brick,refurbished
+No,91900,2,Yes,Bebravská,52,Yes,vrakuna,other,panel,old
+Yes,144000,3,Yes,Rumančeková,69,Yes,ruzinov,top,panel,partial_refurbishment
+No,131600,1,No,Godrova,29,No,stare_mesto,other,brick,refurbished
+Yes,133000,2,No,Jeséniova 41,59,Yes,nove_mesto,bottom,brick,refurbished
+Yes,148000,2,Yes,Svätého Vincenta,70,Yes,ruzinov,other,brick,refurbished
+No,145000,3,Yes,Janotova,64,Yes,karlova_ves,other,panel,refurbished
+Yes,99465,2,Yes,Bujnákova,41,No,dubravka,other,panel,partial_refurbishment
+Yes,107500,4,Yes,Bieloruská,81,Yes,podunajske_biskupice,other,panel,old
+No,98000,1,No,Tomášikova,38,Yes,ruzinov,other,brick,refurbished
+Yes,182000,3,Yes,Tomašikova 55/C,79,Yes,nove_mesto,other,brick,refurbished
+Yes,117490,2,Yes,Sibírska,54,Yes,nove_mesto,bottom,panel,refurbished
+No,119900,2,Yes,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,556500,4,Yes,Zámocká,188,Yes,stare_mesto,other,other,old
+Yes,71400,1.5,No,Vlčie hrdlo,42,Yes,ruzinov,other,panel,partial_refurbishment
+No,122900,3,Yes,Saratovská,70,Yes,dubravka,bottom,panel,partial_refurbishment
+Yes,135000,2,Yes,Račianska 19,52,Yes,nove_mesto,other,panel,refurbished
+Yes,133000,3,Yes,Jurkovičova,63,Yes,raca,other,panel,refurbished
+Yes,319900,3,No,Tupého,110,Yes,nove_mesto,other,brick,refurbished
+Yes,144000,2,Yes,Riazanská,67,Yes,nove_mesto,other,panel,refurbished
+Yes,138000,3,Yes,Mamateyova 1,74,Yes,petrzalka,other,panel,refurbished
+Yes,255000,3,No,Mlynské nivy,114,No,stare_mesto,top,brick,partial_refurbishment
+No,120000,2,No,Hečkova,60,Yes,raca,top,panel,partial_refurbishment
+No,93000,2,Yes,Fedákova,48,Yes,dubravka,other,panel,partial_refurbishment
+Yes,120000,3,Yes,Krásnohorská,68,Yes,petrzalka,top,panel,partial_refurbishment
+No,119900,2,No,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,122000,2,Yes,Hečkova,44,Yes,raca,top,brick,refurbished
+Yes,137000,3,Yes,Lietavská,66,Yes,petrzalka,other,panel,refurbished
+Yes,155000,4,Yes,Batkova,86,No,dubravka,other,panel,refurbished
+No,155000,2,Yes,Grösslingova,64,No,stare_mesto,other,brick,old
+Yes,135000,3,Yes,Rovniankova 2,75,Yes,petrzalka,other,panel,refurbished
+Yes,173000,4,Yes,Furdekova,84,Yes,petrzalka,other,panel,refurbished
+Yes,229000,3,No,Drieňová,91,Yes,ruzinov,other,brick,refurbished
+Yes,149000,4,No,Karpatské námestie,88,Yes,raca,other,panel,partial_refurbishment
+Yes,69800,1,Yes,Štefana Králika,35,Yes,devinska_nova_ves,other,panel,old
+Yes,279000,4,No,Tomášikova,133,Yes,ruzinov,other,brick,refurbished
+Yes,145000,3,No,Mudrochova,67,Yes,raca,other,panel,partial_refurbishment
+No,124900,2,No,Kresánkova,57,Yes,karlova_ves,other,brick,refurbished
+No,145000,3,Yes,Šancová,62,No,nove_mesto,other,brick,refurbished
+Yes,130000,3,Yes,Píniová,85,No,vrakuna,top,brick,refurbished
+Yes,94800,1,Yes,Mierová,38,Yes,ruzinov,bottom,brick,refurbished
+Yes,107900,1,No,Jašíkova,34,Yes,ruzinov,other,panel,refurbished
+Yes,244000,3,Yes,Mierová,81,Yes,ruzinov,other,brick,refurbished
+Yes,148000,3,Yes,Holíčska,70,Yes,petrzalka,bottom,panel,refurbished
+Yes,328000,4,Yes,Mierová,116,Yes,ruzinov,top,brick,refurbished
+Yes,141800,2,Yes,Mierová,63,Yes,ruzinov,bottom,brick,refurbished
+No,120900,2,Yes,Jurigovo námestie,50,Yes,karlova_ves,rest,panel,refurbished
+No,120900,3,Yes,Jurigovo námestie,50,Yes,karlova_ves,rest,panel,refurbished
+No,27000,1.5,No,Stavbárska,40,No,vrakuna,other,panel,partial_refurbishment
+No,113000,2,No,Tranovského,50,No,dubravka,top,panel,refurbished
+No,139990,2,No,Šancová,64,No,nove_mesto,top,brick,refurbished
+No,234990,3,Yes,Račianska,100,No,nove_mesto,bottom,brick,refurbished
+No,106900,2,No,Osuského,55,Yes,petrzalka,other,panel,old
+Yes,134700,2,No,Račianska,50,Yes,nove_mesto,other,brick,refurbished
+No,75000,2,No,Vlčie hrdlo,51,No,ruzinov,other,panel,old
+Yes,128000,3,Yes,Holíčska,75,Yes,petrzalka,other,panel,old
+Yes,210000,3,Yes,Tichá,77,Yes,stare_mesto,other,panel,refurbished
+No,116000,2,Yes,Martinčekova 22,67,Yes,ruzinov,rest,panel,partial_refurbishment
+Yes,130000,2,No,Opletalova,65,No,devinska_nova_ves,bottom,brick,refurbished
+No,83000,2,No,Repašského,40,Yes,dubravka,other,panel,refurbished
+Yes,157000,4,No,Batkova,86,Yes,dubravka,other,panel,partial_refurbishment
+No,117000,2,Yes,Pekná cesta,50,No,raca,other,brick,refurbished
+Yes,199000,3,Yes,Na Križovatkách,81,Yes,ruzinov,top,brick,refurbished
+Yes,113000,1.5,Yes,Mánesovo námestie,53,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,250000,3,Yes,Záhradnícka,96,Yes,ruzinov,other,brick,refurbished
+Yes,126000,3,Yes,Andrusovova,66,Yes,petrzalka,top,panel,old
+No,109000,2,Yes,Osuského,54,Yes,petrzalka,other,panel,old
+No,90000,2,No,Bebravská,52,Yes,vrakuna,other,panel,old
+No,79990,1,Yes,Nobelova,39,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,235000,2,Yes,Dvořákovo nábrežie,56,No,stare_mesto,other,brick,refurbished
+Yes,120000,2,Yes,Martinčekova,53,Yes,ruzinov,top,panel,refurbished
+No,93500,2,Yes,Hronská,51,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,289000,4,Yes,Riazanská,163,Yes,nove_mesto,top,brick,refurbished
+Yes,92990,1.5,No,Beňadická,37,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,149000,4,Yes,Dopravná,83,Yes,raca,bottom,brick,refurbished
+Yes,117900,3,Yes,Námestie Hraničiarov,75,Yes,petrzalka,other,panel,old
+Yes,141999,3,No,Šustekova,70,Yes,petrzalka,other,panel,refurbished
+No,99000,2,Yes,Galbavého,54,Yes,dubravka,other,panel,partial_refurbishment
+Yes,70000,1,Yes,Bieloruská,35,Yes,podunajske_biskupice,top,panel,old
+Yes,120000,2,Yes,Súmračná,43,Yes,ruzinov,bottom,panel,refurbished
+Yes,282000,4,No,Tomášikova,102,Yes,ruzinov,other,other,refurbished
+Yes,156999,4,Yes,Batkova,54,Yes,dubravka,other,panel,refurbished
+No,154777,3,Yes,Hany Meličkovej,80,Yes,karlova_ves,top,panel,partial_refurbishment
+Yes,65000,1,Yes,Bieloruská,37,Yes,podunajske_biskupice,top,panel,old
+Yes,97865,2,Yes,Bujnákova,41,No,dubravka,other,panel,partial_refurbishment
+Yes,159000,4,Yes,Karpatské námestie,88,Yes,raca,other,panel,partial_refurbishment
+Yes,133900,3,No,Herlianska,65,Yes,ruzinov,other,panel,partial_refurbishment
+No,239000,3,No,Kozia,85,No,stare_mesto,top,brick,refurbished
+Yes,180000,2,Yes,Landererova,56,Yes,stare_mesto,other,other,refurbished
+Yes,150000,2,No,Žltá,50,Yes,petrzalka,top,other,refurbished
+Yes,70000,1,Yes,Bieloruská,37,Yes,podunajske_biskupice,top,panel,old
+Yes,156000,4,Yes,Batkova,89,No,dubravka,other,panel,refurbished
+Yes,143000,2,No,Bosákova,60,Yes,petrzalka,other,panel,refurbished
+Yes,145000,3,Yes,Beniakova,67,Yes,karlova_ves,top,panel,refurbished
+Yes,94990,2,Yes,Blagoevova,48,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,170000,4,No,Furdekova,94,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,115000,2,No,Súmračná,46,Yes,ruzinov,other,panel,refurbished
+No,135000,3,Yes,Sibírska,77,No,nove_mesto,bottom,brick,old
+No,225000,3,Yes,Bulharská,113,Yes,ruzinov,top,brick,old
+Yes,142000,3,Yes,Rumančeková,69,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,94990,1.5,Yes,Blagoevova,48,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,138000,3,Yes,Na barine,70,Yes,lamac,bottom,panel,refurbished
+No,262400,3,No,Tolstého,98,Yes,stare_mesto,top,brick,refurbished
+No,127000,2,Yes,Osuského,54,Yes,petrzalka,other,panel,refurbished
+Yes,122000,2,Yes,Tokajícka,54,No,ruzinov,top,brick,partial_refurbishment
+Yes,138000,3,Yes,Nad Lúčkami,72,Yes,karlova_ves,top,panel,partial_refurbishment
+Yes,94990,3,Yes,Čiernovodská,65,Yes,vrakuna,other,panel,old
+Yes,139999,3,Yes,Šustekova,70,Yes,petrzalka,other,panel,refurbished
+No,124900,3,Yes,Hečkova,53,Yes,raca,other,brick,refurbished
+Yes,133990,2,Yes,Kadnárova,60,No,raca,other,brick,refurbished
+Yes,129990,3,No,Tematínska,64,Yes,petrzalka,bottom,panel,refurbished
+No,80990,1,No,Slovinská,34,No,ruzinov,rest,other,refurbished
+No,139999,3,No,Šustekova,74,No,petrzalka,other,other,refurbished
+Yes,141599,3,Yes,Šustekova,70,Yes,petrzalka,other,panel,refurbished
+Yes,96900,1,No,Vyšehradská,44,Yes,petrzalka,other,brick,refurbished
+No,63700,1,Yes,Bieloruská,32,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,258000,3,Yes,Mlynské nivy,110,No,stare_mesto,top,brick,partial_refurbishment
+Yes,106900,2,Yes,Zálužická,47,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,148000,4,No,Vyšehradská,89,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,186000,3,No,Kresánkova,88,Yes,karlova_ves,top,other,refurbished
+Yes,118000,2,No,Súmračná,45,Yes,ruzinov,other,panel,refurbished
+No,160000,3,No,Karadžičova,64,Yes,stare_mesto,other,brick,refurbished
+No,198000,3,Yes,neuvedená,93,No,stare_mesto,rest,brick,partial_refurbishment
+Yes,102900,1,No,Kristy Bendovej,43,Yes,dubravka,rest,brick,refurbished
+Yes,199000,3,Yes,Karadžičova,87,Yes,stare_mesto,other,brick,refurbished
+Yes,199000,3,Yes,Karadžičova,87,Yes,ruzinov,other,brick,refurbished
+Yes,119000,2,Yes,Račianska,57,Yes,nove_mesto,top,panel,partial_refurbishment
+Yes,155000,4,Yes,Batkova,89,No,dubravka,other,panel,refurbished
+Yes,141500,3,Yes,Holíčska,78,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,255000,3,Yes,Mlynské nivy,86,No,stare_mesto,top,brick,partial_refurbishment
+No,134900,2,Yes,Miletičova,62,No,ruzinov,bottom,brick,old
+Yes,252000,3,No,Budovateľská,100,Yes,ruzinov,other,brick,refurbished
+Yes,119000,1.5,Yes,Jungmannova 4,53,Yes,petrzalka,other,panel,refurbished
+Yes,277990,4,Yes,Magurská,114,Yes,nove_mesto,top,brick,refurbished
+Yes,132990,2,Yes,Opletalova,62,Yes,devinska_nova_ves,other,brick,refurbished
+Yes,199990,3,No,Tomášikova,98,Yes,ruzinov,other,brick,refurbished
+Yes,134000,3,Yes,Ľubovnianska,70,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,220000,3,Yes,Drotárska cesta,104,Yes,stare_mesto,other,brick,partial_refurbishment
+Yes,150000,3,Yes,Holíčska,88,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,152000,3,No,Holíčska,78,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,128000,3,Yes,Holíčska,70,Yes,petrzalka,other,panel,old
+Yes,142000,3,No,Holíčska,86,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,139000,3,Yes,Gessayova,72,Yes,petrzalka,other,panel,refurbished
+No,74900,1,Yes,Dudvážska,35,Yes,podunajske_biskupice,other,panel,refurbished
+No,169900,3,No,Pražská,75,Yes,stare_mesto,other,brick,refurbished
+No,99000,1,No,Bárdošova,40,No,nove_mesto,rest,brick,refurbished
+Yes,117900,2,Yes,Martinčekova,53,Yes,ruzinov,top,panel,refurbished
+Yes,142000,3,Yes,Šustekova,70,Yes,petrzalka,other,panel,refurbished
+No,169000,3,Yes,Dostojevského rad,72,No,stare_mesto,other,brick,refurbished
+Yes,152000,3,Yes,Holíčska,78,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,112400,3,Yes,Bieloruská,68,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,155000,4,No,Batkova,86,No,dubravka,other,panel,partial_refurbishment
+Yes,104000,3,No,Korytnická,72,No,podunajske_biskupice,bottom,panel,partial_refurbishment
+Yes,107000,3,Yes,Jána Jonáša,65,Yes,devinska_nova_ves,other,panel,refurbished
+Yes,180000,2,Yes,Laurinská,49,Yes,stare_mesto,bottom,brick,old
+Yes,110000,1.5,Yes,Beňadická 11,48,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,219000,2,Yes,Vajanského nábrežie,70,Yes,stare_mesto,other,brick,refurbished
+Yes,137000,3,No,Hradská,64,No,vrakuna,bottom,brick,refurbished
+No,184000,2,Yes,Krajná,86,Yes,ruzinov,top,brick,refurbished
+Yes,138000,3,Yes,Blagoevova,74,Yes,petrzalka,other,panel,partial_refurbishment
+No,97200,2,Yes,Fedákova,53,Yes,dubravka,other,panel,partial_refurbishment
+Yes,92700,1,No,Šancová,43,No,nove_mesto,other,brick,partial_refurbishment
+Yes,130000,4,No,Istrijská,79,No,devinska_nova_ves,other,panel,old
+No,104999,2,Yes,Holíčska,36,Yes,petrzalka,other,panel,refurbished
+No,107999,2,Yes,Jankolova,36,Yes,petrzalka,bottom,panel,refurbished
+Yes,128000,3,Yes,Holíčska,70,Yes,petrzalka,other,panel,old
+Yes,1e+05,2,No,Nobelova,49,Yes,nove_mesto,other,other,refurbished
+Yes,97999,3,No,Na piesku,58,No,ruzinov,other,other,refurbished
+Yes,87999,2,Yes,Račianska,37,Yes,nove_mesto,other,brick,refurbished
+No,99000,3,No,Kresánkova 7A,89,Yes,karlova_ves,bottom,base,refurbished
+Yes,143000,2,No,Bosákova,59,Yes,petrzalka,other,panel,refurbished
+Yes,159900,3,No,Teplická,73,Yes,nove_mesto,top,panel,refurbished
+Yes,157000,3,Yes,Budyšínska,66,Yes,nove_mesto,bottom,panel,refurbished
+Yes,99900,1,Yes,Jašíkova,39,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,255000,3,Yes,Mlynské nivy,118,No,stare_mesto,top,brick,partial_refurbishment
+No,107000,1,Yes,Miletičova,41,No,ruzinov,top,brick,refurbished
+No,119900,2,Yes,Homolova,54,Yes,dubravka,other,panel,refurbished
+Yes,128000,3,No,Holíčska,74,Yes,petrzalka,other,panel,old
+Yes,129000,2,Yes,Sklenárova,60,Yes,ruzinov,other,panel,old
+No,459000,4,Yes,Palisády,122,No,stare_mesto,bottom,brick,refurbished
+No,234990,3,Yes,Račianska,100,No,nove_mesto,bottom,brick,refurbished
+No,130000,3,No,Na Revíne,58,Yes,nove_mesto,other,panel,refurbished
+No,92000,2,Yes,Latorická,52,No,podunajske_biskupice,rest,panel,partial_refurbishment
+No,109900,1,No,Bajkalská,40,Yes,nove_mesto,other,other,refurbished
+Yes,129000,3,No,Dopravná,78,No,raca,top,brick,partial_refurbishment
+Yes,70000,1,Yes,Bieloruská,37,Yes,podunajske_biskupice,top,panel,old
+Yes,140000,3,Yes,Znievska,69,Yes,petrzalka,other,panel,refurbished
+Yes,115000,3,Yes,Jána Stanislava,57,Yes,karlova_ves,other,panel,refurbished
+Yes,142000,3,Yes,Holíčska,78,Yes,petrzalka,other,panel,refurbished
+Yes,335000,3,Yes,Žiškova,76,Yes,stare_mesto,other,other,refurbished
+Yes,395000,3,Yes,Dvořákovo nábrežie,88,Yes,stare_mesto,other,other,refurbished
+Yes,122500,2,Yes,Štefana Králika,54,Yes,devinska_nova_ves,other,brick,refurbished
+No,191000,3,No,Rustaveliho,97,Yes,raca,other,brick,refurbished
+No,115000,2,Yes,Kazanská,58,Yes,podunajske_biskupice,top,brick,refurbished
+No,116900,2,No,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,86990,2,Yes,Podzáhradná,48,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,138000,3,No,Na barine,70,Yes,lamac,bottom,panel,refurbished
+Yes,86990,1.5,Yes,Podzáhradná,48,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+No,70000,1,No,Slatinská,38,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,86990,1.5,Yes,Podzáhradná,48,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,99990,1.5,Yes,Podzáhradná,53,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,120000,2,No,Hečkova,44,Yes,raca,top,panel,refurbished
+No,117500,2,No,Kazanská,55,Yes,podunajske_biskupice,other,brick,refurbished
+No,289000,4,Yes,Kamenná,114,No,devin,other,brick,refurbished
+Yes,125000,4,Yes,Istrijská,74,No,devinska_nova_ves,other,panel,old
+No,119700,2,No,Martinčekova,53,Yes,ruzinov,top,panel,refurbished
+Yes,280000,3,No,Štefánikova,98,No,stare_mesto,top,brick,refurbished
+Yes,115000,3,Yes,Toplianska,66,Yes,vrakuna,other,panel,refurbished
+Yes,143000,3,Yes,Rumančeková,70,Yes,ruzinov,rest,panel,partial_refurbishment
+Yes,102000,1,No,Teplická,42,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,195000,3,Yes,Drotárska cesta,76,Yes,stare_mesto,other,brick,partial_refurbishment
+Yes,262000,4,No,Pri strelnici,130,Yes,ruzinov,top,brick,refurbished
+Yes,159900,2,No,Trenčianska,78,No,ruzinov,top,brick,refurbished
+No,168000,2,Yes,Cintorínska,55,No,stare_mesto,other,brick,refurbished
+No,119900,2,No,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,71900,1.5,No,Vlčie hrdlo,42,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,107000,2,Yes,Beňadická,47,Yes,petrzalka,bottom,panel,refurbished
+Yes,107900,1,Yes,Jašíkova,40,Yes,ruzinov,other,panel,refurbished
+Yes,82000,1,No,Pavla Horova,43,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,68700,1,Yes,Štefana Králika,35,Yes,devinska_nova_ves,other,panel,old
+Yes,114900,2,No,Vietnamská,40,Yes,ruzinov,top,panel,refurbished
+Yes,142000,3,Yes,Bazovského,77,Yes,dubravka,top,panel,refurbished
+Yes,122000,3,Yes,Na pasekách,67,Yes,raca,top,panel,partial_refurbishment
+No,150000,3,No,Holíčska,78,No,petrzalka,other,panel,partial_refurbishment
+Yes,144900,3,Yes,Agátová,73,Yes,dubravka,other,brick,refurbished
+Yes,144000,3,Yes,Nad Lúčkami,74,Yes,karlova_ves,other,panel,refurbished
+No,125000,3,No,Tupolevova,64,No,petrzalka,other,panel,refurbished
+Yes,74990,1,No,Novohorská,42,No,raca,rest,panel,old
+No,159900,3,Yes,Planckova,75,Yes,petrzalka,other,panel,refurbished
+Yes,119000,3,Yes,Bagarova,73,No,dubravka,other,panel,old
+No,122000,3,No,Pri kríži,67,Yes,dubravka,other,panel,old
+Yes,123000,2,Yes,Sibírska,60,Yes,nove_mesto,other,panel,old
+No,137000,3,No,Znievska,66,Yes,petrzalka,other,panel,refurbished
+No,76000,1,No,Pekníkova,36,Yes,dubravka,top,panel,partial_refurbishment
+No,86000,1,No,Medveďovej,36,No,petrzalka,top,panel,refurbished
+Yes,143500,2,Yes,Moldavská,57,Yes,ruzinov,other,panel,refurbished
+Yes,117500,2,Yes,Sibírska,57,Yes,nove_mesto,bottom,panel,partial_refurbishment
+No,107999,2,Yes,Jankolova,38,Yes,petrzalka,bottom,panel,refurbished
+Yes,109000,3,Yes,Rajecká,70,Yes,vrakuna,bottom,panel,partial_refurbishment
+No,104999,2,Yes,Holíčska,38,Yes,petrzalka,other,panel,refurbished
+Yes,149000,2,Yes,Tomášikova,68,Yes,ruzinov,other,brick,refurbished
+Yes,127999,3,Yes,Holíčska,68,Yes,petrzalka,other,panel,old
+Yes,108900,1.5,Yes,Jasovská,42,Yes,petrzalka,other,panel,refurbished
+Yes,142000,3,Yes,Bradáčova,64,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,117900,3,Yes,Vŕbová,70,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,135000,3,Yes,Bebravská,75,Yes,vrakuna,top,brick,refurbished
+No,149000,3,Yes,Súmračná,64,Yes,ruzinov,bottom,panel,partial_refurbishment
+No,99000,2,No,Nejedlého,54,Yes,dubravka,other,panel,old
+Yes,135000,3,Yes,Uránová,64,No,ruzinov,other,brick,partial_refurbishment
+Yes,159900,2,Yes,Palackého 16,55,Yes,stare_mesto,top,brick,refurbished
+No,105000,2,No,Fedákova,48,Yes,dubravka,other,panel,refurbished
+No,118000,3,No,Hodálova,67,No,karlova_ves,other,brick,partial_refurbishment
+Yes,145000,3,Yes,Sklenárova,75,Yes,ruzinov,other,panel,refurbished
+No,121900,2,Yes,Tabaková,38,No,stare_mesto,rest,brick,refurbished
+Yes,134000,3,No,Osuského,73,Yes,petrzalka,other,panel,partial_refurbishment
+No,97740,2,Yes,Opletalova,56,Yes,devinska_nova_ves,bottom,brick,refurbished
+Yes,134460,3,Yes,Opletalova,79,Yes,devinska_nova_ves,other,brick,refurbished
+Yes,343130,4,No,Smaragdová,135,Yes,jarovce,other,brick,refurbished
+Yes,282601,3,Yes,Smaragdová,78,No,jarovce,bottom,brick,refurbished
+Yes,124900,3,Yes,Vígľašská,69,Yes,petrzalka,bottom,panel,partial_refurbishment
+No,81990,1,Yes,Gabčíkova,37,Yes,karlova_ves,bottom,panel,partial_refurbishment
+Yes,85000,2,No,Rajecká,44,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,99970,3,Yes,Toplianska,70,Yes,vrakuna,rest,panel,partial_refurbishment
+Yes,120000,3,Yes,Na pasekách,67,Yes,raca,top,panel,partial_refurbishment
+Yes,106700,3,No,Bieloruska,64,Yes,podunajske_biskupice,bottom,brick,refurbished
+No,85000,1,Yes,Znievska,36,Yes,petrzalka,other,panel,partial_refurbishment
+No,163950,3,No,Majoránová,70,No,vrakuna,rest,brick,refurbished
+Yes,83000,1,Yes,Ľ. Zúbka,29,Yes,dubravka,bottom,panel,refurbished
+No,165000,2,Yes,Cintorínska,55,No,stare_mesto,other,brick,refurbished
+Yes,83000,1,Yes,Novohorská,31,No,raca,other,panel,refurbished
+Yes,329000,4,Yes,Trnavská cesta,120,No,nove_mesto,other,brick,refurbished
+Yes,113184,2,Yes,Opletalova,65,Yes,devinska_nova_ves,other,brick,refurbished
+Yes,152928,3,Yes,Opletalova,110,Yes,devinska_nova_ves,top,brick,refurbished
+No,135000,2,Yes,Vajnorská,65,No,nove_mesto,bottom,brick,refurbished
+Yes,109000,3,Yes,Rajecká,64,Yes,vrakuna,bottom,panel,refurbished
+Yes,119900,2,Yes,Martinčekova,45,Yes,ruzinov,top,brick,refurbished
+No,78000,1,Yes,Plickova,30,Yes,raca,other,brick,refurbished
+No,79700,1,No,Plickova,30,Yes,raca,other,panel,refurbished
+Yes,149900,2,Yes,Kvetná,51,No,ruzinov,bottom,brick,refurbished
+Yes,154000,3,Yes,Zálužická,71,Yes,ruzinov,top,panel,refurbished
+No,127000,3,No,Kašmírska,59,No,ruzinov,bottom,brick,refurbished
+Yes,108000,2,No,Štefana Králika,48,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,184500,3,Yes,Mierová,79,Yes,ruzinov,top,brick,refurbished
+Yes,155000,3,Yes,Milana Marečka,88,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,250000,4,Yes,Bartókova,90,Yes,stare_mesto,other,brick,old
+Yes,220000,3,Yes,Bartókova,80,Yes,stare_mesto,other,brick,old
+Yes,360000,4,No,Ľubinská,100,Yes,stare_mesto,bottom,brick,refurbished
+Yes,134900,3,Yes,Osuského,73,Yes,petrzalka,other,panel,refurbished
+No,160000,3,No,Bajzova,71,No,ruzinov,bottom,panel,old
+Yes,116700,3,Yes,Ipeľská,79,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,83000,2,Yes,Stavbárska 50,56,Yes,vrakuna,other,panel,refurbished
+Yes,138000,3,No,Cyprichova,62,No,raca,top,brick,refurbished
+Yes,120000,2,No,Galaktická,56,Yes,ruzinov,top,panel,refurbished
+No,79800,1,Yes,Plickova,31,Yes,raca,other,panel,refurbished
+Yes,119900,2,No,Cyprichova,58,Yes,raca,other,brick,refurbished
+Yes,96600,1,Yes,Gabčíkova,34,Yes,karlova_ves,other,other,refurbished
+Yes,205000,3,No,Bajkalská,90,Yes,nove_mesto,other,other,refurbished
+Yes,98000,1.5,Yes,Blagoevova,38,Yes,petrzalka,other,panel,refurbished
+Yes,144900,3,No,Rumančeková,69,Yes,ruzinov,top,panel,partial_refurbishment
+Yes,83000,2,Yes,Stavbárska,56,Yes,vrakuna,other,panel,refurbished
+Yes,138000,3,Yes,Tranovského,63,No,dubravka,other,panel,refurbished
+Yes,143500,3,Yes,Budatínska,70,Yes,petrzalka,top,panel,partial_refurbishment
+No,191000,3,No,Rustaveliho,97,Yes,raca,other,brick,refurbished
+Yes,183000,3,Yes,Murgašova,98,Yes,stare_mesto,top,brick,refurbished
+Yes,145000,4,No,Ševčenkova,86,Yes,petrzalka,top,panel,old
+Yes,80000,1,No,Landauova,33,Yes,dubravka,other,panel,partial_refurbishment
+No,79700,1,No,Landauova,33,Yes,dubravka,other,panel,partial_refurbishment
+Yes,149800,4,Yes,Radarová,79,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,234900,3,Yes,F. Kostku,112,Yes,karlova_ves,other,brick,refurbished
+Yes,141900,3,No,Mudrochova,67,Yes,raca,other,panel,refurbished
+No,143000,4,No,Ševčenkova,86,Yes,petrzalka,top,panel,old
+Yes,182900,3,Yes,Šancová,85,Yes,stare_mesto,other,brick,old
+No,71500,1,No,Milana Marečka,37,No,devinska_nova_ves,rest,other,old
+No,122400,2,No,Matúškova,59,No,nove_mesto,other,brick,partial_refurbishment
+Yes,78000,1,Yes,Landauova,37,Yes,dubravka,rest,panel,refurbished
+Yes,150000,3,No,Halašova,73,Yes,nove_mesto,other,brick,old
+Yes,180000,3,No,Šancová,82,Yes,stare_mesto,other,brick,partial_refurbishment
+No,104900,2,Yes,Bradáčova,55,Yes,petrzalka,other,panel,partial_refurbishment
+No,85000,1,Yes,Saratovská,41,Yes,dubravka,other,panel,partial_refurbishment
+Yes,80000,1,Yes,Landauová,33,Yes,dubravka,other,panel,partial_refurbishment
+No,85000,1,Yes,Osuského,36,Yes,petrzalka,other,panel,refurbished
+Yes,119750,4,Yes,Dudvážska,82,Yes,podunajske_biskupice,bottom,panel,partial_refurbishment
+Yes,79600,1,Yes,Landauova,33,Yes,dubravka,other,panel,partial_refurbishment
+Yes,63000,2,Yes,Stavbárska,56,Yes,vrakuna,other,panel,refurbished
+No,114000,2,Yes,Vietnamská,61,Yes,ruzinov,other,brick,partial_refurbishment
+Yes,94900,2,Yes,Čiližská,70,Yes,vrakuna,top,panel,partial_refurbishment
+No,109000,2,No,Osuského,55,Yes,petrzalka,other,panel,old
+No,89000,1,Yes,Ďatelinová,35,No,ruzinov,other,panel,old
+No,168000,2,Yes,Cintorínska,55,No,stare_mesto,other,brick,refurbished
+No,86900,1,Yes,Kalinčiakova 17,35,No,nove_mesto,bottom,brick,partial_refurbishment
+Yes,105000,3,Yes,Rajecká,69,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+No,42000,1.5,No,Stavbárska,40,Yes,vrakuna,other,panel,refurbished
+No,118900,2,Yes,Považanova,54,Yes,dubravka,other,panel,refurbished
+Yes,204990,2,Yes,Frankovská,86,Yes,nove_mesto,other,brick,refurbished
+No,102490,1,Yes,Jadrová,44,Yes,ruzinov,other,panel,refurbished
+Yes,117000,3,Yes,Jána Poničana,71,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,98900,1,Yes,Jurská,34,Yes,nove_mesto,other,panel,refurbished
+Yes,145000,4,Yes,Ševčenkova,86,Yes,petrzalka,top,panel,old
+Yes,162500,2,Yes,Šancová,70,Yes,nove_mesto,other,brick,refurbished
+Yes,144600,4,Yes,Ševčenkova,86,Yes,petrzalka,top,panel,old
+Yes,257000,3,Yes,Mlynské nivy,110,No,stare_mesto,top,brick,partial_refurbishment
+Yes,144600,4,Yes,Ševčenkova,86,Yes,petrzalka,top,panel,old
+Yes,112000,2,Yes,Tranovského,57,Yes,dubravka,bottom,panel,partial_refurbishment
+Yes,95000,1,No,Gabčíkova,33,Yes,karlova_ves,other,brick,refurbished
+Yes,183000,3,Yes,Šancová,83,Yes,stare_mesto,other,brick,old
+No,109000,2,Yes,Vajnorská,46,No,nove_mesto,top,brick,partial_refurbishment
+Yes,89900,1,No,Jurská,39,Yes,nove_mesto,other,brick,refurbished
+Yes,180000,3,No,Šancová,85,Yes,nove_mesto,other,brick,old
+No,238500,4,No,Potočná 11,95,No,raca,rest,brick,refurbished
+Yes,532885,4,Yes,Vlčkova,157,Yes,stare_mesto,rest,brick,refurbished
+Yes,143000,4,No,Ševčenkova,86,Yes,petrzalka,top,panel,old
+Yes,577687,4,Yes,Vlčkova,163,Yes,stare_mesto,rest,brick,refurbished
+Yes,546447,4,Yes,Vlčkova,154,Yes,stare_mesto,rest,brick,refurbished
+Yes,123600,3,Yes,Krásnohorská,65,Yes,petrzalka,top,panel,refurbished
+No,85000,1,Yes,Osuského,36,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,181600,3,Yes,Šancová,83,Yes,stare_mesto,other,brick,old
+Yes,250000,3,No,Záhradnícka,96,Yes,ruzinov,other,brick,refurbished
+Yes,120000,3,Yes,Lietavská,69,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,269000,4,Yes,Račianska,108,Yes,nove_mesto,other,brick,being_constructed
+No,139000,3,No,Leškova,74,No,stare_mesto,other,brick,refurbished
+No,139000,2,No,Leškova,74,No,stare_mesto,other,brick,refurbished
+No,180000,3,No,Šancová,83,Yes,stare_mesto,other,brick,partial_refurbishment
+No,219890,3,Yes,Vajnorská,111,No,nove_mesto,bottom,brick,partial_refurbishment
+No,219890,4,Yes,Vajnorská,111,No,nove_mesto,bottom,brick,partial_refurbishment
+Yes,172000,3,Yes,Krížna,74,Yes,stare_mesto,other,brick,partial_refurbishment
+Yes,318690,3,No,Kresánkova,140,Yes,karlova_ves,other,base,refurbished
+No,205000,3,No,Dohnányho,78,No,ruzinov,other,brick,refurbished
+Yes,205000,3,No,Dohnányho,76,No,ruzinov,bottom,brick,refurbished
+No,74900,1,Yes,Čiernovodská,36,No,vrakuna,bottom,panel,refurbished
+Yes,205000,3,No,Dohnányho,78,No,ruzinov,bottom,brick,refurbished
+No,219800,3,No,Cukrová,69,Yes,stare_mesto,other,brick,refurbished
+Yes,249900,4,Yes,Kyjevská 3,118,Yes,nove_mesto,other,brick,refurbished
+No,329000,4,Yes,Trnavská cesta,120,Yes,nove_mesto,other,brick,refurbished
+Yes,78000,1,Yes,Landauova,33,Yes,dubravka,other,panel,partial_refurbishment
+Yes,126000,3,Yes,Romanova,65,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,169000,4,Yes,Piešťanská,76,Yes,nove_mesto,other,panel,refurbished
+Yes,158000,3,Yes,Vajnorská,81,Yes,nove_mesto,bottom,brick,old
+Yes,143000,4,No,Šintavská,82,Yes,petrzalka,bottom,panel,partial_refurbishment
+Yes,205000,3,Yes,Dohnányho,78,No,ruzinov,bottom,brick,refurbished
+Yes,143000,4,Yes,Ševčenkova,86,Yes,petrzalka,top,panel,old
+Yes,133000,2,Yes,Uránová,49,No,ruzinov,top,brick,refurbished
+Yes,120300,3,Yes,Budatinská,66,Yes,petrzalka,other,panel,old
+Yes,180000,3,Yes,Blumentálska,81,Yes,stare_mesto,other,brick,partial_refurbishment
+No,269000,3,Yes,Frankovská,125,Yes,nove_mesto,top,brick,refurbished
+Yes,120300,3,Yes,Budatinská,66,Yes,petrzalka,other,panel,old
+Yes,83000,2,Yes,Stavbárska,56,Yes,vrakuna,other,panel,refurbished
+Yes,109500,3,Yes,Stavbárska,74,Yes,vrakuna,other,panel,refurbished
+Yes,279000,3,Yes,Vlčkova,78,No,stare_mesto,other,brick,old
+Yes,130000,4,Yes,Vážska,76,No,vrakuna,top,panel,refurbished
+Yes,96900,3,No,Jána Jonáša,65,Yes,devinska_nova_ves,other,panel,old
+Yes,132400,2,Yes,Martinengova 38,46,Yes,stare_mesto,bottom,brick,refurbished
+Yes,109900,4,Yes,Poľnohospodárska 26,88,Yes,vrakuna,other,panel,old
+Yes,205000,3,Yes,Dohnányho,78,No,ruzinov,bottom,brick,refurbished
+No,116000,1,Yes,Prievozská,40,No,ruzinov,bottom,brick,refurbished
+Yes,149500,3,No,Legionárska,65,Yes,nove_mesto,other,brick,old
+Yes,205000,3,Yes,Dohnányho,78,No,ruzinov,bottom,brick,refurbished
+No,120990,2,No,Matúškova,60,No,nove_mesto,rest,other,partial_refurbishment
+Yes,363000,3,Yes,Gabčíkova,115,Yes,karlova_ves,top,other,refurbished
+No,121900,3,Yes,Hodálova,66,No,karlova_ves,rest,panel,partial_refurbishment
+No,449000,2,Yes,Dvořákovo nábrežie,90,Yes,stare_mesto,other,other,refurbished
+No,439000,2,Yes,Dvořákovo nábrežie,92,Yes,stare_mesto,other,other,refurbished
+Yes,120000,3,No,Pri kríži,67,Yes,dubravka,other,panel,old
+No,164900,2,Yes,Karadžičova,60,Yes,stare_mesto,other,brick,refurbished
+Yes,145000,4,Yes,Ševčenkova,83,Yes,petrzalka,top,panel,old
+No,289000,3,Yes,Cesta na Kamzík,175,Yes,nove_mesto,bottom,brick,refurbished
+Yes,123000,2,Yes,Sibírska,54,Yes,nove_mesto,bottom,panel,old
+No,154900,2,Yes,Tabaková,56,No,stare_mesto,bottom,brick,refurbished
+Yes,209900,3,Yes,Kyjevská 1,112,Yes,nove_mesto,top,brick,refurbished
+Yes,210000,3,No,Dohnányho,78,No,ruzinov,bottom,brick,refurbished
+Yes,185000,3,Yes,Záhrebská,82,No,stare_mesto,other,brick,partial_refurbishment
+Yes,112500,4,Yes,Rajecká,79,Yes,vrakuna,bottom,panel,partial_refurbishment
+No,118300,3,Yes,Romanova,55,Yes,petrzalka,top,panel,refurbished
+Yes,129000,2,No,Kríková,70,Yes,vrakuna,other,brick,refurbished
+Yes,129500,3,Yes,Wolkrova,70,Yes,petrzalka,other,panel,refurbished
+Yes,113000,3,Yes,Ivana Bukovčana,63,Yes,devinska_nova_ves,top,panel,partial_refurbishment
+Yes,205000,3,Yes,Dohnányho,81,No,ruzinov,bottom,brick,refurbished
+Yes,125000,3,No,Furdekova,73,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,125000,3,No,Furdekova,73,Yes,petrzalka,top,panel,partial_refurbishment
+No,108990,2,Yes,Vajnorská,44,No,nove_mesto,top,brick,partial_refurbishment
+Yes,85000,2,Yes,Kríková,47,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,229000,3,No,Trenčianska,136,No,ruzinov,top,brick,refurbished
+Yes,131900,3,Yes,Ševčenkova,70,Yes,petrzalka,other,panel,refurbished
+Yes,76000,1,Yes,Pavla Horova,43,Yes,devinska_nova_ves,other,panel,old
+Yes,140000,3,No,Sabinovská,67,Yes,ruzinov,top,panel,partial_refurbishment
+No,131000,4,No,Račianska,71,Yes,nove_mesto,other,panel,old
+Yes,128000,3,Yes,Sadmelijská 5,72,Yes,raca,other,base,refurbished
+Yes,131000,3,No,Jasovská,76,Yes,petrzalka,other,panel,refurbished
+Yes,129900,3,Yes,Tupolevova,80,Yes,petrzalka,other,panel,partial_refurbishment
+No,110000,2,No,Bradáčova,55,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,173900,3,No,Mierová 29,70,Yes,ruzinov,other,brick,refurbished
+Yes,346900,3,Yes,Fándlyho,91,No,stare_mesto,other,brick,old
+No,155900,3,Yes,Budovateľská,62,No,ruzinov,top,brick,refurbished
+Yes,139500,3,Yes,Bradáčova,61,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,129900,4,Yes,Latorická,79,No,podunajske_biskupice,other,panel,refurbished
+No,132400,2,No,Martinengova,46,Yes,stare_mesto,other,brick,refurbished
+No,131000,3,Yes,Šándorova,68,Yes,ruzinov,other,brick,refurbished
+No,290000,3,No,Jakubovo námestie,113,No,stare_mesto,other,brick,refurbished
+No,33000,2,No,Stavbárska,39,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,107500,1.5,Yes,Fedinova,53,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,107500,2,Yes,Fedinova,53,Yes,petrzalka,other,panel,refurbished
+Yes,115000,1.5,Yes,Gessayova,50,Yes,petrzalka,other,panel,refurbished
+No,213500,4,No,Zárubová,98,No,zahorska_bistrica,bottom,brick,refurbished
+Yes,205000,3,No,Dohnányho,78,No,ruzinov,bottom,brick,refurbished
+Yes,120000,3,No,Vŕbová,73,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,219800,3,Yes,x,110,Yes,nove_mesto,other,brick,old
+Yes,124990,3,No,Mlynarovičova,70,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,159000,4,No,Babuškova,71,No,ruzinov,top,brick,refurbished
+No,104000,1.5,No,Šustekova,42,Yes,petrzalka,other,panel,refurbished
+Yes,128000,3,No,Vyšehradská,64,Yes,petrzalka,other,brick,refurbished
+No,92990,1,No,Martinčekova,33,No,ruzinov,other,other,refurbished
+Yes,128000,2,No,Vyšehradská,64,Yes,petrzalka,other,brick,refurbished
+Yes,139999,3,No,Šustekova,70,Yes,petrzalka,other,panel,refurbished
+Yes,120000,3,Yes,Pri kríži,67,Yes,dubravka,other,panel,old
+No,159000,3,No,Račianska 6,92,Yes,nove_mesto,rest,brick,refurbished
+Yes,155000,3,Yes,Kazanska,75,Yes,podunajske_biskupice,rest,brick,refurbished
+No,150000,3,Yes,Narcisová,74,Yes,ruzinov,other,panel,refurbished
+Yes,120000,3,No,Pri kríži,67,Yes,dubravka,other,panel,old
+Yes,120000,3,Yes,Vŕbová,70,Yes,vrakuna,other,panel,partial_refurbishment
+No,385000,3,Yes,Na Zlatej nohe,96,Yes,nove_mesto,top,brick,refurbished
+Yes,97900,3,Yes,Bodvianska,68,Yes,vrakuna,bottom,panel,partial_refurbishment
+No,83000,1,Yes,Osuského,37,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,382000,4,Yes,Tichá,127,Yes,stare_mesto,other,brick,refurbished
+Yes,105000,2,Yes,Riazanská,45,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,119800,3,Yes,Šintavská,66,Yes,petrzalka,other,panel,old
+No,70000,1,Yes,Slatinská,38,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,113900,1,Yes,Kresánkova,59,Yes,karlova_ves,other,panel,refurbished
+No,137000,3,No,Staré záhrady,73,No,ruzinov,other,brick,partial_refurbishment
+No,89000,1,No,Guothova,32,No,nove_mesto,other,panel,partial_refurbishment
+Yes,112000,2,Yes,Mánesovo námestie,48,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,112000,1.5,Yes,Mánesovo námestie,48,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,258000,3,Yes,Stromová,92,Yes,nove_mesto,other,brick,refurbished
+Yes,143000,4,No,Ševčenkova,86,Yes,petrzalka,top,panel,old
+No,149000,3,Yes,Súmračná,64,Yes,ruzinov,bottom,panel,partial_refurbishment
+Yes,108000,2,Yes,Kazanská,45,Yes,podunajske_biskupice,top,panel,refurbished
+No,345000,4,Yes,Žltá,99,Yes,petrzalka,top,other,refurbished
+Yes,141900,4,No,Kostlivého,74,No,ruzinov,bottom,panel,partial_refurbishment
+Yes,308900,3,Yes,Gajova,110,Yes,stare_mesto,other,brick,refurbished
+Yes,144900,3,Yes,Višňová 14,59,No,nove_mesto,other,panel,refurbished
+Yes,120000,3,No,Vŕbová,70,Yes,vrakuna,other,panel,partial_refurbishment
+No,132400,2,No,Martinengova,46,Yes,stare_mesto,other,brick,refurbished
+Yes,116000,3,Yes,Ivana Bukovčana,63,Yes,devinska_nova_ves,top,panel,partial_refurbishment
+Yes,145000,3,Yes,Damborského,74,No,dubravka,bottom,panel,refurbished
+No,132400,2,No,Martinengova,46,Yes,stare_mesto,other,brick,refurbished
+Yes,122000,3,Yes,Pri kríži,67,Yes,dubravka,other,panel,old
+No,150000,3,Yes,Narcisová,74,Yes,ruzinov,other,panel,refurbished
+No,88000,2,Yes,Studenohorská,43,Yes,lamac,other,panel,partial_refurbishment
+Yes,159000,2,No,Svätého Vincenta,72,Yes,ruzinov,rest,brick,refurbished
+Yes,114900,3,Yes,Hany Meličkovej,63,Yes,karlova_ves,other,panel,old
+Yes,380000,4,No,Tichá,127,Yes,stare_mesto,other,panel,refurbished
+Yes,143000,2,Yes,Solivarská,55,No,ruzinov,other,brick,refurbished
+No,120000,3,Yes,Hodálova,67,Yes,karlova_ves,other,panel,refurbished
+No,128000,1,Yes,Palackého,36,Yes,stare_mesto,other,brick,refurbished
+Yes,99990,1.5,Yes,Podzáhradná,53,Yes,podunajske_biskupice,other,panel,refurbished
+No,68500,1,Yes,Bieloruská,33,Yes,podunajske_biskupice,top,panel,partial_refurbishment
+No,129000,3,Yes,Šándorova,68,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,72500,1,Yes,Šustekova,29,Yes,petrzalka,other,panel,old
+Yes,180000,3,Yes,Blumentálska,83,Yes,stare_mesto,other,brick,partial_refurbishment
+No,126000,3,Yes,Kadnárova,55,No,raca,bottom,brick,refurbished
+Yes,135000,2,No,Solivarská,55,No,ruzinov,other,brick,refurbished
+Yes,133000,3,Yes,Ľudovíta Fullu,68,Yes,karlova_ves,other,panel,refurbished
+Yes,137000,2,No,Sibírska,60,Yes,nove_mesto,other,panel,partial_refurbishment
+Yes,252777,3,Yes,Belopotockého,90,No,stare_mesto,other,brick,refurbished
+No,79900,1,Yes,Plickova,30,Yes,raca,other,panel,refurbished
+Yes,104900,1,Yes,Doležalova,53,Yes,ruzinov,bottom,brick,partial_refurbishment
+No,115000,1,Yes,Prievozská,40,No,ruzinov,bottom,brick,partial_refurbishment
+Yes,122000,3,No,Rovniankova,72,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,119990,2,Yes,Račianska,48,Yes,nove_mesto,other,brick,refurbished
+Yes,104000,3,Yes,Korytnická,72,Yes,podunajske_biskupice,bottom,panel,partial_refurbishment
+No,79900,1,Yes,Holíčska,37,Yes,petrzalka,other,panel,old
+No,149500,2,No,Miletičova,55,Yes,ruzinov,other,brick,partial_refurbishment
+Yes,119990,3,Yes,Šustekova,76,Yes,petrzalka,other,panel,old
+Yes,169990,4,Yes,Furdekova,84,Yes,petrzalka,other,panel,refurbished
+No,121700,3,No,Rovniankova,68,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,286719,4,Yes,Smaragdová,135,No,jarovce,other,brick,refurbished
+Yes,154521,2,Yes,Smaragdová,73,No,jarovce,other,brick,refurbished
+Yes,152418,2,Yes,Smaragdová,72,No,jarovce,other,brick,refurbished
+Yes,313104,4,Yes,Smaragdová,142,No,jarovce,other,brick,refurbished
+Yes,96000,1,No,Fedinova,30,Yes,petrzalka,other,brick,refurbished
+Yes,313060,4,Yes,Smaragdová,142,No,jarovce,other,brick,refurbished
+Yes,135000,3,No,Staré záhrady,73,No,ruzinov,other,panel,partial_refurbishment
+Yes,147469,2,Yes,Smaragdová,69,No,jarovce,other,brick,refurbished
+Yes,348788,4,Yes,Smaragdová,159,No,jarovce,other,brick,refurbished
+Yes,171810,2,Yes,Smaragdová,81,No,jarovce,other,brick,refurbished
+Yes,147321,2,Yes,Smaragdová,69,No,jarovce,other,brick,refurbished
+Yes,122000,3,Yes,Rovniankova,68,Yes,petrzalka,other,panel,partial_refurbishment
+No,69000,1,Yes,Drobného,34,Yes,dubravka,other,panel,old
+Yes,249000,4,Yes,Na Križovatkách,119,Yes,ruzinov,bottom,brick,refurbished
+Yes,105000,3,Yes,Schneidera - Trnavského,48,No,dubravka,bottom,panel,old
+Yes,109900,2,No,Jasovská,42,Yes,petrzalka,other,panel,refurbished
+No,120000,2,Yes,Vajnorská,49,No,nove_mesto,other,brick,refurbished
+Yes,123600,2,Yes,Kadnárova,61,No,raca,other,brick,old
+No,147500,3,Yes,Šalviová,71,Yes,ruzinov,bottom,panel,refurbished
+Yes,145000,2,No,Solivarská,55,No,ruzinov,other,brick,refurbished
+Yes,122500,3,Yes,Čiernovodská 9,70,No,vrakuna,other,panel,refurbished
+Yes,122000,3,Yes,Matejková,63,Yes,karlova_ves,top,panel,partial_refurbishment
+Yes,70000,1.5,No,Vlčie hrdlo,35,No,ruzinov,bottom,brick,partial_refurbishment
+Yes,119990,2,Yes,Istrijská,57,Yes,devinska_nova_ves,top,panel,refurbished
+No,105000,2,Yes,Fedákova,48,Yes,dubravka,other,panel,refurbished
+Yes,111900,2,Yes,Narcisová 46,44,Yes,ruzinov,other,panel,refurbished
+Yes,111900,1,Yes,Narcisová 46,44,Yes,ruzinov,other,panel,refurbished
+Yes,115000,3,Yes,Učiteľská,70,No,podunajske_biskupice,bottom,brick,partial_refurbishment
+Yes,122000,3,Yes,Rovniankova,68,Yes,petrzalka,other,panel,partial_refurbishment
+No,85000,1,Yes,Pluhová,31,No,nove_mesto,rest,brick,refurbished
+Yes,126000,3,Yes,Andrusovova,70,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,210000,2,Yes,Stromová,66,Yes,nove_mesto,other,other,refurbished
+Yes,113900,1,Yes,Kresánkova,54,Yes,karlova_ves,bottom,other,refurbished
+No,96900,2,Yes,Kozmonautická,43,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,159000,2,No,Martinčekova,63,Yes,ruzinov,rest,brick,refurbished
+Yes,103000,3,Yes,Dudvážska,69,Yes,podunajske_biskupice,bottom,panel,old
+Yes,144990,3,Yes,Jašíkova,70,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,117000,3,Yes,Korytnická,70,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,135000,3,Yes,Staré záhrady,73,No,ruzinov,other,other,partial_refurbishment
+Yes,185000,3,Yes,Jiskrova,91,No,nove_mesto,other,brick,partial_refurbishment
+Yes,134000,3,Yes,Osuského,73,Yes,petrzalka,other,panel,partial_refurbishment
+No,84000,1,Yes,Baltská,37,Yes,podunajske_biskupice,rest,panel,refurbished
+Yes,299000,2,Yes,Martinengova,85,Yes,stare_mesto,other,brick,refurbished
+Yes,328000,4,No,Rozvodná,140,Yes,nove_mesto,other,brick,refurbished
+Yes,138000,3,Yes,Staré záhrady,68,No,ruzinov,other,panel,partial_refurbishment
+Yes,115000,2,No,Zadunajská cesta,46,Yes,petrzalka,other,brick,refurbished
+Yes,289000,4,No,Makovického,122,No,nove_mesto,bottom,brick,refurbished
+No,92500,1,Yes,Vranovská,40,Yes,petrzalka,other,panel,refurbished
+Yes,289000,3,No,Makovického,122,No,nove_mesto,bottom,brick,refurbished
+No,122200,2,Yes,Vranovská,56,Yes,petrzalka,top,panel,old
+No,123000,2,Yes,Kopčianska,45,Yes,petrzalka,other,panel,refurbished
+Yes,180000,3,No,Blumentálska,83,Yes,stare_mesto,other,brick,refurbished
+No,99900,1,Yes,Trenčianska,41,No,ruzinov,rest,brick,partial_refurbishment
+Yes,275000,3,Yes,Bajkalská,80,Yes,nove_mesto,other,base,refurbished
+Yes,143000,4,Yes,Ševčenkova,86,Yes,petrzalka,top,panel,old
+Yes,159900,2,Yes,Tupého,90,Yes,nove_mesto,rest,brick,refurbished
+Yes,125000,3,Yes,Mlynarovičova,72,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,142000,4,Yes,Brančská,86,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,84500,2,No,Rajecká,39,Yes,vrakuna,other,panel,refurbished
+Yes,137900,3,Yes,Mesačná,75,Yes,ruzinov,rest,panel,old
+No,107000,2,Yes,Studenohorská,55,Yes,lamac,other,panel,refurbished
+Yes,158800,2,Yes,Povraznícka,71,Yes,stare_mesto,rest,brick,refurbished
+Yes,219900,3,Yes,Tupého,107,Yes,nove_mesto,rest,brick,refurbished
+Yes,107000,2,No,Donnerova,53,Yes,karlova_ves,bottom,panel,refurbished
+Yes,80000,1,Yes,Janka Alexyho,36,Yes,dubravka,other,brick,refurbished
+No,173000,2,Yes,Dunajská 66,65,No,stare_mesto,other,brick,partial_refurbishment
+No,168000,2,Yes,Cintorínska,55,No,stare_mesto,other,brick,refurbished
+Yes,120000,3,Yes,Vŕbová,68,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,120000,3,No,Rovniankova,68,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,109500,2,Yes,Jungmannova,46,Yes,petrzalka,other,panel,old
+No,69000,1,Yes,Bieloruská,33,Yes,podunajske_biskupice,bottom,panel,refurbished
+Yes,144600,2,No,Solivarská,55,No,ruzinov,other,brick,refurbished
+Yes,125000,3,Yes,Ševčenkova,70,Yes,petrzalka,other,panel,refurbished
+Yes,121600,3,Yes,Vŕbová,70,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,121600,3,Yes,Rovniankova,68,Yes,petrzalka,other,panel,refurbished
+No,77000,1,Yes,Saratovská,41,Yes,dubravka,other,panel,partial_refurbishment
+Yes,143000,2,No,Solivarská,55,No,ruzinov,other,brick,refurbished
+No,142990,2,Yes,Jelenia,35,Yes,stare_mesto,other,brick,refurbished
+Yes,127800,4,Yes,Hornádska,78,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,125000,3,No,Mlynarovičova,70,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,149000,3,Yes,Šalviová,70,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,88400,1,No,Antolská,37,Yes,petrzalka,other,brick,refurbished
+No,163000,2,No,Šancová,80,No,nove_mesto,other,brick,partial_refurbishment
+Yes,125800,4,Yes,Hornádska,83,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,143000,2,No,Solivarská,56,No,ruzinov,other,brick,refurbished
+Yes,83000,2,Yes,Stavbárska,56,Yes,vrakuna,other,panel,refurbished
+No,153000,3,Yes,Mestská,56,No,nove_mesto,top,brick,refurbished
+No,138000,2,Yes,Miletičova,64,No,ruzinov,rest,brick,partial_refurbishment
+Yes,125800,4,No,Hornádska,78,Yes,podunajske_biskupice,other,panel,refurbished
+No,185000,3,No,Haburská,82,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,110000,2,Yes,Čiližská,67,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,105000,3,Yes,Rajecká,69,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,102000,3,Yes,Korytnická,72,Yes,podunajske_biskupice,bottom,panel,partial_refurbishment
+No,120000,4,No,Borodáčova,66,No,ruzinov,rest,brick,old
+Yes,114000,2,Yes,Vietnamská,55,Yes,ruzinov,bottom,brick,partial_refurbishment
+No,99500,3,No,Tomanova,47,No,vajnory,top,brick,refurbished
+Yes,127800,4,No,Hornádska,78,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,79750,1,Yes,Račianska,28,Yes,nove_mesto,other,brick,refurbished
+Yes,103000,1,No,Doležalova,55,Yes,ruzinov,bottom,brick,refurbished
+Yes,146772,2,No,Pekná cesta,53,Yes,raca,other,brick,refurbished
+Yes,299470,3,No,Pekná cesta,87,Yes,raca,other,brick,refurbished
+Yes,89452,1,No,Pekná cesta,32,Yes,raca,other,brick,refurbished
+No,108900,2,Yes,Galbavého,55,Yes,dubravka,other,panel,refurbished
+Yes,84500,1,No,Československých parašutistov,36,Yes,nove_mesto,other,panel,refurbished
+Yes,127800,4,Yes,Hornádska,78,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,135000,3,Yes,Vígľašská,78,Yes,petrzalka,other,panel,partial_refurbishment
+No,105000,1,No,29 augusta,35,No,stare_mesto,top,brick,refurbished
+Yes,123000,2,Yes,Solivarská,55,No,ruzinov,top,brick,old
+Yes,105000,1.5,No,Vígľašská,46,Yes,petrzalka,other,panel,refurbished
+No,117900,3,Yes,Drobného,60,Yes,dubravka,rest,panel,refurbished
+Yes,210000,3,No,Horská,102,Yes,nove_mesto,bottom,brick,refurbished
+Yes,119000,2,Yes,Škultétyho,46,Yes,nove_mesto,other,brick,partial_refurbishment
+Yes,127400,4,Yes,Hornádska,78,Yes,podunajske_biskupice,other,panel,refurbished
+No,149900,2,Yes,Wilsonova,51,No,stare_mesto,other,brick,refurbished
+Yes,198000,4,Yes,Legionárska,103,No,stare_mesto,other,brick,old
+No,71900,1,Yes,Bieloruská,34,Yes,podunajske_biskupice,bottom,panel,refurbished
+Yes,78900,1,Yes,Ľuda Zúbka,31,Yes,dubravka,bottom,panel,partial_refurbishment
+No,70000,1,No,Čiližská,42,Yes,vrakuna,other,panel,old
+Yes,125800,4,No,Hornádska,78,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,125800,4,No,Hornádska,78,Yes,podunajske_biskupice,other,panel,refurbished
+No,135000,2,Yes,Mierová,53,Yes,ruzinov,other,panel,refurbished
+No,448000,4,Yes,Pod Vachmajstrom,100,Yes,nove_mesto,other,brick,refurbished
+Yes,120000,4,Yes,Rajčianska,82,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,99900,1,Yes,Jašíkova,40,Yes,ruzinov,other,panel,partial_refurbishment
+No,115000,2,Yes,Rovníková,43,Yes,ruzinov,other,panel,refurbished
+Yes,116900,2,Yes,Medzilaborecká,47,Yes,ruzinov,bottom,panel,refurbished
+Yes,118500,2,No,Račianska,42,Yes,nove_mesto,other,panel,refurbished
+Yes,122500,2,No,Hagarova,59,Yes,raca,other,brick,old
+No,164900,2,Yes,Karadžičova,64,Yes,stare_mesto,other,brick,refurbished
+Yes,143900,2,No,Riazanská,67,Yes,nove_mesto,other,panel,refurbished
+Yes,139900,2,No,Sputniková,56,Yes,ruzinov,bottom,panel,refurbished
+Yes,149500,2,Yes,Šuňavcova,58,No,nove_mesto,other,brick,refurbished
+Yes,149500,3,No,Legionárska,65,Yes,stare_mesto,other,brick,old
+Yes,148500,3,Yes,Jozefa Cígera Hronského,60,Yes,nove_mesto,bottom,panel,refurbished
+Yes,96990,2,Yes,Jesenná,43,Yes,ruzinov,bottom,panel,partial_refurbishment
+Yes,121500,3,No,Medveďovej,67,Yes,petrzalka,bottom,panel,old
+Yes,134500,3,No,Medveďovej,67,Yes,petrzalka,bottom,panel,refurbished
+Yes,146900,4,Yes,Jána Stanislava,80,Yes,karlova_ves,other,panel,partial_refurbishment
+No,141653,2,No,Pod Krásnou hôrkou,53,Yes,nove_mesto,bottom,brick,being_constructed
+Yes,147745,2,No,Pod Krásnou hôrkou,61,Yes,nove_mesto,bottom,brick,being_constructed
+Yes,202386,3,No,Pod Krásnou hôrkou,78,Yes,nove_mesto,other,brick,being_constructed
+Yes,149408,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,140952,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+No,202386,3,No,Pod Krásnou hôrkou,78,Yes,nove_mesto,other,brick,being_constructed
+No,150753,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,140379,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+No,148728,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,164900,2,No,Pod Krásnou hôrkou,61,Yes,nove_mesto,other,brick,being_constructed
+Yes,202386,3,No,Pod Krásnou hôrkou,78,Yes,nove_mesto,other,brick,being_constructed
+Yes,151703,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,150359,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,rest,brick,being_constructed
+Yes,164900,2,No,Pod Krásnou hôrkou,61,Yes,nove_mesto,other,brick,being_constructed
+Yes,202386,3,No,Pod Krásnou hôrkou,78,Yes,nove_mesto,other,brick,being_constructed
+Yes,142977,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,140379,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,149678,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,207086,3,No,Pod Krásnou hôrkou,78,Yes,nove_mesto,other,brick,being_constructed
+Yes,153570,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,144900,2,No,Pod Krásnou hôrkou,53,Yes,nove_mesto,other,brick,being_constructed
+Yes,224850,3,No,Pod Krásnou hôrkou,92,Yes,nove_mesto,bottom,brick,being_constructed
+Yes,150143,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,bottom,brick,being_constructed
+Yes,149678,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,bottom,brick,being_constructed
+Yes,172768,3,No,Pod Krásnou hôrkou,66,Yes,nove_mesto,rest,brick,being_constructed
+Yes,224418,3,No,Pod Krásnou hôrkou,92,Yes,nove_mesto,other,brick,being_constructed
+Yes,148843,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,141600,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,224807,3,No,Pod Krásnou hôrkou,92,Yes,nove_mesto,other,brick,being_constructed
+Yes,150143,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,140952,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+No,149491,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,141632,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,150326,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,150143,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+Yes,148843,2,No,Pod Krásnou hôrkou,54,Yes,nove_mesto,other,brick,being_constructed
+No,172768,3,No,Pod Krásnou hôrkou,66,Yes,nove_mesto,other,brick,being_constructed
+No,160000,3,No,Bratislavská,75,Yes,zahorska_bistrica,other,brick,refurbished
+Yes,149900,3,Yes,Bratislavská,92,Yes,zahorska_bistrica,bottom,brick,refurbished
+Yes,294900,4,No,Jamnického,140,No,karlova_ves,rest,brick,refurbished
+No,163700,3,Yes,Rustaveliho,97,Yes,raca,other,panel,being_constructed
+No,86800,1,Yes,Rustaveliho,51,Yes,raca,other,panel,being_constructed
+No,142900,3,Yes,Rustaveliho,80,Yes,raca,other,panel,being_constructed
+No,99600,2,Yes,Rustaveliho,50,Yes,raca,other,panel,being_constructed
+No,163000,3,Yes,Rustaveliho,96,Yes,raca,other,panel,being_constructed
+No,127900,2,Yes,Rustaveliho,72,Yes,raca,other,panel,being_constructed
+No,87900,1,Yes,Rustaveliho,51,Yes,raca,other,panel,being_constructed
+No,78800,1,Yes,Rustaveliho,45,Yes,raca,other,panel,being_constructed
+No,101500,2,Yes,Rustaveliho,50,Yes,raca,other,panel,being_constructed
+No,165200,3,Yes,Rustaveliho,96,Yes,raca,other,panel,being_constructed
+No,128700,2,Yes,Rustaveliho,72,Yes,raca,other,panel,being_constructed
+No,88900,1,Yes,Rustaveliho,51,Yes,raca,other,panel,being_constructed
+No,145000,3,Yes,Rustaveliho,81,Yes,raca,other,panel,being_constructed
+No,79200,1,Yes,Rustaveliho,45,Yes,raca,other,panel,being_constructed
+No,170100,3,Yes,Rustaveliho,97,Yes,raca,other,panel,being_constructed
+No,89900,1,Yes,Rustaveliho,51,Yes,raca,other,panel,being_constructed
+No,101900,2,Yes,Rustaveliho,50,Yes,raca,other,panel,being_constructed
+No,170600,3,Yes,Rustaveliho,96,Yes,raca,other,panel,being_constructed
+No,131900,2,Yes,Rustaveliho,72,Yes,raca,other,panel,being_constructed
+No,81100,1,Yes,Rustaveliho,45,Yes,raca,other,panel,being_constructed
+No,168900,3,Yes,Rustaveliho,94,Yes,raca,other,panel,being_constructed
+No,133300,2,Yes,Rustaveliho,72,Yes,raca,other,panel,being_constructed
+No,81900,1,Yes,Rustaveliho,45,Yes,raca,other,panel,being_constructed
+Yes,314000,4,Yes,Boženy Němcovej,128,No,stare_mesto,other,brick,refurbished
+No,125500,3,No,Markova,66,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,138500,3,No,Markova,66,Yes,petrzalka,other,panel,refurbished
+Yes,111500,1.5,Yes,Vajnorská,45,No,nove_mesto,other,brick,partial_refurbishment
+Yes,119500,1.5,No,Vajnorská,45,No,nove_mesto,other,brick,refurbished
+Yes,114000,1,No,Narcisová,44,Yes,ruzinov,other,brick,refurbished
+Yes,127800,4,Yes,Hornádska,78,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,158500,2,Yes,Šancová,72,No,stare_mesto,top,brick,refurbished
+Yes,125800,4,Yes,Hornádska,78,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,135900,3,No,Jozefa Cígera Hronského,60,Yes,nove_mesto,bottom,panel,partial_refurbishment
+Yes,132000,2,Yes,Sputniková,56,Yes,ruzinov,bottom,panel,partial_refurbishment
+Yes,119500,4,No,Slatinská,80,Yes,vrakuna,other,panel,partial_refurbishment
+Yes,142000,3,No,Bazovského,63,Yes,dubravka,top,panel,refurbished
+No,155900,3,Yes,Budovateľská,64,No,ruzinov,top,brick,refurbished
+No,149900,2,Yes,Suché mýto,45,Yes,stare_mesto,other,brick,refurbished
+No,68500,1,Yes,Toplianska,35,Yes,vrakuna,top,panel,partial_refurbishment
+Yes,103500,1.5,Yes,Beňadická,37,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,112500,4,Yes,Rajecká,79,Yes,vrakuna,bottom,panel,partial_refurbishment
+Yes,185000,3,Yes,Záhrebská,82,No,stare_mesto,other,brick,partial_refurbishment
+Yes,162500,2,Yes,Šancová,70,Yes,nove_mesto,other,brick,refurbished
+No,68500,1,Yes,Toplianska,35,Yes,vrakuna,top,panel,partial_refurbishment
+No,70000,1,Yes,Bieloruská,32,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+No,118900,1.5,No,Mlynarovičova,60,Yes,petrzalka,other,panel,refurbished
+No,225000,3,No,Obchodná,86,Yes,stare_mesto,other,brick,refurbished
+Yes,215000,4,Yes,Slovanské nábrežie,114,No,devin,other,brick,refurbished
+Yes,128000,4,Yes,Hornádska,78,Yes,podunajske_biskupice,other,panel,refurbished
+No,233000,3,No,Konventná,77,Yes,stare_mesto,other,brick,refurbished
+No,91900,2,Yes,Rajčianska,53,Yes,vrakuna,other,panel,partial_refurbishment
+No,118000,3,Yes,Hodálova,67,Yes,karlova_ves,rest,brick,partial_refurbishment
+Yes,83500,1,No,Hlbinná,37,No,podunajske_biskupice,top,brick,refurbished
+Yes,143000,2,No,Solivarská,59,No,ruzinov,other,brick,refurbished
+No,95000,1,Yes,Záhradnícka 41,30,Yes,ruzinov,bottom,brick,refurbished
+No,89900,2,No,Hrachová,56,No,ruzinov,rest,brick,refurbished
+Yes,299000,4,No,Fraňa Kráľa,111,Yes,stare_mesto,bottom,brick,refurbished
+Yes,119500,2,Yes,Vajnorská,46,No,nove_mesto,other,brick,refurbished
+Yes,134000,3,No,Strečnianska ul.,72,Yes,petrzalka,bottom,panel,refurbished
+Yes,111500,1.5,Yes,Vajnorská,46,No,nove_mesto,other,brick,partial_refurbishment
+Yes,209000,3,No,Gbelská,127,Yes,zahorska_bistrica,top,brick,partial_refurbishment
+No,128000,2,Yes,Palackého,36,Yes,stare_mesto,other,brick,refurbished
+Yes,135500,3,Yes,Markova,66,Yes,petrzalka,other,panel,refurbished
+Yes,134500,3,Yes,Medveďovej,71,Yes,petrzalka,bottom,panel,refurbished
+Yes,126900,4,No,Bodrocká,77,Yes,podunajske_biskupice,other,panel,refurbished
+Yes,145000,4,No,Plickova 8,83,Yes,raca,rest,panel,partial_refurbishment
+Yes,121500,3,Yes,Medveďovej,71,Yes,petrzalka,bottom,panel,old
+Yes,125000,3,No,Ipeľská,68,Yes,podunajske_biskupice,other,panel,refurbished
+No,152000,3,Yes,Rumančeková,66,Yes,ruzinov,top,brick,refurbished
+Yes,84000,1,Yes,Pavla Horova,38,Yes,devinska_nova_ves,other,panel,partial_refurbishment
+Yes,160000,3,Yes,Záhradnícka,76,Yes,ruzinov,bottom,brick,old
+Yes,139500,2,Yes,Odborárske námestie,61,Yes,stare_mesto,bottom,brick,partial_refurbishment
+No,150000,3,Yes,Rumančeková,66,Yes,ruzinov,top,panel,refurbished
+No,92500,2,Yes,Hronská,51,Yes,podunajske_biskupice,other,panel,partial_refurbishment
+Yes,120000,2,Yes,Martinčekova,53,Yes,ruzinov,top,panel,refurbished
+Yes,144000,2,Yes,Riazanská,67,Yes,nove_mesto,other,panel,refurbished
+Yes,71900,1.5,No,Vlčie hrdlo,38,Yes,ruzinov,other,panel,partial_refurbishment
+Yes,96500,1.5,Yes,Holíčska,38,Yes,petrzalka,other,panel,partial_refurbishment
+Yes,180000,3,Yes,Šancová,79,Yes,nove_mesto,other,brick,old
+No,107000,2,Yes,Furdekova,55,Yes,petrzalka,top,panel,partial_refurbishment
+Yes,149000,4,Yes,Haanova,90,Yes,petrzalka,other,panel,partial_refurbishment

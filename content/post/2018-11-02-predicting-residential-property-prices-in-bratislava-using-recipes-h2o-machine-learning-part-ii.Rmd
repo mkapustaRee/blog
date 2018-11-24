@@ -1,0 +1,252 @@
+---
+title: Predicting residential property prices in Bratislava using recipes - H2o Machine
+  learning (part II)
+author: "Michal Kapusta"
+date: '2018-11-02'
+slug: predicting-residential-property-prices-in-bratislava-using-recipes-h2o-machine-learning-part-ii
+tags:
+- Forecasting
+- Recipes
+- Tidyverse
+- Property prices
+- H2o
+- Machine Learning
+- Lime
+categories: R
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+Sys.setlocale(category = "LC_ALL",locale ="de_DE")
+
+library(tidyverse)
+library(rvest)
+library(leaflet)
+library(rebus)
+library(stringr)
+library(janitor)
+library(data.table)
+library(rsample)
+library(recipes)
+
+df_final <-  data.table::fread(file = "/Users/Michal/Desktop/R Projects/R projects/blog/content/post/_files/df_reality.csv",stringsAsFactors = T)  %>% 
+        mutate(no_of_bedrooms = as.factor(no_of_bedrooms),
+               size = as.numeric(size))
+
+df_train <-  data.table::fread(file = "/Users/Michal/Desktop/R Projects/R projects/blog/content/post/_files/df_reality_train.csv")  
+
+df_test <-  data.table::fread(file = "/Users/Michal/Desktop/R Projects/R projects/blog/content/post/_files/df_reality_test.csv")  
+
+```
+
+
+## Summary
+
+In the previous post [link] (https://www.michal-kapusta.com/post/forecasting_house_prices/) we have used the data from the live listing website and created a linear model that predicted apartment prices. This prediction used only the basic information about the apartments. Now, lets use more sophisticated methods for the prediction like the machine learning (H2o). We hope that by using machine learning we might get more accurate estimate. In the first section, we have acquired more data about the apartments and use this additional data to improve accuracy. The second section will use machine learning to predict the prices. The H2o results scored high accuracy (R2 +0.85) on the test set (approx.  340 new apartments). The results outperform the classical linear regression method used in the first article by a large margin.  
+
+
+## Adding additional information about the apartments
+
+In the first post variables used to make prediction contained only elementary information about the apartments. City district, size or number of bedrooms could explain only ca 63% of the variance. In order to enlarge this dataset improved scraper was written capable of gathering information about:
+
+* floor: flats located in the bottom, top or another story in the building.
+* balcony: if the flat has a balcony or not.
+* status: physical obsolescence of the flat. 
+* material: material used in the construction of the building
+
+the whole list of indicators is listed below:
+
+```{r improving data accuracy}
+
+df_final %>% skimr::skim_to_list()
+
+
+```
+
+Simply, by adding data about the flat status, material used during the construction we hope to create the more accurate model. 
+
+For example, using submarkets instead of districts provides more clarity in terms of pricing. See the chart below:
+
+```{r price distribution per district, warning=F, render = F}
+
+df_final %>%
+        ggplot(aes(reorder(district, log(price,10)),log(price,10))) +
+        geom_jitter(alpha = .1) +
+        geom_boxplot(alpha = 0.2) + 
+        theme_minimal() +
+        labs(title = "Devin and Jarovce are among the most expensive submarkets",
+                subtitle = "Distribution of the apartment sale price per submarket",
+             x = "Submarkets", y = "log(sale price)") +
+        theme(legend.position = "none",plot.title = element_text(face = "bold")) +
+        coord_flip()
+
+
+```
+
+On the first glance, the submarkets Devin, Jarovce and old city center are the most expensive. In contrast the Vrakuna, Poddunajske biskupice or Dubravka are most affordable. Interestingly, Petrzalka has the narrow price range suggesting fierce price competition.     
+
+Another example is the information regarding the status of the flat (refurbed or not). 
+
+```{r price distribution per status,warning=F, render = F }
+
+df_final %>%
+        ggplot(aes(reorder(status, -log(price,10)),log(price,10))) +
+        geom_jitter(alpha = .3) +
+        geom_boxplot(alpha = 0.2) + 
+        theme_minimal() +
+        labs(title = "No difference in price for old and partial refurbished flats!!!",
+                subtitle = "Distribution of the apartment sale price per status",
+             x = "Districts of Bratislava", y = "log(sale price)") +
+        theme(legend.position = "none",plot.title = element_text(face = "bold")) 
+
+
+```
+
+From the chart above it is clear that refurbished apartments are more expensive then others. Interestingly, partial refurbishment yields the same price as old apartments. This means that costs associated with the partial refurbishment of the flat aren't reflected in the sale price. Based on this information, I would recommend omitting the expenses and effort for partial reconstruction.  
+
+## Model recipe and machine learning
+
+Now, let's apply the simple recipe to the data and preprocess the dataset for h2o machine learning framework. 
+
+The recipe is simple, with steps for logging the sale price, doing Box-Cox transformations and collapsing not frequent street names into "other" category. I am avoiding the step dummy for factor variables since H2o can deal with factors in long format. 
+
+```{r recipe,message=F,warning=F}
+
+# recipes
+ads_recipe <- recipe(price ~ . , data = df_final) %>%
+        step_log(price, base = 10) %>% 
+        step_BoxCox(size)   %>% 
+        step_other(street, threshold = 0.015) 
+      
+
+# split 
+split    <- df_final  %>%
+                rsample::initial_split(prop = 3/4, strata = "price")
+df_train <- training(split)
+df_test  <- testing(split)
+
+
+
+rcp_prepped_train <- ads_recipe %>% prep(training = df_train, retain = T)
+rcp_prepped_test <- ads_recipe %>% prep(training = df_test, retain = T)
+
+df_train_processed <-rcp_prepped_train %>% juice()
+df_test_processed  <-rcp_prepped_test %>% juice()
+
+df_all_processed <- bind_rows(df_train_processed, df_test_processed) %>%
+                        mutate(street = factor(street))
+
+```
+
+
+The preprocessed are used to feed the AutoML model. Important is the split of the dataset into three parts. Train, valid and test set. Train set will be used to train the model and the validation is used to apply learned insight into the valid set.  
+
+```{r H2o model,message=F,warning=F, echo=F}
+
+
+library(h2o)
+
+h2o.init()
+
+
+data_h2o <- as.h2o(df_all_processed)
+
+splits_h2o <- h2o.splitFrame(data_h2o, ratios = c(0.7, 0.15), seed = 1234)
+
+train_h2o <- splits_h2o[[1]]
+valid_h2o <- splits_h2o[[2]]
+test_h2o  <- splits_h2o[[3]]
+
+y <- "price"
+x <- setdiff(names(train_h2o), y)
+
+automl_models_h2o <- h2o.automl(
+        x = x,
+        y = y,
+        training_frame    = train_h2o,
+        validation_frame  = valid_h2o,
+        leaderboard_frame = test_h2o,
+        max_runtime_secs  = 120
+)
+
+automl_leader <- automl_models_h2o@leader
+
+automl_leader
+
+```
+
+The leader or the most accurate model picked by the h2o framework is the row MODEL ID. The results are impressive since the RMSE is just sub 0.07 on the validation set compared to the 0.10 achieved in the linear regression. 
+
+Now, let's use trained h2o model to predict the data it hasn't seen before. This step contains using ca 340 new apartments and letting the machine learning algorithm predict the sale price.     
+
+```{r performance of the model,message=F,warning=F, echo=F}
+
+performance_h2o <- h2o.performance(automl_leader, newdata = test_h2o)
+
+performance_h2o
+
+```
+
+The results are showing RMSE of sub 0.10 on the test dataset. Great! Now let's look at model accuracy using simple visualization. Let's chart the model prediction and real prices to see how well the model performs. 
+
+```{r predict using h2o, message=F, warning=F}
+
+prediction_h2o <- h2o.predict(automl_leader, newdata = as.h2o(df_test_processed)) %>% as.tibble()
+
+results <-  df_test_processed %>%
+                select( price) %>%
+                bind_cols(prediction_h2o) %>% 
+                mutate_if(is.numeric, funs(10^.)) %>% 
+                mutate(diff = price - predict) 
+
+chart <- results %>%
+        ggplot(aes(price, predict)) +
+        geom_point(alpha = .3) +
+        geom_abline() +
+        theme_minimal() + 
+        scale_x_continuous(labels = scales::comma) + 
+        scale_y_continuous(labels = scales::comma) + 
+        labs(title = "MODEL ACCURACY: Fitted vs Real Prices",
+             subtitle = "Sale price and Predicted price in a relationship",
+             x = "Sale Price", y = "Predicted Price") + 
+        theme(legend.position = "bottom") + 
+        theme(plot.title = element_text(face = "bold")) +
+        geom_smooth(se = F, color = "red")
+
+plotly::ggplotly(chart)
+
+```
+
+The chart above shows that the model is pretty accurate up until the 300.000 price range. The red line is deviating from the black suggesting that the model is underpredicting the prices for the most expensive flats. This is to be expected since the top end of the market contains high fluctuations in the prices. In order to capture this variance, additional data need to be gathered. Imagine, having marble instead of cheap tiles in bathrooms would lead to higher prices. This information isn't part of the model and we can accept that the model underperforms. 
+
+Now, how do we trust the prediction? Understanding the machine learning model helps validate the accuracy and helps us to trust that it works. To transform this black box model into **interpretable machine learning model**  we use the LIME package. The code below initiated process where the machine learning model is explained with series of **support** and **contradict** statements.       
+
+```{r explainig the model using LIME, message=F,warning=F}
+
+library(lime)
+
+explainer <- lime::lime(
+        x              = as.data.frame(train_h2o) %>% head(20), 
+        model          = automl_models_h2o@leader, 
+        bin_continuous = FALSE)
+
+# Run explain() on explainer
+explanations <- lime::explain(
+        x =  as.data.frame(test_h2o) %>% head(4), 
+        explainer    = explainer,
+        n_labels     = 1,
+        n_features   = 6)
+
+plot_features(explanations , ncol = 2)
+
+```
+
+In the chart above 4 different apartments are examined for key variables influencing the price in the machine learning model. Positively impacting factors are colored green and negative are red. The most powerful variable is size, with the highest positive contribution to the price. Other variables, like submarket, no of bedrooms or status can be now interpreted for their contribution to the overall value. 
+
+## Recap
+
+In this article, we applied an automatic machine learning model framework H2o on real-world dataset to predict apartment prices. The results are outperforming linear regression and are used to predict prices on ca 340 apartments with good accuracy. The LIME framework helped to understand how the AI decided to predict the prices. 
+
+

@@ -54,7 +54,7 @@ df_amenity   <- fread("/Users/Michal/Desktop/R Projects/R projects/data_storage/
 
 ## The goal of the post
 
-In this blogpost, i will be predicting the residential prices in the city of Bratislava (Slovakian capital). In order to access real world data I will be scraping data from property listing website. After scraping and data cleaning steps, I will build a predictive model that can predict house prices. 
+In this blogpost, i will be predicting the residential prices in the city of Bratislava (Slovakian capital). In order to access real world data I will be scraping data from property listing website. After scraping and data cleaning steps, I will build a linear model that can predict house prices. 
 
 ## Acquiring the real world data 
 
@@ -381,7 +381,7 @@ The code above is broadly doing following steps:
 * recipe step 3: log transformation of price
 * recipe step 4: Box-Cox transformation of area variable
 
-After splitting the dataset and performing The results shows that the regression Rsquared is around **0.63**. This means around 66% of the price variance can be explained using the variables at hand. 
+After splitting the dataset and performing The results shows that the regression Rsquared is around **0.63**. This means around 63% of the price variance can be explained using the variables at hand. 
 
 The detailed breakdown of the statistical model can be seen here:
 
@@ -461,10 +461,13 @@ Finally, here are the 10 most undervalued streets in Slovakian capital:
 
 ```{r top 10 undervalued streets, warning=F, echo = F}
 
-df_leaf %>% 
-        arrange(diff) %>% 
-        head(10) %>% 
-        ggplot(aes(reorder(street, -diff),diff, fill = district)) +
+ df_leaf %>%
+        group_by(street) %>%
+        mutate(street_mean = mean(diff, na.rm = T)) %>%
+        arrange(street_mean) %>%
+        head(20) %>%
+        distinct(street, .keep_all = T)  %>% 
+        ggplot(aes(reorder(street, -street_mean),street_mean, fill = district)) +
         geom_col() +
         coord_flip() + 
         scale_y_continuous(labels = scales::dollar_format(prefix = "",suffix = "€"))  + 
