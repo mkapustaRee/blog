@@ -8,7 +8,7 @@
     <managingEditor>michal.kapusta@gmail.com (Michal Kapusta)</managingEditor>
     <webMaster>michal.kapusta@gmail.com (Michal Kapusta)</webMaster>
     <copyright>Copyright &amp;copy; 2017 - Michal Kapusta</copyright>
-    <lastBuildDate>Tue, 23 Oct 2018 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 25 Nov 2018 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,9 +16,18 @@
     <item>
       <title>Forecasting</title>
       <link>/tags/forecasting/</link>
-      <pubDate>Tue, 23 Oct 2018 21:13:14 -0500</pubDate>
+      <pubDate>Sun, 25 Nov 2018 21:13:14 -0500</pubDate>
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/tags/forecasting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>H2o</title>
+      <link>/tags/h2o/</link>
+      <pubDate>Sun, 25 Nov 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/h2o/</guid>
       <description></description>
     </item>
     
@@ -28,6 +37,24 @@
       <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/tags/investments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lime</title>
+      <link>/tags/lime/</link>
+      <pubDate>Sun, 25 Nov 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/lime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>/tags/machine-learning/</link>
+      <pubDate>Sun, 25 Nov 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/machine-learning/</guid>
       <description></description>
     </item>
     
@@ -43,7 +70,7 @@
     <item>
       <title>Property Prices</title>
       <link>/tags/property-prices/</link>
-      <pubDate>Tue, 23 Oct 2018 21:13:14 -0500</pubDate>
+      <pubDate>Sun, 25 Nov 2018 21:13:14 -0500</pubDate>
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/tags/property-prices/</guid>
       <description></description>
@@ -52,7 +79,7 @@
     <item>
       <title>Recipes</title>
       <link>/tags/recipes/</link>
-      <pubDate>Tue, 23 Oct 2018 21:13:14 -0500</pubDate>
+      <pubDate>Sun, 25 Nov 2018 21:13:14 -0500</pubDate>
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/tags/recipes/</guid>
       <description></description>
@@ -70,7 +97,7 @@
     <item>
       <title>Tidyverse</title>
       <link>/tags/tidyverse/</link>
-      <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
+      <pubDate>Sun, 25 Nov 2018 21:13:14 -0500</pubDate>
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/tags/tidyverse/</guid>
       <description></description>

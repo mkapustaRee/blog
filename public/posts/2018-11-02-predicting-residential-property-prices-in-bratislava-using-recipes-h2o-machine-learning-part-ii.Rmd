@@ -1,18 +1,10 @@
 ---
-title: Predicting residential property prices in Bratislava using recipes - H2o Machine
-  learning (part II)
+title: "Predicting residential property prices in Bratislava using recipes - H2o Machine learning (part II)"
 author: "Michal Kapusta"
-date: '2018-11-02'
-slug: predicting-residential-property-prices-in-bratislava-using-recipes-h2o-machine-learning-part-ii
-tags:
-- Forecasting
-- Recipes
-- Tidyverse
-- Property prices
-- H2o
-- Machine Learning
-- Lime
-categories: R
+date: "2018-11-25T21:13:14-05:00"
+output: html_document
+tags: ["Forecasting", "Recipes", "Tidyverse","Property prices", "H2o","Machine Learning", "Lime"]
+categories: ["R"]
 ---
 
 

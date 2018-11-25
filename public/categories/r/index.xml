@@ -8,10 +8,28 @@
     <managingEditor>michal.kapusta@gmail.com (Michal Kapusta)</managingEditor>
     <webMaster>michal.kapusta@gmail.com (Michal Kapusta)</webMaster>
     <copyright>Copyright &amp;copy; 2017 - Michal Kapusta</copyright>
-    <lastBuildDate>Tue, 23 Oct 2018 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 25 Nov 2018 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Predicting residential property prices in Bratislava using recipes - H2o Machine learning (part II)</title>
+      <link>/post/2018-11-02-predicting-residential-property-prices-in-bratislava-using-recipes-h2o-machine-learning-part-ii/</link>
+      <pubDate>Sun, 25 Nov 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/post/2018-11-02-predicting-residential-property-prices-in-bratislava-using-recipes-h2o-machine-learning-part-ii/</guid>
+      <description>Summary In the previous post [link] (https://www.michal-kapusta.com/post/forecasting_house_prices/) we have used the data from the live listing website and created a linear model that predicted apartment prices.</description>
+    </item>
+    
+    <item>
+      <title>Predicting residential property prices in Bratislava using recipes - H2o Machine learning (part II)</title>
+      <link>/posts/2018-11-02-predicting-residential-property-prices-in-bratislava-using-recipes-h2o-machine-learning-part-ii/</link>
+      <pubDate>Sun, 25 Nov 2018 21:13:14 -0500</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/posts/2018-11-02-predicting-residential-property-prices-in-bratislava-using-recipes-h2o-machine-learning-part-ii/</guid>
+      <description>Summary In the previous post [link] (https://www.michal-kapusta.com/post/forecasting_house_prices/) we have used the data from the live listing website and created a linear model that predicted apartment prices.</description>
+    </item>
     
     <item>
       <title>Predicting residential property prices in Bratislava using recipes - Linear regression (part I)</title>

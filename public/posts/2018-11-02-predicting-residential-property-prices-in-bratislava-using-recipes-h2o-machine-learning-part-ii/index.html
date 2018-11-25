@@ -1,0 +1,452 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Michal Kapusta</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The HTML5 Herald" />
+  <meta name="author" content="Michal Kapusta" />
+  <meta name="generator" content="Hugo 0.31.1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="/">Michal Kapusta</a>
+            </h1>
+
+      <ul id="social-media">
+        
+        <li><a href="https://twitter.com/mkapustaRee"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://www.linkedin.com/in/michal-kapusta-4b178511/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+         
+        <li><a href="https://github.com/mkapustaRee"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
+           
+      </ul>
+      
+      <p><em>Investment Research | Finance | R programming</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="/bio/">
+                <i class="fa-li fa  fa-lg"></i><span>Bio</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Predicting residential property prices in Bratislava using recipes - H2o Machine learning (part II)</h1>
+
+    
+        <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2018-11-25T21:13:14-05:00">Nov 25, 2018</time>
+        </li>
+        
+        
+        <li>
+            Categories: 
+            <em>
+                
+                    
+                    <a href="/categories/r/">R</a>
+                
+            </em>
+        </li>
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="/tags/forecasting/">#Forecasting</a>
+                
+                    , 
+                    <a href="/tags/recipes/">#Recipes</a>
+                
+                    , 
+                    <a href="/tags/tidyverse/">#Tidyverse</a>
+                
+                    , 
+                    <a href="/tags/property-prices/">#Property prices</a>
+                
+                    , 
+                    <a href="/tags/h2o/">#H2o</a>
+                
+                    , 
+                    <a href="/tags/machine-learning/">#Machine Learning</a>
+                
+                    , 
+                    <a href="/tags/lime/">#Lime</a>
+                
+            </em>
+        </li>
+        
+
+        <li>19 min read</li>
+    </ul>
+</aside>
+    
+
+    <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/plotly-binding/plotly.js"></script>
+<script src="/rmarkdown-libs/typedarray/typedarray.min.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
+<link href="/rmarkdown-libs/plotlyjs/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/plotlyjs/plotly-latest.min.js"></script>
+
+
+<div id="summary" class="section level2">
+<h2>Summary</h2>
+<p>In the previous post [link] (<a href="https://www.michal-kapusta.com/post/forecasting_house_prices/" class="uri">https://www.michal-kapusta.com/post/forecasting_house_prices/</a>) we have used the data from the live listing website and created a linear model that predicted apartment prices. This prediction used only the basic information about the apartments. Now, lets use more sophisticated methods for the prediction like the machine learning (H2o). We hope that by using machine learning we might get more accurate estimate. In the first section, we have acquired more data about the apartments and use this additional data to improve accuracy. The second section will use machine learning to predict the prices. The H2o results scored high accuracy (R2 +0.85) on the test set (approx. 340 new apartments). The results outperform the classical linear regression method used in the first article by a large margin.</p>
+</div>
+<div id="adding-additional-information-about-the-apartments" class="section level2">
+<h2>Adding additional information about the apartments</h2>
+<p>In the first post variables used to make prediction contained only elementary information about the apartments. City district, size or number of bedrooms could explain only ca 63% of the variance. In order to enlarge this dataset improved scraper was written capable of gathering information about:</p>
+<ul>
+<li>floor: flats located in the bottom, top or another story in the building.</li>
+<li>balcony: if the flat has a balcony or not.</li>
+<li>status: physical obsolescence of the flat.</li>
+<li>material: material used in the construction of the building</li>
+</ul>
+<p>the whole list of indicators is listed below:</p>
+<pre class="r"><code>df_final %&gt;% skimr::skim_to_list()</code></pre>
+<pre><code>## $factor
+## # A tibble: 9 x 7
+##   variable    missing complete n     n_unique top_counts           ordered
+## * &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;                &lt;chr&gt;  
+## 1 balcony     0       2197     2197  2        Yes: 1485, No: 712,~ FALSE  
+## 2 basement    0       2197     2197  2        Yes: 1296, No: 901,~ FALSE  
+## 3 district    0       2197     2197  15       ruz: 411, pet: 367,~ FALSE  
+## 4 elevator    0       2197     2197  2        Yes: 1693, No: 504,~ FALSE  
+## 5 floor       0       2197     2197  4        oth: 1369, top: 352~ FALSE  
+## 6 material    0       2197     2197  4        pan: 1087, bri: 982~ FALSE  
+## 7 no_of_bedr~ 0       2197     2197  5        3: 858, 2: 704, 1: ~ FALSE  
+## 8 status      0       2197     2197  4        ref: 1370, par: 534~ FALSE  
+## 9 street      0       2197     2197  588      &quot;Pod: 40, \u0160an:~ FALSE  
+## 
+## $numeric
+## # A tibble: 2 x 12
+##   variable missing complete n     mean  sd    p0    p25   p50   p75   p100 
+## * &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;
+## 1 price    0       2197     2197  1534~ 7762~ 27000 1099~ 1320~ 1610~ 6179~
+## 2 size     0       2197     2197  &quot;   ~ &quot;   ~ 27    51    66    79    246  
+## # ... with 1 more variable: hist &lt;chr&gt;</code></pre>
+<p>Simply, by adding data about the flat status, material used during the construction we hope to create the more accurate model.</p>
+<p>For example, using submarkets instead of districts provides more clarity in terms of pricing. See the chart below:</p>
+<pre class="r"><code>df_final %&gt;%
+        ggplot(aes(reorder(district, log(price,10)),log(price,10))) +
+        geom_jitter(alpha = .1) +
+        geom_boxplot(alpha = 0.2) + 
+        theme_minimal() +
+        labs(title = &quot;Devin and Jarovce are among the most expensive submarkets&quot;,
+                subtitle = &quot;Distribution of the apartment sale price per submarket&quot;,
+             x = &quot;Submarkets&quot;, y = &quot;log(sale price)&quot;) +
+        theme(legend.position = &quot;none&quot;,plot.title = element_text(face = &quot;bold&quot;)) +
+        coord_flip()</code></pre>
+<p><img src="/posts/2018-11-02-predicting-residential-property-prices-in-bratislava-using-recipes-h2o-machine-learning-part-ii_files/figure-html/price%20distribution%20per%20district-1.png" width="672" /></p>
+<p>On the first glance, the submarkets Devin, Jarovce and old city center are the most expensive. In contrast the Vrakuna, Poddunajske biskupice or Dubravka are most affordable. Interestingly, Petrzalka has the narrow price range suggesting fierce price competition.</p>
+<p>Another example is the information regarding the status of the flat (refurbed or not).</p>
+<pre class="r"><code>df_final %&gt;%
+        ggplot(aes(reorder(status, -log(price,10)),log(price,10))) +
+        geom_jitter(alpha = .3) +
+        geom_boxplot(alpha = 0.2) + 
+        theme_minimal() +
+        labs(title = &quot;No difference in price for old and partial refurbished flats!!!&quot;,
+                subtitle = &quot;Distribution of the apartment sale price per status&quot;,
+             x = &quot;Districts of Bratislava&quot;, y = &quot;log(sale price)&quot;) +
+        theme(legend.position = &quot;none&quot;,plot.title = element_text(face = &quot;bold&quot;)) </code></pre>
+<p><img src="/posts/2018-11-02-predicting-residential-property-prices-in-bratislava-using-recipes-h2o-machine-learning-part-ii_files/figure-html/price%20distribution%20per%20status-1.png" width="672" /></p>
+<p>From the chart above it is clear that refurbished apartments are more expensive then others. Interestingly, partial refurbishment yields the same price as old apartments. This means that costs associated with the partial refurbishment of the flat aren’t reflected in the sale price. Based on this information, I would recommend omitting the expenses and effort for partial reconstruction.</p>
+</div>
+<div id="model-recipe-and-machine-learning" class="section level2">
+<h2>Model recipe and machine learning</h2>
+<p>Now, let’s apply the simple recipe to the data and preprocess the dataset for h2o machine learning framework.</p>
+<p>The recipe is simple, with steps for logging the sale price, doing Box-Cox transformations and collapsing not frequent street names into “other” category. I am avoiding the step dummy for factor variables since H2o can deal with factors in long format.</p>
+<pre class="r"><code># recipes
+ads_recipe &lt;- recipe(price ~ . , data = df_final) %&gt;%
+        step_log(price, base = 10) %&gt;% 
+        step_BoxCox(size)   %&gt;% 
+        step_other(street, threshold = 0.015) 
+      
+
+# split 
+split    &lt;- df_final  %&gt;%
+                rsample::initial_split(prop = 3/4, strata = &quot;price&quot;)
+df_train &lt;- training(split)
+df_test  &lt;- testing(split)
+
+
+
+rcp_prepped_train &lt;- ads_recipe %&gt;% prep(training = df_train, retain = T)
+rcp_prepped_test &lt;- ads_recipe %&gt;% prep(training = df_test, retain = T)
+
+df_train_processed &lt;-rcp_prepped_train %&gt;% juice()
+df_test_processed  &lt;-rcp_prepped_test %&gt;% juice()
+
+df_all_processed &lt;- bind_rows(df_train_processed, df_test_processed) %&gt;%
+                        mutate(street = factor(street))</code></pre>
+<p>The preprocessed are used to feed the AutoML model. Important is the split of the dataset into three parts. Train, valid and test set. Train set will be used to train the model and the validation is used to apply learned insight into the valid set.</p>
+<pre><code>##  Connection successful!
+## 
+## R is connected to the H2O cluster: 
+##     H2O cluster uptime:         47 minutes 55 seconds 
+##     H2O cluster timezone:       Europe/Budapest 
+##     H2O data parsing timezone:  UTC 
+##     H2O cluster version:        3.20.0.8 
+##     H2O cluster version age:    2 months and 3 days  
+##     H2O cluster name:           H2O_started_from_R_Michal_ocj984 
+##     H2O cluster total nodes:    1 
+##     H2O cluster total memory:   0.90 GB 
+##     H2O cluster total cores:    4 
+##     H2O cluster allowed cores:  4 
+##     H2O cluster healthy:        TRUE 
+##     H2O Connection ip:          localhost 
+##     H2O Connection port:        54321 
+##     H2O Connection proxy:       NA 
+##     H2O Internal Security:      FALSE 
+##     H2O API Extensions:         XGBoost, Algos, AutoML, Core V3, Core V4 
+##     R Version:                  R version 3.4.1 (2017-06-30)</code></pre>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |=================================================================| 100%</code></pre>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |==                                                               |   3%
+  |                                                                       
+  |===                                                              |   5%
+  |                                                                       
+  |=====                                                            |   8%
+  |                                                                       
+  |======                                                           |  10%
+  |                                                                       
+  |==========                                                       |  15%
+  |                                                                       
+  |==========                                                       |  16%
+  |                                                                       
+  |===========                                                      |  16%
+  |                                                                       
+  |===========                                                      |  17%
+  |                                                                       
+  |===========                                                      |  18%
+  |                                                                       
+  |============                                                     |  18%
+  |                                                                       
+  |============                                                     |  19%
+  |                                                                       
+  |=============                                                    |  20%
+  |                                                                       
+  |==============                                                   |  22%
+  |                                                                       
+  |===============                                                  |  22%
+  |                                                                       
+  |===============                                                  |  23%
+  |                                                                       
+  |===============                                                  |  24%
+  |                                                                       
+  |================                                                 |  24%
+  |                                                                       
+  |================                                                 |  25%
+  |                                                                       
+  |=================                                                |  25%
+  |                                                                       
+  |=================                                                |  26%
+  |                                                                       
+  |=================                                                |  27%
+  |                                                                       
+  |==================                                               |  27%
+  |                                                                       
+  |==================                                               |  28%
+  |                                                                       
+  |===================                                              |  28%
+  |                                                                       
+  |===================                                              |  29%
+  |                                                                       
+  |===================                                              |  30%
+  |                                                                       
+  |====================                                             |  30%
+  |                                                                       
+  |==============================================================   |  95%
+  |                                                                       
+  |=================================================================| 100%</code></pre>
+<pre><code>## Model Details:
+## ==============
+## 
+## H2ORegressionModel: stackedensemble
+## Model ID:  StackedEnsemble_BestOfFamily_0_AutoML_20181125_004407 
+## NULL
+## 
+## 
+## H2ORegressionMetrics: stackedensemble
+## ** Reported on training data. **
+## 
+## MSE:  0.001564239
+## RMSE:  0.03955046
+## MAE:  0.02741334
+## RMSLE:  0.006354867
+## Mean Residual Deviance :  0.001564239
+## 
+## 
+## H2ORegressionMetrics: stackedensemble
+## ** Reported on validation data. **
+## 
+## MSE:  0.004935096
+## RMSE:  0.07025024
+## MAE:  0.04839295
+## RMSLE:  0.01129091
+## Mean Residual Deviance :  0.004935096
+## 
+## 
+## H2ORegressionMetrics: stackedensemble
+## ** Reported on cross-validation data. **
+## ** 5-fold cross-validation on training data (Metrics computed for combined holdout predictions) **
+## 
+## MSE:  0.004654247
+## RMSE:  0.06822204
+## MAE:  0.04607816
+## RMSLE:  0.01093226
+## Mean Residual Deviance :  0.004654247</code></pre>
+<p>The leader or the most accurate model picked by the h2o framework is the row MODEL ID. The results are impressive since the RMSE is just sub 0.07 on the validation set compared to the 0.10 achieved in the linear regression.</p>
+<p>Now, let’s use trained h2o model to predict the data it hasn’t seen before. This step contains using ca 340 new apartments and letting the machine learning algorithm predict the sale price.</p>
+<pre><code>## H2ORegressionMetrics: stackedensemble
+## 
+## MSE:  0.005299781
+## RMSE:  0.0727996
+## MAE:  0.04758576
+## RMSLE:  0.01168042
+## Mean Residual Deviance :  0.005299781</code></pre>
+<p>The results are showing RMSE of sub 0.10 on the test dataset. Great! Now let’s look at model accuracy using simple visualization. Let’s chart the model prediction and real prices to see how well the model performs.</p>
+<pre class="r"><code>prediction_h2o &lt;- h2o.predict(automl_leader, newdata = as.h2o(df_test_processed)) %&gt;% as.tibble()</code></pre>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |=================================================================| 100%
+## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |=================================================================| 100%</code></pre>
+<pre class="r"><code>results &lt;-  df_test_processed %&gt;%
+                select( price) %&gt;%
+                bind_cols(prediction_h2o) %&gt;% 
+                mutate_if(is.numeric, funs(10^.)) %&gt;% 
+                mutate(diff = price - predict) 
+
+chart &lt;- results %&gt;%
+        ggplot(aes(price, predict)) +
+        geom_point(alpha = .3) +
+        geom_abline() +
+        theme_minimal() + 
+        scale_x_continuous(labels = scales::comma) + 
+        scale_y_continuous(labels = scales::comma) + 
+        labs(title = &quot;MODEL ACCURACY: Fitted vs Real Prices&quot;,
+             subtitle = &quot;Sale price and Predicted price in a relationship&quot;,
+             x = &quot;Sale Price&quot;, y = &quot;Predicted Price&quot;) + 
+        theme(legend.position = &quot;bottom&quot;) + 
+        theme(plot.title = element_text(face = &quot;bold&quot;)) +
+        geom_smooth(se = F, color = &quot;red&quot;)
+
+plotly::ggplotly(chart)</code></pre>
+<div id="d9b63c0273c" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="d9b63c0273c">{"x":{"data":[{"x":[230000,275000,310000,255000,179000,107990,270000,570000,159900,240000,98999.9999999999,117500,222000,389990,117000,345000,145000,311100,207652,305000,299000,229500,196999,101000,165000,250000,385000,75384.23,250000,117500,132000,99800.0000000001,120996.6,338200,232800,100000,244000,280000,91000.0000000001,160000,102000,81299,121320,134000,85000,121400,135000,155900,182000,87999.9999999999,87999.9999999999,135000,142000,405000,92000.0000000001,111000,112900,115200,370000,119000,387965,132600,287520,121900,405353,389011,301085,315000,85500,259900,97000.0000000001,85000,135000,340000,399000,255000,109900,267000,98999.9999999999,127000,249990,96302,78000.0000000001,299000,164900,119990,171600,179900,125000,87500,85500,110010,123605,150080,330000,72999,109000,119990,120500,55500,144900,198000,157000,117000,144500,113700,139900,362800,116900,132000,150000,95000,143000,104000,274152,130000,144000,64900,83899.9999999999,69900,85000,126000,112000,139800,77000.0000000001,135000,113900,135000,92990.0000000001,143500,73000,95900,276000,276000,84518,129000,125000,266000,122000,119900,102330,325300,155000,407900,166800,122000,78000.0000000001,160000,77500.0000000001,112000,119500,88999.9999999999,125000,105000,178990,149500,260000,225000,103000,155000,104000,119000,127000,132000,87999.9999999999,150000,156900,145000,80600,149990,139900,38000,129000,128000,122000,86999.9999999999,113000,137000,133000,125000,385000,159000,78000.0000000001,175000,125000,185000,130000,160000,160000,279000,137000,617979,478440,142900,183500,155000,135000,139500,155000,157500,79000.0000000001,107000,130000,115000,134999,125000,135000,139900,113000,130000,139999,115000,140000,128500,113000,213134,120000,121000,99990.0000000001,147000,114990,130000,123000,179900,255000,114600,102600,143000,92999.9999999999,280000,123000,167000,148000,89900,76000,83000,120000,126000,106600,169900,235000,320000,70500,139900,126999,126000,85489.9999999999,69900,90000.0000000001,92000.0000000001,116000,139000,85000,330000,125000,95000,114900,110000,112000,84990,207000,122500,160000,111000,235000,131000,133700,151000,89990,135000,166600,150000,85000,161600,88999.9999999999,84000.0000000001,113000,148000,121000,122400,197000,216500,116900,120000,205000,135000,145000,112000,115000,78000.0000000001,124000,249000,67899.9999999999,109000,112000,166300,180000,96700,95000,170000,71999.9999999999,99990.0000000001,69900,125900,98999.9999999999,155900,125000,220000,156900,139000,142000,87999.9999999999,109000,132000,150000,140000,149000,577700,105000,121700,180000,142000,85999.9999999999,134000,69900,87999.9999999999,120000,142500,408000,119500,107000,249000,69000.0000000001,250000,135000,92999.9999999999,91610,119900,139000,95000,144000,119900,128000,109500,198000,146000,116900,129000,104700,122000,114900,136999,179000,115000,82000,175000,125000,78500,145000,107500,182000,117490,556500,319900,137000,145000,145000,148000,328000,234990,210000,199000,79990,235000,156999,133900,180000,150000,156000,94990,262400,139999,133990,129990,160000,198000,199000,119000,141500,255000,277990,132990,220000,150000,152000,142000,74900,142000,169000,137000,130000,107999,128000,255000,92000.0000000001,109900,129000,115000,142000,119700,102000,195000,82000,68699.9999999999,122000,144900,74990,159900,119000,123000,137000,127999,108900,142000,135000,99970,120000,106700,163950,83000,113184,109000,127000,155000,220000,360000,116700,83000,138000,98000.0000000001,191000,122400,78000.0000000001,168000,86900,180000,219890,205000,329000,78000.0000000001,143000,120300,279000,96900.0000000001,132400,109900,449000,123000,129000,229000,131900,76000,131000,173900,346900,155900,131000,107500,120000,128000,128000,139999,83000,382000,308900,128000,99990.0000000001,68500,252777,104900,122000,119990,169990,313104,348788,147321,122000,210000,159000,117000,115000,137900,107000,120000,109500,69000.0000000001,127800,125000,163000,120000,114000,99499.9999999999,299470,108900,84500.0000000001,119000,78900.0000000001,70000,125800,118500,164900,143900,149500,96990.0000000001,121500,146900,140952,140379,202386,149678,207086,150143,149678,172768,148843,141600,150326,150143,294900,86799.9999999999,138500,114000,125800,103500,215000,233000,118000,143000,95000,111500,128000,135500,145000,121500,84000.0000000001,160000,120000],"y":[272292.417774206,297452.297136529,316055.396508064,310498.018906043,165767.497350714,121052.996579914,298260.635684793,350389.458591202,242607.516418518,190484.401999413,128694.715831729,121500.783521598,210125.24783211,424293.43471617,100874.79110571,307650.809848886,136127.235158091,286833.874335694,202388.466972336,358439.137029976,290676.247369217,267289.726575041,346718.111369851,101101.983872005,233270.574390927,311087.640359055,287430.086510673,78724.9306153996,215426.898294449,119961.977464876,133456.535294012,107272.585077955,230023.074302381,297759.066876673,225579.780301794,82681.8521067981,190824.215629783,367364.771345301,94237.3521692051,201686.080347958,109543.1580529,91288.2714957128,142252.625652746,141617.652818932,78776.5454883642,216088.604882209,129956.081824261,168952.214626721,200371.823403135,91165.5823094592,94884.8357820057,138258.716258717,136789.048335362,222519.420583952,112033.15180816,133775.78843561,112984.1469761,119969.598647251,297810.029093469,119732.144083659,373729.69093775,128747.163207866,268514.934282459,129276.322816032,432319.548163584,357426.313009346,321620.04931123,324375.905311663,94306.6740069929,300354.218288811,98169.3000885478,111172.473406038,131930.895928854,324562.775118842,373612.670003214,238429.33238116,118083.804426856,281851.328357823,102629.44153163,136262.112471617,264115.721598484,123715.114043025,76138.458657917,306600.266092252,167342.502842433,126606.635512272,147487.281260698,182750.587578446,120650.424057648,80359.1501633581,88605.5990758327,106721.850463911,154031.601520708,160381.379511444,287911.459980574,68926.4239775779,151117.158514052,129613.731895288,123563.191820196,53868.7185612686,117619.406820318,190166.992414535,201297.536786585,118246.094641409,125796.933262489,128371.095333055,127484.632514161,296166.363622233,118652.074249419,173285.018560627,178677.964272279,112318.595595911,133218.290866575,108696.381133374,244108.369420398,145205.835118833,131744.693384029,81946.0946425904,81066.3368340764,65538.1418225021,82157.0677896177,124370.534130669,115650.204078959,210967.692941534,89748.3684701918,133588.095120871,112772.956726835,131212.007433344,156294.197385571,133651.5373892,82513.9609563235,102601.091460079,272767.877493837,284628.475694154,92958.5901172223,150654.987705328,122058.138620931,256820.022790934,132388.892620969,160609.560958633,106721.850463911,337525.139206048,145137.908590958,297810.029093469,180069.749715289,123806.058467408,82758.3326659094,154603.116416485,89464.6100128608,106099.418504392,121500.783521598,94845.358527258,124303.109662748,102649.51838397,222078.165268443,156599.810532216,226959.425587011,225635.022495399,107000.482903302,162600.724066669,109958.344588623,128486.525097115,133727.427050083,143294.672653743,94433.5867815124,194003.379713298,171395.54139347,139914.313091465,84560.6948812438,208454.770629379,140172.122047364,46509.8960964764,125645.880868314,126461.860149096,131704.340177032,83636.8113091461,109137.996359239,154259.464192027,157153.333112313,119921.312479435,392643.913538191,190824.215629783,80983.3918899339,149360.767253486,126461.860149096,156846.102140912,123981.194627676,153428.741186939,162941.352250625,259101.85868321,133992.372931828,491586.24367593,432469.624290854,155414.734659639,248675.845738023,166473.143902376,144441.642680179,144249.889856362,138487.625613592,170740.417702858,87839.9812983787,105576.432206223,131799.07884456,126457.465521181,144713.410265324,134512.431340144,139214.028112975,126530.515076068,112964.264967993,127928.371931071,128670.946090748,125974.687253058,136269.060457262,130695.539644979,114379.747357709,211938.126744592,126461.860149096,155765.451259795,107079.164080446,161761.839663035,114379.747357709,119595.194047484,113491.962589205,140852.949462247,236904.551805695,114058.386433263,100799.63873486,138808.287676659,143941.007529361,245529.302879791,133775.551844599,172486.39262247,154488.745581614,101909.910211457,76146.1629164126,121285.248377055,118211.753928396,125164.630186446,105347.314655632,164619.213546775,308573.869158004,317549.228263869,69868.8140543317,174934.087170943,149061.451752122,128742.156415479,83581.8535478176,76753.5846723029,90566.5602155205,86814.0640891625,122276.371609381,120669.308780135,85000.9207922514,353219.447369469,126378.090943792,96043.2601274257,123206.453890353,117519.316739734,112303.863838716,88873.3319161377,190506.202695062,122651.793404134,156856.345775205,104171.833815145,271963.212589549,158214.852467721,130834.63168369,158018.808897876,94589.8871974264,131856.752128269,186631.262233642,198668.386283264,92253.3232375766,164982.278447815,93242.8462973108,79136.1588242727,90901.0549895864,198926.995774538,117017.459092895,135826.370920659,235406.115500562,218995.860825397,116409.481420521,116738.131853866,218847.375888258,159260.51289903,168362.160570142,123896.893511034,121573.150251773,75725.503727971,128337.88225048,253000.959730708,73711.516807689,123523.954490082,122824.914638043,181878.274237009,163834.305830319,97340.6177577049,93025.0366758844,163417.603395361,77487.08412398,126812.247329055,79287.8692093302,122022.089086075,94786.7916210993,171059.435321953,219382.96185711,209056.309602491,191936.953224473,131917.235931426,167540.370180175,85776.283665142,122298.707841995,129405.697167447,155549.761858784,151800.205630239,135398.904100772,477043.55181517,91544.7548993313,128948.45049363,182163.728242495,133188.235256598,83701.3821203518,136140.565355769,76096.8491437497,89252.5385493752,127775.695558733,158784.930765661,299932.210184736,135254.700804519,115452.221810827,235163.972371664,78783.723899991,274673.312858948,143482.334254096,93894.4308367828,98409.6271982357,114069.965003621,127053.388747581,97759.7937834186,129860.571503895,114069.965003621,135978.327546886,118547.622568364,190153.654277198,186004.995945131,113999.588947148,137497.963202293,107484.423735709,127775.695558733,116170.051673927,137313.982133688,197899.696692156,119633.349909636,280074.478705307,161710.691949238,123668.181099163,75541.7704596129,132967.807636013,110562.273345315,242607.516418518,145596.732439392,473728.081935731,286210.72404787,137313.982133688,126918.959450557,249396.754051164,142434.684702259,294026.730590409,250543.687971656,221946.103003977,197959.88473574,84363.9447156179,212339.164765287,158941.129038565,143874.280972687,332756.263106882,178650.013567945,164183.864951044,108774.541016391,293494.473010964,139743.837161829,135158.657488764,131034.265948725,241082.973884952,211847.390558102,210125.24783211,120882.935819368,134892.167317355,259983.958002466,322524.210863763,126294.022084015,227955.828563367,142553.495676844,136039.927716789,140723.930334365,72248.1419969743,139743.837161829,254595.692036639,132296.291192886,133449.739189636,118476.581557196,127066.886169454,252974.977891003,90592.1952286843,104480.180538244,150188.15470806,147866.227439552,141346.480325847,122007.560510098,93906.8640782824,209276.944474168,82243.9751313262,73775.1115247282,124341.246657798,149698.088659616,73753.3584116037,138782.945126763,124421.526989731,127063.07910222,135288.078572791,124862.42580457,102423.505859519,128337.88225048,152881.793021709,113803.866613299,124341.246657798,119491.540664051,154824.087106567,89457.9770416891,121350.955143476,108353.54127777,148940.604348536,141532.572011222,234024.556465397,325301.019812318,117801.81016829,94056.722325225,191321.056280381,102032.271917718,211419.541413437,121318.216964391,84805.1818392429,182925.604051283,94770.7748271906,203877.224442193,207728.053822224,172795.516886722,387263.616232831,80059.8949565402,148895.832097886,124227.053519491,273169.160731471,117491.199782012,192062.892869137,115074.564730245,357649.367308135,117089.876843394,126448.180693918,238794.70325961,139743.837161829,80189.6385478491,138587.960321121,194471.105180593,321727.412948288,173249.323396217,167293.250569218,102453.842025232,115822.412654292,158695.489075062,130907.966284536,140036.492921711,83822.775070077,379102.646915518,298260.635684793,127155.834871239,87306.0429066217,68182.628889296,302672.416598779,106713.571189209,127167.228401444,124871.340907043,168994.895041755,343679.80080579,351479.689413631,167486.468860809,126745.838454969,220011.496254297,154811.29863647,113987.928208384,129184.604766883,140909.219319836,106452.946274204,114440.026362623,105566.641144104,74090.7761998982,129497.899773688,127127.006945125,126518.054893049,149538.564004186,123435.271706824,143041.831942031,200274.382343068,112579.772550075,96973.8294964463,132508.921010768,86492.382654294,63632.449526102,131566.378706549,135176.184033968,202205.721830403,146799.749402534,237959.591157939,102886.286296272,122469.205999745,149801.897751063,148812.581701673,148812.581701673,209482.798329583,148812.581701673,209482.798329583,148639.727355249,148639.727355249,190946.567638638,148812.581701673,148812.581701673,148812.581701673,148812.581701673,276167.841630545,98025.7776431044,137584.52408651,110555.476440128,129497.899773688,96083.1859296268,229338.980569217,270396.337581353,129434.747049359,149102.463029721,96852.1328221809,134288.33254416,160851.876426359,137313.982133688,148256.351566143,124250.795297356,80767.3998016227,155475.172260872,119080.934288999],"text":["~price: 230000.00<br />~predict: 272292.42","~price: 275000.00<br />~predict: 297452.30","~price: 310000.00<br />~predict: 316055.40","~price: 255000.00<br />~predict: 310498.02","~price: 179000.00<br />~predict: 165767.50","~price: 107990.00<br />~predict: 121053.00","~price: 270000.00<br />~predict: 298260.64","~price: 570000.00<br />~predict: 350389.46","~price: 159900.00<br />~predict: 242607.52","~price: 240000.00<br />~predict: 190484.40","~price:  99000.00<br />~predict: 128694.72","~price: 117500.00<br />~predict: 121500.78","~price: 222000.00<br />~predict: 210125.25","~price: 389990.00<br />~predict: 424293.43","~price: 117000.00<br />~predict: 100874.79","~price: 345000.00<br />~predict: 307650.81","~price: 145000.00<br />~predict: 136127.24","~price: 311100.00<br />~predict: 286833.87","~price: 207652.00<br />~predict: 202388.47","~price: 305000.00<br />~predict: 358439.14","~price: 299000.00<br />~predict: 290676.25","~price: 229500.00<br />~predict: 267289.73","~price: 196999.00<br />~predict: 346718.11","~price: 101000.00<br />~predict: 101101.98","~price: 165000.00<br />~predict: 233270.57","~price: 250000.00<br />~predict: 311087.64","~price: 385000.00<br />~predict: 287430.09","~price:  75384.23<br />~predict:  78724.93","~price: 250000.00<br />~predict: 215426.90","~price: 117500.00<br />~predict: 119961.98","~price: 132000.00<br />~predict: 133456.54","~price:  99800.00<br />~predict: 107272.59","~price: 120996.60<br />~predict: 230023.07","~price: 338200.00<br />~predict: 297759.07","~price: 232800.00<br />~predict: 225579.78","~price: 100000.00<br />~predict:  82681.85","~price: 244000.00<br />~predict: 190824.22","~price: 280000.00<br />~predict: 367364.77","~price:  91000.00<br />~predict:  94237.35","~price: 160000.00<br />~predict: 201686.08","~price: 102000.00<br />~predict: 109543.16","~price:  81299.00<br />~predict:  91288.27","~price: 121320.00<br />~predict: 142252.63","~price: 134000.00<br />~predict: 141617.65","~price:  85000.00<br />~predict:  78776.55","~price: 121400.00<br />~predict: 216088.60","~price: 135000.00<br />~predict: 129956.08","~price: 155900.00<br />~predict: 168952.21","~price: 182000.00<br />~predict: 200371.82","~price:  88000.00<br />~predict:  91165.58","~price:  88000.00<br />~predict:  94884.84","~price: 135000.00<br />~predict: 138258.72","~price: 142000.00<br />~predict: 136789.05","~price: 405000.00<br />~predict: 222519.42","~price:  92000.00<br />~predict: 112033.15","~price: 111000.00<br />~predict: 133775.79","~price: 112900.00<br />~predict: 112984.15","~price: 115200.00<br />~predict: 119969.60","~price: 370000.00<br />~predict: 297810.03","~price: 119000.00<br />~predict: 119732.14","~price: 387965.00<br />~predict: 373729.69","~price: 132600.00<br />~predict: 128747.16","~price: 287520.00<br />~predict: 268514.93","~price: 121900.00<br />~predict: 129276.32","~price: 405353.00<br />~predict: 432319.55","~price: 389011.00<br />~predict: 357426.31","~price: 301085.00<br />~predict: 321620.05","~price: 315000.00<br />~predict: 324375.91","~price:  85500.00<br />~predict:  94306.67","~price: 259900.00<br />~predict: 300354.22","~price:  97000.00<br />~predict:  98169.30","~price:  85000.00<br />~predict: 111172.47","~price: 135000.00<br />~predict: 131930.90","~price: 340000.00<br />~predict: 324562.78","~price: 399000.00<br />~predict: 373612.67","~price: 255000.00<br />~predict: 238429.33","~price: 109900.00<br />~predict: 118083.80","~price: 267000.00<br />~predict: 281851.33","~price:  99000.00<br />~predict: 102629.44","~price: 127000.00<br />~predict: 136262.11","~price: 249990.00<br />~predict: 264115.72","~price:  96302.00<br />~predict: 123715.11","~price:  78000.00<br />~predict:  76138.46","~price: 299000.00<br />~predict: 306600.27","~price: 164900.00<br />~predict: 167342.50","~price: 119990.00<br />~predict: 126606.64","~price: 171600.00<br />~predict: 147487.28","~price: 179900.00<br />~predict: 182750.59","~price: 125000.00<br />~predict: 120650.42","~price:  87500.00<br />~predict:  80359.15","~price:  85500.00<br />~predict:  88605.60","~price: 110010.00<br />~predict: 106721.85","~price: 123605.00<br />~predict: 154031.60","~price: 150080.00<br />~predict: 160381.38","~price: 330000.00<br />~predict: 287911.46","~price:  72999.00<br />~predict:  68926.42","~price: 109000.00<br />~predict: 151117.16","~price: 119990.00<br />~predict: 129613.73","~price: 120500.00<br />~predict: 123563.19","~price:  55500.00<br />~predict:  53868.72","~price: 144900.00<br />~predict: 117619.41","~price: 198000.00<br />~predict: 190166.99","~price: 157000.00<br />~predict: 201297.54","~price: 117000.00<br />~predict: 118246.09","~price: 144500.00<br />~predict: 125796.93","~price: 113700.00<br />~predict: 128371.10","~price: 139900.00<br />~predict: 127484.63","~price: 362800.00<br />~predict: 296166.36","~price: 116900.00<br />~predict: 118652.07","~price: 132000.00<br />~predict: 173285.02","~price: 150000.00<br />~predict: 178677.96","~price:  95000.00<br />~predict: 112318.60","~price: 143000.00<br />~predict: 133218.29","~price: 104000.00<br />~predict: 108696.38","~price: 274152.00<br />~predict: 244108.37","~price: 130000.00<br />~predict: 145205.84","~price: 144000.00<br />~predict: 131744.69","~price:  64900.00<br />~predict:  81946.09","~price:  83900.00<br />~predict:  81066.34","~price:  69900.00<br />~predict:  65538.14","~price:  85000.00<br />~predict:  82157.07","~price: 126000.00<br />~predict: 124370.53","~price: 112000.00<br />~predict: 115650.20","~price: 139800.00<br />~predict: 210967.69","~price:  77000.00<br />~predict:  89748.37","~price: 135000.00<br />~predict: 133588.10","~price: 113900.00<br />~predict: 112772.96","~price: 135000.00<br />~predict: 131212.01","~price:  92990.00<br />~predict: 156294.20","~price: 143500.00<br />~predict: 133651.54","~price:  73000.00<br />~predict:  82513.96","~price:  95900.00<br />~predict: 102601.09","~price: 276000.00<br />~predict: 272767.88","~price: 276000.00<br />~predict: 284628.48","~price:  84518.00<br />~predict:  92958.59","~price: 129000.00<br />~predict: 150654.99","~price: 125000.00<br />~predict: 122058.14","~price: 266000.00<br />~predict: 256820.02","~price: 122000.00<br />~predict: 132388.89","~price: 119900.00<br />~predict: 160609.56","~price: 102330.00<br />~predict: 106721.85","~price: 325300.00<br />~predict: 337525.14","~price: 155000.00<br />~predict: 145137.91","~price: 407900.00<br />~predict: 297810.03","~price: 166800.00<br />~predict: 180069.75","~price: 122000.00<br />~predict: 123806.06","~price:  78000.00<br />~predict:  82758.33","~price: 160000.00<br />~predict: 154603.12","~price:  77500.00<br />~predict:  89464.61","~price: 112000.00<br />~predict: 106099.42","~price: 119500.00<br />~predict: 121500.78","~price:  89000.00<br />~predict:  94845.36","~price: 125000.00<br />~predict: 124303.11","~price: 105000.00<br />~predict: 102649.52","~price: 178990.00<br />~predict: 222078.17","~price: 149500.00<br />~predict: 156599.81","~price: 260000.00<br />~predict: 226959.43","~price: 225000.00<br />~predict: 225635.02","~price: 103000.00<br />~predict: 107000.48","~price: 155000.00<br />~predict: 162600.72","~price: 104000.00<br />~predict: 109958.34","~price: 119000.00<br />~predict: 128486.53","~price: 127000.00<br />~predict: 133727.43","~price: 132000.00<br />~predict: 143294.67","~price:  88000.00<br />~predict:  94433.59","~price: 150000.00<br />~predict: 194003.38","~price: 156900.00<br />~predict: 171395.54","~price: 145000.00<br />~predict: 139914.31","~price:  80600.00<br />~predict:  84560.69","~price: 149990.00<br />~predict: 208454.77","~price: 139900.00<br />~predict: 140172.12","~price:  38000.00<br />~predict:  46509.90","~price: 129000.00<br />~predict: 125645.88","~price: 128000.00<br />~predict: 126461.86","~price: 122000.00<br />~predict: 131704.34","~price:  87000.00<br />~predict:  83636.81","~price: 113000.00<br />~predict: 109138.00","~price: 137000.00<br />~predict: 154259.46","~price: 133000.00<br />~predict: 157153.33","~price: 125000.00<br />~predict: 119921.31","~price: 385000.00<br />~predict: 392643.91","~price: 159000.00<br />~predict: 190824.22","~price:  78000.00<br />~predict:  80983.39","~price: 175000.00<br />~predict: 149360.77","~price: 125000.00<br />~predict: 126461.86","~price: 185000.00<br />~predict: 156846.10","~price: 130000.00<br />~predict: 123981.19","~price: 160000.00<br />~predict: 153428.74","~price: 160000.00<br />~predict: 162941.35","~price: 279000.00<br />~predict: 259101.86","~price: 137000.00<br />~predict: 133992.37","~price: 617979.00<br />~predict: 491586.24","~price: 478440.00<br />~predict: 432469.62","~price: 142900.00<br />~predict: 155414.73","~price: 183500.00<br />~predict: 248675.85","~price: 155000.00<br />~predict: 166473.14","~price: 135000.00<br />~predict: 144441.64","~price: 139500.00<br />~predict: 144249.89","~price: 155000.00<br />~predict: 138487.63","~price: 157500.00<br />~predict: 170740.42","~price:  79000.00<br />~predict:  87839.98","~price: 107000.00<br />~predict: 105576.43","~price: 130000.00<br />~predict: 131799.08","~price: 115000.00<br />~predict: 126457.47","~price: 134999.00<br />~predict: 144713.41","~price: 125000.00<br />~predict: 134512.43","~price: 135000.00<br />~predict: 139214.03","~price: 139900.00<br />~predict: 126530.52","~price: 113000.00<br />~predict: 112964.26","~price: 130000.00<br />~predict: 127928.37","~price: 139999.00<br />~predict: 128670.95","~price: 115000.00<br />~predict: 125974.69","~price: 140000.00<br />~predict: 136269.06","~price: 128500.00<br />~predict: 130695.54","~price: 113000.00<br />~predict: 114379.75","~price: 213134.00<br />~predict: 211938.13","~price: 120000.00<br />~predict: 126461.86","~price: 121000.00<br />~predict: 155765.45","~price:  99990.00<br />~predict: 107079.16","~price: 147000.00<br />~predict: 161761.84","~price: 114990.00<br />~predict: 114379.75","~price: 130000.00<br />~predict: 119595.19","~price: 123000.00<br />~predict: 113491.96","~price: 179900.00<br />~predict: 140852.95","~price: 255000.00<br />~predict: 236904.55","~price: 114600.00<br />~predict: 114058.39","~price: 102600.00<br />~predict: 100799.64","~price: 143000.00<br />~predict: 138808.29","~price:  93000.00<br />~predict: 143941.01","~price: 280000.00<br />~predict: 245529.30","~price: 123000.00<br />~predict: 133775.55","~price: 167000.00<br />~predict: 172486.39","~price: 148000.00<br />~predict: 154488.75","~price:  89900.00<br />~predict: 101909.91","~price:  76000.00<br />~predict:  76146.16","~price:  83000.00<br />~predict: 121285.25","~price: 120000.00<br />~predict: 118211.75","~price: 126000.00<br />~predict: 125164.63","~price: 106600.00<br />~predict: 105347.31","~price: 169900.00<br />~predict: 164619.21","~price: 235000.00<br />~predict: 308573.87","~price: 320000.00<br />~predict: 317549.23","~price:  70500.00<br />~predict:  69868.81","~price: 139900.00<br />~predict: 174934.09","~price: 126999.00<br />~predict: 149061.45","~price: 126000.00<br />~predict: 128742.16","~price:  85490.00<br />~predict:  83581.85","~price:  69900.00<br />~predict:  76753.58","~price:  90000.00<br />~predict:  90566.56","~price:  92000.00<br />~predict:  86814.06","~price: 116000.00<br />~predict: 122276.37","~price: 139000.00<br />~predict: 120669.31","~price:  85000.00<br />~predict:  85000.92","~price: 330000.00<br />~predict: 353219.45","~price: 125000.00<br />~predict: 126378.09","~price:  95000.00<br />~predict:  96043.26","~price: 114900.00<br />~predict: 123206.45","~price: 110000.00<br />~predict: 117519.32","~price: 112000.00<br />~predict: 112303.86","~price:  84990.00<br />~predict:  88873.33","~price: 207000.00<br />~predict: 190506.20","~price: 122500.00<br />~predict: 122651.79","~price: 160000.00<br />~predict: 156856.35","~price: 111000.00<br />~predict: 104171.83","~price: 235000.00<br />~predict: 271963.21","~price: 131000.00<br />~predict: 158214.85","~price: 133700.00<br />~predict: 130834.63","~price: 151000.00<br />~predict: 158018.81","~price:  89990.00<br />~predict:  94589.89","~price: 135000.00<br />~predict: 131856.75","~price: 166600.00<br />~predict: 186631.26","~price: 150000.00<br />~predict: 198668.39","~price:  85000.00<br />~predict:  92253.32","~price: 161600.00<br />~predict: 164982.28","~price:  89000.00<br />~predict:  93242.85","~price:  84000.00<br />~predict:  79136.16","~price: 113000.00<br />~predict:  90901.05","~price: 148000.00<br />~predict: 198927.00","~price: 121000.00<br />~predict: 117017.46","~price: 122400.00<br />~predict: 135826.37","~price: 197000.00<br />~predict: 235406.12","~price: 216500.00<br />~predict: 218995.86","~price: 116900.00<br />~predict: 116409.48","~price: 120000.00<br />~predict: 116738.13","~price: 205000.00<br />~predict: 218847.38","~price: 135000.00<br />~predict: 159260.51","~price: 145000.00<br />~predict: 168362.16","~price: 112000.00<br />~predict: 123896.89","~price: 115000.00<br />~predict: 121573.15","~price:  78000.00<br />~predict:  75725.50","~price: 124000.00<br />~predict: 128337.88","~price: 249000.00<br />~predict: 253000.96","~price:  67900.00<br />~predict:  73711.52","~price: 109000.00<br />~predict: 123523.95","~price: 112000.00<br />~predict: 122824.91","~price: 166300.00<br />~predict: 181878.27","~price: 180000.00<br />~predict: 163834.31","~price:  96700.00<br />~predict:  97340.62","~price:  95000.00<br />~predict:  93025.04","~price: 170000.00<br />~predict: 163417.60","~price:  72000.00<br />~predict:  77487.08","~price:  99990.00<br />~predict: 126812.25","~price:  69900.00<br />~predict:  79287.87","~price: 125900.00<br />~predict: 122022.09","~price:  99000.00<br />~predict:  94786.79","~price: 155900.00<br />~predict: 171059.44","~price: 125000.00<br />~predict: 219382.96","~price: 220000.00<br />~predict: 209056.31","~price: 156900.00<br />~predict: 191936.95","~price: 139000.00<br />~predict: 131917.24","~price: 142000.00<br />~predict: 167540.37","~price:  88000.00<br />~predict:  85776.28","~price: 109000.00<br />~predict: 122298.71","~price: 132000.00<br />~predict: 129405.70","~price: 150000.00<br />~predict: 155549.76","~price: 140000.00<br />~predict: 151800.21","~price: 149000.00<br />~predict: 135398.90","~price: 577700.00<br />~predict: 477043.55","~price: 105000.00<br />~predict:  91544.75","~price: 121700.00<br />~predict: 128948.45","~price: 180000.00<br />~predict: 182163.73","~price: 142000.00<br />~predict: 133188.24","~price:  86000.00<br />~predict:  83701.38","~price: 134000.00<br />~predict: 136140.57","~price:  69900.00<br />~predict:  76096.85","~price:  88000.00<br />~predict:  89252.54","~price: 120000.00<br />~predict: 127775.70","~price: 142500.00<br />~predict: 158784.93","~price: 408000.00<br />~predict: 299932.21","~price: 119500.00<br />~predict: 135254.70","~price: 107000.00<br />~predict: 115452.22","~price: 249000.00<br />~predict: 235163.97","~price:  69000.00<br />~predict:  78783.72","~price: 250000.00<br />~predict: 274673.31","~price: 135000.00<br />~predict: 143482.33","~price:  93000.00<br />~predict:  93894.43","~price:  91610.00<br />~predict:  98409.63","~price: 119900.00<br />~predict: 114069.97","~price: 139000.00<br />~predict: 127053.39","~price:  95000.00<br />~predict:  97759.79","~price: 144000.00<br />~predict: 129860.57","~price: 119900.00<br />~predict: 114069.97","~price: 128000.00<br />~predict: 135978.33","~price: 109500.00<br />~predict: 118547.62","~price: 198000.00<br />~predict: 190153.65","~price: 146000.00<br />~predict: 186005.00","~price: 116900.00<br />~predict: 113999.59","~price: 129000.00<br />~predict: 137497.96","~price: 104700.00<br />~predict: 107484.42","~price: 122000.00<br />~predict: 127775.70","~price: 114900.00<br />~predict: 116170.05","~price: 136999.00<br />~predict: 137313.98","~price: 179000.00<br />~predict: 197899.70","~price: 115000.00<br />~predict: 119633.35","~price:  82000.00<br />~predict: 280074.48","~price: 175000.00<br />~predict: 161710.69","~price: 125000.00<br />~predict: 123668.18","~price:  78500.00<br />~predict:  75541.77","~price: 145000.00<br />~predict: 132967.81","~price: 107500.00<br />~predict: 110562.27","~price: 182000.00<br />~predict: 242607.52","~price: 117490.00<br />~predict: 145596.73","~price: 556500.00<br />~predict: 473728.08","~price: 319900.00<br />~predict: 286210.72","~price: 137000.00<br />~predict: 137313.98","~price: 145000.00<br />~predict: 126918.96","~price: 145000.00<br />~predict: 249396.75","~price: 148000.00<br />~predict: 142434.68","~price: 328000.00<br />~predict: 294026.73","~price: 234990.00<br />~predict: 250543.69","~price: 210000.00<br />~predict: 221946.10","~price: 199000.00<br />~predict: 197959.88","~price:  79990.00<br />~predict:  84363.94","~price: 235000.00<br />~predict: 212339.16","~price: 156999.00<br />~predict: 158941.13","~price: 133900.00<br />~predict: 143874.28","~price: 180000.00<br />~predict: 332756.26","~price: 150000.00<br />~predict: 178650.01","~price: 156000.00<br />~predict: 164183.86","~price:  94990.00<br />~predict: 108774.54","~price: 262400.00<br />~predict: 293494.47","~price: 139999.00<br />~predict: 139743.84","~price: 133990.00<br />~predict: 135158.66","~price: 129990.00<br />~predict: 131034.27","~price: 160000.00<br />~predict: 241082.97","~price: 198000.00<br />~predict: 211847.39","~price: 199000.00<br />~predict: 210125.25","~price: 119000.00<br />~predict: 120882.94","~price: 141500.00<br />~predict: 134892.17","~price: 255000.00<br />~predict: 259983.96","~price: 277990.00<br />~predict: 322524.21","~price: 132990.00<br />~predict: 126294.02","~price: 220000.00<br />~predict: 227955.83","~price: 150000.00<br />~predict: 142553.50","~price: 152000.00<br />~predict: 136039.93","~price: 142000.00<br />~predict: 140723.93","~price:  74900.00<br />~predict:  72248.14","~price: 142000.00<br />~predict: 139743.84","~price: 169000.00<br />~predict: 254595.69","~price: 137000.00<br />~predict: 132296.29","~price: 130000.00<br />~predict: 133449.74","~price: 107999.00<br />~predict: 118476.58","~price: 128000.00<br />~predict: 127066.89","~price: 255000.00<br />~predict: 252974.98","~price:  92000.00<br />~predict:  90592.20","~price: 109900.00<br />~predict: 104480.18","~price: 129000.00<br />~predict: 150188.15","~price: 115000.00<br />~predict: 147866.23","~price: 142000.00<br />~predict: 141346.48","~price: 119700.00<br />~predict: 122007.56","~price: 102000.00<br />~predict:  93906.86","~price: 195000.00<br />~predict: 209276.94","~price:  82000.00<br />~predict:  82243.98","~price:  68700.00<br />~predict:  73775.11","~price: 122000.00<br />~predict: 124341.25","~price: 144900.00<br />~predict: 149698.09","~price:  74990.00<br />~predict:  73753.36","~price: 159900.00<br />~predict: 138782.95","~price: 119000.00<br />~predict: 124421.53","~price: 123000.00<br />~predict: 127063.08","~price: 137000.00<br />~predict: 135288.08","~price: 127999.00<br />~predict: 124862.43","~price: 108900.00<br />~predict: 102423.51","~price: 142000.00<br />~predict: 128337.88","~price: 135000.00<br />~predict: 152881.79","~price:  99970.00<br />~predict: 113803.87","~price: 120000.00<br />~predict: 124341.25","~price: 106700.00<br />~predict: 119491.54","~price: 163950.00<br />~predict: 154824.09","~price:  83000.00<br />~predict:  89457.98","~price: 113184.00<br />~predict: 121350.96","~price: 109000.00<br />~predict: 108353.54","~price: 127000.00<br />~predict: 148940.60","~price: 155000.00<br />~predict: 141532.57","~price: 220000.00<br />~predict: 234024.56","~price: 360000.00<br />~predict: 325301.02","~price: 116700.00<br />~predict: 117801.81","~price:  83000.00<br />~predict:  94056.72","~price: 138000.00<br />~predict: 191321.06","~price:  98000.00<br />~predict: 102032.27","~price: 191000.00<br />~predict: 211419.54","~price: 122400.00<br />~predict: 121318.22","~price:  78000.00<br />~predict:  84805.18","~price: 168000.00<br />~predict: 182925.60","~price:  86900.00<br />~predict:  94770.77","~price: 180000.00<br />~predict: 203877.22","~price: 219890.00<br />~predict: 207728.05","~price: 205000.00<br />~predict: 172795.52","~price: 329000.00<br />~predict: 387263.62","~price:  78000.00<br />~predict:  80059.89","~price: 143000.00<br />~predict: 148895.83","~price: 120300.00<br />~predict: 124227.05","~price: 279000.00<br />~predict: 273169.16","~price:  96900.00<br />~predict: 117491.20","~price: 132400.00<br />~predict: 192062.89","~price: 109900.00<br />~predict: 115074.56","~price: 449000.00<br />~predict: 357649.37","~price: 123000.00<br />~predict: 117089.88","~price: 129000.00<br />~predict: 126448.18","~price: 229000.00<br />~predict: 238794.70","~price: 131900.00<br />~predict: 139743.84","~price:  76000.00<br />~predict:  80189.64","~price: 131000.00<br />~predict: 138587.96","~price: 173900.00<br />~predict: 194471.11","~price: 346900.00<br />~predict: 321727.41","~price: 155900.00<br />~predict: 173249.32","~price: 131000.00<br />~predict: 167293.25","~price: 107500.00<br />~predict: 102453.84","~price: 120000.00<br />~predict: 115822.41","~price: 128000.00<br />~predict: 158695.49","~price: 128000.00<br />~predict: 130907.97","~price: 139999.00<br />~predict: 140036.49","~price:  83000.00<br />~predict:  83822.78","~price: 382000.00<br />~predict: 379102.65","~price: 308900.00<br />~predict: 298260.64","~price: 128000.00<br />~predict: 127155.83","~price:  99990.00<br />~predict:  87306.04","~price:  68500.00<br />~predict:  68182.63","~price: 252777.00<br />~predict: 302672.42","~price: 104900.00<br />~predict: 106713.57","~price: 122000.00<br />~predict: 127167.23","~price: 119990.00<br />~predict: 124871.34","~price: 169990.00<br />~predict: 168994.90","~price: 313104.00<br />~predict: 343679.80","~price: 348788.00<br />~predict: 351479.69","~price: 147321.00<br />~predict: 167486.47","~price: 122000.00<br />~predict: 126745.84","~price: 210000.00<br />~predict: 220011.50","~price: 159000.00<br />~predict: 154811.30","~price: 117000.00<br />~predict: 113987.93","~price: 115000.00<br />~predict: 129184.60","~price: 137900.00<br />~predict: 140909.22","~price: 107000.00<br />~predict: 106452.95","~price: 120000.00<br />~predict: 114440.03","~price: 109500.00<br />~predict: 105566.64","~price:  69000.00<br />~predict:  74090.78","~price: 127800.00<br />~predict: 129497.90","~price: 125000.00<br />~predict: 127127.01","~price: 163000.00<br />~predict: 126518.05","~price: 120000.00<br />~predict: 149538.56","~price: 114000.00<br />~predict: 123435.27","~price:  99500.00<br />~predict: 143041.83","~price: 299470.00<br />~predict: 200274.38","~price: 108900.00<br />~predict: 112579.77","~price:  84500.00<br />~predict:  96973.83","~price: 119000.00<br />~predict: 132508.92","~price:  78900.00<br />~predict:  86492.38","~price:  70000.00<br />~predict:  63632.45","~price: 125800.00<br />~predict: 131566.38","~price: 118500.00<br />~predict: 135176.18","~price: 164900.00<br />~predict: 202205.72","~price: 143900.00<br />~predict: 146799.75","~price: 149500.00<br />~predict: 237959.59","~price:  96990.00<br />~predict: 102886.29","~price: 121500.00<br />~predict: 122469.21","~price: 146900.00<br />~predict: 149801.90","~price: 140952.00<br />~predict: 148812.58","~price: 140379.00<br />~predict: 148812.58","~price: 202386.00<br />~predict: 209482.80","~price: 149678.00<br />~predict: 148812.58","~price: 207086.00<br />~predict: 209482.80","~price: 150143.00<br />~predict: 148639.73","~price: 149678.00<br />~predict: 148639.73","~price: 172768.00<br />~predict: 190946.57","~price: 148843.00<br />~predict: 148812.58","~price: 141600.00<br />~predict: 148812.58","~price: 150326.00<br />~predict: 148812.58","~price: 150143.00<br />~predict: 148812.58","~price: 294900.00<br />~predict: 276167.84","~price:  86800.00<br />~predict:  98025.78","~price: 138500.00<br />~predict: 137584.52","~price: 114000.00<br />~predict: 110555.48","~price: 125800.00<br />~predict: 129497.90","~price: 103500.00<br />~predict:  96083.19","~price: 215000.00<br />~predict: 229338.98","~price: 233000.00<br />~predict: 270396.34","~price: 118000.00<br />~predict: 129434.75","~price: 143000.00<br />~predict: 149102.46","~price:  95000.00<br />~predict:  96852.13","~price: 111500.00<br />~predict: 134288.33","~price: 128000.00<br />~predict: 160851.88","~price: 135500.00<br />~predict: 137313.98","~price: 145000.00<br />~predict: 148256.35","~price: 121500.00<br />~predict: 124250.80","~price:  84000.00<br />~predict:  80767.40","~price: 160000.00<br />~predict: 155475.17","~price: 120000.00<br />~predict: 119080.93"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":0.3,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[9001.05000000002,646977.95],"y":[9001.05000000002,646977.95],"text":"~intercept: 0<br />~slope: 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[38000,45341.5063291139,52683.0126582278,60024.5189873418,67366.0253164557,74707.5316455696,82049.0379746835,89390.5443037974,96732.0506329114,104073.556962025,111415.063291139,118756.569620253,126098.075949367,133439.582278481,140781.088607595,148122.594936709,155464.101265823,162805.607594937,170147.113924051,177488.620253164,184830.126582278,192171.632911392,199513.139240506,206854.64556962,214196.151898734,221537.658227848,228879.164556962,236220.670886076,243562.17721519,250903.683544304,258245.189873418,265586.696202532,272928.202531645,280269.708860759,287611.215189873,294952.721518987,302294.227848101,309635.734177215,316977.240506329,324318.746835443,331660.253164557,339001.759493671,346343.265822785,353684.772151899,361026.278481012,368367.784810126,375709.29113924,383050.797468354,390392.303797468,397733.810126582,405075.316455696,412416.82278481,419758.329113924,427099.835443038,434441.341772152,441782.848101266,449124.354430379,456465.860759493,463807.367088607,471148.873417721,478490.379746835,485831.886075949,493173.392405063,500514.898734177,507856.405063291,515197.911392405,522539.417721519,529880.924050633,537222.430379746,544563.93670886,551905.443037974,559246.949367088,566588.455696202,573929.962025316,581271.46835443,588612.974683544,595954.481012658,603295.987341772,610637.493670886,617979],"y":[42847.6586627138,50728.1777569195,58542.7478538324,66290.1008604587,73968.9686838041,81578.0832308745,89116.1764086759,96581.9801242142,103938.003577104,111195.592872129,118429.380463437,125399.579951789,132910.8107584,140796.594634078,148965.288918976,157480.808340141,166238.906018918,174743.534393493,182694.871188234,190439.538262201,198012.40132213,205420.285133947,212670.014463577,219768.414076946,226722.30873998,233538.523218604,240223.882278744,246785.210686325,253229.333207274,259562.907648852,265778.644763538,271871.026493468,277842.200338264,283694.31379755,289429.514370946,295049.949558077,300557.766858564,305955.113772031,311244.1377981,316426.986436394,321505.807186535,326482.747548145,331359.955020849,336139.577104267,340823.761298024,345414.65510174,349914.40601504,354325.161537545,358649.069168879,362888.276408664,367044.930756522,371121.179712076,375119.17077495,379041.051444764,382888.969221143,386665.071603708,390371.506092083,394010.42018589,397583.961384751,401094.277188289,404543.515096127,407933.822607888,411267.347223194,414546.236441667,417772.637762931,420948.698686608,424076.56671232,427158.38933969,430196.314068342,433192.488397897,436149.059827977,439068.175858207,441951.983988208,444802.631717603,447622.266546014,450413.035973065,453177.087498378,455916.568621575,458633.626842279,461330.409660113],"text":["~price:  38000.00<br />~predict:  42847.66","~price:  45341.51<br />~predict:  50728.18","~price:  52683.01<br />~predict:  58542.75","~price:  60024.52<br />~predict:  66290.10","~price:  67366.03<br />~predict:  73968.97","~price:  74707.53<br />~predict:  81578.08","~price:  82049.04<br />~predict:  89116.18","~price:  89390.54<br />~predict:  96581.98","~price:  96732.05<br />~predict: 103938.00","~price: 104073.56<br />~predict: 111195.59","~price: 111415.06<br />~predict: 118429.38","~price: 118756.57<br />~predict: 125399.58","~price: 126098.08<br />~predict: 132910.81","~price: 133439.58<br />~predict: 140796.59","~price: 140781.09<br />~predict: 148965.29","~price: 148122.59<br />~predict: 157480.81","~price: 155464.10<br />~predict: 166238.91","~price: 162805.61<br />~predict: 174743.53","~price: 170147.11<br />~predict: 182694.87","~price: 177488.62<br />~predict: 190439.54","~price: 184830.13<br />~predict: 198012.40","~price: 192171.63<br />~predict: 205420.29","~price: 199513.14<br />~predict: 212670.01","~price: 206854.65<br />~predict: 219768.41","~price: 214196.15<br />~predict: 226722.31","~price: 221537.66<br />~predict: 233538.52","~price: 228879.16<br />~predict: 240223.88","~price: 236220.67<br />~predict: 246785.21","~price: 243562.18<br />~predict: 253229.33","~price: 250903.68<br />~predict: 259562.91","~price: 258245.19<br />~predict: 265778.64","~price: 265586.70<br />~predict: 271871.03","~price: 272928.20<br />~predict: 277842.20","~price: 280269.71<br />~predict: 283694.31","~price: 287611.22<br />~predict: 289429.51","~price: 294952.72<br />~predict: 295049.95","~price: 302294.23<br />~predict: 300557.77","~price: 309635.73<br />~predict: 305955.11","~price: 316977.24<br />~predict: 311244.14","~price: 324318.75<br />~predict: 316426.99","~price: 331660.25<br />~predict: 321505.81","~price: 339001.76<br />~predict: 326482.75","~price: 346343.27<br />~predict: 331359.96","~price: 353684.77<br />~predict: 336139.58","~price: 361026.28<br />~predict: 340823.76","~price: 368367.78<br />~predict: 345414.66","~price: 375709.29<br />~predict: 349914.41","~price: 383050.80<br />~predict: 354325.16","~price: 390392.30<br />~predict: 358649.07","~price: 397733.81<br />~predict: 362888.28","~price: 405075.32<br />~predict: 367044.93","~price: 412416.82<br />~predict: 371121.18","~price: 419758.33<br />~predict: 375119.17","~price: 427099.84<br />~predict: 379041.05","~price: 434441.34<br />~predict: 382888.97","~price: 441782.85<br />~predict: 386665.07","~price: 449124.35<br />~predict: 390371.51","~price: 456465.86<br />~predict: 394010.42","~price: 463807.37<br />~predict: 397583.96","~price: 471148.87<br />~predict: 401094.28","~price: 478490.38<br />~predict: 404543.52","~price: 485831.89<br />~predict: 407933.82","~price: 493173.39<br />~predict: 411267.35","~price: 500514.90<br />~predict: 414546.24","~price: 507856.41<br />~predict: 417772.64","~price: 515197.91<br />~predict: 420948.70","~price: 522539.42<br />~predict: 424076.57","~price: 529880.92<br />~predict: 427158.39","~price: 537222.43<br />~predict: 430196.31","~price: 544563.94<br />~predict: 433192.49","~price: 551905.44<br />~predict: 436149.06","~price: 559246.95<br />~predict: 439068.18","~price: 566588.46<br />~predict: 441951.98","~price: 573929.96<br />~predict: 444802.63","~price: 581271.47<br />~predict: 447622.27","~price: 588612.97<br />~predict: 450413.04","~price: 595954.48<br />~predict: 453177.09","~price: 603295.99<br />~predict: 455916.57","~price: 610637.49<br />~predict: 458633.63","~price: 617979.00<br />~predict: 461330.41"],"type":"scatter","mode":"lines","name":"fitted values","line":{"width":3.77952755905512,"color":"rgba(255,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.7625570776256,"r":7.30593607305936,"b":40.1826484018265,"l":66.4840182648402},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":"<b> MODEL ACCURACY: Fitted vs Real Prices <\/b>","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"xaxis":{"domain":[0,1],"type":"linear","autorange":false,"range":[9001.05000000002,646977.95],"tickmode":"array","ticktext":["200,000","400,000","600,000"],"tickvals":[200000,400000,600000],"categoryorder":"array","categoryarray":["200,000","400,000","600,000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y","title":"Sale Price","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"type":"linear","autorange":false,"range":[20410.729412053,514023.172926591],"tickmode":"array","ticktext":["100,000","200,000","300,000","400,000","500,000"],"tickvals":[100000,200000,300000,400000,500000],"categoryorder":"array","categoryarray":["100,000","200,000","300,000","400,000","500,000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":"Predicted Price","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"source":"A","attrs":{"d9b1434f448":{"x":{},"y":{},"type":"scatter"},"d9b2091ad55":{"intercept":{},"slope":{}},"d9b3c0ab827":{"x":{},"y":{}}},"cur_data":"d9b1434f448","visdat":{"d9b1434f448":["function (y) ","x"],"d9b2091ad55":["function (y) ","x"],"d9b3c0ab827":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1}},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":{"render":[{"code":"function(el, x) { var ctConfig = crosstalk.var('plotlyCrosstalkOpts').set({\"on\":\"plotly_click\",\"persistent\":false,\"dynamic\":false,\"selectize\":false,\"opacityDim\":0.2,\"selected\":{\"opacity\":1}}); }","data":null}]}}</script>
+<p>The chart above shows that the model is pretty accurate up until the 300.000 price range. The red line is deviating from the black suggesting that the model is underpredicting the prices for the most expensive flats. This is to be expected since the top end of the market contains high fluctuations in the prices. In order to capture this variance, additional data need to be gathered. Imagine, having marble instead of cheap tiles in bathrooms would lead to higher prices. This information isn’t part of the model and we can accept that the model underperforms.</p>
+<p>Now, how do we trust the prediction? Understanding the machine learning model helps validate the accuracy and helps us to trust that it works. To transform this black box model into <strong>interpretable machine learning model</strong> we use the LIME package. The code below initiated process where the machine learning model is explained with series of <strong>support</strong> and <strong>contradict</strong> statements.</p>
+<pre class="r"><code>library(lime)
+
+explainer &lt;- lime::lime(
+        x              = as.data.frame(train_h2o) %&gt;% head(20), 
+        model          = automl_models_h2o@leader, 
+        bin_continuous = FALSE)
+
+# Run explain() on explainer
+explanations &lt;- lime::explain(
+        x =  as.data.frame(test_h2o) %&gt;% head(4), 
+        explainer    = explainer,
+        n_labels     = 1,
+        n_features   = 6)</code></pre>
+<pre><code>## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |=================================================================| 100%
+## 
+  |                                                                       
+  |                                                                 |   0%
+  |                                                                       
+  |=================================================================| 100%</code></pre>
+<pre class="r"><code>plot_features(explanations , ncol = 2)</code></pre>
+<p><img src="/posts/2018-11-02-predicting-residential-property-prices-in-bratislava-using-recipes-h2o-machine-learning-part-ii_files/figure-html/explainig%20the%20model%20using%20LIME-1.png" width="672" /></p>
+<p>In the chart above 4 different apartments are examined for key variables influencing the price in the machine learning model. Positively impacting factors are colored green and negative are red. The most powerful variable is size, with the highest positive contribution to the price. Other variables, like submarket, no of bedrooms or status can be now interpreted for their contribution to the overall value.</p>
+</div>
+<div id="recap" class="section level2">
+<h2>Recap</h2>
+<p>In this article, we applied an automatic machine learning model framework H2o on real-world dataset to predict apartment prices. The results are outperforming linear regression and are used to predict prices on ca 340 apartments with good accuracy. The LIME framework helped to understand how the AI decided to predict the prices.</p>
+</div>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="/posts/forecasting_house_prices/"><i class="fa fa-chevron-circle-left"></i> Predicting residential property prices in Bratislava using recipes - Linear regression (part I)</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2017 - Michal Kapusta | 
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="/index.xml">Subscribe</a></h6>
+    </footer>
+</div>
+<script src="/js/scripts.js"></script>
+</body>
+
+</html>
