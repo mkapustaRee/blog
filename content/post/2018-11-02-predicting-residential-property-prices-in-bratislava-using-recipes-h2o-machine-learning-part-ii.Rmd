@@ -135,7 +135,7 @@ df_all_processed <- bind_rows(df_train_processed, df_test_processed) %>%
 
 The preprocessed are used to feed the AutoML model. Important is the split of the dataset into three parts. Train, valid and test set. Train set will be used to train the model and the validation is used to apply learned insight into the valid set.  
 
-```{r H2o model,message=F,warning=F, echo=F}
+```{r H2o model,message=F,warning=F, echo=T}
 
 
 library(h2o)
@@ -184,30 +184,23 @@ performance_h2o
 The results are showing RMSE of sub 0.10 on the test dataset. Great! Now let's look at model accuracy using simple visualization. Let's chart the model prediction and real prices to see how well the model performs. 
 
 ```{r predict using h2o, message=F, warning=F}
-
+library(highcharter)
 prediction_h2o <- h2o.predict(automl_leader, newdata = as.h2o(df_test_processed)) %>% as.tibble()
 
 results <-  df_test_processed %>%
                 select( price) %>%
                 bind_cols(prediction_h2o) %>% 
                 mutate_if(is.numeric, funs(10^.)) %>% 
-                mutate(diff = price - predict) 
+                mutate(diff = price - predict) %>% 
+                mutate_if(is.numeric, round, digits = 0)
 
-chart <- results %>%
-        ggplot(aes(price, predict)) +
-        geom_point(alpha = .3) +
-        geom_abline() +
-        theme_minimal() + 
-        scale_x_continuous(labels = scales::comma) + 
-        scale_y_continuous(labels = scales::comma) + 
-        labs(title = "MODEL ACCURACY: Fitted vs Real Prices",
-             subtitle = "Sale price and Predicted price in a relationship",
-             x = "Sale Price", y = "Predicted Price") + 
-        theme(legend.position = "bottom") + 
-        theme(plot.title = element_text(face = "bold")) +
-        geom_smooth(se = F, color = "red")
 
-plotly::ggplotly(chart)
+hchart(results, "scatter", hcaes(price, predict, regression = TRUE, color = diff)) %>% 
+  hc_title(text = "<b>MODEL ACCURACY: Fitted vs Real Prices</b>",  align = "left") %>% 
+  hc_subtitle(text = "Sale price and Predicted price in a relationship",  align = "left") %>% 
+  hc_add_theme(hc_theme_flat()) 
+
+
 
 ```
 
@@ -226,12 +219,13 @@ explainer <- lime::lime(
 
 # Run explain() on explainer
 explanations <- lime::explain(
-        x =  as.data.frame(test_h2o) %>% head(4), 
+        x =  as.data.frame(test_h2o) %>% head(10), 
         explainer    = explainer,
         n_labels     = 1,
         n_features   = 6)
 
-plot_features(explanations , ncol = 2)
+lime::plot_explanations(explanations)
+
 
 ```
 
