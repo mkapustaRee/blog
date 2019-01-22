@@ -4,12 +4,22 @@
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2018-11-25T21:13:14-05:00</lastmod>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/bio/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/what-can-hotel-landlords-learn-from-the-guest-reviews-use-case-from-booking-com-dataset/</loc>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/what-can-hotel-landlords-learn-from-the-guest-reviews-use-case-from-booking-com-dataset/</loc>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -60,6 +70,12 @@
   </url>
   
   <url>
+    <loc>/tags/hotel-reviews/</loc>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/investments/</loc>
     <lastmod>2018-03-01T21:13:14-05:00</lastmod>
     <priority>0</priority>
@@ -91,7 +107,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-11-25T21:13:14-05:00</lastmod>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -103,7 +119,7 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2018-11-25T21:13:14-05:00</lastmod>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -120,8 +136,26 @@
   </url>
   
   <url>
+    <loc>/tags/sentiment-analysis/</loc>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <lastmod>2018-11-25T21:13:14-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/textual-data/</loc>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tidytext/</loc>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

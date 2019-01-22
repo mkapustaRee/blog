@@ -32,6 +32,15 @@
     </item>
     
     <item>
+      <title>Hotel Reviews</title>
+      <link>/tags/hotel-reviews/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/hotel-reviews/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Investments</title>
       <link>/tags/investments/</link>
       <pubDate>Thu, 01 Mar 2018 21:13:14 -0500</pubDate>
@@ -91,6 +100,33 @@
       <pubDate>Tue, 23 Oct 2018 21:13:14 -0500</pubDate>
       <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
       <guid>/tags/rsample/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sentiment Analysis</title>
+      <link>/tags/sentiment-analysis/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/sentiment-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Textual Data</title>
+      <link>/tags/textual-data/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/textual-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tidytext</title>
+      <link>/tags/tidytext/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/tags/tidytext/</guid>
       <description></description>
     </item>
     

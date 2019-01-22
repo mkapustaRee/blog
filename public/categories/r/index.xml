@@ -8,10 +8,28 @@
     <managingEditor>michal.kapusta@gmail.com (Michal Kapusta)</managingEditor>
     <webMaster>michal.kapusta@gmail.com (Michal Kapusta)</webMaster>
     <copyright>Copyright &amp;copy; 2017 - Michal Kapusta</copyright>
-    <lastBuildDate>Sun, 25 Nov 2018 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What can hotel landlords learn from the guest reviews? Use case from booking.com dataset</title>
+      <link>/post/what-can-hotel-landlords-learn-from-the-guest-reviews-use-case-from-booking-com-dataset/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/post/what-can-hotel-landlords-learn-from-the-guest-reviews-use-case-from-booking-com-dataset/</guid>
+      <description>Background Information In this article, I will analyze textual data from hotel reviews. This analysis will focus on real estate investors or landlords since guest reviews offer insight into what is working in a hotel (or not!</description>
+    </item>
+    
+    <item>
+      <title>What can hotel landlords learn from the guest reviews? Use case from booking.com dataset</title>
+      <link>/posts/what-can-hotel-landlords-learn-from-the-guest-reviews-use-case-from-booking-com-dataset/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      <author>michal.kapusta@gmail.com (Michal Kapusta)</author>
+      <guid>/posts/what-can-hotel-landlords-learn-from-the-guest-reviews-use-case-from-booking-com-dataset/</guid>
+      <description>Background Information In this article, I will analyze textual data from hotel reviews. This analysis will focus on real estate investors or landlords since guest reviews offer insight into what is working in a hotel (or not!</description>
+    </item>
     
     <item>
       <title>Predicting residential property prices in Bratislava using recipes - H2o Machine learning (part II)</title>

@@ -1,0 +1,532 @@
+---
+title: What can hotel landlords learn from the guest reviews? Use case from booking.com
+  dataset
+author: Michal Kapusta
+date: '2019-01-22'
+slug: what-can-hotel-landlords-learn-from-the-guest-reviews-use-case-from-booking-com-dataset
+categories:
+  - R
+tags:
+  - tidytext
+  - hotel reviews
+  - sentiment analysis
+  - textual data
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(lubridate)
+library(highcharter)
+library(tidytext)
+
+df_raw <- read_rds(path =  "_files/hotel_reviews.rds") %>% as_tibble()
+df_tidy <- df_raw %>%
+                mutate(Review_Date = ymd(Review_Date),
+                             Review_Year = year(Review_Date),
+                             Review_Qtr = quarter(Review_Date),
+                             Review_Mth = month(Review_Date)) %>% 
+        mutate(Hotel_City = case_when(Hotel_Address = str_detect(Hotel_Address,pattern = "London") ~ "London",
+                                      Hotel_Address = str_detect(Hotel_Address,pattern = "Paris") ~ "Paris",
+                                      Hotel_Address = str_detect(Hotel_Address,pattern = "Barcelona") ~ "Barcelona",
+                                      Hotel_Address = str_detect(Hotel_Address,pattern = "Vienna") ~ "Vienna",
+                                      Hotel_Address = str_detect(Hotel_Address,pattern = "Amsterdam") ~ "Amsterdam",
+                                      Hotel_Address = str_detect(Hotel_Address,pattern = "Milan") ~ "Milan"))
+
+#df_tidy %>% write_rds(path = "_data/hotel_reviews.rds",compress = "gz")
+#df_skus <- read_rds(path =  "_data/hotel_reviews.rds")
+
+df_hotel_info <- df_tidy %>% select(Hotel_Name, Hotel_City) %>% distinct()
+
+
+tags_raw <- df_tidy %>% pull(Tags)
+
+s <- tags_raw %>%
+    str_replace("]","") %>%
+    str_replace("\\[","") %>%
+    str_replace_all("'","") %>%
+        str_split(",", simplify = T) 
+
+trip_final <- s[,1] %>% str_trim()  %>% as.tibble() %>% rename(trip_rationale = value)
+
+df_tidy <- df_tidy %>%
+        bind_cols(trip_final) %>% 
+        filter(trip_rationale %in% c("Leisure trip","Business trip")) 
+
+
+df_scores <- df_tidy %>%
+                group_by(Hotel_Name, trip_rationale) %>%
+                mutate(score_trip_rationale = mean(Reviewer_Score)) %>%
+                ungroup() %>%
+                group_by(Hotel_Name, trip_rationale) %>%
+                transmute(score = score_trip_rationale) %>%
+                distinct() %>%
+                spread(trip_rationale, score) %>%
+                janitor::clean_names() %>%
+                mutate(rationale_ratio = business_trip / leisure_trip) %>%
+                ungroup() %>%
+                arrange(-rationale_ratio)
+
+my_theme <- theme_minimal() + 
+        theme(legend.position = "bottom",
+              plot.title = element_text(face = "bold"), 
+              plot.caption = element_text(hjust = 1)) 
+
+top_10_by_review <- df_tidy %>% group_by(Hotel_Name) %>% transmute(count = n()) %>% arrange(-count) %>% unique() %>% head(8)
+
+theme_set(my_theme)
+
+```
+
+
+## Background Information  
+
+In this article, I will analyze **textual data from hotel reviews**. This analysis will focus on real estate investors or landlords since guest reviews offer insight into what is working in a hotel (or not!). Social media and smartphone revolution enabled reviews, comments and travel blogs to be written by guests. This reviews are gathered on websites. Nowadays, every single guest is asked to write a review on his stay. Several websites (tripadvisors.com, booking.com) reached critical size and now have extensive data on first-hand guest experience. This dataset is valuable, but hard to extract. Humans will struggle to read thousands of reviews and then write a non-biased analysis. Computers can.
+
+This article is broken into three chapters:
+
+* Chapter #1 What can we learn from guest score distribution?  
+* Chapter #2 Can we spot what's wrong with a group of hotels using one chart? 
+* Chapter #3 Recommendation for property owner: Strand Palace Hotel reviews analysis.
+
+
+## What can we learn from guest score distribution?
+
+The data used in this analysis is available on the website **www.kaggle.com**. The dataset of interest is from the  www.booking.com and contains nearly 500.000 reviews from approx. 1500 hotels (Paris, Barcelona, Vienna, London and Milan).  
+
+Now, let's look at all hotels on displayed on a map.
+
+```{r leaflet, include=T, echo=F, message=F,warning=F, fig.width=9, fig.height=9}
+library(dplyr)
+library(tidyr)
+library(leaflet)
+library(leaflet.extras)
+library(scales)
+
+hotel.names = df_tidy %>%
+    select(Hotel_Name, Hotel_Address, lat, lng, Average_Score, Total_Number_of_Reviews,
+           Review_Total_Positive_Word_Counts, Review_Total_Negative_Word_Counts, Hotel_City) %>%
+    #Remove the 17 records without geo coordinates
+    filter(lat != 0 & lng != 0) %>%
+    group_by(Hotel_Name, Hotel_Address, lat, lng, Average_Score, Total_Number_of_Reviews,Hotel_City) %>%
+    summarise(Tot_Pos_Words = sum(Review_Total_Positive_Word_Counts),
+              Tot_Neg_Words = sum(Review_Total_Negative_Word_Counts),
+              Total_Words = sum(Tot_Pos_Words + Tot_Neg_Words),
+              Pos_Word_Rate = percent(Tot_Pos_Words/Total_Words),
+              Neg_Word_Rate = percent(Tot_Neg_Words/Total_Words)) %>% 
+        ungroup() %>% 
+        group_by(Hotel_City) %>% 
+        mutate(pct = ntile(Average_Score, 10))
+
+
+
+points <- cbind(hotel.names$lng,hotel.names$lat)
+
+leaflet() %>% 
+    addProviderTiles('CartoDB.DarkMatter',
+                     options = providerTileOptions(noWrap = TRUE)) %>%
+    addCircles(data = points,
+               color = "red",
+               popup = paste0("<strong>Hotel: </strong>",
+                              hotel.names$Hotel_Name,                 
+                              "<br><strong>Address: </strong>", 
+                              hotel.names$Hotel_Address, 
+                              "<br><strong>Average Score: </strong>", 
+                              hotel.names$Average_Score, 
+                              "<br><strong>Number of Reviews: </strong>", 
+                              hotel.names$Total_Number_of_Reviews,
+                              "<br><strong>Percent Positive Review Words: </strong>",
+                              hotel.names$Pos_Word_Rate))
+
+```
+
+Glancing over the map we can state that the dataset contains hotel located mostly in the city center. Next, let's look at the distribution of hotel score by business, and leisure guests. Bear in mind, that 10 points is the highest score and one is the lowest score the hotel guest can provide.
+
+```{r distribution of scores by trip rationale, include=T, echo=F, warning=F, fig.width=9}
+
+df_means <- df_scores %>%
+        select(-rationale_ratio) %>% 
+        gather(rationale, values, 2:length(.)) %>% 
+        filter(values != "rationale_ratio") %>%
+        ungroup() %>%
+        group_by(rationale) %>%
+        summarise(mean = mean(values))
+
+
+df_scores %>%
+        select(-rationale_ratio) %>% 
+        gather(rationale, values, 2:length(.)) %>% 
+        filter(values != "rationale_ratio") %>% 
+        ggplot(aes(values, fill = rationale)) +
+        geom_density(alpha = .7) + 
+        scale_fill_viridis_d() + 
+        labs(title = "Business guests are more critical when scoring",
+             subtitle = "Average rating by trip rationale", 
+             x = "1-worst, 10-best",
+             caption = "Source: www.booking.com") + 
+        geom_vline(data = df_means, aes(xintercept = mean, color = rationale), linetype = 2) + 
+        scale_color_viridis_d()
+
+
+```
+
+The chart shows business guests are more critical with an average note of 8.19. Leisure guests scored their trip on average - 8.53. Additionally, the business guest review distribution is a more slightly "wider". This means inconsistent hotel experience might exist. As a hotel operator, you always prefer to achieve consistent (high) results - thus narrow distribution is desired.  
+
+Now, lets find out if the distributions is different across cities? 
+
+```{r distribution of scores by trip rationale and city, include=T, echo=F, warning=F, fig.width=9}
+
+mean_values <- df_scores %>%
+        select(-rationale_ratio) %>% 
+        gather(rationale, values, 2:length(.)) %>% 
+        left_join(df_hotel_info, by = c("hotel_name" = "Hotel_Name")) %>% 
+        filter(values != "rationale_ratio") %>% 
+        ungroup() %>% 
+        group_by(Hotel_City, rationale) %>% 
+        summarise(mean = mean(values, na.rm = T))
+
+
+df_scores %>%
+        select(-rationale_ratio) %>% 
+        gather(rationale, values, 2:length(.)) %>% 
+        left_join(df_hotel_info, by = c("hotel_name" = "Hotel_Name")) %>% 
+        filter(values != "rationale_ratio") %>% 
+        ggplot(aes(values, fill = rationale)) +
+        geom_density(alpha = .7) + 
+        geom_vline(data = mean_values, aes(xintercept = mean, color = rationale), linetype = 2, site = 1) + 
+        scale_fill_viridis_d() + 
+        scale_colour_viridis_d() +
+        labs(title = "Business guests are least satisfied compared to other cities",
+             subtitle = "Average rating by trip rationale and city", 
+             caption = "Source: www.booking.com") + 
+        facet_wrap(~Hotel_City) 
+
+```
+
+From the chart above we can see that the business guest review score varies between 7.9 (Milan) and 8.35 (Vienna). Additionally, the leisure guests consistently score their hotel stay higher than business travelers. Interesting!
+
+Now, since we have the reviewer nationality data, is there a country-specific pattern? 
+
+```{r distribution by reviewer group, echo = F, warning = F, fig.width=9}
+
+ctr_MENA <- c("Saudi Arabia", "United Arab Emirates", "Kuwait","Qatar","Bahrain","Oman")
+ctr_USA <- c("United States", "Canada")
+ctr_EU <- c("United Kingdom", "France","Germany","Spain","Netherlands","Italy","Sweden","Norway","Finland")
+ctr_APAC <- c("China","Japan","Australia","India","Singapour","Hongkong")
+
+review_score_by_nationality <- df_tidy %>% 
+                group_by(Hotel_Name) %>% 
+                mutate(Review_count = n()) %>% 
+                ungroup() %>% 
+                filter(Review_count >= 150) %>% 
+                mutate(Reviewer_Group = case_when(Reviewer_Nationality %in% ctr_MENA ~ "MENA",
+                                                  Reviewer_Nationality %in% ctr_USA ~ "USA",
+                                                  Reviewer_Nationality %in% ctr_EU ~ "EU",
+                                                  Reviewer_Nationality %in% ctr_APAC ~ "APAC")) 
+
+mean_lines <- review_score_by_nationality %>% 
+        select(Hotel_Name, trip_rationale, Reviewer_Score, Reviewer_Group) %>% 
+        drop_na() %>% 
+        group_by(Hotel_Name, trip_rationale,Reviewer_Group) %>% 
+        summarise(values = mean(Reviewer_Score)) %>% 
+        ungroup() %>% 
+        group_by(Reviewer_Group, trip_rationale) %>% 
+        transmute(mean = mean(values))
+
+review_score_by_nationality %>% 
+        select(Hotel_Name, trip_rationale, Reviewer_Score, Reviewer_Group) %>% 
+        drop_na() %>% 
+        group_by(Hotel_Name, trip_rationale,Reviewer_Group) %>% 
+        summarise(values = mean(Reviewer_Score)) %>% 
+        ggplot(aes(values, fill = trip_rationale)) +
+        geom_density(alpha = .7) + 
+        scale_fill_viridis_d() + 
+        geom_vline(aes(xintercept = mean, colour = trip_rationale), data = mean_lines, linetype = 2) + 
+        labs(title = "MENA business travelers are harder to please...",
+             subtitle = "Average rating by trip rationale by Reviewer Group ", 
+             caption = "Source: www.Booking.com") + 
+        facet_wrap(~Reviewer_Group, scales = "free") + 
+        scale_color_viridis_d()
+
+
+```
+
+As expected, each group is acting slightly different. The MENA region business travelers are more critical (average score is just 7.8 points), then guests from the USA or APAC region.     
+
+Now, let's look at the top hotels receiving the highest score from a business guest in Europe.  
+
+```{r top_leisure_business_hotels, include=T, echo=F, warning=F, fig.width=9}
+
+top_5_leisure_and_business <- df_tidy %>% 
+                group_by(Hotel_Name) %>% 
+                mutate(Review_count = n()) %>% 
+                ungroup() %>% 
+                filter(Review_count >= 150) %>% 
+                group_by(Hotel_Name, Hotel_City, trip_rationale) %>% 
+                transmute(mean = mean(Reviewer_Score)) %>% 
+                ungroup() %>% 
+                distinct() %>% 
+                group_by(trip_rationale) 
+
+
+top_15_business <- top_5_leisure_and_business %>% 
+                filter(trip_rationale == "Business trip") %>% 
+                top_n(10, mean)
+
+
+
+top_15_business  %>% 
+        ggplot(aes(reorder(Hotel_Name, mean), mean, fill = Hotel_City)) + 
+        geom_col(position = "dodge") + 
+        scale_fill_viridis_d()  +
+        coord_flip(ylim = c(9,10))   +
+        labs(title = "Barcelona leads the satisfaction ranking among business guests...",
+             subtitle = "Top 10 hotels sorted by score of business guests (>150 reviews)")
+
+```
+
+Surprisingly, among the top ten hotels, Barcelona was represented four out of ten times. The Serras Hotel received the best averace score. Only two London hotels (Soho Hotel and Rosewood) made in into the top list. Interestingly, three hotels in Vienna made it into the top ten. 
+
+Now, let's look at the hotel with the highest business guest score by country of origin. As we learned, country groups behave differently. This could also mean they prefer different Hotels to stay. Let's look only at the hotels in London market. 
+```{r top_leisure_business_hotels by traveler, include=T, echo=F, warning=F, fig.width=9}
+
+ctr_MENA <- c("Saudi Arabia", "United Arab Emirates", "Kuwait","Qatar","Bahrain","Oman")
+ctr_USA <- c("United States", "Canada")
+ctr_EU <- c("United Kingdom", "France","Germany","Spain","Netherlands","Italy","Sweden","Norway","Finland")
+ctr_APAC <- c("China","Japan","Australia","India","Singapour","Hongkong")
+
+top_5_business_by_nationality <- df_tidy %>% 
+                group_by(Hotel_Name) %>% 
+                mutate(Review_count = n()) %>% 
+                ungroup() %>% 
+                filter(Review_count >= 150) %>% 
+                mutate(Reviewer_Group = case_when(Reviewer_Nationality %in% ctr_MENA ~ "MENA",
+                                                  Reviewer_Nationality %in% ctr_USA ~ "USA",
+                                                  Reviewer_Nationality %in% ctr_EU ~ "EU",
+                                                  Reviewer_Nationality %in% ctr_APAC ~ "APAC")) %>% 
+                group_by(Hotel_Name,Hotel_City, trip_rationale, Reviewer_Group) %>% 
+                summarise(mean = mean(Reviewer_Score)) %>% 
+                ungroup() %>% 
+                drop_na() %>% 
+                filter(trip_rationale == "Business trip",
+                       Hotel_City == "London") %>% 
+                split(.$Reviewer_Group) %>% 
+                map(arrange, -mean) %>% 
+                map_df(head,n = 7)
+ 
+
+
+top_5_business_by_nationality  %>% 
+        ggplot(aes(reorder(Hotel_Name, mean), mean, fill = Reviewer_Group)) + 
+        geom_col(position = "dodge") + 
+        scale_fill_viridis_d()  +
+        coord_flip(ylim = c(9,10))   +
+        labs(title = "London: Nationalities preffer different hotels",
+             x = "",
+             y = "",
+             subtitle = "Top 7 Hotels sorted by score of business trip and reviewer nationality") + 
+        facet_wrap(~Reviewer_Group, scales = "free")
+
+```
+
+Interestingly, the MENA travelers score Park Plaza, Wembley Holiday Inn and Adria Hotels with the highest score.
+
+## Can we spot what's wrong with the hotel itself?
+
+Now, let's move away from guest review score data, and focus on the actual textual information. The words used when writing the review are a great source of unstructured data. Open-source programming languages (like R) allow usage of specialized tools (packages/library) to work with text (with ease). One of the suitable tools for the job is the **tidytext** package developed by Julia Silge, David Robinson (among other authors).  
+
+The process of tidying the unstructured text data broadly include following steps:
+
+* selecting ten most frequently reviewed hotels and focusing on the negative reviews
+* cutting the reviews into individual words
+* removing the stopwords
+* apply inverse document frequency to assign unique words to a particular hotel
+
+This process will create a table containing the words associated the most with specific hotels within the peer group. 
+
+```{r explore td-idf, message=F, include=T, echo=F, warning=F, fig.width=9, fig.height=9}
+lst_10 <- top_10_by_review %>% pull(Hotel_Name)
+
+original_reviews <- df_tidy %>% 
+        filter(Hotel_Name %in% lst_10) %>% 
+        select(Hotel_Name, Negative_Review) %>% 
+        mutate(line = row_number(),
+               Hotel_Name = as.factor(Hotel_Name)) %>%
+  ungroup()
+
+tidy_reviews <- original_reviews %>%
+  unnest_tokens(input = Negative_Review, output = text, drop = T)
+
+tidy_reviews <- tidy_reviews %>%
+  anti_join(get_stopwords(), by = c("text" = "word")) %>% 
+        filter(text != "room")
+
+tidy_reviews %>%
+  count(Hotel_Name, text, sort = TRUE) %>% 
+        bind_tf_idf(text, Hotel_Name, n) %>% 
+        group_by(Hotel_Name) %>% 
+        top_n(8) %>%
+        ungroup() %>% 
+        mutate(text = reorder(text, tf_idf)) %>% 
+        ggplot(aes(text, tf_idf, fill = Hotel_Name )) + 
+        geom_col(show.legend = F) + 
+        facet_wrap(~Hotel_Name, scales = "free", ncol = 2) + 
+        coord_flip() +
+        theme(axis.text.x=element_blank()) + 
+        scale_fill_viridis_d() + 
+        labs(title = "Noise from train tracks, thin walls, mice or boiler is bothering guests",
+             subtitle = "Words used in hotel review (unique within the peer group)",
+             x = NULL, y= NULL, caption = "www.booking.com")
+
+
+```
+
+
+The chart above shows that in guests of Britannia International Hotel Canary Wharf frequently used words like **"dlr"** or **"train"** in the review. After a quick google search, I understand that the hotel area is next to the train tracks. This location is a critical issue. **In real estate world: you can fix the building, but not the location.** Similar to Britannica the Copthorne hotel location is adjacent to the train tracks. Grand Royale in Hyde Park guests had a problem with loud floorboards, basement, boilers, and blinds. Such faults **can be managed** by a decent **refurbishment**. 
+
+## Recommendation for property owner: Strand Palace Hotel reviews analysis. 
+
+After the group review, I will focus on one particular hotel Strand Palace Hotel in London. I will try to extract the maximum pieces of information from the guest reviews. 
+
+Firstly, how is the average score changing over time? Are the scores consistent?
+
+```{r reviews over time,  include=T, echo=F, warning=F, message=F, fig.width=9}
+df_tidy %>% 
+        filter(Hotel_Name == "Strand Palace Hotel") %>%
+        ggplot(aes(Review_Date, Reviewer_Score))  + 
+        geom_point(alpha = .15) + 
+        geom_smooth(se = F, color = "red") + 
+        facet_wrap(~trip_rationale) + 
+        labs(title  = "Business guests rating falls in summer 2017, what happend?", 
+                subtitle = "Strand Palace Hotel: Reviewer score over time by trip rationale",
+             caption = "Source: www.booking.com")  
+ 
+```
+
+From the chart above we can see the reviewer score over time split between business and leisure guests. Both are showing up the drop in the score in the summer 2017. Business guests are overall more critical, but the fall in score is concerning.  
+
+Now let's look at the reviews themselves. 
+
+```{r hotel negative review, include=T, echo=F, warning=F, fig.width=9}
+df_tidy %>% 
+        filter(Hotel_Name == "Strand Palace Hotel") %>%
+        arrange(Reviewer_Score) %>% 
+        select(Review_Date, Reviewer_Nationality,Negative_Review) %>% 
+        DT::datatable()
+
+```
+
+The sample size of 4120 reviews is a challenge to tidy for further analysis. Here we use the tidytext seps to extract the insights.
+
+* step 1: cut the text into single words
+* step 2: remove stopwords
+* step 3: apply sentiment lexicon (in this case bing lexicon) 
+* step 4: apply pairwise correlation calculations to get high correlated words 
+
+
+The first two steps show the filtered selection of words arranged by frequency. 
+
+```{r unnest reviews, include=T, echo=F, warning=F, fig.width=9}
+library(tidytext)
+library(kableExtra)
+
+
+original_reviews <- df_tidy %>% 
+        filter(Hotel_Name == "Strand Palace Hotel") %>% 
+        select(Negative_Review) %>% 
+        mutate(line = row_number()) %>%
+  ungroup()
+
+tidy_reviews <- original_reviews %>%
+  unnest_tokens(input = Negative_Review, output = text, drop = T)
+
+tidy_reviews <- tidy_reviews %>%
+  anti_join(get_stopwords(), by = c("text" = "word")) %>% 
+        filter(text != "room")
+
+tidy_reviews %>%
+  count(text, sort = TRUE) %>% 
+        head(10) %>% 
+        knitr::kable() %>% 
+        kableExtra::kable_styling()
+
+```
+
+In this case, the word **negative**, **small** or **breakfast** appears on the top. Since the analyzed reviews are negative the word "negative" doesn't have any significance and will be removed from the analysis. 
+
+Let's visualize the words using a basic chart.
+
+```{r word sentiment analysis, include=T, echo=F, warning=F, fig.width=9}
+
+
+bing_word_counts <- tidy_reviews %>%
+    inner_join(get_sentiments("bing"), by = c("text" = "word")) %>% 
+  count(text, sentiment, sort = TRUE) %>% 
+        filter(text != "negative")
+
+
+bing_word_counts %>%
+    filter(n > 50) %>%
+    mutate(n = ifelse(sentiment == "negative", -n, n)) %>%
+    arrange(n) %>%
+    ggplot(aes(reorder(text, n),n, fill = sentiment)) +
+        geom_col() +
+        coord_flip()  + 
+        scale_fill_viridis_d() + 
+        labs(title = "Noise, expensive and cold are mentioned in negative reviews",
+             subtitle = "Hotel reviews most frequent used words by sentiment",
+             y = "",x="", caption = "Source: www.booking.com")
+        
+
+
+```
+
+The chart displays the most frequent words by sentiment. It seems the words **noisy**, **expensive**, **cold** are used often when describing the hotel stay. This is important for the property operators since it is direct feedback from customers. Feedback can lead to precise refurbishment project aimed to remove the most critical issues.   
+
+Finally, lets look at the collection of words that appear in the reviews next to other words, which are highly correlated. 
+
+```{r nove, include=T, warning=F,echo=F, message=F, fig.width=9}
+
+library(widyr)
+library(igraph)
+library(ggraph)
+
+tidy_reviews_filtered <- tidy_reviews %>%
+        group_by(text) %>% 
+        add_count(sort = T) %>% 
+        filter(n > 50)
+
+top_word_cors <- tidy_reviews_filtered  %>% 
+        pairwise_cor(text,line, sort = T) %>% 
+        head(100) 
+
+set.seed(2018)
+
+top_word_cors %>%
+        graph_from_data_frame() %>% 
+        ggraph() + 
+        geom_edge_link() + 
+        geom_node_point() + 
+        geom_node_text(aes(label = name),repel = T ) + 
+        labs(title = "Thin walls, air conditioning and windows are often mentioned", 
+             subtitle = "Correlation of words from negative reviews",
+             caption = "Source: www.booking.com", y = "", x = "") 
+         
+
+```
+
+The chart reveals frequent issues that hotel guest are frequently commenting. The first group of issues revolves around words like **door**, **walls**, **thin** or **hear**. This set of words points out the fact that the walls between the rooms are thin and the noises from the neighbor is disturbing for the guest. Next group of words is connected to the word **air** or **window**. It appears **air conditioning** and **view outside** is an issue.   
+
+## Summary
+
+In this article I have analyzed approx. 500.000 hotel reviews written by hotel guests. Using tidytext principles and basic distribution analysis we have found that: 
+
+* Business guest are harder to satisfy (in general, across the cities)
+* Paris and Vienna business guest reviews are the highest 
+* Nationality of the reviewer plays important role (overall rating, hotel choices)
+* Hotel Strand analysis shows: Overall rating drops in summer 2017. Air condition, thin walls, view outside, long check-in and double booked rooms are often mentioned
+
+
+
+
