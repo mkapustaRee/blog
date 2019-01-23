@@ -82,7 +82,7 @@ theme_set(my_theme)
 
 ## Background Information  
 
-In this article, I will analyze **textual data from hotel reviews**. This analysis will focus on real estate investors or landlords since guest reviews offer insight into what is working in a hotel (or not!). Social media and smartphone revolution enabled reviews, comments and travel blogs to be written by guests. This reviews are gathered on websites. Nowadays, every single guest is asked to write a review on his stay. Several websites (tripadvisors.com, booking.com) reached critical size and now have extensive data on first-hand guest experience. This dataset is valuable, but hard to extract. Humans will struggle to read thousands of reviews and then write a non-biased analysis. Computers can.
+In this article, I will analyze **textual data from hotel reviews**. This analysis will focus on real estate investors or landlords since guest reviews offer insight into hotel performace. Social media and smartphone revolution enabled reviews, comments and travel blogs to be written by guests. Nowadays, every single guest is kindly asked to write a review of his stay. These reviews are stored on websites. Several websites (tripadvisors.com, booking.com) reached a critical size and contain extensive data on the first-hand guests experiences. This textual data is valuable but hard to extract. Humans will struggle to read thousands of reviews and then write a non-biased analysis. Computers can.
 
 This article is broken into three chapters:
 
@@ -141,7 +141,7 @@ leaflet() %>%
 
 ```
 
-Glancing over the map we can state that the dataset contains hotel located mostly in the city center. Next, let's look at the distribution of hotel score by business, and leisure guests. Bear in mind, that 10 points is the highest score and one is the lowest score the hotel guest can provide.
+Glancing over the map we can state that the dataset contains hotel located mostly in the city center. Next, let's look at the distribution of hotel score by business, and leisure guests. Bear in mind, that 10 points are the highest score and one is the lowest score the hotel guest can provide.
 
 ```{r distribution of scores by trip rationale, include=T, echo=F, warning=F, fig.width=9}
 
@@ -171,7 +171,7 @@ df_scores %>%
 
 ```
 
-The chart shows business guests are more critical with an average note of 8.19. Leisure guests scored their trip on average - 8.53. Additionally, the business guest review distribution is a more slightly "wider". This means inconsistent hotel experience might exist. As a hotel operator, you always prefer to achieve consistent (high) results - thus narrow distribution is desired.  
+The chart shows business guests are more critical with an average score of 8.19. Leisure guests scored their trip on average - 8.53. Additionally, the business guest review distribution is a more slightly "wider". This means inconsistent hotel experience might exist. As a hotel operator, you always prefer to achieve consistent (high) results - thus narrow distribution is desired.  
 
 Now, lets find out if the distributions is different across cities? 
 
@@ -286,9 +286,9 @@ top_15_business  %>%
 
 ```
 
-Surprisingly, among the top ten hotels, Barcelona was represented four out of ten times. The Serras Hotel received the best averace score. Only two London hotels (Soho Hotel and Rosewood) made in into the top list. Interestingly, three hotels in Vienna made it into the top ten. 
+Surprisingly, among the top ten hotels, Barcelona was represented four out of ten times. The Serras Hotel received the best average score. Only two London hotels (Soho Hotel and Rosewood) made in into the top list. Interestingly, three hotels in Vienna made it into the top ten. 
 
-Now, let's look at the hotel with the highest business guest score by country of origin. As we learned, country groups behave differently. This could also mean they prefer different Hotels to stay. Let's look only at the hotels in London market. 
+Now, let's look at the hotel with the highest business guest score by country of origin. As we learned, country groups behave differently. This could also mean they prefer different Hotels to stay. Let's look only at the hotels in the London market. 
 ```{r top_leisure_business_hotels by traveler, include=T, echo=F, warning=F, fig.width=9}
 
 ctr_MENA <- c("Saudi Arabia", "United Arab Emirates", "Kuwait","Qatar","Bahrain","Oman")
@@ -336,7 +336,7 @@ Interestingly, the MENA travelers score Park Plaza, Wembley Holiday Inn and Adri
 
 Now, let's move away from guest review score data, and focus on the actual textual information. The words used when writing the review are a great source of unstructured data. Open-source programming languages (like R) allow usage of specialized tools (packages/library) to work with text (with ease). One of the suitable tools for the job is the **tidytext** package developed by Julia Silge, David Robinson (among other authors).  
 
-The process of tidying the unstructured text data broadly include following steps:
+The process of tidying the unstructured text data includes the following steps:
 
 * selecting ten most frequently reviewed hotels and focusing on the negative reviews
 * cutting the reviews into individual words
@@ -404,7 +404,7 @@ df_tidy %>%
  
 ```
 
-From the chart above we can see the reviewer score over time split between business and leisure guests. Both are showing up the drop in the score in the summer 2017. Business guests are overall more critical, but the fall in score is concerning.  
+From the chart above we can see the reviewer score over time split between business and leisure guests. Both are showing up the drop in the score in summer 2017. Business guests are overall more critical, but the fall in the score is concerning.  
 
 Now let's look at the reviews themselves. 
 
@@ -417,7 +417,7 @@ df_tidy %>%
 
 ```
 
-The sample size of 4120 reviews is a challenge to tidy for further analysis. Here we use the tidytext seps to extract the insights.
+The sample size of 4120 reviews is a challenge to tidy for further analysis. Here we use the tidytext steps to extract the insights.
 
 * step 1: cut the text into single words
 * step 2: remove stopwords
@@ -484,7 +484,7 @@ bing_word_counts %>%
 
 The chart displays the most frequent words by sentiment. It seems the words **noisy**, **expensive**, **cold** are used often when describing the hotel stay. This is important for the property operators since it is direct feedback from customers. Feedback can lead to precise refurbishment project aimed to remove the most critical issues.   
 
-Finally, lets look at the collection of words that appear in the reviews next to other words, which are highly correlated. 
+Finally, let's look at the collection of words that appear in the reviews next to other words, which are highly correlated. 
 
 ```{r nove, include=T, warning=F,echo=F, message=F, fig.width=9}
 
@@ -520,12 +520,12 @@ The chart reveals frequent issues that hotel guest are frequently commenting. Th
 
 ## Summary
 
-In this article I have analyzed approx. 500.000 hotel reviews written by hotel guests. Using tidytext principles and basic distribution analysis we have found that: 
+In this article, I have analyzed approx. 500.000 hotel reviews written by hotel guests. Using tidytext principles and distribution analysis we have found that: 
 
 * Business guest are harder to satisfy (in general, across the cities)
 * Paris and Vienna business guest reviews are the highest 
-* Nationality of the reviewer plays important role (overall rating, hotel choices)
-* Hotel Strand analysis shows: Overall rating drops in summer 2017. Air condition, thin walls, view outside, long check-in and double booked rooms are often mentioned
+* Nationality of the reviewer plays an important role (overall rating, hotel choices)
+* Hotel Strand analysis shows: overall rating drops in summer 2017. Air condition, thin walls, view outside, long check-in and double booked rooms are often mentioned
 
 
 
